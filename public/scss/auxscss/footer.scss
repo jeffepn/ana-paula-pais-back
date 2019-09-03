@@ -1,0 +1,23 @@
+footer {
+    position: relative;
+    min-height: 400px;
+    background-color: $colorPrimary;
+    background-image: url("/images/site/backs/interior-sala.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.background-footer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba($colorPrimary, 0.75);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.content-footer {
+    position: relative;
+    z-index: 2;
+    color: white;
+}

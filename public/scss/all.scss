@@ -1,0 +1,13 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+.row {
+    margin: 0;
+}
+
+@import "./auxscss/variables.scss";
+@import "./auxscss/fonts.scss";
+@import "./auxscss/footer.scss";
+@import "./auxscss/header.scss";

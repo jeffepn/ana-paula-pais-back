@@ -1,0 +1,22 @@
+header a {
+  color: #6e273d;
+}
+
+header a:hover {
+  font-size: 1.1em;
+  color: black;
+}
+
+nav {
+  background: none !important;
+  font-size: 1.2em;
+}
+
+nav li a {
+  font-family: "Livvic", sans-serif;
+}
+
+.social-network {
+  font-size: 1.4em;
+}
+/*# sourceMappingURL=header.css.map */

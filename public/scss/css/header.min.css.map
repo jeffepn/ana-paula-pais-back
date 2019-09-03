@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACI,MADE,CACF,CAAC,AAAC,CACE,KAAK,CCHE,OAAO,CDQjB,AAPL,AAGQ,MAHF,CACF,CAAC,AAEI,MAAM,AAAC,CACJ,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,KAAK,CACf,AAGT,AAAA,GAAG,AAAC,CACA,UAAU,CAAE,eAAe,CAC3B,SAAS,CAAE,KAAK,CAMnB,AARD,AAIQ,GAJL,CAGC,EAAE,CACE,CAAC,AAAC,CACE,WAAW,CCZN,QAAQ,CAAE,UAAU,CDa5B,AAGT,AAAA,eAAe,AAAC,CACZ,SAAS,CAAE,KAAK,CACnB",
+    "sources": [
+        "../auxscss/header.scss",
+        "../auxscss/variables.scss"
+    ],
+    "names": [],
+    "file": "header.min.css"
+}

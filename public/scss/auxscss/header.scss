@@ -1,0 +1,22 @@
+@import "./variables.scss";
+header {
+    a {
+        color: $colorPrimary;
+        &:hover {
+            font-size: 1.1em;
+            color: black;
+        }
+    }
+}
+nav {
+    background: none !important;
+    font-size: 1.2em;
+    li {
+        a {
+            font-family: $fontSecoundary;
+        }
+    }
+}
+.social-network {
+    font-size: 1.4em;
+}

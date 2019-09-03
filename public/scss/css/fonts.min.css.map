@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,WAAW,AAAC,CACR,WAAW,CCAD,EAAE,CDCf,AACD,AAAA,cAAc,AAAC,CACX,WAAW,CCFE,EAAE,CDGlB,AACD,AAAA,SAAS,AAAC,CACN,WAAW,CCJH,EAAE,CDKb",
+    "sources": [
+        "../auxscss/fonts.scss",
+        "../auxscss/variables.scss"
+    ],
+    "names": [],
+    "file": "fonts.min.css"
+}
