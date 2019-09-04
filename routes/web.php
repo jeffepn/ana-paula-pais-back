@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
+    return view('pre-launch');
+});
+Route::get('/site', function () {
     return view('home');
 });

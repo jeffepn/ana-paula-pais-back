@@ -67,4 +67,31 @@ nav li a {
 .social-network {
   font-size: 1.4em;
 }
+
+.pre-launch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6e273d), to(#140000));
+  background: linear-gradient(to bottom, #6e273d, #140000);
+}
+
+.pre-launch img {
+  margin: 0 auto;
+}
+
+.pre-launch p {
+  margin-top: 20px;
+  font-family: "Hepta Slab", serif;
+  font-size: 3em;
+  color: white;
+}
 /*# sourceMappingURL=all.css.map */
