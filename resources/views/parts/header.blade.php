@@ -5,7 +5,7 @@ if(isset($transparent)){
 }
 ?>
 <nav id="nav-master" class="navbar navbar-expand-md fixed-top navbar-light bg-light {{$flagMenu}}">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand py-0" href="#">
         <img src="{{url('images/site/logo.png')}}" alt="Ana Paula Pais Imóveis">
     </a>
     <button class="open-menu navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

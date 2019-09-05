@@ -6,12 +6,12 @@
                     <div class="block-immobile-carrousel"
                         style="background-image: url('{{url('images/site/backs/interior-sala3.jpg')}}');">
                         <div class="data-immobile">
-                            <h6 class="data-immobile-neighborhood">
+                            <h5 class="data-immobile-neighborhood">
                                 Jardim Vitória, Poços de Caldas
-                            </h6>
-                            <h5 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
                             </h5>
+                            <h3 class="data-immobile-description">
+                                Lorem Ipsum is simply dummy text of the printing
+                            </h3>
                             <span class="data-immobile-price">
                                 R$ 1.030.000
                             </span>
@@ -22,12 +22,12 @@
                     <div class="block-immobile-carrousel"
                         style="background-image: url('{{url('images/site/backs/sala-estar.jpg')}}');">
                         <div class="data-immobile">
-                            <h6 class="data-immobile-neighborhood">
+                            <h5 class="data-immobile-neighborhood">
                                 Santa Ângela, Poços de Caldas
-                            </h6>
-                            <h5 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
                             </h5>
+                            <h3 class="data-immobile-description">
+                                Lorem Ipsum is simply dummy text of the printing
+                            </h3>
                             <span class="data-immobile-price">
                                 R$ 2.000.000
                             </span>
@@ -38,12 +38,12 @@
                     <div class="block-immobile-carrousel"
                         style="background-image: url('{{url('images/site/backs/studio.jpg')}}');">
                         <div class="data-immobile">
-                            <h6 class="data-immobile-neighborhood">
+                            <h5 class="data-immobile-neighborhood">
                                 Contry Club, Poços de Caldas
-                            </h6>
-                            <h5 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
                             </h5>
+                            <h3 class="data-immobile-description">
+                                Lorem Ipsum is simply dummy text of the printing
+                            </h3>
                             <span class="data-immobile-price">
                                 R$ 500.000
                             </span>
@@ -54,12 +54,12 @@
                     <div class="block-immobile-carrousel"
                         style="background-image: url('{{url('images/site/backs/cozinha.jpg')}}');">
                         <div class="data-immobile">
-                            <h6 class="data-immobile-neighborhood">
+                            <h5 class="data-immobile-neighborhood">
                                 Centro, Poços de Caldas
-                            </h6>
-                            <h5 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
                             </h5>
+                            <h3 class="data-immobile-description">
+                                Lorem Ipsum is simply dummy text of the printing
+                            </h3>
                             <span class="data-immobile-price">
                                 R$ 2.000.000
                             </span>

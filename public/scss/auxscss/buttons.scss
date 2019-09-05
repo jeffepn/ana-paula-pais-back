@@ -1,0 +1,25 @@
+@import "./variables.scss";
+@mixin colorwhitedefault() {
+    color: white;
+    &:hover,
+    &:focus {
+        color: white;
+    }
+}
+.bt {
+    border-radius: 0;
+    transition: transform 0.2s;
+    &--pr {
+        @extend .bt;
+        background: $colorPrimary;
+        @include colorwhitedefault();
+    }
+    &--se {
+        @extend .bt;
+        background: $colorSecoundary;
+        @include colorwhitedefault();
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+}
