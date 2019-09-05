@@ -54,7 +54,8 @@
             font-size: 30px;
             line-height: 30px;
             text-align: center;
-            &:focus {
+            &:focus,
+            &:hover {
                 outline: 2px solid rgba($colorPrimary, 0.6);
                 background: rgba(gray, 1);
             }
@@ -78,6 +79,30 @@
         }
         span {
             display: none !important;
+        }
+    }
+    .owl-dots {
+        padding-top: 10px;
+        text-align: center;
+        color: $colorPrimary;
+        .owl-dot {
+            margin-right: 5px;
+            margin-left: 5px;
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                content: "\f111";
+                font-weight: 400;
+            }
+            span {
+                display: none !important;
+            }
+        }
+        .active {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                content: "\f111";
+                font-weight: 900 !important;
+            }
         }
     }
 }

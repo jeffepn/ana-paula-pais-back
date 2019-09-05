@@ -221,7 +221,7 @@ nav li a {
   text-align: center;
 }
 
-#carrousel-partial .owl-nav button:focus {
+#carrousel-partial .owl-nav button:focus, #carrousel-partial .owl-nav button:hover {
   outline: 2px solid rgba(110, 39, 61, 0.6);
   background: gray;
 }
@@ -249,6 +249,33 @@ nav li a {
 
 #carrousel-partial .owl-nav span {
   display: none !important;
+}
+
+#carrousel-partial .owl-dots {
+  padding-top: 10px;
+  text-align: center;
+  color: #6e273d;
+}
+
+#carrousel-partial .owl-dots .owl-dot {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#carrousel-partial .owl-dots .owl-dot::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 400;
+}
+
+#carrousel-partial .owl-dots .owl-dot span {
+  display: none !important;
+}
+
+#carrousel-partial .owl-dots .active::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 900 !important;
 }
 
 .bt, .bt--pr, .bt--se {

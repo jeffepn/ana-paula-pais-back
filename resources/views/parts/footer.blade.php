@@ -3,9 +3,21 @@
     <div class="px-md-5 content-footer">
         <div class="row">
             <div class="col-4">
-                <p>Aqui será o footer.</p>
+                <img width="40%" src="{{url('images/site/logobig.png')}}" alt="Ana Paula Pais Imóveis">
             </div>
             <div class="col-4">
+                <div class="social-network">
+                    <a class="text-white" href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="#" class="d-flex align-items-center text-white ft-primary">
+                    <i class="mdil mdil-email mdil-36px mr-2"></i>
+                    contato@anapaulapais.com.br
+                </a>
+                <a href="#" class="d-flex align-items-center text-white ft-primary">
+                    <i class="mdil mdil-phone mdil-36px mr-2"></i>
+                    (35) 99999 9999
+                </a>
             </div>
             <div class="col-4">
                 <h4>Newsletter</h4>

@@ -68,26 +68,15 @@
                 </div>
             </div>
         </div>
-        <div class="owl-dots">
-            <div class="owl-dot active"><span></span></div>
-            <div class="owl-dot"><span></span></div>
-            <div class="owl-dot"><span></span></div>
-        </div>
-        <div class="owl-nav">
-            <button type="button" role="presentation" class="owl-prev">
-                <span aria-label="Previous"><i class="mdil mdil-chevron-left"></i></span>
-            </button>
-            <button type="button" role="presentation" class="owl-next">
-                <span aria-label="Next">›</span>
-            </button>
-        </div>
     </div>
 </div>
 @section('js-util')
 @parent
 $('#carrousel-partial').owlCarousel({
 loop: true,
-//autoplay: true,
+autoplay: true,
+autoplayHoverPause:true,
+dots: true,
 responsiveClass: true,
 responsive:{
 0:{
