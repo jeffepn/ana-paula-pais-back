@@ -1,1 +1,10 @@
 @extends('template')
+@section('header')
+@include('parts.header',['transparent'=>'transparent'])
+@endsection
+@section('context')
+@parent
+@include('sections.section-home')
+@include('parts.typhograpy')
+@include('immobiles.immobile-carrousel')
+@endsection

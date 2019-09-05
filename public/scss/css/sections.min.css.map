@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,AAAC,CACV,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,iCAAiC,CACnD,mBAAmB,CAAE,MAAM,CAC3B,eAAe,CAAE,KAAK,CAUzB,AAfD,AAMI,aANS,AAMR,OAAO,AAAC,CACL,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,CAAC,CACP,UAAU,CAAO,eAAK,CACzB",
+    "sources": [
+        "../auxscss/sections.scss"
+    ],
+    "names": [],
+    "file": "sections.min.css"
+}

@@ -8,9 +8,12 @@ html {
 }
 
 @import "./auxscss/variables.scss";
+@import "./auxscss/sections.scss";
 @import "./auxscss/fonts.scss";
 @import "./auxscss/footer.scss";
 @import "./auxscss/header.scss";
+@import "./auxscss/immobiles.scss";
+@import "./auxscss/carrousel.scss";
 
 .pre-launch {
     display: flex;

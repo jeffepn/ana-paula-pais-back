@@ -1,16 +1,52 @@
 @import "./variables.scss";
-header {
+.nav-in-floating {
+    .navbar-brand {
+        img {
+            height: 40px;
+        }
+    }
+}
+.navbar-transparent {
+    background: transparent !important;
     a {
-        color: $colorPrimary;
+        color: white !important;
         &:hover {
             font-size: 1.1em;
             color: black;
         }
     }
 }
+.open-menu {
+    background: transparent;
+    border: none;
+    line-height: 1;
+    padding: 0;
+    &::after {
+        color: $colorPrimary;
+        font-size: 2.5em;
+        font-family: "Material Design Icons Light";
+        content: "\F35C";
+    }
+    &:focus {
+        outline: 2px solid rgba($colorPrimary, 0.6);
+    }
+}
 nav {
+    background: white;
+    .navbar-brand {
+        img {
+            height: 80px;
+        }
+    }
+    a {
+        color: $colorPrimary !important;
+        &:hover {
+            font-size: 1.1em;
+            color: black;
+        }
+    }
     background: none !important;
-    font-size: 1.2em;
+    font-size: 0.9em;
     li {
         a {
             font-family: $fontSecoundary;

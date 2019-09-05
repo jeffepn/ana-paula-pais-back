@@ -14,50 +14,18 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab|Livvic|Open+Sans+Condensed:300&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab|Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
     <link rel="stylesheet" href="{{url('css/all.min.css')}}">
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="h-100">
     @section('header')
     @include('parts.header')
     @show
     @section('context')
-    <div class="px-3 pt-4" style="font-size: 1.2em;">
-        <p class="ft-primary">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="ft-secoundary">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p class="ft-third">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-    </div>
     @show
     @section('footer')
     @include('parts.footer')
@@ -71,6 +39,17 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script src="{{url('js/screen.js')}}">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            @section('js-util')
+            @show            
+        });  	
     </script>
 </body>
 
