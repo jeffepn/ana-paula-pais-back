@@ -52,23 +52,6 @@
     <div class="row">
         <div class="immobile-list">
             <div class="immobile-list-card">
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="immobile-list-context">
                     <p>
                         Jardim Vitória, Poços de Caldas<br>
@@ -94,27 +77,27 @@
                         R$ 1.030.000
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
                 <div class="immobile-list-image">
                     <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
                                 </div>
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
                                 </div>
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
                 <div class="immobile-list-context">
                     <p>
                         Santa Ângela, Poços de Caldas<br>
@@ -140,27 +123,27 @@
                         R$ 2.000.000
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
                 <div class="immobile-list-image">
                     <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
                                 </div>
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
                                 </div>
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
                 <div class="immobile-list-context">
                     <p>
                         Contry Club, Poços de Caldas<br>
@@ -186,27 +169,27 @@
                         R$ 500.000
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
                 <div class="immobile-list-image">
                     <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
                                 </div>
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
                                 </div>
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
                 <div class="immobile-list-context">
                     <p>
                         Centro, Poços de Caldas<br>
@@ -230,6 +213,391 @@
                     </div>
                     <div class="immobile-list-context-price">
                         R$ 2.000.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Jardim Vitória, Poços de Caldas<br>
+                        <span>(AN-43543)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 1.030.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Santa Ângela, Poços de Caldas<br>
+                        <span>(AN-43544)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 2.000.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Contry Club, Poços de Caldas<br>
+                        <span>(AN-43545)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 500.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Centro, Poços de Caldas<br>
+                        <span>(AN-43546)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 2.000.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Jardim Vitória, Poços de Caldas<br>
+                        <span>(AN-43543)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 1.030.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Santa Ângela, Poços de Caldas<br>
+                        <span>(AN-43544)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 2.000.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Contry Club, Poços de Caldas<br>
+                        <span>(AN-43545)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 500.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="immobile-list">
+            <div class="immobile-list-card">
+                <div class="immobile-list-context">
+                    <p>
+                        Centro, Poços de Caldas<br>
+                        <span>(AN-43546)</span>
+                    </p>
+                    <hr>
+                    <h4>
+                        Lorem Ipsum is simply dummy text of the printing
+                    </h4>
+                    <div class="item-data-immobile">
+                        2<br>
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        5<br>
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="item-data-immobile">
+                        3<br>
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <div class="immobile-list-context-price">
+                        R$ 2.000.000
+                    </div>
+                </div>
+                <div class="immobile-list-image">
+                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                                <div class="owl-item">
+                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

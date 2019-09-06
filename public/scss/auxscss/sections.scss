@@ -22,18 +22,47 @@
 }
 .section-view-all-immobiles {
     padding: 4rem 0;
-    background: #eeeeee;
+    background: #f9f9f9;
 }
 .immobile-list {
     padding: 0 1rem;
     margin-bottom: 1rem;
     width: 100%;
+    cursor: pointer;
     &-card {
+        display: flex;
+        flex-direction: column;
         background: white;
+        border: 1px solid #ced4da;
     }
     &-image {
-        height: 260px;
+        order: 1;
+        height: $heighImageImmobileList;
         overflow: hidden;
+        position: relative;
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: $heighImageImmobileList;
+            background: rgba(#333, 0.5);
+            /*font-family: "Font Awesome 5 Free";
+            content: "\f067";*/
+            font-family: "Material Design Icons Light";
+            content: "\f415";
+            font-weight: 900;
+            opacity: 0;
+            transition: opacity 0.7s;
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            line-height: $heighImageImmobileList;
+        }
+        .owl-carousel {
+            position: relative;
+            z-index: 3;
+        }
         .owl-carousel,
         .owl-stage-outer,
         .owl-stage,
@@ -41,6 +70,7 @@
             //width: 100% !important;
             height: 100% !important;
             img {
+                transition: transform 0.7s;
                 width: auto;
                 min-width: 100% !important;
                 min-height: 100% !important;
@@ -49,6 +79,7 @@
         }
     }
     &-context {
+        order: 2;
         padding: 1rem;
         p {
             margin-bottom: 0;
@@ -62,6 +93,15 @@
             font-size: 1.2em !important;
             font-family: $fontPrimary;
         }
+        &:hover {
+            ~ .immobile-list-image::after {
+                opacity: 1;
+                z-index: 4;
+            }
+            ~ .immobile-list-image .owl-item.active img {
+                transform: scale(1.3);
+            }
+        }
     }
     &-context-price {
         display: inline-flex;
@@ -69,6 +109,7 @@
         float: right;
         font-family: $fontPrimary;
     }
+
     .item-data-immobile {
         font-family: $fontPrimary;
         padding: 0 0.25rem;
