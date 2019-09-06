@@ -3,6 +3,10 @@ html {
     margin: 0;
     padding: 0;
 }
+body {
+    display: flex;
+    flex-direction: column;
+}
 .row {
     margin: 0;
 }
@@ -15,6 +19,7 @@ html {
 @import "./auxscss/immobiles.scss";
 @import "./auxscss/carrousel.scss";
 @import "./auxscss/buttons.scss";
+@import "./auxscss/form.scss";
 
 .pre-launch {
     display: flex;

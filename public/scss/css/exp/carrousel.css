@@ -45,78 +45,93 @@
   color: yellow;
 }
 
-#carrousel-partial {
+#carrousel-partial,
+.carrousel-owl {
   position: relative;
 }
 
-#carrousel-partial .owl-nav {
+#carrousel-partial .owl-nav,
+.carrousel-owl .owl-nav {
   position: absolute;
   top: 50%;
   width: 100%;
 }
 
-#carrousel-partial .owl-nav button {
+#carrousel-partial .owl-nav button,
+.carrousel-owl .owl-nav button {
   width: 35px;
   height: 35px;
-  background: rgba(128, 128, 128, 0.2);
-  color: white;
+  background: rgba(128, 128, 128, 0.5) !important;
+  color: white !important;
   font-size: 30px;
   line-height: 30px;
   text-align: center;
 }
 
-#carrousel-partial .owl-nav button:focus, #carrousel-partial .owl-nav button:hover {
+#carrousel-partial .owl-nav button:focus, #carrousel-partial .owl-nav button:hover,
+.carrousel-owl .owl-nav button:focus,
+.carrousel-owl .owl-nav button:hover {
   outline: 2px solid rgba(110, 39, 61, 0.6);
-  background: gray;
+  background: gray !important;
 }
 
-#carrousel-partial .owl-nav .owl-prev {
+#carrousel-partial .owl-nav .owl-prev,
+.carrousel-owl .owl-nav .owl-prev {
   margin-left: 1rem;
 }
 
-#carrousel-partial .owl-nav .owl-prev::before {
+#carrousel-partial .owl-nav .owl-prev::before,
+.carrousel-owl .owl-nav .owl-prev::before {
   font-family: "Material Design Icons Light";
   content: "\F141";
   font-weight: 900;
 }
 
-#carrousel-partial .owl-nav .owl-next {
+#carrousel-partial .owl-nav .owl-next,
+.carrousel-owl .owl-nav .owl-next {
   float: right;
   margin-right: 1rem;
 }
 
-#carrousel-partial .owl-nav .owl-next::before {
+#carrousel-partial .owl-nav .owl-next::before,
+.carrousel-owl .owl-nav .owl-next::before {
   font-family: "Material Design Icons Light";
   content: "\F142";
   font-weight: 900;
 }
 
-#carrousel-partial .owl-nav span {
+#carrousel-partial .owl-nav span,
+.carrousel-owl .owl-nav span {
   display: none !important;
 }
 
-#carrousel-partial .owl-dots {
+#carrousel-partial .owl-dots,
+.carrousel-owl .owl-dots {
   padding-top: 10px;
   text-align: center;
   color: #6e273d;
 }
 
-#carrousel-partial .owl-dots .owl-dot {
+#carrousel-partial .owl-dots .owl-dot,
+.carrousel-owl .owl-dots .owl-dot {
   margin-right: 5px;
   margin-left: 5px;
 }
 
-#carrousel-partial .owl-dots .owl-dot::before {
+#carrousel-partial .owl-dots .owl-dot::before,
+.carrousel-owl .owl-dots .owl-dot::before {
   font-family: "Font Awesome 5 Free";
   content: "\f111";
   font-weight: 400;
 }
 
-#carrousel-partial .owl-dots .owl-dot span {
+#carrousel-partial .owl-dots .owl-dot span,
+.carrousel-owl .owl-dots .owl-dot span {
   display: none !important;
 }
 
-#carrousel-partial .owl-dots .active::before {
+#carrousel-partial .owl-dots .active::before,
+.carrousel-owl .owl-dots .active::before {
   font-family: "Font Awesome 5 Free";
   content: "\f111";
   font-weight: 900 !important;

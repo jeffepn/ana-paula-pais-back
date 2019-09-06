@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+@mixin baseinputs {
+    //width: 100%;
+    padding: 0.25rem !important;
+    max-width: 100% !important;
+    background: none !important;
+    color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0 !important;
+    &::placeholder {
+        color: #495057 !important;
+    }
+}
+.form-search-immobile {
+    width: 100%;
+    input,
+    select {
+        @include baseinputs();
+    }
+}
+.bootstrap-select {
+    .btn-light {
+        @include baseinputs();
+    }
+}
+.input-group {
+    .input-group-text {
+        z-index: 9;
+        background: $colorPrimary;
+        border: 0;
+        border-radius: 0;
+        button {
+            padding: 0;
+            line-height: 1;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.4em;
+        }
+    }
+}

@@ -9,6 +9,10 @@
 .bt {
     border-radius: 0;
     transition: transform 0.2s;
+    &:hover,
+    &:focus {
+        transform: scale(1.1);
+    }
     &--pr {
         @extend .bt;
         background: $colorPrimary;
@@ -18,8 +22,5 @@
         @extend .bt;
         background: $colorSecoundary;
         @include colorwhitedefault();
-    }
-    &:hover {
-        transform: scale(1.1);
     }
 }

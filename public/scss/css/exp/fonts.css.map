@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AACA,AAAA,WAAW,CAAC;EACR,WAAW,ECAD,EAAE;CDCf;;AACD,AAAA,cAAc,CAAC;EACX,WAAW,ECFE,EAAE;CDGlB;;AACD,AAAA,SAAS,CAAC;EACN,WAAW,ECJH,EAAE;CDKb",
+    "mappings": "AACA,AAAA,WAAW,CAAC;EACR,WAAW,ECCD,YAAY,EAAE,KAAK;CDAhC;;AACD,AAAA,cAAc,CAAC;EACX,WAAW,ECDE,QAAQ,EAAE,UAAU;CDEpC;;AACD,AAAA,SAAS,CAAC;EACN,WAAW,ECHH,qBAAqB,EAAE,UAAU;CDI5C",
     "sources": [
         "../../auxscss/fonts.scss",
         "../../auxscss/variables.scss"

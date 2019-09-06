@@ -4,8 +4,8 @@ if(isset($transparent)){
     $flagMenu =' transparent navbar-transparent ';
 }
 ?>
-<nav id="nav-master" class="navbar navbar-expand-md fixed-top navbar-light bg-light {{$flagMenu}}">
-    <a class="navbar-brand py-0" href="#">
+<nav id="nav-master" class="navbar navbar-expand-md fixed-top navbar-light {{$flagMenu}}">
+    <a class="navbar-brand py-0" href="{{url('/')}}">
         <img src="{{url('images/site/logo.png')}}" alt="Ana Paula Pais Imóveis">
     </a>
     <button class="open-menu navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -15,10 +15,7 @@ if(isset($transparent)){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="">Venda</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">Aluguel</a>
+                <a class="nav-link" href="{{url('busca-de-imoveis')}}">Busca</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="">Serviços</a>
@@ -28,6 +25,9 @@ if(isset($transparent)){
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">(35) 99733-3777</a>
             </li>
             <!--
                 <li class="nav-item dropdown">

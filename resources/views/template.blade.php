@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Hepta+Slab|Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    @section('css')
+    @show
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
     <link rel="stylesheet" href="{{url('css/all.min.css')}}">
 </head>
@@ -44,6 +46,8 @@
     </script>
     <script src="{{url('js/screen.js')}}">
     </script>
+    @section('js')
+    @show
 
     <script type="text/javascript">
         $(document).ready(function () {

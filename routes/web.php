@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pre-launch');
-});
-Route::get('/site', function () {
-    return view('home');
-});
+Route::get('/', 'SiteController@prelaunch');
+Route::get('site', 'SiteController@home');
+
+//Immobiles
+Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');

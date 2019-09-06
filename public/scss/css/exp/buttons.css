@@ -6,6 +6,11 @@
   transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
+.bt:hover, .bt--pr:hover, .bt--se:hover, .bt:focus, .bt--pr:focus, .bt--se:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .bt--pr {
   background: #6e273d;
   color: white;
@@ -22,10 +27,5 @@
 
 .bt--se:hover, .bt--se:focus {
   color: white;
-}
-
-.bt:hover, .bt--pr:hover, .bt--se:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 /*# sourceMappingURL=buttons.css.map */
