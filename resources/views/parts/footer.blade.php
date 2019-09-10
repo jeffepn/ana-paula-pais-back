@@ -1,6 +1,6 @@
-<footer class="footer mt-auto py-3">
+<footer class="footer mt-auto py-5">
     <div class="background-footer"></div>
-    <div class="ps-md-2 px-lg-5 content-footer">
+    <div class="ps-md-2 px-lg-5 py-5 content-footer">
         <div class="row">
             <div class="col-md-3 mb-3 col-lg-4">
                 <img width="40%" class="mx-auto d-block" src="{{url('images/site/logobig.png')}}"
@@ -40,6 +40,6 @@
                 </form>
             </div>
         </div>
-        <p class="text-center">© Copyright 2019</p>
+        <p class="text-center mb-0">© Copyright 2019</p>
     </div>
 </footer>
