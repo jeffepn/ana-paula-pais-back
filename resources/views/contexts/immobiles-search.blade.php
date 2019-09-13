@@ -1,7 +1,7 @@
 <section class="section-immobiles-search row">
     <div class="sidebar-search pt-3">
         <form class="form-search-immobile" action="{{url('registra-busca-de-imoveis')}}">
-        @csrf
+            @csrf
             <div class="row">
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
                     {{Form::select('bussiness', $bussiness, session('search_immobile.bussiness'), ['class'=>'form-control'])}}
@@ -28,19 +28,24 @@
                     {{Form::select('dormitory', [''=>'Dormitórios',0,1,2,3,4,5,6,7,8,9,10], session('search_immobile.dormitory'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="garage" placeholder="Vagas na garagem" value="{{session('search_immobile.garage')}}">
+                    <input class="form-control" name="garage" placeholder="Vagas na garagem"
+                        value="{{session('search_immobile.garage')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="price_min" placeholder="Preço min." value="{{session('search_immobile.price_min')}}">
+                    <input class="form-control" name="price_min" placeholder="Preço min."
+                        value="{{session('search_immobile.price_min')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="price_max" placeholder="Preços máx." value="{{session('search_immobile.price_max')}}">
+                    <input class="form-control" name="price_max" placeholder="Preços máx."
+                        value="{{session('search_immobile.price_max')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="area_min" placeholder="Área (m²) min." value="{{session('search_immobile.area_min')}}">
+                    <input class="form-control" name="area_min" placeholder="Área (m²) min."
+                        value="{{session('search_immobile.area_min')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="area_max" placeholder="Área (m²) máx." value="{{session('search_immobile.area_max')}}">
+                    <input class="form-control" name="area_max" placeholder="Área (m²) máx."
+                        value="{{session('search_immobile.area_max')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
                     <button type="submit" class="btn bt--pr w-100"> Filtrar </button>
@@ -50,27 +55,33 @@
     </div>
 </section>
 <section class="section-view-all-immobiles">
-{{count($immobiles)}}
     <div class="row">
-    @foreach($immobiles as $immobile)
-<div class="immobile-list">
+        <div class="col-12">
+            @if(!$immobiles->isEmpty())
+            <h3>Nenhum imóvel encontrado</h3>
+            @else
+            <h3>{{count($immobiles)}} imóveis encontrado(s)</h3>
+            @endif
+        </div>
+        @foreach($immobiles as $immobile)
+        <div class="immobile-list">
             <div class="immobile-list-card">
                 <div class="immobile-list-context">
                     <a href="{{url('imovel/'.$immobile->slug)}}">
                         <p>
-                        {{$immobile->neighborhood->name}}, {{$immobile->neighborhood->city->name}}<br>
+                            {{$immobile->neighborhood->name}}, {{$immobile->neighborhood->city->name}}<br>
                             <span>({{$immobile->slug}})</span>
                         </p>
                         <hr>
                         <div class="row">
                             <h4>
-                                {{$immobile->min_description}} 
+                                {{$immobile->min_description}}
                             </h4>
                             <div class="col-12 px-0 my-3">
-                                <div class="item-data-immobile">                                
+                                <div class="item-data-immobile">
                                     <i class="fas fa-car-alt"></i>{{$immobile->garage}} vagas
                                 </div>
-                                <div class="item-data-immobile">                                
+                                <div class="item-data-immobile">
                                     <i class="fas fa-bed"></i>{{$immobile->dormitory}} quartos
                                 </div>
                                 <div class="item-data-immobile">
@@ -81,35 +92,37 @@
                         <div class="immobile-list-context-price mt-3">
                             <div class="row">
                                 @if($immobile->rent)
-                                <div class="col-6 px-0"> Aluguel: R$ {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_rent)}}</div>
+                                <div class="col-6 px-0"> Aluguel: R$
+                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_rent)}}</div>
                                 @endif
                                 @if($immobile->sale)
-                                    <div class="col-6 px-0">Venda: R$ {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_sale)}}</div>
+                                <div class="col-6 px-0">Venda: R$
+                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_sale)}}</div>
                                 @endif
                             </div>
                         </div>
-                    </a>   
-                </div>                
+                    </a>
+                </div>
                 <div class="immobile-list-image">
                     <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
-                                @foreach ($immobile->images as $image) 
+                                @foreach ($immobile->images as $image)
                                 <div class="owl-item">
                                     <img src="{{url($image->way)}}" alt="{{$image->alt}}">
                                 </div>
-                               @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endforeach
-    <div class="col-12">
-    {{$immobiles->links()}}
-    </div>    
+        @endforeach
+        <div class="col-12">
+            {{$immobiles->links()}}
         </div>
+    </div>
 </section>
 @section('js-util')
 @parent
