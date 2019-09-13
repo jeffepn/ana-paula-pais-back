@@ -37,6 +37,11 @@ body {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.section-immobile {
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
 .section-immobiles-search {
   padding-top: 130px;
   padding-bottom: 30px;
@@ -45,6 +50,28 @@ body {
 .section-view-all-immobiles {
   padding: 4rem 0;
   background: #f9f9f9;
+}
+
+.section-view-all-immobiles .pagination {
+  font-size: 2em;
+  font-family: "Hepta Slab", serif;
+  margin-top: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-view-all-immobiles .pagination a {
+  color: #6e273d;
+}
+
+.section-view-all-immobiles .pagination li.active .page-link {
+  background: #6e273d;
+  color: white;
+}
+
+.section-view-all-immobiles .pagination .page-link {
+  border: 1px solid #6e273d;
 }
 
 .immobile-list {
@@ -64,6 +91,7 @@ body {
           flex-direction: column;
   background: white;
   border: 1px solid #ced4da;
+  height: 100%;
 }
 
 .immobile-list-image {
@@ -129,6 +157,15 @@ body {
   padding: 1rem;
 }
 
+.immobile-list-context a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.immobile-list-context a:hover, .immobile-list-context a:focus, .immobile-list-context a:active, .immobile-list-context a:visited {
+  text-decoration: none;
+}
+
 .immobile-list-context p {
   margin-bottom: 0;
   font-family: "Oswald", sans-serif;
@@ -155,11 +192,7 @@ body {
 }
 
 .immobile-list-context-price {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 1.2em;
-  float: right;
+  font-size: 1.1em;
   font-family: "Hepta Slab", serif;
 }
 
@@ -168,6 +201,10 @@ body {
   padding: 0 0.25rem;
   display: inline-block;
   color: #999;
+}
+
+.immobile-list .item-data-immobile i {
+  width: 25px;
 }
 
 .content-home {
@@ -226,16 +263,52 @@ body {
   }
 }
 
-.ft-primary {
+.ft-primary, .ft-primary-small, .ft-primary-medium, .ft-primary-big {
   font-family: "Hepta Slab", serif;
 }
 
-.ft-secoundary {
+.ft-primary-small {
+  font-size: 0.8em;
+}
+
+.ft-primary-medium {
+  font-size: 1.4em;
+}
+
+.ft-primary-big {
+  font-size: 2em;
+}
+
+.ft-secoundary, .ft-secoundary-small, .ft-secoundary-medium, .ft-secoundary-big {
   font-family: "Oswald", sans-serif;
 }
 
-.ft-third {
+.ft-secoundary-small {
+  font-size: 0.8em;
+}
+
+.ft-secoundary-medium {
+  font-size: 1.4em;
+}
+
+.ft-secoundary-big {
+  font-size: 2em;
+}
+
+.ft-third, .ft-third-small, .ft-third-medium, .ft-third-big {
   font-family: "Open Sans Condensed", sans-serif;
+}
+
+.ft-third-small {
+  font-size: 0.8em;
+}
+
+.ft-third-medium {
+  font-size: 1.4em;
+}
+
+.ft-third-big {
+  font-size: 2em;
 }
 
 footer {
@@ -510,6 +583,7 @@ nav li a {
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+  display: inline-block;
 }
 
 .bt:hover, .bt--pr:hover, .bt--se:hover, .bt:focus, .bt--pr:focus, .bt--se:focus {

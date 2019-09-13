@@ -16,6 +16,10 @@
         background: rgba(black, 0.1);
     }
 }
+.section-immobile {
+    padding-top: 130px;
+    padding-bottom: 30px;
+}
 .section-immobiles-search {
     padding-top: 130px;
     padding-bottom: 30px;
@@ -23,6 +27,22 @@
 .section-view-all-immobiles {
     padding: 4rem 0;
     background: #f9f9f9;
+    .pagination {
+        font-size: 2em;
+        font-family: $fontPrimary;
+        margin-top: 1rem;
+        justify-content: center;
+        a {
+            color: $colorPrimary;
+        }
+        li.active .page-link {
+            background: $colorPrimary;
+            color: white;
+        }
+        .page-link {
+            border: 1px solid $colorPrimary;
+        }
+    }
 }
 .immobile-list {
     padding: 0 1rem;
@@ -34,6 +54,7 @@
         flex-direction: column;
         background: white;
         border: 1px solid #ced4da;
+        height: 100%;
     }
     &-image {
         order: 1;
@@ -81,6 +102,16 @@
     &-context {
         order: 2;
         padding: 1rem;
+        a {
+            color: inherit;
+            text-decoration: none;
+            &:hover,
+            &:focus,
+            &:active,
+            &:visited {
+                text-decoration: none;
+            }
+        }
         p {
             margin-bottom: 0;
             font-family: $fontSecoundary;
@@ -104,9 +135,7 @@
         }
     }
     &-context-price {
-        display: inline-flex;
-        font-size: 1.2em;
-        float: right;
+        font-size: 1.1em;
         font-family: $fontPrimary;
     }
 
@@ -115,6 +144,9 @@
         padding: 0 0.25rem;
         display: inline-block;
         color: #999;
+        i {
+            width: 25px;
+        }
     }
 }
 @mixin basecontent() {

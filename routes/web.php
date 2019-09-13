@@ -16,3 +16,5 @@ Route::get('site', 'SiteController@home');
 
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');
+Route::get('registra-busca-de-imoveis', 'SiteController@setsessionsearch');
+Route::get('imovel/{slug}', 'SiteController@immobile');

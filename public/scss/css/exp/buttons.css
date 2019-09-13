@@ -4,6 +4,7 @@
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+  display: inline-block;
 }
 
 .bt:hover, .bt--pr:hover, .bt--se:hover, .bt:focus, .bt--pr:focus, .bt--se:focus {

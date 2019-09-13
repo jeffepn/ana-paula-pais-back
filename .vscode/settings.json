@@ -1,0 +1,20 @@
+{
+    "editor.formatOnSave": true,
+    "php-cs-fixer.onsave": true,
+    "php.suggest.basic": false,
+    "blade.format.enable": true,
+    "liveSassCompile.settings.formats": [
+        // This is Default.
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../css/exp/"
+        },
+        // More Complex
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "~/../css/"
+        }
+    ]
+}

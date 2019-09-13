@@ -1,9 +1,10 @@
 <section class="section-immobiles-search row">
     <div class="sidebar-search pt-3">
-        <form class="form-search-immobile">
+        <form class="form-search-immobile" action="{{url('registra-busca-de-imoveis')}}">
+        @csrf
             <div class="row">
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    {{Form::select('bussiness', [1=>'Alugar',2=>'Comprar'], null, ['class'=>'form-control'])}}
+                    {{Form::select('bussiness', $bussiness, session('search_immobile.bussiness'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3">
                     <div class="input-group">
@@ -18,592 +19,97 @@
                     </div>
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3">
-                    {{Form::select('neighborhood', [''=>'Bairro',1=>'Centro',2=>'Jd. Vitória',3=>'Santa Ângela'], null, ['class'=>'form-control'])}}
+                    {{Form::select('neighborhood', [''=>'Bairro']+$neighborhoods, session('search_immobile.neighborhood'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    {{Form::select('dormitory', [''=>'Tipo do imóvel',1=>'Casa',2=>'Apartamento',3=>'Cobertura'], null, ['class'=>'form-control'])}}
+                    {{Form::select('type', [''=>'Tipo do imóvel']+$types, session('search_immobile.type'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    {{Form::select('dormitory', [''=>'Dormitórios',0,1,2,3,4,5,6,7,8,9,10], null, ['class'=>'form-control'])}}
+                    {{Form::select('dormitory', [''=>'Dormitórios',0,1,2,3,4,5,6,7,8,9,10], session('search_immobile.dormitory'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" placeholder="Vagas na garagem">
+                    <input class="form-control" name="garage" placeholder="Vagas na garagem" value="{{session('search_immobile.garage')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="" placeholder="Preço min.">
+                    <input class="form-control" name="price_min" placeholder="Preço min." value="{{session('search_immobile.price_min')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="" placeholder="Preços máx.">
+                    <input class="form-control" name="price_max" placeholder="Preços máx." value="{{session('search_immobile.price_max')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="" placeholder="Área (m²) min.">
+                    <input class="form-control" name="area_min" placeholder="Área (m²) min." value="{{session('search_immobile.area_min')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <input class="form-control" name="" placeholder="Área (m²) máx.">
+                    <input class="form-control" name="area_max" placeholder="Área (m²) máx." value="{{session('search_immobile.area_max')}}">
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-2">
-                    <button class="btn bt--pr w-100"> Filtrar </button>
+                    <button type="submit" class="btn bt--pr w-100"> Filtrar </button>
                 </div>
             </div>
         </form>
     </div>
 </section>
 <section class="section-view-all-immobiles">
+{{count($immobiles)}}
     <div class="row">
-        <div class="immobile-list">
+    @foreach($immobiles as $immobile)
+<div class="immobile-list">
             <div class="immobile-list-card">
                 <div class="immobile-list-context">
-                    <p>
-                        Jardim Vitória, Poços de Caldas<br>
-                        <span>(AN-43543)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 1.030.000
-                    </div>
-                </div>
+                    <a href="{{url('imovel/'.$immobile->slug)}}">
+                        <p>
+                        {{$immobile->neighborhood->name}}, {{$immobile->neighborhood->city->name}}<br>
+                            <span>({{$immobile->slug}})</span>
+                        </p>
+                        <hr>
+                        <div class="row">
+                            <h4>
+                                {{$immobile->min_description}} 
+                            </h4>
+                            <div class="col-12 px-0 my-3">
+                                <div class="item-data-immobile">                                
+                                    <i class="fas fa-car-alt"></i>{{$immobile->garage}} vagas
+                                </div>
+                                <div class="item-data-immobile">                                
+                                    <i class="fas fa-bed"></i>{{$immobile->dormitory}} quartos
+                                </div>
+                                <div class="item-data-immobile">
+                                    <i class="fas fa-shower"></i>{{$immobile->bathroom}} banheiros
+                                </div>
+                            </div>
+                        </div>
+                        <div class="immobile-list-context-price mt-3">
+                            <div class="row">
+                                @if($immobile->rent)
+                                <div class="col-6 px-0"> Aluguel: R$ {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_rent)}}</div>
+                                @endif
+                                @if($immobile->sale)
+                                    <div class="col-6 px-0">Venda: R$ {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_sale)}}</div>
+                                @endif
+                            </div>
+                        </div>
+                    </a>   
+                </div>                
                 <div class="immobile-list-image">
                     <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
+                                @foreach ($immobile->images as $image) 
                                 <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
+                                    <img src="{{url($image->way)}}" alt="{{$image->alt}}">
                                 </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
+                               @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Santa Ângela, Poços de Caldas<br>
-                        <span>(AN-43544)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 2.000.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    @endforeach
+    <div class="col-12">
+    {{$immobiles->links()}}
+    </div>    
         </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Contry Club, Poços de Caldas<br>
-                        <span>(AN-43545)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 500.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Centro, Poços de Caldas<br>
-                        <span>(AN-43546)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 2.000.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Jardim Vitória, Poços de Caldas<br>
-                        <span>(AN-43543)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 1.030.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Santa Ângela, Poços de Caldas<br>
-                        <span>(AN-43544)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 2.000.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Contry Club, Poços de Caldas<br>
-                        <span>(AN-43545)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 500.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Centro, Poços de Caldas<br>
-                        <span>(AN-43546)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 2.000.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Jardim Vitória, Poços de Caldas<br>
-                        <span>(AN-43543)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 1.030.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/interior-sala3.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Santa Ângela, Poços de Caldas<br>
-                        <span>(AN-43544)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 2.000.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/sala-estar.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Contry Club, Poços de Caldas<br>
-                        <span>(AN-43545)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 500.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/studio.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <p>
-                        Centro, Poços de Caldas<br>
-                        <span>(AN-43546)</span>
-                    </p>
-                    <hr>
-                    <h4>
-                        Lorem Ipsum is simply dummy text of the printing
-                    </h4>
-                    <div class="item-data-immobile">
-                        2<br>
-                        <i class="fas fa-car-alt"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        5<br>
-                        <i class="fas fa-bed"></i>
-                    </div>
-                    <div class="item-data-immobile">
-                        3<br>
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <div class="immobile-list-context-price">
-                        R$ 2.000.000
-                    </div>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                                <div class="owl-item">
-                                    <img src="{{url('images/site/backs/cozinha.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </section>
 @section('js-util')
 @parent

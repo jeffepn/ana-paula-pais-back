@@ -9,6 +9,7 @@
 .bt {
     border-radius: 0;
     transition: transform 0.2s;
+    display: inline-block;
     &:hover,
     &:focus {
         transform: scale(1.1);

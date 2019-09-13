@@ -10,6 +10,8 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
+        "jeffersonpereira/laraveladmin": "1.0.*",
+        "jeffersonpereira/laravelclassesutilities": "1.0.*",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "5.8.*"
@@ -58,6 +60,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "post-install-cmd": [
+            "php artisan vendor:publish --tag=laraveladminpublish --force"
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --tag=laraveladminpublish --force"
         ]
+    
     }
 }

@@ -1,10 +1,46 @@
 @import "./variables.scss";
 .ft-primary {
     font-family: $fontPrimary;
+    &-small {
+        @extend .ft-primary;
+        font-size: 0.8em;
+    }
+    &-medium {
+        @extend .ft-primary;
+        font-size: 1.4em;
+    }
+    &-big {
+        @extend .ft-primary;
+        font-size: 2em;
+    }
 }
 .ft-secoundary {
     font-family: $fontSecoundary;
+    &-small {
+        @extend .ft-secoundary;
+        font-size: 0.8em;
+    }
+    &-medium {
+        @extend .ft-secoundary;
+        font-size: 1.4em;
+    }
+    &-big {
+        @extend .ft-secoundary;
+        font-size: 2em;
+    }
 }
 .ft-third {
     font-family: $fontThird;
+    &-small {
+        @extend .ft-third;
+        font-size: 0.8em;
+    }
+    &-medium {
+        @extend .ft-third;
+        font-size: 1.4em;
+    }
+    &-big {
+        @extend .ft-third;
+        font-size: 2em;
+    }
 }
