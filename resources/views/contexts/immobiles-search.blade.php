@@ -57,7 +57,7 @@
 <section class="section-view-all-immobiles">
     <div class="row">
         <div class="col-12">
-            @if(!$immobiles->isEmpty())
+            @if($immobiles->isEmpty())
             <h3>Nenhum imóvel encontrado</h3>
             @else
             <h3>{{count($immobiles)}} imóveis encontrado(s)</h3>
