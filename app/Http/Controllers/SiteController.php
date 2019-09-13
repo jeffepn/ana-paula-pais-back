@@ -20,7 +20,7 @@ class SiteController extends Controller
     }
     public function searchimmobiles(ImmobileService $immobileService)
     {
-        if (session()->has('search_immobile')) {
+        if (!session()->has('search_immobile')) {
             SiteUtility::initializeSessionSearch();
         }
         $search = session('search_immobile');
