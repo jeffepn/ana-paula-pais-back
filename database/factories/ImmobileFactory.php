@@ -18,7 +18,7 @@ $factory->define(Immobile::class, function (Faker $faker, $data) {
         $value_rent = $faker->randomFloat(1, 0, 5000);
     }
     if ($sale) {
-        $value_sale = $faker->randomFloat(1, 0, 2000000);
+        $value_sale = $faker->randomFloat(1, 100000, 2000000);
     }
     return [
         'slug' => 'AN-' . rand(111, 999),
@@ -34,8 +34,8 @@ $factory->define(Immobile::class, function (Faker $faker, $data) {
         'garage' => rand(1, 10),
         'value_condominium' => $faker->randomFloat(1, 0, 300),
         'value_iptu' => $faker->randomFloat(1, 0, 300),
-        'area_building' => $faker->randomFloat(1, 0, 300),
-        'area_total' => $faker->randomFloat(1, 0, 300),
+        'area_building' => $faker->randomFloat(1, 100, 200),
+        'area_total' => $faker->randomFloat(1, 300, 350),
         'min_description' => $faker->text(rand(20, 50)),
         'description' => $faker->text(5000)
     ];

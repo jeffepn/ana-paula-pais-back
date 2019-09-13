@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-//Services
-use App\Services\ImmobileService;
-//Utilities
 use App\Utility\SiteUtility;
+//Services
+use Illuminate\Http\Request;
+//Utilities
+use App\Services\ImmobileService;
+use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
@@ -25,6 +26,7 @@ class SiteController extends Controller
         }
         $search = session('search_immobile');
         //return $search;
+        //return $immobileService->getAllPerSearch($search);
         return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
     }
     public function setsessionsearch(Request $request)
@@ -44,7 +46,7 @@ class SiteController extends Controller
             'area_min' => $request->area_min,
             'area_max' => $request->area_max
         ]);
-        //return session('search_immobile');
+        // return session('search_immobile');
         return redirect()->to('busca-de-imoveis');
     }
     public function immobile(ImmobileService $immobileService, $slug)

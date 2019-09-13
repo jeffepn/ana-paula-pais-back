@@ -14,7 +14,17 @@ class NeighborhoodSeeder extends Seeder
      */
     public function run()
     {
-        $city = factory(City::class)->create();
-        factory(Neighborhood::class, 7)->create(['city_id' => $city->id]);
+        $city = City::create(['name' => 'Poços de Caldas']);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Centro"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Jd. Vitória"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Santa Ângela"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Dom Bosco"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Contry Club"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Jd dos Estados"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "São Geraldo"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "São José"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Quisisana"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Caio Junqueira"]);
+        Neighborhood::create(['city_id' => $city->id, 'name' => "Jd Tiradentes"]);
     }
 }

@@ -47,24 +47,45 @@ class ImmobileService implements ServiceDefault
         $verifyBussiness = !empty($search['bussiness']);
         $verifyNeighborhood = !empty($search['neighborhood']);
         $verifyType = !empty($search['type']);
-        $verifyGarage = !empty($search['bussiness']);
+        $verifyGarage = !empty($search['garage']);
         $verifyDormitory = !empty($search['dormitory']);
-        $verifyPriceMin = !empty($search['bussiness']);
-        $verifyPriceMax = !empty($search['bussiness']);
-        $verifyAreaMin = !empty($search['bussiness']);
-        $verifyAreaMax = !empty($search['bussiness']);
-
-        return Immobile::when($verifyBussiness, function ($query, $verifyBussiness) use ($search) {
-            if ($search['bussiness'] == 1) {
-                return $query->where('rent', true);
-            } else {
-                return $query->where('sale', true);
-            }
-        })->when($verifyDormitory, function ($query, $verifyDormitory) use ($search) {
-            return $query->where('dormitory', $search['dormitory']);
-        })/*->when($verifyType, function ($query, $verifyType) use ($search) {
-            return $query->where('type', $search['type']);
-        })*/
+        $verifyPriceMin = !empty($search['price_min']);
+        $verifyPriceMax = !empty($search['price_max']);
+        $verifyAreaMin = !empty($search['area_min']);
+        $verifyAreaMax = !empty($search['area_max']);
+        if ($search['bussiness'] == 1) {
+            $slugBussiness = "rent";
+        } else {
+            $slugBussiness = "sale";
+        }
+        return Immobile::where($slugBussiness, true)
+            ->when($verifyNeighborhood, function ($query, $verifyNeighborhood) use ($search) {
+                return $query->where('neighborhood_id', $search['neighborhood']);
+            })->when($verifyType, function ($query, $verifyType) use ($search) {
+                return $query->where('type', $search['type']);
+            })->when($verifyGarage, function ($query, $verifyGarage) use ($search) {
+                return $query->where('garage', $search['garage']);
+            })->when($verifyDormitory, function ($query, $verifyDormitory) use ($search) {
+                return $query->where('dormitory', $search['dormitory']);
+            })->when($verifyPriceMin, function ($query, $verifyPriceMin) use ($search) {
+                if ($search['bussiness'] == 1) {
+                    return $query->where('value_rent', '>=', $search['price_min']);
+                } else {
+                    return $query->where('value_sale', '>=', $search['price_min']);
+                }
+            })->when($verifyPriceMax, function ($query, $verifyPriceMax) use ($search) {
+                if ($search['bussiness'] == 1) {
+                    return $query->where('value_rent', '<=', $search['price_max']);
+                } else {
+                    return $query->where('value_sale', '<=', $search['price_max']);
+                }
+            })->when($verifyAreaMin, function ($query, $verifyAreaMin) use ($search) {
+                return $query->where('area_building', '>=', $search['area_min'])
+                    ->where('area_total', '>=', $search['area_min']);
+            })->when($verifyAreaMax, function ($query, $verifyAreaMax) use ($search) {
+                return $query->where('area_building', '<=', $search['area_max'])
+                    ->where('area_total', '<=', $search['area_max']);
+            }) //->toSql();
             ->paginate(12);
     }
 
