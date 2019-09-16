@@ -27,8 +27,10 @@
     @section('header')
     @include('parts.header')
     @show
-    @section('context')
-    @show
+    <div class="container px-1">
+        @section('context')
+        @show
+    </div>
     @section('footer')
     @include('parts.footer')
     @show
@@ -52,8 +54,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             @section('js-util')
-            @show            
-        });  	
+            @show
+        });
     </script>
 </body>
 

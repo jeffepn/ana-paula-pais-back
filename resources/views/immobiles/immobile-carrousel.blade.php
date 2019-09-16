@@ -1,4 +1,4 @@
-<div class="px-2">
+<div class="px-0">
     <div id="carrousel-partial" class="owl-carousel owl-theme owl-loaded">
         <div class="owl-stage-outer">
             <div class="owl-stage">
@@ -83,7 +83,7 @@ responsive:{
 items:1,
 nav: true
 },
-768:{
+992:{
 items:2,
 nav: true
 }
