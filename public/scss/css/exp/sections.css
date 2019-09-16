@@ -1,8 +1,8 @@
 .section-home {
   position: relative;
-  min-height: 100%;
-  max-height: 100%;
-  background-image: url(/images/site/backs/pocos.jpg);
+  width: 100%;
+  min-height: 300px;
+  background-image: url(/images/site/backs/section-home.svg);
   background-position: center;
   background-size: cover;
 }
@@ -14,16 +14,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .section-immobile {
-  padding-top: 130px;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .section-immobiles-search {
-  padding-top: 130px;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 

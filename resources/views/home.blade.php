@@ -4,6 +4,6 @@
 @endsection
 @section('context')
 @include('sections.section-home')
-@include('parts.typhograpy')
+@include('parts.search')
 @include('immobiles.immobile-carrousel')
 @endsection

@@ -15,9 +15,13 @@ class SiteController extends Controller
     {
         return view('pre-launch');
     }
-    public function home()
+    public function home(ImmobileService $immobileService)
     {
-        return view('home');
+        if (!session()->has('search_immobile')) {
+            SiteUtility::initializeSessionSearch();
+        }
+        $search = session('search_immobile');
+        return view('home', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
     }
     public function searchimmobiles(ImmobileService $immobileService)
     {
@@ -47,7 +51,7 @@ class SiteController extends Controller
             'area_max' => $request->area_max
         ]);
         // return session('search_immobile');
-        return redirect()->to('busca-de-imoveis');
+        return redirect()->back();
     }
     public function immobile(ImmobileService $immobileService, $slug)
     {

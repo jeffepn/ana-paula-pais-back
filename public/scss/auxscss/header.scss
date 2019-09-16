@@ -1,20 +1,15 @@
 @import "./variables.scss";
 .nav-in-floating {
-    box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.06);
-    //box-shadow: 0px 0px 8px -4px black;
-    .navbar-brand {
-        img {
-            height: 50px;
-        }
-    }
-}
-.navbar-transparent {
-    background: transparent !important;
-    a {
-        color: white !important;
-    }
+    box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 .open-menu {
+    margin: 0 auto;
+    margin-top: 10px;
     background: transparent;
     border: none;
     line-height: 1;
@@ -32,9 +27,15 @@
 nav {
     background: white;
     font-size: 1.2em;
+    transition: position 0.5s;
     .navbar-brand {
+        width: 100%;
+        margin: 0;
         img {
-            height: 80px;
+            height: 70px;
+            margin: 0 auto;
+            display: block;
+            transition: height 0.5s;
         }
     }
     a {
@@ -52,4 +53,35 @@ nav {
 }
 .social-network {
     font-size: 1.4em;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    nav {
+        .navbar-brand {
+            width: auto;
+            img {
+                height: 80px;
+            }
+        }
+    }
+    .nav-in-floating {
+        .navbar-brand {
+            img {
+                height: 50px;
+            }
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
 }

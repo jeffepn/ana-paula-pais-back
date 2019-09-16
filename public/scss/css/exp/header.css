@@ -1,21 +1,16 @@
 .nav-in-floating {
-  -webkit-box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.06);
-          box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.06);
-}
-
-.nav-in-floating .navbar-brand img {
-  height: 50px;
-}
-
-.navbar-transparent {
-  background: transparent !important;
-}
-
-.navbar-transparent a {
-  color: white !important;
+  -webkit-box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
+          box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 .open-menu {
+  margin: 0 auto;
+  margin-top: 10px;
   background: transparent;
   border: none;
   line-height: 1;
@@ -36,10 +31,21 @@
 nav {
   background: white;
   font-size: 1.2em;
+  -webkit-transition: position 0.5s;
+  transition: position 0.5s;
+}
+
+nav .navbar-brand {
+  width: 100%;
+  margin: 0;
 }
 
 nav .navbar-brand img {
-  height: 80px;
+  height: 70px;
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
 }
 
 nav a {
@@ -57,5 +63,17 @@ nav li a {
 
 .social-network {
   font-size: 1.4em;
+}
+
+@media (min-width: 992px) {
+  nav .navbar-brand {
+    width: auto;
+  }
+  nav .navbar-brand img {
+    height: 80px;
+  }
+  .nav-in-floating .navbar-brand img {
+    height: 50px;
+  }
 }
 /*# sourceMappingURL=header.css.map */
