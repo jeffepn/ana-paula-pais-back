@@ -4,6 +4,7 @@
 @endsection
 @section('context')
 @include('sections.section-home')
-@include('parts.search')
 @include('immobiles.immobile-carrousel')
+@include('sections.section-ana')
+@include('sections.section-clients')
 @endsection

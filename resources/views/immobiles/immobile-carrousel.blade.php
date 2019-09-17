@@ -1,4 +1,4 @@
-<div class="px-0">
+<div class="py-2">
     <div id="carrousel-partial" class="owl-carousel owl-theme owl-loaded">
         <div class="owl-stage-outer">
             <div class="owl-stage">
@@ -76,7 +76,7 @@ $('#carrousel-partial').owlCarousel({
 loop: true,
 autoplay: true,
 autoplayHoverPause:true,
-dots: true,
+dots: false,
 responsiveClass: true,
 responsive:{
 0:{

@@ -16,7 +16,7 @@
   left: 0;
   top: 0;
   padding: 0 0.5rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .block-immobile-carrousel .data-immobile-neighborhood {
-  font-family: "Oswald", sans-serif;
+  font-family: "Hepta Slab", serif;
   opacity: 0.7;
 }
 
@@ -40,9 +40,23 @@
 }
 
 .block-immobile-carrousel .data-immobile-price {
-  font-size: 0.9em;
+  font-size: 1.5em;
   font-family: "Oswald", sans-serif;
   color: yellow;
+}
+
+.item-depoiment {
+  height: auto;
+  text-align: center;
+}
+
+.item-depoiment h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+.item-depoiment p {
+  color: white;
+  font-family: "Hepta Slab", serif;
 }
 
 #carrousel-partial,
@@ -135,5 +149,11 @@
   font-family: "Font Awesome 5 Free";
   content: "\f111";
   font-weight: 900 !important;
+}
+
+@media (min-width: 576px) {
+  .item-depoiment {
+    padding: 0 2rem;
+  }
 }
 /*# sourceMappingURL=carrousel.css.map */

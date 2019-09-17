@@ -3,7 +3,7 @@
     <div class="ps-md-2 px-lg-5 py-5 content-footer">
         <div class="row">
             <div class="col-md-3 mb-3 col-lg-4">
-                <img width="40%" class="mx-auto d-block" src="{{url('images/site/logobig.png')}}"
+                <img width="40%" class="mx-auto d-block" src="{{url('images/site/logowhite.png')}}"
                     alt="Ana Paula Pais Imóveis">
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 mb-3">

@@ -1,14 +1,21 @@
-<div class="container px-0">
-    <nav id="nav-master" class="navbar navbar-expand-lg navbar-light ">
+@php
+$classHeader = '';
+if(isset($transparent)){
+$classHeader = ' header-transparent ';
+}
+@endphp
+<header class=" px-0 {{$classHeader}}">
+    <nav id="nav-master" class="navbar navbar-expand-lg navbar-light container px-0">
         <a class="navbar-brand py-0" href="{{url('/')}}">
-            <img src="{{url('images/site/lghorcinzel.png')}}" alt="Ana Paula Pais Imóveis">
+            <img class="img-header-floating" src="{{url('images/site/logo.png')}}" alt="Ana Paula Pais Imóveis">
+            <img class="img-header" src="{{url('images/site/logowhite.png')}}" alt="Ana Paula Pais Imóveis">
         </a>
         <button class="open-menu navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse  px-3" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{url('busca-de-imoveis')}}">Busca</span></a>
@@ -45,4 +52,4 @@
             </div>
         </div>
     </nav>
-</div>
+</header>

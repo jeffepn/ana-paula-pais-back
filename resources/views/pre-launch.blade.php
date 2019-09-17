@@ -5,7 +5,7 @@
 
 @section('context')
 <div class="w-100 h-100 pre-launch">
-    <img width="40%" src="{{url('images/site/logobig.png')}}" alt="Ana Paula Pais Imóveis">
+    <img width="40%" src="{{url('images/site/logowhite.png')}}" alt="Ana Paula Pais Imóveis">
     <p>Em breve um novo site</p>
 </div>
 @endsection

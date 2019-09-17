@@ -1,0 +1,64 @@
+#anim-one-home {
+    font-size: 40px;
+    color: white;
+    animation: run-anim-one-home 10s infinite
+        cubic-bezier(0.245, 0.325, 0.67, 1.51);
+}
+#anim-two-home {
+    font-size: 40px;
+    color: white;
+    animation: run-anim-two-home 10s infinite
+        cubic-bezier(0.245, 0.325, 0.67, 1.51);
+}
+@keyframes run-anim-one-home {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    45% {
+        font-size: 40px;
+    }
+    50% {
+        opacity: 0;
+        font-size: 0px;
+    }
+    90% {
+        opacity: 0;
+    }
+    95% {
+        font-size: 0px;
+    }
+    100% {
+        font-size: 40px;
+        opacity: 1;
+    }
+}
+@keyframes run-anim-two-home {
+    0% {
+        opacity: 0;
+        font-size: 0px;
+    }
+    40% {
+        opacity: 0;
+    }
+    45% {
+        font-size: 0px;
+    }
+    50% {
+        font-size: 40px;
+        opacity: 1;
+    }
+    90% {
+        font-size: 40px;
+        opacity: 1;
+    }
+    95% {
+        font-size: 40px;
+    }
+    100% {
+        font-size: 0px;
+        opacity: 0;
+    }
+}

@@ -1,11 +1,23 @@
 @import "./variables.scss";
 .nav-in-floating {
     box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+    background: white !important;
+    #nav-master {
+        .img-header {
+            opacity: 0 !important;
+        }
+        .img-header-floating {
+            opacity: 1 !important;
+        }
+        a {
+            color: $colorPrimary !important;
+        }
+        .open-menu {
+            &::after {
+                color: $colorPrimary !important;
+            }
+        }
+    }
 }
 .open-menu {
     margin: 0 auto;
@@ -24,25 +36,59 @@
         outline: 2px solid rgba($colorPrimary, 0.6);
     }
 }
-nav {
+header {
+    width: 100%;
     background: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.header-transparent {
+    background: transparent;
+    color: white;
+    #nav-master {
+        .img-header {
+            opacity: 1;
+        }
+        .img-header-floating {
+            opacity: 0;
+        }
+        a {
+            color: white;
+        }
+        .open-menu {
+            &::after {
+                color: white;
+            }
+        }
+    }
+}
+#nav-master {
+    background: transparent;
     font-size: 1.2em;
-    transition: position 0.5s;
+    .img-header {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+    }
+    .img-header-floating {
+        opacity: 1;
+    }
     .navbar-brand {
         width: 100%;
         margin: 0;
         img {
             height: 70px;
             margin: 0 auto;
-            display: block;
             transition: height 0.5s;
         }
     }
     a {
-        color: $colorPrimary !important;
+        color: $colorPrimary;
         &:hover {
             font-size: 1.1em;
-            color: black;
         }
     }
     li {
@@ -52,6 +98,9 @@ nav {
     }
 }
 .social-network {
+    a {
+        color: $colorPrimary;
+    }
     font-size: 1.4em;
 }
 
@@ -64,8 +113,23 @@ nav {
 }
 
 // Large devices (desktops, 992px and up)
+@media (max-width: 991px) {
+    #nav-master {
+        .navbar-brand {
+            .img-header {
+                right: 0;
+            }
+        }
+        a {
+            color: $colorPrimary !important;
+        }
+        .navbar-collapse {
+            background: white !important;
+        }
+    }
+}
 @media (min-width: 992px) {
-    nav {
+    #nav-master {
         .navbar-brand {
             width: auto;
             img {
@@ -76,7 +140,7 @@ nav {
     .nav-in-floating {
         .navbar-brand {
             img {
-                height: 50px;
+                height: 50px !important;
             }
         }
     }
