@@ -1,6 +1,6 @@
 @extends('template')
 @section('header')
-@include('parts.header',['transparent'=>'transparent'])
+@include('parts.header',['fixed'=>'fixed'])
 @endsection
 @section('context')
 @include('sections.section-home')

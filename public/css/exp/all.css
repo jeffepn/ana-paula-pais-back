@@ -65,7 +65,7 @@ body {
 }
 
 .section-immobiles-search {
-  padding-top: 130px;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
@@ -511,23 +511,6 @@ footer form button {
 .nav-in-floating {
   -webkit-box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
           box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
-  background: white !important;
-}
-
-.nav-in-floating #nav-master .img-header {
-  opacity: 0 !important;
-}
-
-.nav-in-floating #nav-master .img-header-floating {
-  opacity: 1 !important;
-}
-
-.nav-in-floating #nav-master a {
-  color: #6e273d !important;
-}
-
-.nav-in-floating #nav-master .open-menu::after {
-  color: #6e273d !important;
 }
 
 .open-menu {
@@ -553,6 +536,11 @@ footer form button {
 header {
   width: 100%;
   background: white;
+  -webkit-box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
+          box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
+}
+
+.header-fixed, .nav-in-floating {
   position: fixed;
   top: 0;
   right: 0;
@@ -560,40 +548,9 @@ header {
   z-index: 1030;
 }
 
-.header-transparent {
-  background: transparent;
-  color: white;
-}
-
-.header-transparent #nav-master .img-header {
-  opacity: 1;
-}
-
-.header-transparent #nav-master .img-header-floating {
-  opacity: 0;
-}
-
-.header-transparent #nav-master a {
-  color: white;
-}
-
-.header-transparent #nav-master .open-menu::after {
-  color: white;
-}
-
 #nav-master {
   background: transparent;
   font-size: 1.2em;
-}
-
-#nav-master .img-header {
-  position: absolute;
-  left: 0;
-  opacity: 0;
-}
-
-#nav-master .img-header-floating {
-  opacity: 1;
 }
 
 #nav-master .navbar-brand {
@@ -606,6 +563,7 @@ header {
   margin: 0 auto;
   -webkit-transition: height 0.5s;
   transition: height 0.5s;
+  display: block;
 }
 
 #nav-master a {
@@ -628,24 +586,17 @@ header {
   color: #6e273d;
 }
 
-@media (max-width: 991px) {
-  #nav-master .navbar-brand .img-header {
-    right: 0;
-  }
-  #nav-master a {
-    color: #6e273d !important;
-  }
-  #nav-master .navbar-collapse {
-    background: white !important;
-  }
-}
-
 @media (min-width: 992px) {
+  header {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
   #nav-master .navbar-brand {
     width: auto;
   }
   #nav-master .navbar-brand img {
     height: 80px;
+    margin: 0;
   }
   .nav-in-floating .navbar-brand img {
     height: 50px !important;

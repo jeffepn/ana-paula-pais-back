@@ -1,23 +1,7 @@
 @import "./variables.scss";
 .nav-in-floating {
+    @extend .header-fixed;
     box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
-    background: white !important;
-    #nav-master {
-        .img-header {
-            opacity: 0 !important;
-        }
-        .img-header-floating {
-            opacity: 1 !important;
-        }
-        a {
-            color: $colorPrimary !important;
-        }
-        .open-menu {
-            &::after {
-                color: $colorPrimary !important;
-            }
-        }
-    }
 }
 .open-menu {
     margin: 0 auto;
@@ -39,43 +23,18 @@
 header {
     width: 100%;
     background: white;
+    box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
+}
+.header-fixed {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
 }
-.header-transparent {
-    background: transparent;
-    color: white;
-    #nav-master {
-        .img-header {
-            opacity: 1;
-        }
-        .img-header-floating {
-            opacity: 0;
-        }
-        a {
-            color: white;
-        }
-        .open-menu {
-            &::after {
-                color: white;
-            }
-        }
-    }
-}
 #nav-master {
     background: transparent;
     font-size: 1.2em;
-    .img-header {
-        position: absolute;
-        left: 0;
-        opacity: 0;
-    }
-    .img-header-floating {
-        opacity: 1;
-    }
     .navbar-brand {
         width: 100%;
         margin: 0;
@@ -83,6 +42,7 @@ header {
             height: 70px;
             margin: 0 auto;
             transition: height 0.5s;
+            display: block;
         }
     }
     a {
@@ -114,26 +74,17 @@ header {
 
 // Large devices (desktops, 992px and up)
 @media (max-width: 991px) {
-    #nav-master {
-        .navbar-brand {
-            .img-header {
-                right: 0;
-            }
-        }
-        a {
-            color: $colorPrimary !important;
-        }
-        .navbar-collapse {
-            background: white !important;
-        }
-    }
 }
 @media (min-width: 992px) {
+    header {
+        box-shadow: none;
+    }
     #nav-master {
         .navbar-brand {
             width: auto;
             img {
                 height: 80px;
+                margin: 0;
             }
         }
     }

@@ -20,7 +20,7 @@
     @section('css')
     @show
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/all.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.0')}}">
 </head>
 
 <body class="h-100">
