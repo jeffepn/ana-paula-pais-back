@@ -15,6 +15,7 @@ class SiteController extends Controller
     {
         return view('pre-launch');
     }
+    //Site
     public function home(ImmobileService $immobileService)
     {
         if (!session()->has('search_immobile')) {
@@ -23,6 +24,11 @@ class SiteController extends Controller
         $search = session('search_immobile');
         return view('home', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
     }
+    public function services()
+    {
+        return view('services');
+    }
+    //Immobiles
     public function searchimmobiles(ImmobileService $immobileService)
     {
         if (!session()->has('search_immobile')) {

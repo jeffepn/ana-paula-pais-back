@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100%;
   max-height: 100%;
-  background-image: url(/images/site/backs/sala-estar.jpg);
+  background-image: url(/images/site/backs/sections/section-home.jpg);
   background-position: center;
   background-size: cover;
   z-index: 1;
@@ -50,10 +50,26 @@
 }
 
 .section-clients {
-  background-image: url(/images/site/backs/bg-ana.png);
+  background-image: url(/images/site/backs/sections/brick.png);
   background-size: 220px 140px;
   min-height: 600px;
   background-color: gray;
+}
+
+.section-services-description-one {
+  min-height: 400px;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.section-services-description-two {
+  min-height: 400px;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.section-services-description-two .content-services-description-back {
+  background-image: url(/images/site/backs/sections/services2.jpg);
 }
 
 .section-view-all-immobiles {
@@ -216,6 +232,33 @@
   width: 25px;
 }
 
+.lead-section, .divider-section-services-description {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.lead-section h1, .divider-section-services-description h1,
+.lead-section h2,
+.divider-section-services-description h2,
+.lead-section h3,
+.divider-section-services-description h3,
+.lead-section h4,
+.divider-section-services-description h4,
+.lead-section h5,
+.divider-section-services-description h5,
+.lead-section h6,
+.divider-section-services-description h6 {
+  font-family: "Hepta Slab", serif;
+  color: #6e273d;
+}
+
+.lead-section p, .divider-section-services-description p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.6em;
+  font-weight: 200;
+}
+
 .content-home {
   width: 100%;
   min-height: 100%;
@@ -246,6 +289,116 @@
 
 .content-home a {
   font-size: 1.5em;
+}
+
+.content-services-description-back {
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 3;
+  position: relative;
+  background-image: url(/images/site/backs/residence-2219972_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  position: relative;
+  height: 400px;
+}
+
+.content-services-description-back h1,
+.content-services-description-back h2,
+.content-services-description-back h3,
+.content-services-description-back h4,
+.content-services-description-back h5,
+.content-services-description-back h6 {
+  font-weight: lighter !important;
+}
+
+.content-services-description-back::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.content-services-description {
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 3;
+  position: relative;
+  -webkit-box-shadow: 0px 0 4px 0 black;
+          box-shadow: 0px 0 4px 0 black;
+  position: absolute;
+  top: 66px;
+  left: -25%;
+  opacity: 0;
+  min-height: 264px;
+  height: 264px;
+  background: rgba(110, 39, 61, 0.5);
+  color: white;
+  width: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content-services-description h1,
+.content-services-description h2,
+.content-services-description h3,
+.content-services-description h4,
+.content-services-description h5,
+.content-services-description h6 {
+  font-weight: lighter !important;
+}
+
+.content-services-description p {
+  font-family: "Hepta Slab", serif;
+  font-size: 1.2em;
+}
+
+.divider-section-services-description {
+  -webkit-box-shadow: 0px 0 4px 2px #495057;
+          box-shadow: 0px 0 4px 2px #495057;
+  background: gray;
+  margin-top: -3rem;
+  margin-bottom: -3rem;
+  z-index: 4;
+  position: relative;
+}
+
+.divider-section-services-description h1 {
+  font-family: "Cinzel", serif;
+  color: white;
+}
+
+.content-view {
+  opacity: 1;
+  left: 0;
 }
 
 .content-clients {
@@ -345,6 +498,13 @@
             flex: 0 0 50%;
     max-width: 50%;
   }
+  .lead-section, .divider-section-services-description {
+    padding: 1.5rem;
+  }
+  .content-services-description-back::after {
+    background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(rgba(128, 128, 128, 0.5)), to(rgba(0, 0, 0, 0.5)));
+    background-image: linear-gradient(to right, white, rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0.5));
+  }
 }
 
 @media (min-width: 768px) {
@@ -353,6 +513,13 @@
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
     max-width: 50%;
+  }
+  .lead-section, .divider-section-services-description {
+    width: 80%;
+  }
+  .content-services-description {
+    width: 70%;
+    background: #6e273d;
   }
 }
 
@@ -363,6 +530,12 @@
             flex: 0 0 33.33%;
     max-width: 33.33%;
   }
+  .lead-section, .divider-section-services-description {
+    padding: 2.5rem;
+  }
+  .content-services-description {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -371,6 +544,9 @@
         -ms-flex: 0 0 25%;
             flex: 0 0 25%;
     max-width: 25%;
+  }
+  .lead-section, .divider-section-services-description {
+    width: 70%;
   }
 }
 /*# sourceMappingURL=sections.css.map */

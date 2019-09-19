@@ -1,10 +1,11 @@
 @import "./variables.scss";
+$heightSectionServices: 400px;
 .section-home {
     position: relative;
     width: 100%;
     min-height: 100%;
     max-height: 100%;
-    background-image: url(/images/site/backs/sala-estar.jpg);
+    background-image: url(/images/site/backs/sections/section-home.jpg);
     background-position: center;
     background-size: cover;
     z-index: 1;
@@ -42,10 +43,24 @@
     padding-bottom: 30px;
 }
 .section-clients {
-    background-image: url(/images/site/backs/bg-ana.png);
+    background-image: url(/images/site/backs/sections/brick.png);
     background-size: 220px 140px;
     min-height: 600px;
     background-color: rgba(gray, 1);
+}
+@mixin section-services-description {
+    min-height: $heightSectionServices;
+    position: relative;
+    margin: 2rem 0;
+}
+.section-services-description-one {
+    @include section-services-description;
+}
+.section-services-description-two {
+    @include section-services-description;
+    .content-services-description-back {
+        background-image: url(/images/site/backs/sections/services2.jpg);
+    }
 }
 .section-view-all-immobiles {
     padding: 4rem 0;
@@ -190,12 +205,86 @@
         font-weight: lighter !important;
     }
 }
+.lead-section {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin: 0 auto;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $fontPrimary;
+        color: $colorPrimary;
+    }
+    p {
+        font-family: $fontSecoundary;
+        font-size: 1.6em;
+        font-weight: 200;
+    }
+}
 .content-home {
     @include basecontent();
     z-index: 4;
     a {
         font-size: 1.5em;
     }
+}
+.content-services-description-back {
+    @include basecontent();
+    background-image: url(/images/site/backs/residence-2219972_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    height: $heightSectionServices;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(black, 0.5);
+    }
+}
+.content-services-description {
+    @include basecontent();
+    box-shadow: 0px 0 4px 0 black;
+    position: absolute;
+    top: ($heightSectionServices * 0.33) / 2;
+    left: -25%;
+    opacity: 0;
+    min-height: $heightSectionServices * 0.66;
+    height: $heightSectionServices * 0.66;
+    background: rgba($colorPrimary, 0.5);
+    color: white;
+    width: 100%;
+    transition: all 1s;
+    text-align: center;
+    padding: 2rem;
+    p {
+        font-family: $fontPrimary;
+        font-size: 1.2em;
+    }
+}
+.divider-section-services-description {
+    @extend .lead-section;
+    box-shadow: 0px 0 4px 2px #495057;
+    background: gray;
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+    z-index: 4;
+    position: relative;
+    h1 {
+        font-family: $fontThird;
+        color: white;
+    }
+}
+.content-view {
+    opacity: 1;
+    left: 0;
 }
 .content-clients {
     @include basecontent();
@@ -246,6 +335,19 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .lead-section {
+        padding: 1.5rem;
+    }
+    .content-services-description-back {
+        &::after {
+            background-image: linear-gradient(
+                to right,
+                white,
+                rgba(gray, 0.5),
+                rgba(black, 0.5)
+            );
+        }
+    }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -253,6 +355,13 @@
     .immobile-list {
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    .lead-section {
+        width: 80%;
+    }
+    .content-services-description {
+        width: 70%;
+        background: $colorPrimary;
     }
 }
 
@@ -262,6 +371,12 @@
         flex: 0 0 33.33%;
         max-width: 33.33%;
     }
+    .lead-section {
+        padding: 2.5rem;
+    }
+    .content-services-description {
+        width: 50%;
+    }
 }
 
 // Extra large devices (large desktops, 1200px and up)
@@ -269,5 +384,8 @@
     .immobile-list {
         flex: 0 0 25%;
         max-width: 25%;
+    }
+    .lead-section {
+        width: 70%;
     }
 }

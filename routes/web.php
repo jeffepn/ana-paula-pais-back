@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'SiteController@prelaunch');
+//Site
 Route::get('site', 'SiteController@home');
+Route::get('nossos-servicos', 'SiteController@services');
 
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');
