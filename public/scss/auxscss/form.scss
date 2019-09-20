@@ -40,3 +40,20 @@
         }
     }
 }
+.form-contact {
+    display: inline-block;
+    width: 100%;
+    input,
+    select,
+    textarea {
+        @include baseinputs();
+        width: 100%;
+        color: white !important;
+        font-weight: 200;
+        font-family: $fontSecoundary;
+        font-size: 1.7em;
+        &::placeholder {
+            color: white !important;
+        }
+    }
+}

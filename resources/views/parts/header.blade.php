@@ -23,10 +23,10 @@ $classHeader = ' header-fixed ';
                     <a class="nav-link" href="{{url('nossos-servicos')}}">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Sobre</a>
+                    <a class="nav-link" href="{{url('sobre')}}">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Contato</a>
+                    <a class="nav-link" href="{{url('contato')}}">Contato</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">(35) 99733-3777</a>

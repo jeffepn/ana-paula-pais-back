@@ -15,6 +15,9 @@ Route::get('/', 'SiteController@prelaunch');
 //Site
 Route::get('site', 'SiteController@home');
 Route::get('nossos-servicos', 'SiteController@services');
+Route::get('sobre', 'SiteController@about');
+Route::get('contato', 'SiteController@contact');
+Route::post('contato', 'SiteController@sendcontact');
 
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');

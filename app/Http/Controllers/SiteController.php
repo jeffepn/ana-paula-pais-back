@@ -28,6 +28,18 @@ class SiteController extends Controller
     {
         return view('services');
     }
+    public function about()
+    {
+        return view('about');
+    }
+    public function contact()
+    {
+        return view('contact');
+    }
+    public function sendcontact()
+    {
+        return redirect()->back();
+    }
     //Immobiles
     public function searchimmobiles(ImmobileService $immobileService)
     {

@@ -77,19 +77,93 @@ body {
 }
 
 .section-services-description-one {
-  min-height: 400px;
   position: relative;
   margin: 2rem 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 400px;
+  height: 400px;
+  background-image: url(/images/site/backs/sections/services1.jpg);
+}
+
+.section-services-description-one::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-services-description-one .content-default {
+  top: 66px;
+  min-height: 264px;
+  height: 264px;
 }
 
 .section-services-description-two {
-  min-height: 400px;
   position: relative;
   margin: 2rem 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 400px;
+  height: 400px;
+  background-image: url(/images/site/backs/sections/services2.jpg);
 }
 
-.section-services-description-two .content-services-description-back {
-  background-image: url(/images/site/backs/sections/services2.jpg);
+.section-services-description-two::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-services-description-two .content-default {
+  top: 66px;
+  min-height: 264px;
+  height: 264px;
+}
+
+.section-contact {
+  position: relative;
+  margin: 2rem 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: auto;
+  background-image: url(/images/site/backs/sections/contact.jpg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-contact::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-contact .content-default {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  min-height: auto;
+  left: 0;
+  opacity: 1;
+  background: rgba(110, 39, 61, 0.8);
 }
 
 .section-view-all-immobiles {
@@ -311,50 +385,22 @@ body {
   font-size: 1.5em;
 }
 
-.content-services-description-back {
-  width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 3;
+.divider-section-services-description {
+  -webkit-box-shadow: 0px 0 4px 2px #495057;
+          box-shadow: 0px 0 4px 2px #495057;
+  background: gray;
+  margin-top: -3rem;
+  margin-bottom: -3rem;
+  z-index: 4;
   position: relative;
-  background-image: url(/images/site/backs/residence-2219972_1280.jpg);
-  background-size: cover;
-  background-position: center;
-  min-height: 100%;
-  position: relative;
-  height: 400px;
 }
 
-.content-services-description-back h1,
-.content-services-description-back h2,
-.content-services-description-back h3,
-.content-services-description-back h4,
-.content-services-description-back h5,
-.content-services-description-back h6 {
-  font-weight: lighter !important;
+.divider-section-services-description h1 {
+  font-family: "Cinzel", serif;
+  color: white;
 }
 
-.content-services-description-back::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.content-services-description {
+.content-default {
   width: 100%;
   min-height: 100%;
   max-height: 100%;
@@ -373,11 +419,8 @@ body {
   -webkit-box-shadow: 0px 0 4px 0 black;
           box-shadow: 0px 0 4px 0 black;
   position: absolute;
-  top: 66px;
   left: -25%;
   opacity: 0;
-  min-height: 264px;
-  height: 264px;
   background: rgba(110, 39, 61, 0.5);
   color: white;
   width: 100%;
@@ -387,33 +430,27 @@ body {
   padding: 2rem;
 }
 
-.content-services-description h1,
-.content-services-description h2,
-.content-services-description h3,
-.content-services-description h4,
-.content-services-description h5,
-.content-services-description h6 {
+.content-default h1,
+.content-default h2,
+.content-default h3,
+.content-default h4,
+.content-default h5,
+.content-default h6 {
   font-weight: lighter !important;
 }
 
-.content-services-description p {
+.content-default h1,
+.content-default h2,
+.content-default h3,
+.content-default h4,
+.content-default h5,
+.content-default h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+.content-default p {
   font-family: "Hepta Slab", serif;
   font-size: 1.2em;
-}
-
-.divider-section-services-description {
-  -webkit-box-shadow: 0px 0 4px 2px #495057;
-          box-shadow: 0px 0 4px 2px #495057;
-  background: gray;
-  margin-top: -3rem;
-  margin-bottom: -3rem;
-  z-index: 4;
-  position: relative;
-}
-
-.divider-section-services-description h1 {
-  font-family: "Cinzel", serif;
-  color: white;
 }
 
 .content-view {
@@ -521,7 +558,7 @@ body {
   .lead-section, .divider-section-services-description {
     padding: 1.5rem;
   }
-  .content-services-description-back::after {
+  .content-default-with-back::after {
     background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(rgba(128, 128, 128, 0.5)), to(rgba(0, 0, 0, 0.5)));
     background-image: linear-gradient(to right, white, rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0.5));
   }
@@ -537,7 +574,7 @@ body {
   .lead-section, .divider-section-services-description {
     width: 80%;
   }
-  .content-services-description {
+  .content-default {
     width: 70%;
     background: #6e273d;
   }
@@ -553,7 +590,7 @@ body {
   .lead-section, .divider-section-services-description {
     padding: 2.5rem;
   }
-  .content-services-description {
+  .content-default {
     width: 50%;
   }
 }
@@ -570,52 +607,28 @@ body {
   }
 }
 
-.ft-primary, .ft-primary-small, .ft-primary-medium, .ft-primary-big {
-  font-family: "Hepta Slab", serif;
-}
-
-.ft-primary-small {
+.ft-sm, .ft-primary-small, .ft-secoundary-small, .ft-third-small {
   font-size: 0.8em;
 }
 
-.ft-primary-medium {
+.ft-md, .ft-primary-medium, .ft-secoundary-medium, .ft-third-medium {
   font-size: 1.4em;
 }
 
-.ft-primary-big {
+.ft-bg, .ft-primary-big, .ft-secoundary-big, .ft-third-big {
   font-size: 2em;
+}
+
+.ft-primary, .ft-primary-small, .ft-primary-medium, .ft-primary-big {
+  font-family: "Hepta Slab", serif;
 }
 
 .ft-secoundary, .ft-secoundary-small, .ft-secoundary-medium, .ft-secoundary-big {
   font-family: "Oswald", sans-serif;
 }
 
-.ft-secoundary-small {
-  font-size: 0.8em;
-}
-
-.ft-secoundary-medium {
-  font-size: 1.4em;
-}
-
-.ft-secoundary-big {
-  font-size: 2em;
-}
-
 .ft-third, .ft-third-small, .ft-third-medium, .ft-third-big {
   font-family: "Cinzel", serif;
-}
-
-.ft-third-small {
-  font-size: 0.8em;
-}
-
-.ft-third-medium {
-  font-size: 1.4em;
-}
-
-.ft-third-big {
-  font-size: 2em;
 }
 
 footer {
@@ -1043,6 +1056,75 @@ header {
   border: none;
   color: white;
   font-size: 1.4em;
+}
+
+.form-contact {
+  display: inline-block;
+  width: 100%;
+}
+
+.form-contact input,
+.form-contact select,
+.form-contact textarea {
+  padding: 0.25rem !important;
+  max-width: 100% !important;
+  background: none !important;
+  color: #495057 !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0 !important;
+  width: 100%;
+  color: white !important;
+  font-weight: 200;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.7em;
+}
+
+.form-contact input::-webkit-input-placeholder,
+.form-contact select::-webkit-input-placeholder,
+.form-contact textarea::-webkit-input-placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input:-ms-input-placeholder,
+.form-contact select:-ms-input-placeholder,
+.form-contact textarea:-ms-input-placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input::-ms-input-placeholder,
+.form-contact select::-ms-input-placeholder,
+.form-contact textarea::-ms-input-placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input::placeholder,
+.form-contact select::placeholder,
+.form-contact textarea::placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input::-webkit-input-placeholder,
+.form-contact select::-webkit-input-placeholder,
+.form-contact textarea::-webkit-input-placeholder {
+  color: white !important;
+}
+
+.form-contact input:-ms-input-placeholder,
+.form-contact select:-ms-input-placeholder,
+.form-contact textarea:-ms-input-placeholder {
+  color: white !important;
+}
+
+.form-contact input::-ms-input-placeholder,
+.form-contact select::-ms-input-placeholder,
+.form-contact textarea::-ms-input-placeholder {
+  color: white !important;
+}
+
+.form-contact input::placeholder,
+.form-contact select::placeholder,
+.form-contact textarea::placeholder {
+  color: white !important;
 }
 
 #anim-one-home {

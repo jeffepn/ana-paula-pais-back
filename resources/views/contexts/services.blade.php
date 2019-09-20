@@ -14,9 +14,7 @@
         <h1>Curadoria de Imóveis</h1>
     </div>
     <section class="section-services-description-one">
-        <div class="content-services-description-back">
-        </div>
-        <div class="content-services-description">
+        <div class="content-default">
             <p>
                 Você já ouviu falar em curadoria de imóveis
                 Pois bem, eu faço isso para você.<br>
@@ -28,9 +26,7 @@
         <h1>Imobiliária Boutique</h1>
     </div>
     <section class="section-services-description-two">
-        <div class="content-services-description-back">
-        </div>
-        <div class="content-services-description">
+        <div class="content-default">
             <p>
                 A primeira consultora imobiliária boutique da região
                 Boutique no sentido de...

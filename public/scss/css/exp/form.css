@@ -72,4 +72,73 @@
   color: white;
   font-size: 1.4em;
 }
+
+.form-contact {
+  display: inline-block;
+  width: 100%;
+}
+
+.form-contact input,
+.form-contact select,
+.form-contact textarea {
+  padding: 0.25rem !important;
+  max-width: 100% !important;
+  background: none !important;
+  color: #495057 !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0 !important;
+  width: 100%;
+  color: white !important;
+  font-weight: 200;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.7em;
+}
+
+.form-contact input::-webkit-input-placeholder,
+.form-contact select::-webkit-input-placeholder,
+.form-contact textarea::-webkit-input-placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input:-ms-input-placeholder,
+.form-contact select:-ms-input-placeholder,
+.form-contact textarea:-ms-input-placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input::-ms-input-placeholder,
+.form-contact select::-ms-input-placeholder,
+.form-contact textarea::-ms-input-placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input::placeholder,
+.form-contact select::placeholder,
+.form-contact textarea::placeholder {
+  color: #495057 !important;
+}
+
+.form-contact input::-webkit-input-placeholder,
+.form-contact select::-webkit-input-placeholder,
+.form-contact textarea::-webkit-input-placeholder {
+  color: white !important;
+}
+
+.form-contact input:-ms-input-placeholder,
+.form-contact select:-ms-input-placeholder,
+.form-contact textarea:-ms-input-placeholder {
+  color: white !important;
+}
+
+.form-contact input::-ms-input-placeholder,
+.form-contact select::-ms-input-placeholder,
+.form-contact textarea::-ms-input-placeholder {
+  color: white !important;
+}
+
+.form-contact input::placeholder,
+.form-contact select::placeholder,
+.form-contact textarea::placeholder {
+  color: white !important;
+}
 /*# sourceMappingURL=form.css.map */

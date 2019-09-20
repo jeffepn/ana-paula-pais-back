@@ -25,14 +25,14 @@ function verifyIfNavFloating(top) {
     }
 }
 function verifyViexContext(top) {
-    if ($('.section-services-description-one').length && !$('.section-services-description-one .content-services-description').hasClass('content-view')) {
+    if ($('.section-services-description-one').length && !$('.section-services-description-one .content-default').hasClass('content-view')) {
         if (top >= $('.section-services-description-one').offset().top - 300 && top <= ($('.section-services-description-one').offset().top + $('.section-services-description-one').height()) - 300) {
-            $('.section-services-description-one .content-services-description').addClass('content-view');
+            $('.section-services-description-one .content-default').addClass('content-view');
         }
     }
-    if ($('.section-services-description-two').length && !$('.section-services-description-two .content-services-description').hasClass('content-view')) {
+    if ($('.section-services-description-two').length && !$('.section-services-description-two .content-default').hasClass('content-view')) {
         if (top >= $('.section-services-description-two').offset().top - 300 && top <= ($('.section-services-description-two').offset().top + $('.section-services-description-two').height()) - 300) {
-            $('.section-services-description-two .content-services-description').addClass('content-view');
+            $('.section-services-description-two .content-default').addClass('content-view');
         }
     }
 }
