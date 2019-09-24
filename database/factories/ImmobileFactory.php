@@ -37,7 +37,6 @@ $factory->define(Immobile::class, function (Faker $faker, $data) {
         'area_building' => $faker->randomFloat(1, 100, 200),
         'area_total' => $faker->randomFloat(1, 300, 350),
         'min_description' => $faker->text(rand(20, 50)),
-        'description' => $faker->text(400),
-        'visits' => rand(1, 10)
+        'description' => $faker->text(400)
     ];
 });
