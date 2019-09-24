@@ -20,20 +20,8 @@
     @section('css')
     @show
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.2')}}">
+    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.3')}}">
     <link rel="stylesheet" href="{{url('css/assetsutilities.min.css')}}">
-
-    <!-- <link rel="stylesheet" href="{{url('scss/css/animation.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/buttons.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/carrousel.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/fonts.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/footer.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/form.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/header.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/immobiles.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/sections.min.css')}}">
-    <link rel="stylesheet" href="{{url('scss/css/variables.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.2')}}">-->
 </head>
 
 <body class="h-100">
@@ -61,7 +49,7 @@
     </script>
     <script src="{{url('js/assetsutilities.min.js')}}">
     </script>
-    <script src="{{url('js/screen.js?v=1.0.2')}}">
+    <script src="{{url('js/screen.js?v=1.0.3')}}">
     </script>
     @section('js')
     @show
