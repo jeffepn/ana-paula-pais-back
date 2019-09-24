@@ -34,7 +34,6 @@ class CreateImmobilesTable extends Migration
             $table->decimal('area_building', 10, 2);
             $table->string('min_description', 50);
             $table->text('description', 255);
-            $table->integer('visits')->default(0);
             $table->timestamps();
         });
     }

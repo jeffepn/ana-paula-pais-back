@@ -48,13 +48,10 @@ class SiteController extends Controller
             SiteUtility::initializeSessionSearch();
         }
         $search = session('search_immobile');
-        //return $search;
-        //return $immobileService->getAllPerSearch($search);
         return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
     }
     public function setsessionsearch(Request $request)
     {
-        //return $request->all();
         if (!session()->has('search_immobile')) {
             SiteUtility::initializeSessionSearch();
         }
@@ -69,12 +66,13 @@ class SiteController extends Controller
             'area_min' => $request->area_min,
             'area_max' => $request->area_max
         ]);
-        // return session('search_immobile');
         return redirect()->back();
     }
     public function immobile(ImmobileService $immobileService, $slug)
     {
         $immobile = $immobileService->getWithSlug($slug);
+        if (!$immobile) { }
+        $immobileService->registerVisit($immobile->id, request()->ip());
         return view('immobile', ['immobile' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
     }
 }

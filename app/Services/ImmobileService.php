@@ -8,6 +8,7 @@ use JpUtilities\Services\ServiceDefault;
 use App\Models\Immobile\Immobile;
 use App\Models\Immobile\ImageImmobile;
 use App\Models\Address\Neighborhood;
+use App\Models\Immobile\VisitImmobile;
 //Utilities
 use JpUtilities\Utilities\ArrayUtility;
 
@@ -97,7 +98,7 @@ class ImmobileService implements ServiceDefault
      */
     public function getOrderByVisits($amount)
     {
-        return Immobile::where('rent', true)->orWhere('sale', true)->orderBy('visits', 'desc')->take($amount)->get();
+        return Immobile::where('rent', true)->orWhere('sale', true)->take($amount)->get();
     }
 
     public function getAllForSelect()
@@ -122,5 +123,16 @@ class ImmobileService implements ServiceDefault
     public function getAllNeighborhoodsSelect()
     {
         return ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
+    }
+    /**
+     * Register visit if ip not visited immobile
+     *
+     * @param int $immobile_id Id of Immobile
+     * @param string $ip Ip of visitant
+     * @return VisitImmobile
+     */
+    public function registerVisit($immobile_id, $ip)
+    {
+        return VisitImmobile::firstOrCreate(['immobile_id' => $immobile_id, 'ip' => $ip]);
     }
 }
