@@ -18,6 +18,17 @@
         @extend .bt;
         background: $colorPrimary;
         @include colorwhitedefault();
+        &--out {
+            @extend .bt--pr;
+            background: white;
+            color: $colorPrimary;
+            border-color: $colorPrimary;
+            &:hover,
+            &:active,
+            &:focus {
+                color: $colorPrimary;
+            }
+        }
     }
     &--se {
         @extend .bt;

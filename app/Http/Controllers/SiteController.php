@@ -18,11 +18,7 @@ class SiteController extends Controller
     //Site
     public function home(ImmobileService $immobileService)
     {
-        if (!session()->has('search_immobile')) {
-            SiteUtility::initializeSessionSearch();
-        }
-        $search = session('search_immobile');
-        return view('home', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
+        return view('home', ['immobileshighlights' => $immobileService->getOrderByVisits(6)]);
     }
     public function services()
     {
@@ -37,6 +33,11 @@ class SiteController extends Controller
         return view('contact');
     }
     public function sendcontact()
+    {
+        return redirect()->back();
+    }
+
+    public function newsletter()
     {
         return redirect()->back();
     }
@@ -74,6 +75,6 @@ class SiteController extends Controller
     public function immobile(ImmobileService $immobileService, $slug)
     {
         $immobile = $immobileService->getWithSlug($slug);
-        return view('immobile', ['immobile' => $immobile]);
+        return view('immobile', ['immobile' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
     }
 }

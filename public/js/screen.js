@@ -14,6 +14,16 @@ $(document).ready(function () {
             }
         }
     });
+    $("body").on("click", ".scrool-smoth", function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        scrollSmoth($(this).attr('href'));
+
+    });
+    $("body").on("click", ".close-modal-view-image-immobile", function (event) {
+        console.log('kkkkkk');
+        $('#modal-view-image-immobile').modal('hide');
+    });
 });
 function verifyIfNavFloating(top) {
     if (top < 50) {
@@ -25,6 +35,7 @@ function verifyIfNavFloating(top) {
     }
 }
 function verifyViexContext(top) {
+
     if ($('.section-services-description-one').length && !$('.section-services-description-one .content-default').hasClass('content-view')) {
         if (top >= $('.section-services-description-one').offset().top - 300 && top <= ($('.section-services-description-one').offset().top + $('.section-services-description-one').height()) - 300) {
             $('.section-services-description-one .content-default').addClass('content-view');
@@ -35,4 +46,14 @@ function verifyViexContext(top) {
             $('.section-services-description-two .content-default').addClass('content-view');
         }
     }
+
+}
+
+function scrollSmoth(element) {
+    var offsets = getPositionElement(element);
+    var top = (offsets['top'] - $('header').height());
+    $('html, body').animate({
+        scrollTop: top
+    }, 500);
+
 }

@@ -15,16 +15,16 @@
             @csrf
             <div class="row">
                 <div class="my-2 px-1 col-6">
-                    <input name="name" placeholder="Nome">
+                    <input name="name" placeholder="Nome *">
                 </div>
                 <div class="my-2 px-1 col-6">
                     <input name="phone" placeholder="Telefone">
                 </div>
                 <div class="my-2 px-1 col-12">
-                    <input name="email" type="email" placeholder="Endereço de e-mail">
+                    <input name="email" type="email" placeholder="E-mail *">
                 </div>
                 <div class="my-2 px-1 col-12">
-                    <textarea name="message" id="" cols="30" rows="3" placeholder="Descreva sua dúvida"></textarea>
+                    <textarea name="message" id="" cols="30" rows="3" placeholder="Descreva sua dúvida *"></textarea>
                 </div>
                 <div class="my-2 px-1 col-12 text-right">
                     <button class="btn bt--se ft-md px-5"> Enviar </button>

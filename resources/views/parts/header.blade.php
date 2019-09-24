@@ -31,23 +31,11 @@ $classHeader = ' header-fixed ';
                 <li class="nav-item">
                     <a class="nav-link" href="">(35) 99733-3777</a>
                 </li>
-                <!--
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>-->
             </ul>
             <div class="social-network">
-                <a class="mr-2" href="#"><i class="fab fa-facebook-square"></i></a>
-                <a class="" href="#"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" class="mr-2" href="{{url(config('app.url_facebook'))}}"><i
+                        class="fab fa-facebook-square"></i></a>
+                <a target="_blank" href="{{url(config('app.url_instagram'))}}"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </nav>

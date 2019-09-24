@@ -9,10 +9,11 @@
             <div class="col-sm-6 col-md-5 col-lg-4 mb-3">
                 <h4>Contatos</h4>
                 <div class="social-network">
-                    <a class="text-white" href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a class="text-white" href="{{url(config('app.url_facebook'))}}"><i
+                            class="fab fa-facebook-square"></i></a>
                     <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-                <a href="#" class="d-flex align-items-center text-white ft-primary">
+                <a href="{{url(config('app.url_instagram'))}}" class="d-flex align-items-center text-white ft-primary">
                     <i class="mdil mdil-email mdil-24px mr-2"></i>
                     contato@anapaulapais.com.br
                 </a>
@@ -27,7 +28,8 @@
                     Quer ficar por dentro de nossas novidades?<br>
                     Assine agora nossa Newsletter.
                 </p>
-                <form action="" method="POST">
+                <form action="{{url('newsletter')}}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <input name="name" class="form-control" placeholder="Nome">
                         <p class="text-danger">{{$errors->first('name')}}</p>

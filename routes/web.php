@@ -18,6 +18,7 @@ Route::get('nossos-servicos', 'SiteController@services');
 Route::get('sobre', 'SiteController@about');
 Route::get('contato', 'SiteController@contact');
 Route::post('contato', 'SiteController@sendcontact');
+Route::post('newsletter', 'SiteController@newsletter');
 
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');

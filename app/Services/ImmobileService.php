@@ -89,6 +89,17 @@ class ImmobileService implements ServiceDefault
             ->paginate(12);
     }
 
+    /**
+     * Get Immobiles order by visits with amount defined
+     *
+     * @param int $amount Amount of Immobiles
+     * @return Immobile[]
+     */
+    public function getOrderByVisits($amount)
+    {
+        return Immobile::where('rent', true)->orWhere('sale', true)->orderBy('visits', 'desc')->take($amount)->get();
+    }
+
     public function getAllForSelect()
     { }
 

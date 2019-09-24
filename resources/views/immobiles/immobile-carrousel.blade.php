@@ -2,70 +2,35 @@
     <div id="carrousel-partial" class="owl-carousel owl-theme owl-loaded">
         <div class="owl-stage-outer">
             <div class="owl-stage">
+                @foreach($immobileshighlights as $immobileshighlight)
+                @php
+                $image = $immobileshighlight->images->first();
+                @endphp
                 <div class="owl-item px-2">
-                    <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/backs/interior-sala3.jpg')}}');">
-                        <div class="data-immobile">
-                            <h5 class="data-immobile-neighborhood">
-                                Jardim Vitória, Poços de Caldas
-                            </h5>
-                            <h3 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
-                            </h3>
-                            <span class="data-immobile-price">
-                                R$ 1.030.000
-                            </span>
+                    <a href="{{url('imovel/'.$immobileshighlight->slug)}}">
+                        <div class="block-immobile-carrousel" style="background-image: url('{{url( $image->way)}}');">
+                            <div class="data-immobile">
+                                <h5 class="data-immobile-neighborhood">
+                                    {{$immobileshighlight->neighborhood->name.', '.$immobileshighlight->neighborhood->city->name}}
+                                </h5>
+                                <h3 class="data-immobile-description">
+                                    {{$immobileshighlight->min_description}}
+                                </h3>
+                                <span class="data-immobile-price">
+                                    @if($immobileshighlight->rent)
+                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_rent)}}
+                                    <span class="data-immobile-type-bussiness">( Aluguel ) </span><br>
+                                    @endif
+                                    @if($immobileshighlight->sale)
+                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_sale)}}
+                                    <span class="data-immobile-type-bussiness"> ( Venda )</span>
+                                    @endif
+                                </span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="owl-item px-2">
-                    <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/backs/sala-estar.jpg')}}');">
-                        <div class="data-immobile">
-                            <h5 class="data-immobile-neighborhood">
-                                Santa Ângela, Poços de Caldas
-                            </h5>
-                            <h3 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
-                            </h3>
-                            <span class="data-immobile-price">
-                                R$ 2.000.000
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-item px-2">
-                    <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/backs/studio.jpg')}}');">
-                        <div class="data-immobile">
-                            <h5 class="data-immobile-neighborhood">
-                                Contry Club, Poços de Caldas
-                            </h5>
-                            <h3 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
-                            </h3>
-                            <span class="data-immobile-price">
-                                R$ 500.000
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-item px-2">
-                    <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/backs/cozinha.jpg')}}');">
-                        <div class="data-immobile">
-                            <h5 class="data-immobile-neighborhood">
-                                Centro, Poços de Caldas
-                            </h5>
-                            <h3 class="data-immobile-description">
-                                Lorem Ipsum is simply dummy text of the printing
-                            </h3>
-                            <span class="data-immobile-price">
-                                R$ 2.000.000
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -74,7 +39,7 @@
 @parent
 $('#carrousel-partial').owlCarousel({
 loop: true,
-autoplay: true,
+autoplay: false,
 autoplayHoverPause:true,
 dots: false,
 responsiveClass: true,

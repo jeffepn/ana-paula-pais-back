@@ -34,10 +34,6 @@ $heightSectionServices: 400px;
         text-align: center;
     }
 }
-.section-immobile {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
 .section-immobiles-search {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -99,7 +95,7 @@ $heightSectionServices: 400px;
         min-height: auto;
         left: 0;
         opacity: 1;
-        background: rgba($colorPrimary, 0.8);
+        background: rgba($colorPrimary, 0.9);
     }
 }
 .section-view-all-immobiles {
@@ -280,9 +276,17 @@ $heightSectionServices: 400px;
     margin-bottom: -3rem;
     z-index: 4;
     position: relative;
-    h1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: $fontThird;
         color: white;
+    }
+    span {
+        white-space: nowrap;
     }
 }
 .content-default {
@@ -366,7 +370,8 @@ $heightSectionServices: 400px;
     .lead-section {
         padding: 1.5rem;
     }
-    .content-default-with-back {
+    .section-services-description-one,
+    .section-services-description-two {
         &::after {
             background-image: linear-gradient(
                 to right,

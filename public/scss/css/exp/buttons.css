@@ -1,4 +1,4 @@
-.bt, .bt--pr, .bt--se {
+.bt, .bt--pr, .bt--pr--out, .bt--se {
   border-radius: 0;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
@@ -7,18 +7,28 @@
   display: inline-block;
 }
 
-.bt:hover, .bt--pr:hover, .bt--se:hover, .bt:focus, .bt--pr:focus, .bt--se:focus {
+.bt:hover, .bt--pr:hover, .bt--pr--out:hover, .bt--se:hover, .bt:focus, .bt--pr:focus, .bt--pr--out:focus, .bt--se:focus {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.bt--pr {
+.bt--pr, .bt--pr--out {
   background: #6e273d;
   color: white;
 }
 
-.bt--pr:hover, .bt--pr:focus {
+.bt--pr:hover, .bt--pr--out:hover, .bt--pr:focus, .bt--pr--out:focus {
   color: white;
+}
+
+.bt--pr--out {
+  background: white;
+  color: #6e273d;
+  border-color: #6e273d;
+}
+
+.bt--pr--out:hover, .bt--pr--out:active, .bt--pr--out:focus {
+  color: #6e273d;
 }
 
 .bt--se {

@@ -1,0 +1,29 @@
+#modal-view-image-immobile {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    .modal-dialog {
+        max-height: 80% !important;
+        max-width: 90% !important;
+        overflow: hidden;
+        //margin: auto;
+    }
+    .close-modal-view-image-immobile {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 2;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}

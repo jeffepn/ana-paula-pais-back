@@ -1,1 +1,90 @@
-/* No CSS *//*# sourceMappingURL=immobiles.css.map */
+.section-immobile {
+  margin-top: 146px;
+  position: relative;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-immobile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-immobile .image-highlights {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.section-immobile .content-default {
+  position: relative;
+  min-height: auto;
+  left: auto;
+  opacity: 1;
+  float: right;
+  margin-left: auto;
+}
+
+.big-description-immobile {
+  font-size: 1.2em;
+  font-family: "Hepta Slab", serif;
+}
+
+.contact-immobile {
+  background: #6e273d;
+  text-align: center;
+  padding: 1.5rem 0.25rem;
+}
+
+.contact-immobile h1,
+.contact-immobile h2,
+.contact-immobile h3,
+.contact-immobile h4,
+.contact-immobile h5,
+.contact-immobile h6 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  color: white;
+}
+
+.more-options-immobile h1,
+.more-options-immobile h2,
+.more-options-immobile h3,
+.more-options-immobile h4,
+.more-options-immobile h5,
+.more-options-immobile h6 {
+  font-family: "Cinzel", serif;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .section-immobile::after {
+    background-image: -webkit-gradient(linear, right top, left top, from(white), color-stop(rgba(128, 128, 128, 0.5)), to(rgba(0, 0, 0, 0.5)));
+    background-image: linear-gradient(to left, white, rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0.5));
+  }
+}
+
+@media (min-width: 992px) {
+  .section-immobile {
+    margin-top: 96px;
+  }
+}
+/*# sourceMappingURL=immobiles.css.map */

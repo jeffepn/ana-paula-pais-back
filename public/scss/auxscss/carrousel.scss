@@ -35,8 +35,13 @@
         }
         &-price {
             font-size: 1.5em;
-            font-family: $fontSecoundary;
-            color: yellow;
+            font-family: $fontThird;
+            font-weight: bold;
+            color: #ffff40;
+        }
+        &-type-bussiness {
+            font-size: 0.8em;
+            opacity: 0.7;
         }
     }
 }
@@ -59,17 +64,20 @@
         top: 50%;
         width: 100%;
         button {
-            width: 35px;
-            height: 35px;
-            background: rgba(gray, 0.5) !important;
-            color: white !important;
-            font-size: 30px;
-            line-height: 30px;
-            text-align: center;
+            &::before {
+                background: rgba(gray, 0.5) !important;
+                color: white !important;
+                font-size: 30px;
+                line-height: 30px;
+                text-align: center;
+            }
             &:focus,
             &:hover {
-                outline: 2px solid rgba($colorPrimary, 0.6);
-                background: rgba(gray, 1) !important;
+                outline: none;
+                &::before {
+                    outline: 2px solid rgba($colorPrimary, 0.6);
+                    background: rgba(gray, 1) !important;
+                }
             }
         }
         .owl-prev {
@@ -118,15 +126,55 @@
         }
     }
 }
+#carrousel-pre-view {
+    .owl-item {
+        height: 150px;
+        overflow: hidden;
+        cursor: zoom-in;
+        img {
+            min-height: 100%;
+            min-width: 100%;
+        }
+    }
+}
+#carrousel-immobile-view {
+    .owl-nav {
+        button {
+            background: none !important;
+            &::before {
+                background: gray !important;
+                font-size: 1.5em;
+            }
+        }
+    }
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .item-depoiment {
         padding: 0 2rem;
     }
+    #carrousel-immobile-view {
+        .owl-nav {
+            button {
+                &::before {
+                    font-size: 2.5em;
+                }
+            }
+        }
+    }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+    #carrousel-immobile-view {
+        .owl-nav {
+            button {
+                &::before {
+                    font-size: 3em;
+                }
+            }
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)

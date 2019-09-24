@@ -1,7 +1,6 @@
 @extends('template')
 @section('title')
-@parent
-- Busca de immobiles
+Busca de immobiles - {{config('app.name')}}
 @endsection
 @section('context')
 @include('contexts.immobiles-search')

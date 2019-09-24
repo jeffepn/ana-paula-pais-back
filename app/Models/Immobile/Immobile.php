@@ -14,7 +14,7 @@ class Immobile extends Model
     public $table = "immobiles";
     public $timestamps = true;
     protected $fillable = [
-        'slug', 'type', 'neighborhood_id', 'rent', 'sale', 'value_rent', 'value_sale', 'dormitory', 'suite', 'bathroom', 'garage', 'value_condominium', 'value_iptu', 'area_total', 'area_building', 'min_description', 'description'
+        'slug', 'type', 'neighborhood_id', 'rent', 'sale', 'value_rent', 'value_sale', 'dormitory', 'suite', 'bathroom', 'garage', 'value_condominium', 'value_iptu', 'area_total', 'area_building', 'min_description', 'description', 'visits'
     ];
     /**
      * Get all ImageImmobile of Immobile

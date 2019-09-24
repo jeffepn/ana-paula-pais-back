@@ -21,6 +21,19 @@
     @show
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
     <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.2')}}">
+    <link rel="stylesheet" href="{{url('css/assetsutilities.min.css')}}">
+
+    <!-- <link rel="stylesheet" href="{{url('scss/css/animation.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/buttons.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/carrousel.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/fonts.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/footer.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/form.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/header.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/immobiles.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/sections.min.css')}}">
+    <link rel="stylesheet" href="{{url('scss/css/variables.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.2')}}">-->
 </head>
 
 <body class="h-100">
@@ -33,9 +46,11 @@
     @include('parts.footer')
     @show
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+    </script>-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
     </script>
@@ -43,6 +58,8 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script src="{{url('js/assetsutilities.min.js')}}">
     </script>
     <script src="{{url('js/screen.js?v=1.0.2')}}">
     </script>

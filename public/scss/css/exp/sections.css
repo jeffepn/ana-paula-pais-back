@@ -39,11 +39,6 @@
   text-align: center;
 }
 
-.section-immobile {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 .section-immobiles-search {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -143,7 +138,7 @@
   min-height: auto;
   left: 0;
   opacity: 1;
-  background: rgba(110, 39, 61, 0.8);
+  background: rgba(110, 39, 61, 0.9);
 }
 
 .section-view-all-immobiles {
@@ -375,9 +370,18 @@
   position: relative;
 }
 
-.divider-section-services-description h1 {
+.divider-section-services-description h1,
+.divider-section-services-description h2,
+.divider-section-services-description h3,
+.divider-section-services-description h4,
+.divider-section-services-description h5,
+.divider-section-services-description h6 {
   font-family: "Cinzel", serif;
   color: white;
+}
+
+.divider-section-services-description span {
+  white-space: nowrap;
 }
 
 .content-default {
@@ -538,7 +542,8 @@
   .lead-section, .divider-section-services-description {
     padding: 1.5rem;
   }
-  .content-default-with-back::after {
+  .section-services-description-one::after,
+  .section-services-description-two::after {
     background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(rgba(128, 128, 128, 0.5)), to(rgba(0, 0, 0, 0.5)));
     background-image: linear-gradient(to right, white, rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0.5));
   }

@@ -7,6 +7,9 @@ Imóvel não encontrado
 @endif
 - {{config('app.name')}}
 @endsection
+@section('header')
+@include('parts.header',['fixed'=>'fixed'])
+@endsection
 @section('context')
 @include('contexts.immobile')
 @endsection
