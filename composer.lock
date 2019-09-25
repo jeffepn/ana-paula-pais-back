@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d55a84cde4128733153dcf6e4b962878",
+    "content-hash": "f8cf33e2d9ff8a841a413b1eaec43213",
     "packages": [
+        {
+            "name": "barryvdh/laravel-async-queue",
+            "version": "v0.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-async-queue.git",
+                "reference": "e8d696295d2ced1df31f7f797d1a6f1ddea71bb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-async-queue/zipball/e8d696295d2ced1df31f7f797d1a6f1ddea71bb2",
+                "reference": "e8d696295d2ced1df31f7f797d1a6f1ddea71bb2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.5|^6",
+                "illuminate/support": "^5.5|^6",
+                "php": ">=7",
+                "symfony/process": "^3.2|^4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Barryvdh\\Queue\\AsyncServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Queue\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Async Queue Driver for Laravel (Push to background)",
+            "keywords": [
+                "async",
+                "background",
+                "laravel",
+                "queue"
+            ],
+            "time": "2019-09-09T10:03:36+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",

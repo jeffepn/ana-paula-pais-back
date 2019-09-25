@@ -1,0 +1,4 @@
+25-09-19 18:09 | Passei kkkkkk =     async    ssl    smtp    mail.anapaulapais.com.br    465    contatosite@anapaulapais.com.br  add=  contatosite@anapaulapais.com.br name=   Imóveis Ana Paula Pais
+25-09-19 18:09 | Connection could not be established with host mail.anapaulapais.com.br [ #0]/opt/lampp/htdocs/ana-paula-pais/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php269/ ContactService - sendEmail
+25-09-19 18:09 | Passei kkkkkk =     async    ssl    smtp    mail.anapaulapais.com.br    465    contatosite@anapaulapais.com.br  add=  contatosite@anapaulapais.com.br name=   Imóveis Ana Paula Pais
+25-09-19 18:09 | Connection could not be established with host mail.anapaulapais.com.br [ #0]/opt/lampp/htdocs/ana-paula-pais/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php269/ ContactService - sendEmail

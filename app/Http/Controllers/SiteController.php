@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Utility\SiteUtility;
-//Services
 use Illuminate\Http\Request;
+//Services
+use JpUtilities\Utilities\Util;
+use App\Jobs\Contact\ContactJob;
 //Utilities
+use App\Mail\Contact\ContactMail;
 use App\Services\ImmobileService;
+use JpUtilities\Utilities\LogsSystem;
+//Job
 use Illuminate\Support\Facades\DB;
+use JpUtilities\Services\ContactService;
 
 class SiteController extends Controller
 {
@@ -32,9 +38,34 @@ class SiteController extends Controller
     {
         return view('contact');
     }
-    public function sendcontact()
+    public function sendcontact(Request $request)
     {
-        return redirect()->back();
+        $validator = validator()->make(
+            $request->all(),
+            [
+                'name' => 'required|max:50',
+                'email' => 'required|email|max:300',
+                'phone' => 'max:20',
+                'message' => 'required|max:300',
+            ],
+            [
+                'max' => 'Limite o campo a :max caracteres.',
+                'name.required' => 'Como podemos te chamar',
+                'name.max' => 'Que nome grande hein... Limite ele a 50 caracteres.',
+                'email.email' => 'Formato de e-mail inválido.',
+                'email.required' => 'Precisamos saber seu e-mail, para que possamos entrar em contato.',
+                'message.required' => 'Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.'
+            ]
+        );
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator, 'contact');
+        }
+        //$logs = new LogsSystem();
+        //$logs->writeLogEmail('Passei kkkkkk = ' . "    " . config('queue.default') . "    " . config('mail.encryption') . "    " .  config('mail.driver') . "    " . config('mail.host') . "    " . config('mail.port') . "    " . config('mail.username'));
+        //ContactService::sendEmail('contato@anapaulapais.com.br', new ContactMail($request->all()));
+        //$this->dispatch(new ContactJob($request->all()));
+        ContactJob::dispatch($request->all());
+        return redirect()->back()->with('successcontact', Util::success('ContactSuccess'));
     }
 
     public function newsletter()

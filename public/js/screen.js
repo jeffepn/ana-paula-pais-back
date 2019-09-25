@@ -57,3 +57,20 @@ function scrollSmoth(element) {
     }, 500);
 
 }
+
+function scrollInApp(top, element, smoth) {
+    if (!smoth) {
+        smoth = 500;
+    }
+    if (element) {
+        var offsets = getPositionElement(element);
+        var top = (offsets['top'] - $('header').height());
+        $('html, body').animate({
+            scrollTop: top
+        }, smoth);
+        return 1;
+    }
+    $('html, body').animate({
+        scrollTop: top
+    }, smoth);
+}

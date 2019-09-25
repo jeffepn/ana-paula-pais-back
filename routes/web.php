@@ -11,6 +11,19 @@
 |
 */
 
+use Illuminate\Mail\Markdown;
+
+Route::get('mail', function () {
+
+    $markdown = new Markdown(view(), config('mail.markdown'));
+    return $markdown->render('email.contact', ['content' => [
+        'name' => 'Jefferson Pereira',
+        'phone' => '35 9999 9999',
+        'email' => 'jefferson@gmail.com',
+        'message' => 'jdflskjf djskfljsdo jfklsdjaklfj kldsaj fdkls jkldfs jklsdj k',
+    ]]);
+});
+
 Route::get('/', 'SiteController@prelaunch');
 //Site
 Route::get('site', 'SiteController@home');

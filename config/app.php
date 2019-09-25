@@ -1,5 +1,6 @@
 <?php
 
+
 return [
     'url_facebook' => env('URL_FACEBOOK', '#'),
     'url_instagram' => env('URL_INSTAGRAM', '#'),
@@ -164,7 +165,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-
+        Barryvdh\Queue\AsyncServiceProvider::class,
         /*
          * Package Service Providers...
          */

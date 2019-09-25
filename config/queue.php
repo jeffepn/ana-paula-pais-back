@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+    'default' => env('QUEUE_CONNECTION'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,14 @@ return [
     */
 
     'connections' => [
-
+        'async' => [
+            'driver' => 'async',
+            'table' => 'jobs',
+            'queue' => 'default',
+            'expire' => 120,
+            'binary' => env('BINARY_PHP'),
+            'binary_args' => '',
+        ],
         'sync' => [
             'driver' => 'sync',
         ],
