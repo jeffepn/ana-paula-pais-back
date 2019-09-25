@@ -115,7 +115,7 @@
                 <p class="my-3"> {{$errors->contact->first('name')}} </p>
             </div>
             <div class="my-2 px-1 col-6">
-                <input name="phone" placeholder="Telefone">
+                <input id="phone-contact" name="phone" placeholder="Telefone">
                 <p class="my-3"> {{$errors->contact->first('phone')}} </p>
             </div>
             <div class="my-2 px-1 col-6">
@@ -233,6 +233,9 @@
 
 @section('js-util')
 @parent
+
+maskedPhone('#phone-contact');
+
 $('#carrousel-pre-view').owlCarousel({
 loop: true,
 autoplay: true,

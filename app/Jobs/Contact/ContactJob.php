@@ -36,8 +36,8 @@ class ContactJob implements ShouldQueue
     public function handle()
     {
 
-        $logs = new LogsSystem();
-        $logs->writeLogEmail('Passei kkkkkk = ' . "    " . config('queue.default') . "    " . config('mail.encryption') . "    " .  config('mail.driver') . "    " . config('mail.host') . "    " . config('mail.port') . "    " . config('mail.username') . "  add=  " . config('mail.from.address') . " name=   " . config('mail.from.name'));
+        //  $logs = new LogsSystem();
+        // $logs->writeLogEmail('Passei kkkkkk = ' . "    " . config('queue.default') . "    " . config('queue.connections.async.binary') . "    " . config('mail.encryption') . "    " .  config('mail.driver') . "    " . config('mail.host') . "    " . config('queue.connections.binary') . "    " . config('mail.port') . "    " . config('mail.username') . "  add=  " . config('mail.from.address') . " name=   " . config('mail.from.name'));
         ContactService::sendEmail('contato@anapaulapais.com.br', new ContactMail($this->content));
     }
 }
