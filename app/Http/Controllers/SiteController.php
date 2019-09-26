@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Utility\SiteUtility;
 use Illuminate\Http\Request;
+//Models
+use App\Models\Site\Newsletter;
 //Services
-use JpUtilities\Utilities\Util;
-use App\Jobs\Contact\ContactJob;
-//Utilities
-use App\Mail\Contact\ContactMail;
 use App\Services\ImmobileService;
-use JpUtilities\Utilities\LogsSystem;
+//Utilities
+use App\Utility\SiteUtility;
+use JpUtilities\Utilities\Util;
 //Job
-use Illuminate\Support\Facades\DB;
-use JpUtilities\Services\ContactService;
+use App\Jobs\Contact\ContactJob;
 
 class SiteController extends Controller
 {
@@ -60,17 +58,32 @@ class SiteController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator, 'contact');
         }
-        //$logs = new LogsSystem();
-        //$logs->writeLogEmail('Passei kkkkkk = ' . "    " . config('queue.default') . "    " . config('mail.encryption') . "    " .  config('mail.driver') . "    " . config('mail.host') . "    " . config('mail.port') . "    " . config('mail.username'));
-        //ContactService::sendEmail('contato@anapaulapais.com.br', new ContactMail($request->all()));
-        //$this->dispatch(new ContactJob($request->all()));
         ContactJob::dispatch($request->all());
         return redirect()->back()->with('successcontact', Util::success('ContactSuccess'));
     }
 
-    public function newsletter()
+    public function newsletter(Request $request)
     {
-        return redirect()->back();
+        $validator = validator()->make(
+            $request->all(),
+            [
+                'name' => 'required|max:50',
+                'email' => 'required|email|unique:newsletters|max:300'
+            ],
+            [
+                'max' => 'Limite o campo a :max caracteres.',
+                'name.required' => 'Como podemos te chamar',
+                'name.max' => 'Que nome grande hein... Limite ele a 50 caracteres.',
+                'email.unique' => 'Você já está cadastrado em nossa Newsletter.',
+                'email.email' => 'Formato de e-mail inválido.',
+                'email.required' => 'Precisamos saber seu e-mail, para que possamos enviar nossos boletos informativos.'
+            ]
+        );
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator, 'newsletter');
+        }
+        Newsletter::create($request->all());
+        return redirect()->back()->with('successnewsletter', Util::success('NewsletterSuccess'));
     }
     //Immobiles
     public function searchimmobiles(ImmobileService $immobileService)

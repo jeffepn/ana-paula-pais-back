@@ -93,7 +93,7 @@
     @if($key)
     @section('js-util')
     @parent
-    scrollInApp(null,'.form-contact',1);
+    $("#form-immobile-contact [name={{$key}}]").focus();
     @endsection
     @endif
 
@@ -104,7 +104,7 @@
     @endsection
     @endif
 
-    <form class="form-contact" method="POST" action="{{url('contato')}}" novalidate>
+    <form id="form-immobile-contact" class="form-contact" method="POST" action="{{url('contato')}}" novalidate>
         @csrf
         <div class="row px-sm-3">
             <div class="my-2 px-1 col-6">

@@ -1,3 +1,21 @@
+@php
+$key = array_key_first($errors->newsletter->messages());
+@endphp
+@if($key)
+@section('js-util')
+@parent
+$("#form-newsletter [name={{$key}}]").focus();
+//scrollInApp(null,'#form-newsletter',1);
+@endsection
+@endif
+
+@if(session('successnewsletter'))
+@section('js-util')
+@parent
+scrollInApp(null,'#form-newsletter',1);
+@endsection
+@endif
+
 <footer class="footer mt-auto py-5">
     <div class="background-footer"></div>
     <div class="ps-md-2 px-lg-5 py-5 content-footer">
@@ -28,16 +46,17 @@
                     Quer ficar por dentro de nossas novidades?<br>
                     Assine agora nossa Newsletter.
                 </p>
-                <form action="{{url('newsletter')}}" method="POST">
+                <form id="form-newsletter" action="{{url('newsletter')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <input name="name" class="form-control" placeholder="Nome">
-                        <p class="text-danger">{{$errors->first('name')}}</p>
+                        <p class="mt-3">{{$errors->newsletter->first('name')}}</p>
                     </div>
                     <div class="form-group">
                         <input name="email" class="form-control" placeholder="Endereço de E-mail">
-                        <p class="text-danger">{{$errors->first('email')}}</p>
+                        <p class="mt-3">{{$errors->newsletter->first('email')}}</p>
                     </div>
+                    <p class="my-3"> {{session('successnewsletter')}} </p>
                     <button class="btn bt--se w-100"> Enviar </button>
                 </form>
             </div>
