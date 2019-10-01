@@ -36,6 +36,18 @@ class SiteController extends Controller
     {
         return view('contact');
     }
+
+    public function enterprise($slug)
+    {
+        switch ($slug) {
+            case 'blue-park':
+                return view('enterprises.blue-park-vital');
+                break;
+            default:
+                return view('errors.404');
+                break;
+        }
+    }
     public function sendcontact(Request $request)
     {
         $validator = validator()->make(

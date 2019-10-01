@@ -23,6 +23,9 @@ Route::get('contato', 'SiteController@contact');
 Route::post('contato', 'SiteController@sendcontact');
 Route::post('newsletter', 'SiteController@newsletter');
 
+//Enterprises
+Route::get('empreendimento/{slug}', 'SiteController@enterprise');
+
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');
 Route::post('busca-imovel-por-codigo', 'SiteController@searchimmobilecode');

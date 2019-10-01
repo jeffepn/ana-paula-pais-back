@@ -10,11 +10,13 @@
             <div class="content-ana-text">
                 <h1>Quem é Ana Paula Pais</h1>
                 <p>
-                    Estou no mercado imobiliário desde 2017<br>
-                    Troquei de profissão com muita gratidão<br>
-                    Tenho muito respeito e responsabilidade com os meus clientes<br>
-                    Desenvolvo meu trabalho com muita felicidade, afinal levar alegria aos clientes e algo muito
-                    motivador
+                    Eu, Ana Paula Pais, estou no mercado desde 2017, na carreira solo, trabalhando com seriedade,
+                    respeito e
+                    muito comprometimento.
+                </p>
+                <p>
+                    Minha cultura de serviço é sempre focada no meu cliente, um dos segredos do meu sucesso é a
+                    dedicação ... <a href="{{url('sobre')}}">Ver mais</a>
                 </p>
             </div>
         </div>

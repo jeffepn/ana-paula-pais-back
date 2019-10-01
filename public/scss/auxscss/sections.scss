@@ -122,6 +122,13 @@ $heightSectionServices: 400px;
         background: rgba($colorPrimary, 0.9);
     }
 }
+.section-enterprises {
+    img {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+}
 .section-view-all-immobiles {
     padding: 4rem 0;
     background: #f9f9f9;

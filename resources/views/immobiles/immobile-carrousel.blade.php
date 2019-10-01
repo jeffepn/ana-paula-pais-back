@@ -2,6 +2,16 @@
     <div id="carrousel-partial" class="owl-carousel owl-theme owl-loaded">
         <div class="owl-stage-outer">
             <div class="owl-stage">
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/blue-park1.png')}}');">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/blue-park')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 @foreach($immobileshighlights as $immobileshighlight)
                 @php
                 $image = $immobileshighlight->images->first();
@@ -47,11 +57,11 @@ responsive:{
 0:{
 items:1,
 nav: true
-},
+}/*,
 992:{
 items:2,
 nav: true
-}
+}*/
 }
 });
 @endsection

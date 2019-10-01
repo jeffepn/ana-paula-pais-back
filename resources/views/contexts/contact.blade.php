@@ -1,5 +1,3 @@
-<div>
-</div>
 <section class="section-contact py-5 my-0">
     <div class="content-default-with-back">
     </div>
