@@ -27,15 +27,18 @@ scrollInApp(null,'#form-newsletter',1);
             <div class="col-sm-6 col-md-5 col-lg-4 mb-3">
                 <h4>Contatos</h4>
                 <div class="social-network">
-                    <a class="text-white" href="{{url(config('app.url_facebook'))}}"><i
-                            class="fab fa-facebook-square"></i></a>
-                    <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" class=" mr-3" href="{{url(config('app.url_facebook'))}}"><i
+                            class="fab fa-facebook-square i-face"></i></a>
+                    <a target="_blank" class=" mr-3" href="{{url(config('app.url_instagram'))}}"><i
+                            class="fab fa-instagram i-inst"></i></a>
+                    <a target="_blank" class=" mr-3" href="{{url(config('app.url_whatsapp'))}}"><i
+                            class="fab fa-whatsapp i-wath"></i></a>
                 </div>
                 <a href="{{url(config('app.url_instagram'))}}" class="d-flex align-items-center text-white ft-primary">
                     <i class="mdil mdil-email mdil-24px mr-2"></i>
                     contato@anapaulapais.com.br
                 </a>
-                <a href="#" class="d-flex align-items-center text-white ft-primary">
+                <a href="tel:+553599733-3777" class="d-flex align-items-center text-white ft-primary">
                     <i class="mdil mdil-phone mdil-24px mr-2"></i>
                     (35) 99733-3777
                 </a>

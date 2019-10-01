@@ -258,8 +258,8 @@ body {
   transition: -webkit-transform 0.7s;
   transition: transform 0.7s;
   transition: transform 0.7s, -webkit-transform 0.7s;
+  margin: 0 auto;
   width: auto;
-  min-width: 100% !important;
   min-height: 100% !important;
   max-height: 100% !important;
 }
@@ -636,7 +636,7 @@ body {
   font-family: "Cinzel", serif;
 }
 
-footer {
+.footer {
   position: relative;
   background-color: #6e273d;
   background-image: url("/images/site/backs/sections/footer.jpg");
@@ -651,7 +651,7 @@ footer {
           align-items: center;
 }
 
-footer form input {
+.footer form input {
   font-family: "Oswald", sans-serif;
   background: none !important;
   border-radius: 0 !important;
@@ -659,26 +659,34 @@ footer form input {
   letter-spacing: 2px;
 }
 
-footer form input::-webkit-input-placeholder {
+.footer form input::-webkit-input-placeholder {
   color: white !important;
 }
 
-footer form input:-ms-input-placeholder {
+.footer form input:-ms-input-placeholder {
   color: white !important;
 }
 
-footer form input::-ms-input-placeholder {
+.footer form input::-ms-input-placeholder {
   color: white !important;
 }
 
-footer form input::placeholder {
+.footer form input::placeholder {
   color: white !important;
 }
 
-footer form button {
+.footer form button {
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   letter-spacing: 2px;
+}
+
+.footer .social-network {
+  font-size: 1.9em;
+}
+
+.footer .social-network a {
+  color: white;
 }
 
 .background-footer {
@@ -1072,6 +1080,14 @@ header {
   font-size: 1.5em;
 }
 
+#carrousel-immobile-view .owl-item img {
+  margin: 0 auto;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 @media (min-width: 576px) {
   .item-depoiment {
     padding: 0 2rem;
@@ -1411,6 +1427,31 @@ header {
   top: 30px;
   right: 30px;
   z-index: 2;
+}
+
+.social-network .i-face:hover {
+  color: #3b5998;
+}
+
+.social-network .i-wath:hover {
+  color: #34af23;
+}
+
+.social-network .i-inst:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#555cce), color-stop(#c63185), to(#f97a2b));
+  background: linear-gradient(to bottom, #555cce, #c63185, #f97a2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-network i {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-network i:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .pre-launch {

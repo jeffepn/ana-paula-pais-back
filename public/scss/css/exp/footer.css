@@ -1,4 +1,4 @@
-footer {
+.footer {
   position: relative;
   background-color: #6e273d;
   background-image: url("/images/site/backs/sections/footer.jpg");
@@ -13,7 +13,7 @@ footer {
           align-items: center;
 }
 
-footer form input {
+.footer form input {
   font-family: "Oswald", sans-serif;
   background: none !important;
   border-radius: 0 !important;
@@ -21,26 +21,34 @@ footer form input {
   letter-spacing: 2px;
 }
 
-footer form input::-webkit-input-placeholder {
+.footer form input::-webkit-input-placeholder {
   color: white !important;
 }
 
-footer form input:-ms-input-placeholder {
+.footer form input:-ms-input-placeholder {
   color: white !important;
 }
 
-footer form input::-ms-input-placeholder {
+.footer form input::-ms-input-placeholder {
   color: white !important;
 }
 
-footer form input::placeholder {
+.footer form input::placeholder {
   color: white !important;
 }
 
-footer form button {
+.footer form button {
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   letter-spacing: 2px;
+}
+
+.footer .social-network {
+  font-size: 1.9em;
+}
+
+.footer .social-network a {
+  color: white;
 }
 
 .background-footer {

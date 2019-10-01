@@ -1,0 +1,32 @@
+@import "./variables.scss";
+
+.social-network {
+    .i-face {
+        &:hover {
+            color: $colorFace;
+        }
+    }
+    .i-wath {
+        &:hover {
+            color: $colorWhat;
+        }
+    }
+    .i-inst {
+        &:hover {
+            background: linear-gradient(
+                to bottom,
+                $colorInst1,
+                $colorInst2,
+                $colorInst3
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    i {
+        transition: all 0.2s;
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}

@@ -33,9 +33,12 @@ $classHeader = ' header-fixed ';
                 </li>
             </ul>
             <div class="social-network">
-                <a target="_blank" class="mr-2" href="{{url(config('app.url_facebook'))}}"><i
-                        class="fab fa-facebook-square"></i></a>
-                <a target="_blank" href="{{url(config('app.url_instagram'))}}"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" class="px-3" href="{{url(config('app.url_facebook'))}}"><i
+                        class="fab fa-facebook-square i-face"></i></a>
+                <a target="_blank" class=" px-3" href="{{url(config('app.url_instagram'))}}"><i
+                        class="fab fa-instagram i-inst"></i></a>
+                <a target="_blank" class=" px-3" href="{{url(config('app.url_whatsapp'))}}"><i
+                        class="fab fa-whatsapp i-wath"></i></a>
             </div>
         </div>
     </nav>

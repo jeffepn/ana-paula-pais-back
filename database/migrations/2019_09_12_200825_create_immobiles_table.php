@@ -28,12 +28,12 @@ class CreateImmobilesTable extends Migration
             $table->integer('suite')->nullable()->default(null);
             $table->integer('bathroom')->nullable()->default(null);
             $table->integer('garage')->nullable()->default(null);
-            $table->decimal('value_condominium', 10, 2);
-            $table->decimal('value_iptu', 10, 2);
-            $table->decimal('area_total', 10, 2);
-            $table->decimal('area_building', 10, 2);
-            $table->string('min_description', 50);
-            $table->text('description', 255);
+            $table->decimal('value_condominium', 10, 2)->nullable()->default(null);
+            $table->decimal('value_iptu', 10, 2)->nullable()->default(null);
+            $table->decimal('area_total', 10, 2)->nullable()->default(null);
+            $table->decimal('area_building', 10, 2)->nullable()->default(null);
+            $table->string('min_description', 150);
+            $table->text('description');
             $table->timestamps();
         });
     }

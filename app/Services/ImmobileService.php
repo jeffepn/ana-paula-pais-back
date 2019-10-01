@@ -11,11 +11,20 @@ use App\Models\Address\Neighborhood;
 use App\Models\Immobile\VisitImmobile;
 //Utilities
 use JpUtilities\Utilities\ArrayUtility;
+use JpUtilities\Utilities\StringUtility;
+use JpUtilities\Utilities\Upload;
+use App\Utility\SiteUtility;
 
 class ImmobileService implements ServiceDefault
 {
     public function create($data)
-    { }
+    {
+        $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $data['neighborhood_id'] . $data['type'] . rand(1, 999));
+        while (validator()->make($data, ['slug' => 'unique:immobiles'])->fails()) {
+            $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $data['neighborhood_id'] . $data['type'] . rand(1, 999));
+        }
+        return Immobile::create($data);
+    }
 
     public function edit($data)
     { }
@@ -111,10 +120,54 @@ class ImmobileService implements ServiceDefault
     { }
 
     public function getRules($type, $parameters)
-    { }
+    {
+        return [
+            'neighborhood_id' => 'required',
+            'value_rent' => 'numeric|between:0,99999999.99',
+            'value_sale' => 'numeric|between:0,99999999.99',
+            'type' => 'required',
+            'dormitory' => 'integer',
+            'suite' => 'integer',
+            'bathroom' => 'integer',
+            'garage' => 'integer',
+            'value_condominium' => 'numeric|between:0,99999999.99',
+            'value_iptu' => 'numeric|between:0,99999999.99',
+            'area_total' => 'numeric|between:0,99999999.99',
+            'area_building' => 'numeric|between:0,99999999.99',
+            'min_description' => 'required|max:150',
+            'description' => 'required|max:65300',
+            'image' => 'required',
+            'image.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+        ];
+    }
 
     public function getMessages()
-    { }
+    {
+        return [
+            'max' => 'Limite o campo a :max caracteres.',
+            'integer' => 'O campo precisa ser um número inteiro.',
+            'required' => 'Campo obrigatório',
+            'neighborhood_id.required' => 'Escolha um Bairro',
+            'numeric' => 'Número inválido',
+            'between' => 'Formato válido 99.99',
+            'type.required' => 'Escolha um Tipo de Imóvel',
+            'image.required' => 'Escolha pelo menos uma imagem.',
+            'image' => 'Imagem inválida',
+            'mimes' => 'Formato de arquivos aceitos (peg,png,jpg,svg|).'
+        ];
+    }
+    /**
+     * Create ImageImmobile in system
+     *
+     * @param string $way Way for image
+     * @param Immobile $immobile
+     * @return ImageImmobile
+     */
+    public function createImage($way, $immobile)
+    {
+        return ImageImmobile::create(['immobile_id' => $immobile->id, 'way' => $way, 'alt' => SiteUtility::getTypesImmobile()[$immobile->type] . ' ' . $immobile->neighborhood->name . ' , ' . $immobile->neighborhood->city->name . ' - Imóveis Ana Paula Pais']);
+    }
+
     /**
      * Return all Neighborhoods for select
      *
@@ -122,7 +175,13 @@ class ImmobileService implements ServiceDefault
      */
     public function getAllNeighborhoodsSelect()
     {
-        return ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
+        return ArrayUtility::convertArrayForInputSelectWith2Value(
+            'id',
+            'name',
+            'name_city',
+            Neighborhood::join('cities', 'neighborhoods.city_id', '=', 'cities.id')
+                ->select('neighborhoods.id', 'neighborhoods.name', 'cities.name AS name_city')->get()
+        );
     }
     /**
      * Register visit if ip not visited immobile

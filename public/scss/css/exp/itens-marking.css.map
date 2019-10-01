@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAEQ,eAFO,CACX,OAAO,AACF,MAAM,CAAC;EACJ,KAAK,ECDL,OAAO;CDEV;;AAJT,AAOQ,eAPO,CAMX,OAAO,AACF,MAAM,CAAC;EACJ,KAAK,ECLL,OAAO;CDMV;;AATT,AAYQ,eAZO,CAWX,OAAO,AACF,MAAM,CAAC;EACJ,UAAU,EAAE,qDAKX;EACD,uBAAuB,EAAE,IAAI;EAC7B,uBAAuB,EAAE,WAAW;CACvC;;AArBT,AAuBI,eAvBW,CAuBX,CAAC,CAAC;EACE,UAAU,EAAE,QAAQ;CAIvB;;AA5BL,AAyBQ,eAzBO,CAuBX,CAAC,AAEI,MAAM,CAAC;EACJ,SAAS,EAAE,UAAU;CACxB",
+    "sources": [
+        "../../auxscss/itens-marking.scss",
+        "../../auxscss/variables.scss"
+    ],
+    "names": [],
+    "file": "itens-marking.css"
+}

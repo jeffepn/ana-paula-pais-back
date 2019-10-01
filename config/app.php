@@ -4,6 +4,7 @@
 return [
     'url_facebook' => env('URL_FACEBOOK', '#'),
     'url_instagram' => env('URL_INSTAGRAM', '#'),
+    'url_whatsapp' => env('URL_WHATSAPP', '#'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
