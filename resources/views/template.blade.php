@@ -20,8 +20,8 @@
     @section('css')
     @show
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.4')}}">
-    <link rel="stylesheet" href="{{url('css/assetsutilities.min.css?v=1.0.4')}}">
+    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.5')}}">
+    <link rel="stylesheet" href="{{url('css/assetsutilities.min.css?v=1.0.5')}}">
 </head>
 
 <body class="h-100">
@@ -47,9 +47,9 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
     </script>
-    <script src="{{url('js/assetsutilities.min.js?v=1.0.4')}}">
+    <script src="{{url('js/assetsutilities.min.js?v=1.0.5')}}">
     </script>
-    <script src="{{url('js/screen.js?v=1.0.4')}}">
+    <script src="{{url('js/screen.js?v=1.0.5')}}">
     </script>
     @section('js')
     @show
