@@ -14,14 +14,14 @@
                                     {{$immobileshighlight->neighborhood->name.', '.$immobileshighlight->neighborhood->city->name}}
                                 </h5>
                                 <h3 class="data-immobile-description">
-                                    {{$immobileshighlight->min_description}}
+                                    {!!$immobileshighlight->min_description!!}
                                 </h3>
                                 <span class="data-immobile-price">
-                                    @if($immobileshighlight->rent)
+                                    @if($immobileshighlight->rent && $immobileshighlight->value_rent > 0)
                                     {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_rent)}}
                                     <span class="data-immobile-type-bussiness">( Aluguel ) </span><br>
                                     @endif
-                                    @if($immobileshighlight->sale)
+                                    @if($immobileshighlight->sale $immobileshighlight->value_sale > 0)
                                     {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_sale)}}
                                     <span class="data-immobile-type-bussiness"> ( Venda )</span>
                                     @endif
