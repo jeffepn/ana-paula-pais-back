@@ -173,11 +173,11 @@ class ImmobileService implements ServiceDefault
     }
 
     /**
-     * Return all Neighborhoods for select
+     * Return all Neighborhoods for select with city
      *
      * @return array
      */
-    public function getAllNeighborhoodsSelect()
+    public function getAllNeighborhoodsSelectWithCity()
     {
         return ArrayUtility::convertArrayForInputSelectWith2Value(
             'id',
@@ -186,6 +186,15 @@ class ImmobileService implements ServiceDefault
             Neighborhood::join('cities', 'neighborhoods.city_id', '=', 'cities.id')
                 ->select('neighborhoods.id', 'neighborhoods.name', 'cities.name AS name_city')->get()
         );
+    }
+    /**
+     * Return all Neighborhoods for select
+     *
+     * @return void
+     */
+    public function getAllNeighborhoodsSelect()
+    {
+        return ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
     }
     /**
      * Register visit if ip not visited immobile

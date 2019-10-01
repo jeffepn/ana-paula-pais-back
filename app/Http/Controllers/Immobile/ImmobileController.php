@@ -15,7 +15,7 @@ class ImmobileController extends Controller
 {
     public function create(ImmobileService $immobileService)
     {
-        return view('admin.immobiles.createimmobile', ['neighborhoods' => $immobileService->getAllNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile()]);
+        return view('admin.immobiles.createimmobile', ['neighborhoods' => $immobileService->getAllNeighborhoodsSelectWithCity(), 'types' => SiteUtility::getTypesImmobile()]);
     }
     public function store(Request $request, ImmobileService $immobileService)
     {
