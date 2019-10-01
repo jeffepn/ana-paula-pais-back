@@ -6,7 +6,7 @@ $classHeader = ' header-fixed ';
 @endphp
 <header class=" px-0 {{$classHeader}}">
     <nav id="nav-master" class="navbar navbar-expand-lg navbar-light container px-0">
-        <a class="navbar-brand py-0" href="{{url('/site')}}">
+        <a class="navbar-brand py-0" href="{{url('/')}}">
             <img class="img-header-floating" src="{{url('images/site/logo.png')}}" alt="Ana Paula Pais Imóveis">
         </a>
         <button class="open-menu navbar-toggler" type="button" data-toggle="collapse"

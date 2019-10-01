@@ -14,9 +14,9 @@
 use Illuminate\Mail\Markdown;
 
 
-Route::get('/', 'SiteController@prelaunch');
+Route::get('/', 'SiteController@home');
 //Site
-Route::get('site', 'SiteController@home');
+//Route::get('site', 'SiteController@home');
 Route::get('nossos-servicos', 'SiteController@services');
 Route::get('sobre', 'SiteController@about');
 Route::get('contato', 'SiteController@contact');
