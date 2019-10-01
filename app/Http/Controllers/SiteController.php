@@ -123,6 +123,6 @@ class SiteController extends Controller
             return view('immobile', ['immobile' => null]);
         }
         $immobileService->registerVisit($immobile->id, request()->ip());
-        return view('immobile', ['immobile' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
+        return view('immobile', ['immobilechain' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
     }
 }

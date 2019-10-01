@@ -1,4 +1,4 @@
-@if(!$immobile)
+@if(!$immobilechain)
 <section class="section-immobile-not-found">
     <div class="text-center">
         <h1 class="mt-5 ft-third">Imóvel não encontrado, ou não se encontra mais disponível.</h1>
@@ -8,30 +8,30 @@
 @else
 <section class="section-immobile">
     @php
-    $imagehighlight = $immobile->images->first();
+    $imagehighlight = $immobilechain->images->first();
     @endphp
     <div class="image-highlights" style="background-image: url('{{url($imagehighlight->way)}}');">
     </div>
     <div class="content-default my-5">
         <p>
-            {{$immobile->neighborhood->name}}, {{$immobile->neighborhood->city->name}}<br>
-            <span>({{$immobile->slug}}) {{$immobile->textType()}}</span>
+            {{$immobilechain->neighborhood->name}}, {{$immobilechain->neighborhood->city->name}}<br>
+            <span>({{$immobilechain->slug}}) {{$immobilechain->textType()}}</span>
         </p>
         <div class="row">
             <h4>
-                {{$immobile->min_description}}
+                {{$immobilechain->min_description}}
             </h4>
         </div>
         <div class="immobile-list-context-price mt-3">
             <div class="row">
-                @if($immobile->rent)
+                @if($immobilechain->rent && $immobilechain->value_rent > 0)
                 <div class="col-6 px-0">
                     Aluguel:<br>
-                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_rent)}}</div>
+                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobilechain->value_rent)}}</div>
                 @endif
-                @if($immobile->sale)
+                @if($immobilechain->sale && $immobilechain->value_sale > 0)
                 <div class="col-6 px-0">Venda:<br>
-                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_sale)}}</div>
+                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobilechain->value_sale)}}</div>
                 @endif
             </div>
         </div>
@@ -48,7 +48,7 @@
     <div id="carrousel-pre-view" class="px-2 owl-carousel owl-theme owl-loaded carrousel-owl carrousel-immobile-view ">
         <div class="owl-stage-outer">
             <div class="owl-stage">
-                @foreach ($immobile->images as $image)
+                @foreach ($immobilechain->images as $image)
                 <div class="owl-item" data-toggle="modal" data-target="#modal-view-image-immobile">
                     <img src="{{url($image->way)}}" alt="{{$image->alt}}">
                 </div>
@@ -61,29 +61,41 @@
     <div class="divider-section-services-description my-3">
         <h3>Detalhes do imóvel</h3>
         <p>
+            @if($immobilechain->garage)
             <span class="p-2">
-                <i class="fas fa-car-alt mr-2"></i>{{$immobile->garage}} vagas
+                <i class="fas fa-car-alt mr-2"></i>{{$immobilechain->garage}} vagas
             </span>
+            @endif
+            @if($immobilechain->dormitory)
             <span class="p-2">
-                <i class="fas fa-bed mr-2"></i>{{$immobile->dormitory}} quartos
+                <i class="fas fa-bed mr-2"></i>{{$immobilechain->dormitory}} quartos
             </span>
+            @endif
+            @if($immobilechain->area_building >0)
             <span class="p-2">
-                <i class="far fa-building mr-2"></i>{{$immobile->area_building}} m2
+                <i class="far fa-building mr-2"></i>{{$immobilechain->area_building}} m2
             </span>
+            @endif
+            @if($immobilechain->area_total > 0)
             <span class="p-2">
-                <i class="far fa-map mr-2"></i>{{$immobile->area_total}} m2
+                <i class="far fa-map mr-2"></i>{{$immobilechain->area_total}} m2
             </span>
+            @endif
+            @if($immobilechain->value_condominium > 0)
             <span class="p-2">
-                <i class="fas fa-dollar-sign mr-2"></i>{{$immobile->value_condominium}} (Condomínio)
+                <i class="fas fa-dollar-sign mr-2"></i>{{$immobilechain->value_condominium}} (Condomínio)
             </span>
+            @endif
+            @if($immobilechain->value_iptu >0)
             <span class="p-2">
-                <i class="fas fa-dollar-sign mr-2"></i>{{$immobile->value_iptu}} (IPTU)
+                <i class="fas fa-dollar-sign mr-2"></i>{{$immobilechain->value_iptu}} (IPTU)
             </span>
+            @endif
         </p>
     </div>
     <div class="big-description-immobile">
         <p class="p-4">
-            {{$immobile->description}}
+            {!!$immobilechain->description!!}
         </p>
     </div>
 </section>
@@ -110,7 +122,7 @@
         @csrf
         <div class="row px-sm-3">
             <div class="my-2 px-1 col-6">
-                <input name="slug" value="{{$immobile->slug}}" readonly>
+                <input name="slug" value="{{$immobilechain->slug}}" readonly>
             </div>
             <div class="my-2 px-1 col-6">
                 <input name="name" placeholder="Nome *">
@@ -126,7 +138,7 @@
             </div>
             <div class="my-2 px-1 col-12">
                 <textarea name="message" id="" cols="30" rows="3"
-                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o imóvel {{$immobile->slug}}.</textarea>
+                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o imóvel {{$immobilechain->slug}}.</textarea>
                 <p class="my-3"> {{$errors->contact->first('message')}} </p>
             </div>
             <p class="ft-secoundary-big font-weight-light"> {{session('successcontact')}} </p>
@@ -141,6 +153,7 @@
     <h1 class="my-3"> Mais algumas opções </h1>
     <div class="row justify-content-center">
         @foreach($immobiles as $immobile)
+        @if($immobilechain->id != $immobile->id)
         <div class="immobile-list">
             <div class="immobile-list-card">
                 <div class="immobile-list-context">
@@ -155,32 +168,40 @@
                                 {{$immobile->min_description}}
                             </h4>
                             <div class="col-12 px-0 my-3">
+                                @if($immobile->garage)
                                 <div class="item-data-immobile">
                                     <i class="fas fa-car-alt"></i>{{$immobile->garage}} vagas
                                 </div>
+                                @endif
+                                @if($immobile->dormitory)
                                 <div class="item-data-immobile">
                                     <i class="fas fa-bed"></i>{{$immobile->dormitory}} quartos
                                 </div>
+                                @endif
+                                @if($immobile->area_building > 0)
                                 <div class="item-data-immobile">
                                     <span title="Área construída">
                                         <i class="far fa-building"></i>{{$immobile->area_building}} m2
                                     </span>
                                 </div>
+                                @endif
+                                @if($immobile->area_total > 0)
                                 <div class="item-data-immobile">
                                     <span title="Área total">
                                         <i class="far fa-map"></i>{{$immobile->area_total}} m2
                                     </span>
                                 </div>
+                                @endif
                             </div>
                         </div>
                         <div class="immobile-list-context-price mt-3">
                             <div class="row">
-                                @if($immobile->rent)
+                                @if($immobile->rent && $immobile->value_rent > 0)
                                 <div class="col-6 px-0">
                                     Aluguel:<br>
                                     {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_rent)}}</div>
                                 @endif
-                                @if($immobile->sale)
+                                @if($immobile->sale && $immobile->value_sale > 0)
                                 <div class="col-6 px-0">Venda:<br>
                                     {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_sale)}}</div>
                                 @endif
@@ -203,6 +224,7 @@
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </section>
@@ -219,7 +241,7 @@
                 <div id="carrousel-immobile-view" class="owl-carousel owl-theme owl-loaded carrousel-owl">
                     <div class="owl-stage-outer">
                         <div class="owl-stage">
-                            @foreach ($immobile->images as $image)
+                            @foreach ($immobilechain->images as $image)
                             <div class="owl-item px-1">
                                 <img src="{{url($image->way)}}" alt="{{$image->alt}}">
                             </div>

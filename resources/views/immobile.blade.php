@@ -1,7 +1,7 @@
 @extends('template')
 @section('title')
-@if($immobile)
-{{$immobile->min_description}}
+@if($immobilechain)
+{{$immobilechain->min_description}}
 @else
 Imóvel não encontrado
 @endif
