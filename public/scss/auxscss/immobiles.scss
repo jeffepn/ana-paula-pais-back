@@ -1,11 +1,16 @@
 @import "./variables.scss";
-
+.section-immobile-not-found {
+    justify-content: center;
+}
+.section-immobile-not-found,
 .section-immobile {
     margin-top: 146px;
     position: relative;
     height: auto;
     display: flex;
     align-items: center;
+}
+.section-immobile {
     &::after {
         content: "";
         position: absolute;

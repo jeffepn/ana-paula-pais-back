@@ -19,7 +19,7 @@ class ImmobileService implements ServiceDefault
 {
     public function create($data)
     {
-        $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $data['neighborhood_id'] . $data['type'] . rand(1, 999));
+        $data['slug'] = 'AN-' . StringUtility::generateSlugOfTextWithComplement($data['neighborhood_id'] . $data['type'] . rand(1, 999));
         while (validator()->make($data, ['slug' => 'unique:immobiles'])->fails()) {
             $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $data['neighborhood_id'] . $data['type'] . rand(1, 999));
         }
@@ -77,24 +77,28 @@ class ImmobileService implements ServiceDefault
                 return $query->where('garage', $search['garage']);
             })->when($verifyDormitory, function ($query, $verifyDormitory) use ($search) {
                 return $query->where('dormitory', $search['dormitory']);
-            })->when($verifyPriceMin, function ($query, $verifyPriceMin) use ($search) {
+            })/*->when($verifyPriceMin, function ($query, $verifyPriceMin) use ($search) {
                 if ($search['bussiness'] == 1) {
                     return $query->where('value_rent', '>=', $search['price_min']);
                 } else {
                     return $query->where('value_sale', '>=', $search['price_min']);
                 }
-            })->when($verifyPriceMax, function ($query, $verifyPriceMax) use ($search) {
+            })*/->when($verifyPriceMax, function ($query, $verifyPriceMax) use ($search) {
                 if ($search['bussiness'] == 1) {
-                    return $query->where('value_rent', '<=', $search['price_max']);
+                    //return $query->where('value_rent', '<=', $search['price_max']);
+                    return $query->where('value_rent', '=', $search['price_max']);
                 } else {
-                    return $query->where('value_sale', '<=', $search['price_max']);
+                    //return $query->where('value_sale', '<=', $search['price_max']);
+                    return $query->where('value_sale', '=', $search['price_max']);
                 }
-            })->when($verifyAreaMin, function ($query, $verifyAreaMin) use ($search) {
+            })/*->when($verifyAreaMin, function ($query, $verifyAreaMin) use ($search) {
                 return $query->where('area_building', '>=', $search['area_min'])
                     ->where('area_total', '>=', $search['area_min']);
-            })->when($verifyAreaMax, function ($query, $verifyAreaMax) use ($search) {
-                return $query->where('area_building', '<=', $search['area_max'])
-                    ->where('area_total', '<=', $search['area_max']);
+            })*/->when($verifyAreaMax, function ($query, $verifyAreaMax) use ($search) {
+                //return $query->where('area_building', '<=', $search['area_max'])
+                //  ->where('area_total', '<=', $search['area_max']);
+                return $query->where('area_building', '=', $search['area_max'])
+                    ->orWhere('area_total', '=', $search['area_max']);
             }) //->toSql();
             ->paginate(12);
     }

@@ -94,6 +94,10 @@ class SiteController extends Controller
         $search = session('search_immobile');
         return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
     }
+    public function searchimmobilecode(Request $request)
+    {
+        return redirect()->to('imovel/' . $request->code);
+    }
     public function setsessionsearch(Request $request)
     {
         if (!session()->has('search_immobile')) {
@@ -112,10 +116,12 @@ class SiteController extends Controller
         ]);
         return redirect()->back();
     }
-    public function immobile(ImmobileService $immobileService, $slug)
+    public function immobile(ImmobileService $immobileService, $slug = null)
     {
         $immobile = $immobileService->getWithSlug($slug);
-        if (!$immobile) { }
+        if (!$immobile) {
+            return view('immobile', ['immobile' => null]);
+        }
         $immobileService->registerVisit($immobile->id, request()->ip());
         return view('immobile', ['immobile' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
     }

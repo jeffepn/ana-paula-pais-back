@@ -71,6 +71,18 @@ body {
   background-color: gray;
 }
 
+.section-not-found {
+  margin-top: 146px;
+  position: relative;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .section-services-description-one {
   position: relative;
   margin: 2rem 0;
@@ -805,6 +817,13 @@ header {
   }
 }
 
+.section-immobile-not-found {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-immobile-not-found,
 .section-immobile {
   margin-top: 146px;
   position: relative;

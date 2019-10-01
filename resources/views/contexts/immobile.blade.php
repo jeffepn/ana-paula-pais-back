@@ -1,8 +1,10 @@
 @if(!$immobile)
-<div class="text-center">
-    <h1 class="mt-5">Imóvel não encontrado, ou não se encontra mais disponível.</h1>
-    <a href="{{url()->previous()}}" class="bt--se ft-secoundary-big px-5 py-1 col-auto">Voltar</a>
-</div>
+<section class="section-immobile-not-found">
+    <div class="text-center">
+        <h1 class="mt-5 ft-third">Imóvel não encontrado, ou não se encontra mais disponível.</h1>
+        <a href="{{url()->previous()}}" class="bt--se ft-secoundary-big px-5 py-1 col-auto">Voltar</a>
+    </div>
+</section>
 @else
 <section class="section-immobile">
     @php

@@ -1,3 +1,10 @@
+.section-immobile-not-found {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-immobile-not-found,
 .section-immobile {
   margin-top: 146px;
   position: relative;

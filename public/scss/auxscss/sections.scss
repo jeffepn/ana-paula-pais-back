@@ -44,6 +44,13 @@ $heightSectionServices: 400px;
     min-height: 600px;
     background-color: rgba(gray, 1);
 }
+.section-not-found {
+    margin-top: 146px;
+    position: relative;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
 @mixin section-description {
     position: relative;
     margin: 2rem 0;

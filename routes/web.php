@@ -25,8 +25,9 @@ Route::post('newsletter', 'SiteController@newsletter');
 
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');
+Route::post('busca-imovel-por-codigo', 'SiteController@searchimmobilecode');
 Route::get('registra-busca-de-imoveis', 'SiteController@setsessionsearch');
-Route::get('imovel/{slug}', 'SiteController@immobile');
+Route::get('imovel/{slug?}', 'SiteController@immobile');
 
 
 Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');

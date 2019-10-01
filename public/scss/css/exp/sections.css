@@ -51,6 +51,18 @@
   background-color: gray;
 }
 
+.section-not-found {
+  margin-top: 146px;
+  position: relative;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .section-services-description-one {
   position: relative;
   margin: 2rem 0;
