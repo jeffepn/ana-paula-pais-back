@@ -1,16 +1,15 @@
 @import "./variables.scss";
 .ft-sm {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
 }
 .ft-md {
-    font-size: 1.4em;
+    font-size: 1.4em !important;
 }
 .ft-bg {
-    @extend .ft-bg;
-    font-size: 2em;
+    font-size: 2em !important;
 }
 .ft-primary {
-    font-family: $fontPrimary;
+    font-family: $fontPrimary !important;
     &-small {
         @extend .ft-sm;
         @extend .ft-primary;
@@ -25,7 +24,7 @@
     }
 }
 .ft-secoundary {
-    font-family: $fontSecoundary;
+    font-family: $fontSecoundary !important;
     &-small {
         @extend .ft-sm;
         @extend .ft-secoundary;
@@ -40,7 +39,7 @@
     }
 }
 .ft-third {
-    font-family: $fontThird;
+    font-family: $fontThird !important;
     &-small {
         @extend .ft-sm;
         @extend .ft-third;

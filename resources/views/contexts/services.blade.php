@@ -3,22 +3,62 @@
 
         <h1>O que oferecemos aos nossos clientes</h1>
         <p>
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
-            impressos, e vem
-            sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja
-            de tipos e os
-            embaralhou para fazer um livro de modelos de tipos.
         </p>
     </div>
     <div class="divider-section-services-description mt-0">
         <h1>Curadoria de Imóveis</h1>
     </div>
-    <section class="section-services-description-one">
+    <section class="section-curated-immobiles py-5 my-0">
+        <div class="content-default-with-back">
+        </div>
+        <div class="content-default text-left">
+            <p>
+                Em algum momento de sua vida, certamente você já pensou em comprar ou alugar um imóvel e sabe que essa
+                procura pode ser muito estressante e cansativa.
+            </p>
+            <p>
+                Mas você já ouviu falar em curadoria de imóveis? Eu, Ana Paula Pais, faço esse trabalho personalizado
+                para você.
+            </p>
+            <p>
+                A principal intenção de uma curadoria especializada é facilitar a busca do imóvel ideal para comprar ou
+                alugar.
+            </p>
+            <p>
+                Na curadoria que realizo, seleciono apenas os imóveis especiais que se encaixam perfeitamente no seu
+                perfil. Ou seja, você não perde tempo visitando imóveis que não agradam. Eu envio só as melhores opções,
+                cuidadosamente selecionadas, para sua avaliação e acompanho você e sua família em visitas presenciais
+                nos imóveis que interessarem.
+            </p>
+            <p>
+                Para contar com esse serviço e encontrar o imóvel que atenda todas as necessidades e expectativas para o
+                seu novo lar, basta você me contar o que procura.
+            </p>
+        </div>
+    </section>
+    <!-- <section class="section-services-description-one">
         <div class="content-default">
             <p>
-                Você já ouviu falar em curadoria de imóveis
-                Pois bem, eu faço isso para você.<br>
-                A curadoria é....
+                Em algum momento de sua vida, certamente você já pensou em comprar ou alugar um imóvel e sabe que essa
+                procura pode ser muito estressante e cansativa.
+            </p>
+            <p>
+                Mas você já ouviu falar em curadoria de imóveis? Eu, Ana Paula Pais, faço esse trabalho personalizado
+                para você.
+            </p>
+            <p>
+                A principal intenção de uma curadoria especializada é facilitar a busca do imóvel ideal para comprar ou
+                alugar.
+            </p>
+            <p>
+                Na curadoria que realizo, seleciono apenas os imóveis especiais que se encaixam perfeitamente no seu
+                perfil. Ou seja, você não perde tempo visitando imóveis que não agradam. Eu envio só as melhores opções,
+                cuidadosamente selecionadas, para sua avaliação e acompanho você e sua família em visitas presenciais
+                nos imóveis que interessarem.
+            </p>
+            <p>
+                Para contar com esse serviço e encontrar o imóvel que atenda todas as necessidades e expectativas para o
+                seu novo lar, basta você me contar o que procura.
             </p>
         </div>
     </section>
@@ -32,5 +72,5 @@
                 Boutique no sentido de...
             </p>
         </div>
-    </section>
+    </section>-->
 </div>

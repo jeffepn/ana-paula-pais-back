@@ -21,7 +21,6 @@ $(document).ready(function () {
 
     });
     $("body").on("click", ".close-modal-view-image-immobile", function (event) {
-        console.log('kkkkkk');
         $('#modal-view-image-immobile').modal('hide');
     });
 });
@@ -35,7 +34,11 @@ function verifyIfNavFloating(top) {
     }
 }
 function verifyViexContext(top) {
-
+    if ($('.section-curated-immobiles').length && !$('.section-curated-immobiles .content-default').hasClass('content-view')) {
+        if (top >= $('.section-curated-immobiles').offset().top - 300 && top <= ($('.section-curated-immobiles').offset().top + $('.section-curated-immobiles').height()) - 300) {
+            $('.section-curated-immobiles .content-default').addClass('content-view');
+        }
+    }
     if ($('.section-services-description-one').length && !$('.section-services-description-one .content-default').hasClass('content-view')) {
         if (top >= $('.section-services-description-one').offset().top - 300 && top <= ($('.section-services-description-one').offset().top + $('.section-services-description-one').height()) - 300) {
             $('.section-services-description-one .content-default').addClass('content-view');

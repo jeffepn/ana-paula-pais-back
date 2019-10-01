@@ -153,6 +153,40 @@
   background: rgba(110, 39, 61, 0.9);
 }
 
+.section-curated-immobiles {
+  position: relative;
+  margin: 2rem 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: auto;
+  background-image: url(/images/site/backs/sections/services1.jpg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-curated-immobiles::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-curated-immobiles .content-default {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  min-height: auto;
+  background: rgba(110, 39, 61, 0.9);
+}
+
 .section-view-all-immobiles {
   padding: 4rem 0;
   background: #f9f9f9;
@@ -337,7 +371,7 @@
 
 .lead-section p, .divider-section-services-description p {
   font-family: "Oswald", sans-serif;
-  font-size: 1.6em;
+  font-size: 1.8em;
   font-weight: 200;
 }
 
@@ -378,7 +412,7 @@
           box-shadow: 0px 0 4px 2px #495057;
   background: gray;
   margin-top: -3rem;
-  margin-bottom: -3rem;
+  margin-bottom: -2rem;
   z-index: 4;
   position: relative;
 }
