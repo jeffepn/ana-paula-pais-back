@@ -21,7 +21,7 @@
                                     {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_rent)}}
                                     <span class="data-immobile-type-bussiness">( Aluguel ) </span><br>
                                     @endif
-                                    @if($immobileshighlight->sale $immobileshighlight->value_sale > 0)
+                                    @if($immobileshighlight->sale && $immobileshighlight->value_sale > 0)
                                     {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_sale)}}
                                     <span class="data-immobile-type-bussiness"> ( Venda )</span>
                                     @endif
