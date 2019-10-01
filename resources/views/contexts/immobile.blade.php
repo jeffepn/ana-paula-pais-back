@@ -19,7 +19,7 @@
         </p>
         <div class="row">
             <h4>
-                {{$immobilechain->min_description}}
+                {!!$immobilechain->min_description!!}
             </h4>
         </div>
         <div class="immobile-list-context-price mt-3">
@@ -165,7 +165,7 @@
                         <hr>
                         <div class="row">
                             <h4>
-                                {{$immobile->min_description}}
+                                {!!$immobile->min_description!!}
                             </h4>
                             <div class="col-12 px-0 my-3">
                                 @if($immobile->garage)

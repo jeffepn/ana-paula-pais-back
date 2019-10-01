@@ -20,7 +20,7 @@
                         <hr>
                         <div class="row">
                             <h4>
-                                {{$immobile->min_description}}
+                                {!!$immobile->min_description!!}
                             </h4>
                             <div class="col-12 px-0 my-3">
                                 @if($immobile->garage)
