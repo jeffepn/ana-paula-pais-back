@@ -4,7 +4,7 @@
             <div class="owl-stage">
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/blue-park1.png')}}');">
+                        style="background-image: url('{{url('images/site/enterprises/blue-park1.png')}}');background-position: top;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/blue-park')}}">
                                 Saber mais
@@ -14,9 +14,19 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/unique1.png')}}');">
+                        style="background-image: url('{{url('images/site/enterprises/unique1.png')}}');background-position: top;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/unique')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/chateau1.png')}}');background-position: top;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/chateau-de-versailles')}}">
                                 Saber mais
                             </a>
                         </div>

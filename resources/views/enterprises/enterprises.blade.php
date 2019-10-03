@@ -16,7 +16,7 @@ Empreendimentos - {{config('app.name')}}
             </a>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
-            <a href="#">
+            <a href="{{url('empreendimento/chateau-de-versailles')}}">
                 <img src="{{url('images/site/enterprises/chateau.png')}}">
             </a>
         </div>

@@ -46,6 +46,9 @@ class SiteController extends Controller
             case 'unique':
                 return view('enterprises.unique-vital');
                 break;
+            case 'chateau-de-versailles':
+                return view('enterprises.chateau-vital');
+                break;
             default:
                 return view('errors.404');
                 break;
