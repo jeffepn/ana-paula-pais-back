@@ -64,6 +64,13 @@ scrollInApp(null,'#form-newsletter',1);
                 </form>
             </div>
         </div>
+        <div class="p-5">
+            <p class="ft-secoundary-medium font-weight-light text-justify">
+                Informamos que as mobílias e artigos de decoração são meramente ilustrativos. Nós resguardamos o direito
+                de corrigir eventuais erros ortográficos e preços (os valores de condomínio e iptu podem variar do
+                anunciado).
+            </p>
+        </div>
         <p class="text-center mb-0">© Copyright 2019</p>
     </div>
 </footer>

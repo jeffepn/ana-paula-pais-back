@@ -61,10 +61,26 @@ class SiteController extends Controller
             case 'zeuz':
                 return view('enterprises.zeuz-vogo');
                 break;
+            case 'meditterraneum':
+                return redirect()->to('/');
+                return view('enterprises.meditterraneum-elos');
+                break;
+            case 'sorano':
+                return redirect()->to('/');
+                return view('enterprises.sorano-elos');
+                break;
             default:
                 return view('errors.404');
                 break;
         }
+    }
+    public function meditterraneum()
+    {
+        return view('enterprises.meditterraneum-elos');
+    }
+    public function sorano()
+    {
+        return view('enterprises.sorano-elos');
     }
 
     public function enterprises()

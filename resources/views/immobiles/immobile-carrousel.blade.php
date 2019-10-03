@@ -4,7 +4,7 @@
             <div class="owl-stage">
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/blue-park.png')}}');background-position: center; background-size:90%;">
+                        style="background-image: url('{{url('images/site/enterprises/bluepark.svg')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/blue-park')}}">
                                 Saber mais
@@ -14,7 +14,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/unique.png')}}');background-position: center; background-size:90%;">
+                        style="background-image: url('{{url('images/site/enterprises/unique.svg')}}');background-color: #1b75bc;background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/unique')}}">
                                 Saber mais
@@ -24,7 +24,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/chateau.png')}}');background-position: center; background-size:90%;">
+                        style="background-image: url('{{url('images/site/enterprises/chateau.svg')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/chateau-de-versailles')}}">
                                 Saber mais
@@ -34,7 +34,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/easy.png')}}');background-position: center; background-size:90%;">
+                        style="background-image: url('{{url('images/site/enterprises/easy.svg')}}');background-color: #999999;background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/easy')}}">
                                 Saber mais
@@ -44,7 +44,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/greenpark.png')}}');background-position: center; background-size:90%;">
+                        style="background-image: url('{{url('images/site/enterprises/greenpark.svg')}}');background-color: #4d4d4d;background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/green-park')}}">
                                 Saber mais
@@ -54,7 +54,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/lumiere.png')}}');background-position: center; background-size:90%;">
+                        style="background-image: url('{{url('images/site/enterprises/lumiere.svg')}}');background-color: #4d4d4d;background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/lumiere')}}">
                                 Saber mais
@@ -67,6 +67,26 @@
                         style="background-image: url('{{url('images/site/enterprises/zeuz.svg')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/zeuz')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/meditterraneum.svg')}}');background-color: #000000;background-position: center; background-size:90%;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/meditterraneum')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/sorano.svg')}}');background-color: #153d49;background-position: center; background-size:90%;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/sorano')}}">
                                 Saber mais
                             </a>
                         </div>
