@@ -115,7 +115,7 @@
 @parent
 $('#carrousel-partial-one').owlCarousel({
 loop: true,
-autoplay: false,
+autoplay: true,
 autoplayHoverPause:true,
 dots: false,
 responsiveClass: true,
