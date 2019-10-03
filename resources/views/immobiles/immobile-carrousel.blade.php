@@ -4,7 +4,7 @@
             <div class="owl-stage">
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/blue-park1.png')}}');background-position: top;">
+                        style="background-image: url('{{url('images/site/enterprises/blue-park.png')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/blue-park')}}">
                                 Saber mais
@@ -14,7 +14,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/unique1.png')}}');background-position: top;">
+                        style="background-image: url('{{url('images/site/enterprises/unique.png')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/unique')}}">
                                 Saber mais
@@ -24,7 +24,7 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/chateau1.png')}}');background-position: top;">
+                        style="background-image: url('{{url('images/site/enterprises/chateau.png')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/chateau-de-versailles')}}">
                                 Saber mais
@@ -34,9 +34,39 @@
                 </div>
                 <div class="owl-item px-2">
                     <div class="block-immobile-carrousel"
-                        style="background-image: url('{{url('images/site/enterprises/easybanner.png')}}');background-position: top;">
+                        style="background-image: url('{{url('images/site/enterprises/easy.png')}}');background-position: center; background-size:90%;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/easy')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/greenpark.png')}}');background-position: center; background-size:90%;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/green-park')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/lumiere.png')}}');background-position: center; background-size:90%;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/lumiere')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/zeuz.svg')}}');background-position: center; background-size:90%;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/zeuz')}}">
                                 Saber mais
                             </a>
                         </div>
@@ -85,7 +115,7 @@
 @parent
 $('#carrousel-partial-one').owlCarousel({
 loop: true,
-autoplay: true,
+autoplay: false,
 autoplayHoverPause:true,
 dots: false,
 responsiveClass: true,
