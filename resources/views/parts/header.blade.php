@@ -17,7 +17,10 @@ $classHeader = ' header-fixed ';
         <div class="collapse navbar-collapse  px-3" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url('busca-de-imoveis')}}">Busca</span></a>
+                    <a class="nav-link" href="{{url('busca-de-imoveis')}}">Busca</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url('empreendimentos')}}">Empreendimentos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('nossos-servicos')}}">Serviços</a>

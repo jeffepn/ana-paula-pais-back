@@ -1,22 +1,32 @@
 @extends('template')
 @section('title')
-Blue Park (Vital) - {{config('app.name')}}
+Unique (Vital) - {{config('app.name')}}
 @endsection
 @section('context')
 <section class="section-enterprises pt-5">
-    <img src="{{url('images/site/enterprises/blue-park1.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park2.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park3.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park4.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park5.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park6.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park7.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park8.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park9.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park10.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park11.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park12.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park13.png')}}">
+    <img src="{{url('images/site/enterprises/unique1.png')}}">
+    <img src="{{url('images/site/enterprises/unique2.png')}}">
+    <img src="{{url('images/site/enterprises/unique3.png')}}">
+    <img src="{{url('images/site/enterprises/unique4.png')}}">
+    <img src="{{url('images/site/enterprises/unique5.png')}}">
+    <img src="{{url('images/site/enterprises/unique6.png')}}">
+    <img src="{{url('images/site/enterprises/unique7.png')}}">
+    <img src="{{url('images/site/enterprises/unique8.png')}}">
+    <img src="{{url('images/site/enterprises/unique9.png')}}">
+    <img src="{{url('images/site/enterprises/unique10.png')}}">
+    <img src="{{url('images/site/enterprises/unique11.png')}}">
+    <img src="{{url('images/site/enterprises/unique12.png')}}">
+    <img src="{{url('images/site/enterprises/unique13.png')}}">
+    <img src="{{url('images/site/enterprises/unique14.png')}}">
+    <img src="{{url('images/site/enterprises/unique15.png')}}">
+    <img src="{{url('images/site/enterprises/unique16.png')}}">
+    <img src="{{url('images/site/enterprises/unique17.png')}}">
+    <img src="{{url('images/site/enterprises/unique18.png')}}">
+    <img src="{{url('images/site/enterprises/unique19.png')}}">
+    <img src="{{url('images/site/enterprises/unique20.png')}}">
+    <img src="{{url('images/site/enterprises/unique21.png')}}">
+    <img src="{{url('images/site/enterprises/unique22.png')}}">
+    <img src="{{url('images/site/enterprises/unique23.png')}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>
@@ -41,7 +51,7 @@ Blue Park (Vital) - {{config('app.name')}}
         @csrf
         <div class="row px-sm-3">
             <div class="my-2 px-1 col-6">
-                <input name="slug" value="Blue Park" readonly>
+                <input name="slug" value="Unique" readonly>
             </div>
             <div class="my-2 px-1 col-6">
                 <input name="name" placeholder="Nome *">
@@ -57,7 +67,7 @@ Blue Park (Vital) - {{config('app.name')}}
             </div>
             <div class="my-2 px-1 col-12">
                 <textarea name="message" id="" cols="30" rows="3"
-                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o Blue Park.</textarea>
+                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o Unique.</textarea>
                 <p class="my-3"> {{$errors->contact->first('message')}} </p>
             </div>
             <p class="ft-secoundary-big font-weight-light"> {{session('successcontact')}} </p>

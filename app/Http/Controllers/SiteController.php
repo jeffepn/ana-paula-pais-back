@@ -43,10 +43,18 @@ class SiteController extends Controller
             case 'blue-park':
                 return view('enterprises.blue-park-vital');
                 break;
+            case 'unique':
+                return view('enterprises.unique-vital');
+                break;
             default:
                 return view('errors.404');
                 break;
         }
+    }
+
+    public function enterprises()
+    {
+        return view('enterprises.enterprises');
     }
     public function sendcontact(Request $request)
     {
