@@ -32,6 +32,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="owl-item px-2">
+                    <div class="block-immobile-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/easybanner.png')}}');background-position: top;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/easy')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

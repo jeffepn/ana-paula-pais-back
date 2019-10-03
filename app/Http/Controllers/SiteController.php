@@ -49,6 +49,9 @@ class SiteController extends Controller
             case 'chateau-de-versailles':
                 return view('enterprises.chateau-vital');
                 break;
+            case 'easy':
+                return view('enterprises.easy-vital');
+                break;
             default:
                 return view('errors.404');
                 break;
