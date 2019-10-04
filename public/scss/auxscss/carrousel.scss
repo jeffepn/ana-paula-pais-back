@@ -1,5 +1,6 @@
 @import "./variables.scss";
-.block-immobile-carrousel {
+.block-immobile-carrousel,
+.block-enterprise-carrousel {
     position: relative;
     background-size: cover;
     background-position: center;
@@ -7,17 +8,6 @@
     width: 100%;
     height: 70vh;
     cursor: pointer;
-    &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        padding: 0 0.5rem;
-        background: rgba(#000, 0.3);
-        z-index: 1;
-    }
     .data-immobile {
         position: absolute;
         padding: 1rem;
@@ -43,6 +33,24 @@
             font-size: 0.8em;
             opacity: 0.7;
         }
+    }
+}
+.block-enterprise-carrousel {
+    background-position: center;
+    background-size: 90%;
+}
+
+.block-immobile-carrousel {
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        padding: 0 0.5rem;
+        background: rgba(#000, 0.7);
+        z-index: 1;
     }
 }
 .item-depoiment {
