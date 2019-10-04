@@ -20,7 +20,7 @@
     <meta name="description"
         content="Casas, Apartamentos, Salas, Pontos Comerciais em Poços de Caldas. Entre em contato e lhe ajudaremos a encontrar o imóvel perfeito para suas necessidades.">
     @show
-    <title> @section('title') {{config('app.name')}} @show </title>
+    <title> @section('title') {{config('app.name')}} @show em Poços de Caldas</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
