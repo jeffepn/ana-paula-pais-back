@@ -16,12 +16,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="charset" content="UTF-8">
-
-    <title>
-        @section('title')
-        {{config('app.name')}}
-        @show
-    </title>
+    @section('description')
+    <meta name="description"
+        content="Casas, Apartamentos, Salas, Pontos Comerciais em Poços de Caldas. Entre em contato e lhe ajudaremos a encontrar o imóvel perfeito para suas necessidades.">
+    @show
+    <title> @section('title') {{config('app.name')}} @show </title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -31,8 +30,9 @@
     @section('css')
     @show
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.9')}}">
-    <link rel="stylesheet" href="{{url('css/assetsutilities.min.css?v=1.0.9')}}">
+    <link rel="stylesheet" href="{{url('css/all.min.css?v=1.0.10')}}">
+    <link rel="stylesheet" href="{{url('css/assetsutilities.min.css?v=1.0.10')}}">
+
 </head>
 
 <body class="h-100">
@@ -45,9 +45,6 @@
     @include('parts.footer')
     @show
 
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -58,9 +55,9 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
     </script>
-    <script src="{{url('js/assetsutilities.min.js?v=1.0.9')}}">
+    <script src="{{url('js/assetsutilities.min.js?v=1.0.10')}}">
     </script>
-    <script src="{{url('js/screen.js?v=1.0.9')}}">
+    <script src="{{url('js/screen.js?v=1.0.10')}}">
     </script>
     @section('js')
     @show
