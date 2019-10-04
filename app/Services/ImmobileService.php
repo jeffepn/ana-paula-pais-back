@@ -84,11 +84,17 @@ class ImmobileService implements ServiceDefault
         $verifyAreaMax = !empty($search['area_max']);
         if ($search['bussiness'] == 1) {
             $slugBussiness = "rent";
-        } else {
+        } elseif ($search['bussiness'] == 2) {
             $slugBussiness = "sale";
+        } else {
+            $slugBussiness = null;
         }
-        return Immobile::where($slugBussiness, true)
-            ->when($verifyNeighborhood, function ($query, $verifyNeighborhood) use ($search) {
+        return Immobile:: //where($slugBussiness, true)
+            when($verifyBussiness, function ($query, $verifyBussiness) use ($slugBussiness) {
+                if ($slugBussiness) {
+                    return $query->where($slugBussiness, true);
+                }
+            })->when($verifyNeighborhood, function ($query, $verifyNeighborhood) use ($search) {
                 return $query->where('neighborhood_id', $search['neighborhood']);
             })->when($verifyType, function ($query, $verifyType) use ($search) {
                 return $query->where('type', $search['type']);

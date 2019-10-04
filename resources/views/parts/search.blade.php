@@ -20,7 +20,7 @@
             <form class="form-search-immobile row" action="{{url('registra-busca-de-imoveis')}}">
                 @csrf
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                    {{Form::select('bussiness', $bussiness, session('search_immobile.bussiness'), ['class'=>'form-control'])}}
+                    {{Form::select('bussiness',[''=>'Você quer?']+ $bussiness, session('search_immobile.bussiness'), ['class'=>'form-control'])}}
                 </div>
 
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
