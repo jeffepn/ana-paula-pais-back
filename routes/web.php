@@ -26,8 +26,13 @@ Route::post('newsletter', 'SiteController@newsletter');
 //Enterprises
 Route::get('empreendimentos', 'SiteController@enterprises');
 Route::get('empreendimento/{slug}', 'SiteController@enterprise');
-Route::get('meditterraneum', 'SiteController@meditterraneum');
-Route::get('sorano', 'SiteController@sorano');
+
+Route::get('blue', 'SiteController@blue');
+Route::get('chateau', 'SiteController@chateau');
+Route::get('easy', 'SiteController@easy');
+Route::get('green', 'SiteController@green');
+Route::get('lumiere', 'SiteController@lumiere');
+Route::get('unique', 'SiteController@unique');
 
 //Immobiles
 Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');

@@ -41,32 +41,36 @@ class SiteController extends Controller
     {
         switch ($slug) {
             case 'blue-park':
+                return redirect()->to('/');
                 return view('enterprises.blue-park-vital');
                 break;
             case 'unique':
+                return redirect()->to('/');
                 return view('enterprises.unique-vital');
                 break;
             case 'chateau-de-versailles':
+                return redirect()->to('/');
                 return view('enterprises.chateau-vital');
                 break;
             case 'easy':
+                return redirect()->to('/');
                 return view('enterprises.easy-vital');
                 break;
             case 'green-park':
+                return redirect()->to('/');
                 return view('enterprises.green-park-vital');
                 break;
             case 'lumiere':
+                return redirect()->to('/');
                 return view('enterprises.lumiere-vital');
                 break;
             case 'zeuz':
                 return view('enterprises.zeuz-vogo');
                 break;
             case 'meditterraneum':
-                return redirect()->to('/');
                 return view('enterprises.meditterraneum-elos');
                 break;
             case 'sorano':
-                return redirect()->to('/');
                 return view('enterprises.sorano-elos');
                 break;
             default:
@@ -74,13 +78,29 @@ class SiteController extends Controller
                 break;
         }
     }
-    public function meditterraneum()
+    public function blue()
     {
-        return view('enterprises.meditterraneum-elos');
+        return view('enterprises.blue-park-vital');
     }
-    public function sorano()
+    public function chateau()
     {
-        return view('enterprises.sorano-elos');
+        return view('enterprises.chateau-vital');
+    }
+    public function easy()
+    {
+        return view('enterprises.easy-vital');
+    }
+    public function green()
+    {
+        return view('enterprises.green-park-vital');
+    }
+    public function lumiere()
+    {
+        return view('enterprises.lumiere-vital');
+    }
+    public function unique()
+    {
+        return view('enterprises.unique-vital');
     }
 
     public function enterprises()
