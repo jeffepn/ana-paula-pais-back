@@ -54,7 +54,7 @@ class ImmobileService implements ServiceDefault
     public function getAllRent()
     {
 
-        return Immobile::where('rent', true)->get();
+        return Immobile::where('rent', true)->paginate(12);
     }
     /**
      * Get all immobiles sale
@@ -63,7 +63,7 @@ class ImmobileService implements ServiceDefault
      */
     public function getAllSale()
     {
-        return Immobile::where('sale', true)->get();
+        return Immobile::where('sale', true)->paginate(12);
     }
     /**
      * Return Immobiles per search
