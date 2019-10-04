@@ -2,14 +2,17 @@
 @section('title')
 Château de Versailles (Vital) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5">
-    <img src="{{url('images/site/enterprises/chateau1.png')}}">
-    <img src="{{url('images/site/enterprises/chateau2.png')}}">
-    <img src="{{url('images/site/enterprises/chateau3.png')}}">
-    <img src="{{url('images/site/enterprises/chateau4.png')}}">
-    <img src="{{url('images/site/enterprises/chateau5.png')}}">
-    <img src="{{url('images/site/enterprises/chateau6.png')}}">
+    <img src="{{url('images/site/enterprises/chateau1.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/chateau2.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/chateau3.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/chateau4.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/chateau5.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/chateau6.png?v='.$version)}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>

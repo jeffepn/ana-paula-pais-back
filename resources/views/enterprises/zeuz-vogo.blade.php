@@ -2,14 +2,17 @@
 @section('title')
 Zeuz (Vogo) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5 container">
-    <img src="{{url('images/site/enterprises/zeuz1.jpg')}}">
-    <img src="{{url('images/site/enterprises/zeuz2.jpg')}}">
-    <img src="{{url('images/site/enterprises/zeuz3.jpg')}}">
-    <img src="{{url('images/site/enterprises/zeuz4.jpg')}}">
-    <img src="{{url('images/site/enterprises/zeuz5.jpg')}}">
-    <img src="{{url('images/site/enterprises/zeuz6.jpg')}}">
+    <img src="{{url('images/site/enterprises/zeuz1.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/zeuz2.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/zeuz3.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/zeuz4.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/zeuz5.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/zeuz6.jpg?v='.$version)}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>

@@ -2,27 +2,30 @@
 @section('title')
 Lumiere (Vital) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5 container">
-    <img src="{{url('images/site/enterprises/lumiere1.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere2.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere3.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere4.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere5.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere6.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere7.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere8.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere9.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere10.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere11.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere12.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere13.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere14.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere15.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere16.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere17.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere18.jpg')}}">
-    <img src="{{url('images/site/enterprises/lumiere19.jpg')}}">
+    <img src="{{url('images/site/enterprises/lumiere1.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere2.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere3.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere4.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere5.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere6.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere7.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere8.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere9.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere10.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere11.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere12.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere13.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere14.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere15.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere16.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere17.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere18.jpg?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/lumiere19.jpg?v='.$version)}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>

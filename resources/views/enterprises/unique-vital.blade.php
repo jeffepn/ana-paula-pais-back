@@ -2,31 +2,34 @@
 @section('title')
 Unique (Vital) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5">
-    <img src="{{url('images/site/enterprises/unique1.png')}}">
-    <img src="{{url('images/site/enterprises/unique2.png')}}">
-    <img src="{{url('images/site/enterprises/unique3.png')}}">
-    <img src="{{url('images/site/enterprises/unique4.png')}}">
-    <img src="{{url('images/site/enterprises/unique5.png')}}">
-    <img src="{{url('images/site/enterprises/unique6.png')}}">
-    <img src="{{url('images/site/enterprises/unique7.png')}}">
-    <img src="{{url('images/site/enterprises/unique8.png')}}">
-    <img src="{{url('images/site/enterprises/unique9.png')}}">
-    <img src="{{url('images/site/enterprises/unique10.png')}}">
-    <img src="{{url('images/site/enterprises/unique11.png')}}">
-    <img src="{{url('images/site/enterprises/unique12.png')}}">
-    <img src="{{url('images/site/enterprises/unique13.png')}}">
-    <img src="{{url('images/site/enterprises/unique14.png')}}">
-    <img src="{{url('images/site/enterprises/unique15.png')}}">
-    <img src="{{url('images/site/enterprises/unique16.png')}}">
-    <img src="{{url('images/site/enterprises/unique17.png')}}">
-    <img src="{{url('images/site/enterprises/unique18.png')}}">
-    <img src="{{url('images/site/enterprises/unique19.png')}}">
-    <img src="{{url('images/site/enterprises/unique20.png')}}">
-    <img src="{{url('images/site/enterprises/unique21.png')}}">
-    <img src="{{url('images/site/enterprises/unique22.png')}}">
-    <img src="{{url('images/site/enterprises/unique23.png')}}">
+    <img src="{{url('images/site/enterprises/unique1.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique2.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique3.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique4.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique5.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique6.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique7.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique8.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique9.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique10.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique11.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique12.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique13.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique14.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique15.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique16.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique17.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique18.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique19.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique20.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique21.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique22.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/unique23.png?v='.$version)}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>

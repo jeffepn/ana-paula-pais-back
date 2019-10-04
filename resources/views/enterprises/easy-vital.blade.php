@@ -2,27 +2,30 @@
 @section('title')
 Easy (Vital) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5">
-    <img src="{{url('images/site/enterprises/easy1.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy2.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy3.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy4.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy5.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy6.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy7.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy8.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy9.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy10.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy11.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy12.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy13.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy14.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy15.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy16.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy17.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy18.png')}}"><br>
-    <img src="{{url('images/site/enterprises/easy19.png')}}"><br>
+    <img src="{{url('images/site/enterprises/easy1.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy2.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy3.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy4.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy5.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy6.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy7.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy8.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy9.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy10.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy11.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy12.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy13.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy14.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy15.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy16.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy17.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy18.png?v='.$version)}}"><br>
+    <img src="{{url('images/site/enterprises/easy19.png?v='.$version)}}"><br>
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>

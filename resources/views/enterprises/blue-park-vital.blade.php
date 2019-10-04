@@ -2,21 +2,24 @@
 @section('title')
 Blue Park (Vital) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5">
-    <img src="{{url('images/site/enterprises/blue-park1.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park2.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park3.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park4.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park5.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park6.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park7.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park8.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park9.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park10.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park11.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park12.png')}}">
-    <img src="{{url('images/site/enterprises/blue-park13.png')}}">
+    <img src="{{url('images/site/enterprises/blue-park1.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park2.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park3.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park4.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park5.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park6.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park7.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park8.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park9.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park10.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park11.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park12.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/blue-park13.png?v='.$version)}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>

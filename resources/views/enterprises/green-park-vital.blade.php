@@ -2,18 +2,21 @@
 @section('title')
 Green Park (Vital) - {{config('app.name')}}
 @endsection
+@php
+$version = '1.0.0';
+@endphp
 @section('context')
 <section class="section-enterprises pt-5">
-    <img src="{{url('images/site/enterprises/greenpark1.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark2.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark3.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark4.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark5.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark6.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark7.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark8.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark9.png')}}"><br>
-    <img src="{{url('images/site/enterprises/greenpark10.png')}}"><br>
+    <img src="{{url('images/site/enterprises/greenpark1.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark2.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark3.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark4.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark5.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark6.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark7.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark8.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark9.png?v='.$version)}}">
+    <img src="{{url('images/site/enterprises/greenpark10.png?v='.$version)}}">
 </section>
 <section id="more-info" class="contact-immobile">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>
