@@ -176,4 +176,19 @@ class SiteController extends Controller
         $immobileService->registerVisit($immobile->id, request()->ip());
         return view('immobile', ['immobilechain' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
     }
+
+
+    //Generator
+
+    public function searchimmobilesrent(ImmobileService $immobileService)
+    {
+        SiteUtility::initializeSessionSearch();
+        return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllRent()]);
+    }
+
+    public function searchimmobilessale(ImmobileService $immobileService)
+    {
+        SiteUtility::initializeSessionSearch();
+        return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllSale()]);
+    }
 }

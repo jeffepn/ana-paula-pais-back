@@ -47,6 +47,25 @@ class ImmobileService implements ServiceDefault
         return Immobile::where('sale', true)->orWhere('rent', true)->paginate(12);
     }
     /**
+     * Get all immobiles rent
+     *
+     * @return Immobile[]
+     */
+    public function getAllRent()
+    {
+
+        return Immobile::where('rent', true)->get();
+    }
+    /**
+     * Get all immobiles sale
+     *
+     * @return Immobile[]
+     */
+    public function getAllSale()
+    {
+        return Immobile::where('sale', true)->get();
+    }
+    /**
      * Return Immobiles per search
      *
      * @param array $search

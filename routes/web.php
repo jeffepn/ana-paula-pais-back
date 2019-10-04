@@ -38,3 +38,9 @@ Route::get('imovel/{slug?}', 'SiteController@immobile');
 
 Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');
 Route::post('cadastrar-imovel-99', 'Immobile\ImmobileController@store');
+
+
+//Generator sitemap
+
+Route::get('busca-de-imoveis-aluguel', 'SiteController@searchimmobilesrent');
+Route::get('busca-de-imoveis-venda', 'SiteController@searchimmobilessale');
