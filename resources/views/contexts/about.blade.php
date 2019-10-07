@@ -38,6 +38,7 @@
                     OU VOCÊ FAZ BEM FEITO<br>
                     OU NÃO FAZ”
                 </p>
+                <img width="150" src="{{url('images/site/logo-ayrton-senna.png')}}" alt="By Ayrton Senna">
             </div>
         </div>
     </div>

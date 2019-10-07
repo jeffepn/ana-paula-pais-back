@@ -154,76 +154,7 @@
     <div class="row justify-content-center">
         @foreach($immobiles as $immobile)
         @if($immobilechain->id != $immobile->id)
-        <div class="immobile-list">
-            <div class="immobile-list-card">
-                <div class="immobile-list-context">
-                    <a href="{{url('imovel/'.$immobile->slug)}}">
-                        <p>
-                            {{$immobile->neighborhood->name}}, {{$immobile->neighborhood->city->name}}<br>
-                            <span>({{$immobile->slug}}) {{$immobile->textType()}}</span>
-                        </p>
-                        <hr>
-                        <div class="row">
-                            <h4>
-                                {!!$immobile->min_description!!}
-                            </h4>
-                            <div class="col-12 px-0 my-3">
-                                @if($immobile->garage)
-                                <div class="item-data-immobile">
-                                    <i class="fas fa-car-alt"></i>{{$immobile->garage}} vagas
-                                </div>
-                                @endif
-                                @if($immobile->dormitory)
-                                <div class="item-data-immobile">
-                                    <i class="fas fa-bed"></i>{{$immobile->dormitory}} quartos
-                                </div>
-                                @endif
-                                @if($immobile->area_building > 0)
-                                <div class="item-data-immobile">
-                                    <span title="Área construída">
-                                        <i class="far fa-building"></i>{{$immobile->area_building}} m2
-                                    </span>
-                                </div>
-                                @endif
-                                @if($immobile->area_total > 0)
-                                <div class="item-data-immobile">
-                                    <span title="Área total">
-                                        <i class="far fa-map"></i>{{$immobile->area_total}} m2
-                                    </span>
-                                </div>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="immobile-list-context-price mt-3">
-                            <div class="row">
-                                @if($immobile->rent && $immobile->value_rent > 0)
-                                <div class="col-6 px-0">
-                                    Aluguel:<br>
-                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_rent)}}</div>
-                                @endif
-                                @if($immobile->sale && $immobile->value_sale > 0)
-                                <div class="col-6 px-0">Venda:<br>
-                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobile->value_sale)}}</div>
-                                @endif
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="immobile-list-image">
-                    <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                @foreach ($immobile->images as $image)
-                                <div class="owl-item">
-                                    <img src="{{url($image->way)}}" alt="{{$image->alt}}">
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('contexts.view-immobile-default',['immobileview'=>$immobile])
         @endif
         @endforeach
     </div>
