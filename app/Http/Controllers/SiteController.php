@@ -41,27 +41,27 @@ class SiteController extends Controller
     {
         switch ($slug) {
             case 'blue-park':
-                return redirect()->to('/');
+                //return redirect()->to('/');
                 return view('enterprises.blue-park-vital');
                 break;
             case 'unique':
-                return redirect()->to('/');
+                //  return redirect()->to('/');
                 return view('enterprises.unique-vital');
                 break;
             case 'chateau-de-versailles':
-                return redirect()->to('/');
+                //return redirect()->to('/');
                 return view('enterprises.chateau-vital');
                 break;
             case 'easy':
-                return redirect()->to('/');
+                //   return redirect()->to('/');
                 return view('enterprises.easy-vital');
                 break;
             case 'green-park':
-                return redirect()->to('/');
+                //  return redirect()->to('/');
                 return view('enterprises.green-park-vital');
                 break;
             case 'lumiere':
-                return redirect()->to('/');
+                // return redirect()->to('/');
                 return view('enterprises.lumiere-vital');
                 break;
             case 'zeuz':
