@@ -194,7 +194,7 @@ class SiteController extends Controller
             return view('immobile', ['immobile' => null]);
         }
         $immobileService->registerVisit($immobile->id, request()->ip());
-        return view('immobile', ['immobilechain' => $immobile, 'immobiles' => $immobileService->getOrderByVisits(3)]);
+        return view('immobile', ['immobilechain' => $immobile, 'immobiles' => $immobileService->getSimilarImmobiles($immobile, 3)]);
     }
 
 

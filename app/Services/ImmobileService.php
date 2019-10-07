@@ -138,6 +138,21 @@ class ImmobileService implements ServiceDefault
     {
         return Immobile::where('rent', true)->orWhere('sale', true)->take($amount)->get();
     }
+    /**
+     * Get Immobiles similiar Immobile with amount defined
+     *
+     * @param Immobile $immobile
+     * @param int $amount Amount immobiles search
+     * @return Immobile[]
+     */
+    public function getSimilarImmobiles($immobile, $amount)
+    {
+        return Immobile::where('rent', $immobile->rent)
+            ->where('sale', $immobile->sale)
+            ->where('neighborhood_id', $immobile->neighborhood_id)
+            ->where('type', $immobile->type)
+            ->take($amount)->get();
+    }
 
     public function getAllForSelect()
     { }
