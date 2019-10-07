@@ -7,7 +7,7 @@
 
                 <div></div>
             </div>
-            <div class="text-left mt-3">
+            <div class="text-justify mt-3">
                 <p>
                     A tendência familiar, sempre engajada no empreendedorismo na área comercial, fez com que eu deixasse
                     a
@@ -32,8 +32,8 @@
                     do sonho de uma casa nova.
                 </p>
                 <p class="ft-third">
-                    “NO QUE DIZ RESPEITO AO EMPENHO.<br>
-                    AO COMPROMISSO AO ESFORÇO.<br>
+                    “NO QUE DIZ RESPEITO AO EMPENHO,<br>
+                    AO COMPROMISSO, AO ESFORÇO, À DEDICAÇÃO,<br>
                     NÃO EXISTE MEIO-TERMO.<br>
                     OU VOCÊ FAZ BEM FEITO<br>
                     OU NÃO FAZ”

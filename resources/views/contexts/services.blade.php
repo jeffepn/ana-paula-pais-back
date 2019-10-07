@@ -11,7 +11,7 @@
     <section class="section-curated-immobiles py-5 my-0">
         <div class="content-default-with-back">
         </div>
-        <div class="content-default text-left">
+        <div class="content-default text-justify">
             <p>
                 Em algum momento de sua vida, certamente você já pensou em comprar ou alugar um imóvel e sabe que essa
                 procura pode ser muito estressante e cansativa.
