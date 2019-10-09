@@ -9,50 +9,48 @@
                     <div class="owl-item px-2">
                         <div class="item-depoiment">
                             <div class="container">
-                                <h3>Alice Monteiro</h3>
+                                <h3>
+                                    Renata Santucci<br>
+                                    Propagandista
+                                </h3>
                                 <p>
-                                    Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
-                                    impressos, e vem
-                                    sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma
-                                    bandeja de tipos e os
-                                    embaralhou para fazer um livro de modelos de tipos.
+                                    Falar da Ana Paula é um previlégio! Uma profissional totalmente diferenciada que
+                                    consegue escutar e compreender seus clientes.<br>
+                                    Trazendo o empreendimento correto que
+                                    sempre buscamos dentro do que foi conversado.<br>
+                                    Ana Paula você é uma profissional (Sensacional)
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="owl-item px-2">
                         <div class="item-depoiment">
-                            <h3>Roberto Fagundes</h3>
+                            <h3>
+                                Cylmara Lacerda Gontijo<br>
+                                Psicóloga e Professora na PUC Poços
+                            </h3>
                             <p>
-                                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
-                                impressos, e vem
-                                sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja
-                                de tipos e os
-                                embaralhou para fazer um livro de modelos de tipos.
+                                Foi um prazer negociar com a Ana Paula, pessoa atenciosa, muito educada e gentil.<br>
+                                Me passou todas as informações do imóvel com clareza e objetividade, foi também muito
+                                paciente para esclarecer todas as minhas dúvidas.<br>
+                                Com certeza vou continuar contando com seus serviços, excelente profissional.
                             </p>
                         </div>
                     </div>
                     <div class="owl-item px-2">
                         <div class="item-depoiment">
-                            <h3>Fernanda Terra</h3>
+                            <h3>
+                                Eliana Barbosa<br>
+                                Aposentada
+                            </h3>
                             <p>
-                                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
-                                impressos, e vem
-                                sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja
-                                de tipos e os
-                                embaralhou para fazer um livro de modelos de tipos.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="owl-item px-2">
-                        <div class="item-depoiment">
-                            <h3>Higor Silva</h3>
-                            <p>
-                                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
-                                impressos, e vem
-                                sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja
-                                de tipos e os
-                                embaralhou para fazer um livro de modelos de tipos.
+                                Olá pessoal, estou falando sobre esta corretora de imóveis Ana Paula, que para mim
+                                sempre
+                                foi uma pessoa exemplar, atenciosa, prestativa e muitas outras qualidades quem nem tenho
+                                como descrever.<br>
+                                Comprei um imóvel a qual ela estava vendendo, fiquei muito feliz,
+                                recomendo a Ana Paula para atender vocês que estão interessados.<br>
+                                Atenciosamente Eliana.
                             </p>
                         </div>
                     </div>
