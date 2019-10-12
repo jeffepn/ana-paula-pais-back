@@ -69,6 +69,9 @@
             @if($immobilechain->dormitory)
             <span class="p-2">
                 <i class="fas fa-bed mr-2"></i>{{$immobilechain->dormitory}} quartos
+                @if($immobilechain->suite)
+                sendo {{$immobilechain->suite}} suítes
+                @endif
             </span>
             @endif
             @if($immobilechain->area_building >0)
