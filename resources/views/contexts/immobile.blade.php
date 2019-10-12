@@ -63,14 +63,14 @@
         <p>
             @if($immobilechain->garage)
             <span class="p-2">
-                <i class="fas fa-car-alt mr-2"></i>{{$immobilechain->garage}} vagas
+                <i class="fas fa-car-alt mr-2"></i>{{$immobilechain->garage}} vaga(s)
             </span>
             @endif
             @if($immobilechain->dormitory)
             <span class="p-2">
-                <i class="fas fa-bed mr-2"></i>{{$immobilechain->dormitory}} quartos
+                <i class="fas fa-bed mr-2"></i>{{$immobilechain->dormitory}} quarto(s)
                 @if($immobilechain->suite)
-                sendo {{$immobilechain->suite}} suítes
+                sendo {{$immobilechain->suite}} suíte(s)
                 @endif
             </span>
             @endif
