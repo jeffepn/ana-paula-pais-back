@@ -54,6 +54,25 @@
                             </p>
                         </div>
                     </div>
+                    <div class="owl-item px-2">
+                        <div class="item-depoiment">
+                            <h3>
+                                Regina Cioffi<br>
+                                Médica pediatra
+                            </h3>
+                            <p>
+                                Conheci Ana Paula em uma oportunidade de investimento apresentado por ela em
+                                2017.<br>
+                                Qualidades que considero imprescindíveis encontrei nela durante a negociação.
+                                Profissionalismo, conhecimento do negócio e do mercado imobiliário, persistência com
+                                ética, flexibilidade com foco no "ganha- ganha".<br>
+                                Além desses valores, tem o feeling de
+                                entender as possibilidades de investimento do cliente, e apresenta alternativas para
+                                a concretização do negócio. <br>
+                                Acabei na verdade ganhando uma amiga
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

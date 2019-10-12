@@ -55,7 +55,7 @@
 }
 .item-depoiment {
     height: auto;
-    text-align: center;
+    text-align: justify;
     h3 {
         font-family: $fontSecoundary;
     }
@@ -140,7 +140,7 @@
         overflow: hidden;
         cursor: zoom-in;
         img {
-            min-height: 100%;
+            max-height: 100%;
             min-width: 100%;
         }
     }
