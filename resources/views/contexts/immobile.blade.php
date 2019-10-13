@@ -195,7 +195,7 @@
 maskedPhone('#phone-contact');
 
 $('#carrousel-pre-view').owlCarousel({
-loop: true,
+loop: false,
 autoplay: true,
 autoplayHoverPause:true,
 nav: true,
@@ -221,7 +221,7 @@ items:6
 }
 });
 $('.carrousel-owl').owlCarousel({
-loop: true,
+loop: false,
 autoplayHoverPause:true,
 nav: true,
 dots: false,

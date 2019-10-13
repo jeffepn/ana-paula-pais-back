@@ -33,7 +33,7 @@
                     {{Form::select('dormitory', [''=>'Dormitórios',0,1,2,3,4,5,6,7,8,9,10], session('search_immobile.dormitory'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                    <input class="form-control" name="garage" placeholder="Vagas na garagem"
+                    <input class="form-control" type="number" name="garage" placeholder="Vagas na garagem"
                         value="{{session('search_immobile.garage')}}">
                 </div>
                 <!--<div class="mb-2 col-sm-4 col-md-3 col-lg-2">
