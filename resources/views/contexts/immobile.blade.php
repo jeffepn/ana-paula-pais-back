@@ -152,6 +152,7 @@
     </form>
 </section>
 
+@if($immobiles->isNotEmpty())
 <section class="more-options-immobile my-5">
     <h1 class="my-3"> Mais algumas opções </h1>
     <div class="row justify-content-center">
@@ -162,6 +163,7 @@
         @endforeach
     </div>
 </section>
+@endif
 <!-- Modal -->
 <div class="modal fade" id="modal-view-image-immobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">

@@ -147,7 +147,8 @@ class ImmobileService implements ServiceDefault
      */
     public function getSimilarImmobiles($immobile, $amount)
     {
-        return Immobile::where('rent', $immobile->rent)
+        return Immobile::where('id', '!=', $immobile->id)
+            ->where('rent', $immobile->rent)
             ->where('sale', $immobile->sale)
             ->where('neighborhood_id', $immobile->neighborhood_id)
             ->where('type', $immobile->type)
