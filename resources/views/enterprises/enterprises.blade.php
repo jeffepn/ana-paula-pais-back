@@ -30,11 +30,11 @@ Empreendimentos - {{config('app.name')}}
                 <img src="{{url('images/site/enterprises/greenpark.png')}}">
             </a>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
+        <!--<div class="col-sm-6 col-md-4 col-lg-3 mb-5">
             <a href="{{url('empreendimento/lumiere')}}">
                 <img src="{{url('images/site/enterprises/lumiere.png')}}">
             </a>
-        </div>
+        </div>-->
         <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
             <a href="{{url('empreendimento/zeuz')}}">
                 <img src="{{url('images/site/enterprises/zeuz.svg')}}">

@@ -1,7 +1,7 @@
 <div>
     <div class="lead-section">
 
-        <h1>O que oferecemos aos nossos clientes</h1>
+        <h1>O que oferecemos aos meus clientes</h1>
         <p>
         </p>
     </div>

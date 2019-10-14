@@ -1,7 +1,7 @@
 <section class="section-home">
     <div class="content-home">
         <div class="box-animation-home">
-            <div id="anim-one-home">O que oferecemos?</div>
+            <div id="anim-one-home">O que ofereço?</div>
             <div id="anim-two-home">Curadoria de imóveis</div>
         </div>
         <div class="text-center mt-5">

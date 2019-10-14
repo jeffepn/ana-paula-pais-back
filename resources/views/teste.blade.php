@@ -7,40 +7,27 @@
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
-    <p class="my-3">80 % das unidades vendidas, localizado no centro da cidade, tenha conforto e sofisticação em um só
-        lugar.</p>
     <div class="row ">
         <div class="col-sm-6 col-md-4">
             <li>
-                Área de lazer
+                Localização privilegiada
             </li>
             <li>
-                Área Gourmet
+                Acesso por três endereços
             </li>
             <li>
-                Brinquedoteca
-            </li>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <li>
-                Churrasqueira
-            </li>
-            <li>
-                Deck Seco e Molhado
-            </li>
-            <li>
-                Espaço Fitness
+                Vista panorâmica da serra e do centro desde o primeiro andar
             </li>
         </div>
         <div class="col-sm-6 col-md-4">
             <li>
-                Piscina com borda infinita
+                Apartamentos com 2 dormitórios ou duplex com 3 dormitórios
             </li>
             <li>
-                Playground
+                Piscina, Academia, Playground, Brinquedoteca e Área Gourmet
             </li>
             <li>
-                Varanda Gourmet
+                Todos os apartamentos com varanda gourmet e churrasqueira
             </li>
         </div>
     </div>

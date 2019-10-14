@@ -18,7 +18,7 @@ class SiteUtility
             4 => "Flat",
             5 => "Ponto Comercial",
             6 => "Terreno",
-            7 => "Stúdio",
+            7 => "Studio",
         ];
     }
     /**
