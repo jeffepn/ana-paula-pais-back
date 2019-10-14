@@ -3,66 +3,35 @@
 @include('parts.header')
 @endsection
 @section('context')
-<div class="px-3 px-md-5">
+<div class="px-3 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
+    <p class="my-3">Traga seu negócio para salas comerciais no centro da cidade</p>
     <div class="row ">
         <div class="col-sm-6 col-md-4">
-            <li>Academia</li>
-            <li>
-                Ampla Recepção com Sala de Estar
-            </li>
-            <li>
-                Área de lazer
-            </li>
             <li>
                 Áreas comuns entregue mobiliadas
             </li>
+        </div>
+        <div class="col-sm-6 col-md-4">
             <li>
-                Carpete de madeira
-            </li>
-            <li>
-                Espaço Kids e Espaço Gourmet
+                Comercial
             </li>
         </div>
         <div class="col-sm-6 col-md-4">
             <li>
-                Granito em bancadas/soleiras/parapeitos
-            </li>
-            <li>
-                Louge
-            </li>
-            <li>
-                Medidores de água individualizados
-            </li>
-            <li>
-                Moldura em gesso
-            </li>
-            <li>
-                Piscina
-            </li>
-            <li>
-                Porcelanato refiticado
-            </li>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <li>
-                Reservatório de água com capacidade extra
-            </li>
-            <li>
-                Revestimento cerâmico
-            </li>
-            <li>
-                Rodapé em madeira
-            </li>
-            <li>
-                Salão de Festas
-            </li>
-            <li>
-                Sauna
+                Garagem
             </li>
         </div>
     </div>
+
+    <h2 class="my-3 ft-secoundary">Plantas salas comercais</h2>
+    <h4>Saúde</h4>
+    <img class="m-w-100" src="images/utilsimmobiles/saudesaodomenico.png" alt="">
+    <h4>Humanas</h4>
+    <img class="m-w-100" src="images/utilsimmobiles/humanassaodomenico.png" alt="">
+    <h4>Exatas</h4>
+    <img class="m-w-100" src="images/utilsimmobiles/exatassaodomenico.png" alt="">
 </div>
 @endsection
