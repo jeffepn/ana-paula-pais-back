@@ -1,7 +1,7 @@
 <div class="section-clients">
     <div class="content-clients">
         <h1>
-            O que estão falando de nós
+            O que estão falando sobre o meu trabalho
         </h1>
         <div id="carrousel-clients" class="owl-carousel owl-theme owl-loaded carrousel-owl">
             <div class="owl-stage-outer">

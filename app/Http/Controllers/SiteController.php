@@ -24,6 +24,10 @@ class SiteController extends Controller
     {
         return view('home', ['immobileshighlights' => $immobileService->getOrderByVisits(6)]);
     }
+    public function teste(ImmobileService $immobileService)
+    {
+        return view('teste');
+    }
     public function services()
     {
         return view('services');

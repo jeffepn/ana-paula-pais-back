@@ -96,10 +96,8 @@
             @endif
         </p>
     </div>
-    <div class="big-description-immobile">
-        <p class="p-4">
-            {!!$immobilechain->description!!}
-        </p>
+    <div class="big-description-immobile p-4">
+        {!!$immobilechain->description!!}
     </div>
 </section>
 <section id="more-info" class="contact-immobile">
