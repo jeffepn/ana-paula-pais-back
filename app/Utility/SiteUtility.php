@@ -14,10 +14,11 @@ class SiteUtility
         return [
             1 => "Casa",
             2 => "Apartamento",
-            3 => "Sala",
+            3 => "Sala Comercial",
             4 => "Flat",
             5 => "Ponto Comercial",
             6 => "Terreno",
+            7 => "Stúdio",
         ];
     }
     /**

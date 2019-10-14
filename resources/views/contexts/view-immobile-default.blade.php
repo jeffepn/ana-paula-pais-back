@@ -14,25 +14,25 @@
                     <div class="col-12 px-0 my-3">
                         @if($immobileview->garage)
                         <div class="item-data-immobile">
-                            <i class="fas fa-car-alt"></i>{{$immobileview->garage}} vagas
+                            <i class="fas fa-car-alt"></i>{{$immobileview->garage}} vaga(s)
                         </div>
                         @endif
                         @if($immobileview->dormitory)
                         <div class="item-data-immobile">
-                            <i class="fas fa-bed"></i>{{$immobileview->dormitory}} quartos
+                            <i class="fas fa-bed"></i>{{$immobileview->dormitory}} quarto(s)
                         </div>
                         @endif
                         @if($immobileview->area_building > 0)
                         <div class="item-data-immobile">
                             <span title="Área construída">
-                                <i class="far fa-building"></i>{{$immobileview->area_building}} m2
+                                <i class="far fa-building"></i>{{$immobileview->area_building}} m²
                             </span>
                         </div>
                         @endif
                         @if($immobileview->area_total > 0)
                         <div class="item-data-immobile">
                             <span title="Área total">
-                                <i class="far fa-map"></i>{{$immobileview->area_total}} m2
+                                <i class="far fa-map"></i>{{$immobileview->area_total}} m²
                             </span>
                         </div>
                         @endif
