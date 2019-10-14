@@ -54,7 +54,17 @@
             </a>
         </div>
         <div class="immobile-list-image">
-            <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
+            @php
+            $images = $immobileview->images;
+            $way = '';
+            $alt = '';
+            if($images->isNotEmpty()){
+            $way = $images->first()->way;
+            $alt = $images->first()->alt;
+            }
+            @endphp
+            <img src="{{url($way)}}" alt="{{$alt}}">
+            <!-- <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
                 <div class="owl-stage-outer">
                     <div class="owl-stage">
                         @foreach ($immobileview->images as $image)
@@ -64,7 +74,7 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
+        </div>-->
         </div>
     </div>
 </div>
