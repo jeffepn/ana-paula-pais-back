@@ -166,24 +166,34 @@ class ImmobileService implements ServiceDefault
 
     public function getRules($type, $parameters)
     {
-        return [
-            'neighborhood_id' => 'required',
-            'value_rent' => 'numeric|between:0,99999999.99',
-            'value_sale' => 'numeric|between:0,99999999.99',
-            'type' => 'required',
-            'dormitory' => 'integer',
-            'suite' => 'integer',
-            'bathroom' => 'integer',
-            'garage' => 'integer',
-            'value_condominium' => 'numeric|between:0,99999999.99',
-            'value_iptu' => 'numeric|between:0,99999999.99',
-            'area_total' => 'numeric|between:0,99999999.99',
-            'area_building' => 'numeric|between:0,99999999.99',
-            'min_description' => 'required|max:150',
-            'description' => 'required|max:65300',
-            'image' => 'required',
-            'image.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
-        ];
+        switch ($type) {
+            case 'create':
+                return [
+                    'neighborhood_id' => 'required',
+                    'value_rent' => 'numeric|between:0,99999999.99',
+                    'value_sale' => 'numeric|between:0,99999999.99',
+                    'type' => 'required',
+                    'dormitory' => 'integer',
+                    'suite' => 'integer',
+                    'bathroom' => 'integer',
+                    'garage' => 'integer',
+                    'value_condominium' => 'numeric|between:0,99999999.99',
+                    'value_iptu' => 'numeric|between:0,99999999.99',
+                    'area_total' => 'numeric|between:0,99999999.99',
+                    'area_building' => 'numeric|between:0,99999999.99',
+                    'min_description' => 'required|max:150',
+                    'description' => 'required|max:65300',
+                    'image' => 'required',
+                    'image.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+                ];
+            case 'edit':
+                return [
+                    'image' => 'required',
+                    'image.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+                ];
+            default:
+                return [];
+        }
     }
 
     public function getMessages()

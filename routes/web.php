@@ -44,6 +44,8 @@ Route::get('imovel/{slug?}', 'SiteController@immobile');
 
 Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');
 Route::post('cadastrar-imovel-99', 'Immobile\ImmobileController@store');
+Route::get('editar-imovel-99/{slug}', 'Immobile\ImmobileController@edit');
+Route::post('editar-imovel-99', 'Immobile\ImmobileController@update');
 
 
 //Generator sitemap

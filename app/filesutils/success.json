@@ -1,5 +1,6 @@
 {
     "ContactSuccess": "Em breve retornaremos seu contato.",
     "NewsletterSuccess": "Você agora receberá  nossos boletos informativos.",
-    "RegisterImmobileSuccess": "Imóvel cadastrado com sucesso."
+    "RegisterImmobileSuccess": "Imóvel cadastrado com sucesso.",
+    "EditImmobileSuccess": "Imóvel atualizado com sucesso."
 }
