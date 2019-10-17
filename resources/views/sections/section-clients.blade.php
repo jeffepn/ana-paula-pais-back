@@ -14,7 +14,7 @@
                                     Propagandista
                                 </h3>
                                 <p>
-                                    Falar da Ana Paula é um previlégio! Uma profissional totalmente diferenciada que
+                                    Falar da Ana Paula é um privilégio! Uma profissional totalmente diferenciada que
                                     consegue escutar e compreender seus clientes.<br>
                                     Trazendo o empreendimento correto que
                                     sempre buscamos dentro do que foi conversado.<br>

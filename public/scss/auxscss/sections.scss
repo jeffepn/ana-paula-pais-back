@@ -71,7 +71,7 @@ $heightSectionServices: 400px;
     @include section-description;
     min-height: $heightSectionServices;
     height: $heightSectionServices;
-    background-image: url(/images/site/backs/sections/services1.jpg);
+    background-image: url(/images/site/backs/sections/section-services.jpg);
     .content-default {
         top: ($heightSectionServices * 0.33) / 2;
         min-height: $heightSectionServices * 0.66;
@@ -107,8 +107,8 @@ $heightSectionServices: 400px;
 }
 .section-curated-immobiles {
     @include section-description;
-    min-height: auto;
-    background-image: url(/images/site/backs/sections/services1.jpg);
+    min-height: 100vh;
+    background-image: url(/images/site/backs/sections/section-services.jpg);
     display: flex;
     align-items: center;
     .content-default {

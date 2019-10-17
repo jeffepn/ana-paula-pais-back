@@ -24,8 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        /*$schedule->command('inspire')
+            ->hourly();*/
+
+        $schedule->command('backup:clean -n')->everyMinute(); //->daily()->at('19:00');
+        $schedule->command('backup:run -n')->everyMinute()->appendOutputTo('/opt/lampp/htdocs/storage/logs/cron.log'); //->daily()->at('19:44');
     }
 
     /**
@@ -35,7 +38,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

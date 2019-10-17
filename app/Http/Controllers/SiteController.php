@@ -26,6 +26,7 @@ class SiteController extends Controller
     }
     public function teste(ImmobileService $immobileService)
     {
+        return date('H:i:s');
         return view('teste');
     }
     public function services()
