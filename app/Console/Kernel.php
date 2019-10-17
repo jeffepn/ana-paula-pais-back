@@ -27,8 +27,8 @@ class Kernel extends ConsoleKernel
         /*$schedule->command('inspire')
             ->hourly();*/
 
-        $schedule->command('backup:clean -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/runbackup.log'); //->daily()->at('19:00');
-        $schedule->command('backup:run -n')->everyMinute()->appendOutputTo('/opt/lampp/htdocs/storage/logs/cron.log'); //->daily()->at('19:44');
+        $schedule->command('backup:clean -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/deletebackup.log'); //->daily()->at('19:00');
+        $schedule->command('backup:run -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/runbackup.log'); //->daily()->at('19:00');
     }
 
     /**
