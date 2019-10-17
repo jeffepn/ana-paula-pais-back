@@ -63,7 +63,19 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
+        'ftp' => [
+            'driver' => 'ftp',
+            'host' => 'ftp.jpdesenvolvimentoweb.com.br',
+            'username' => 'backup@jpdesenvolvimentoweb.com.br',
+            'password' => '=({gbw*+gEXL',
 
+            // Optional FTP Settings...
+            'port' => 21,
+            // 'root' => '',
+            // 'passive' => true,
+            // 'ssl' => true,
+            // 'timeout' => 30,
+        ],
     ],
 
 ];

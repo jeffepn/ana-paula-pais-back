@@ -27,8 +27,10 @@ class Kernel extends ConsoleKernel
         /*$schedule->command('inspire')
             ->hourly();*/
 
-        $schedule->command('backup:clean -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/deletebackup.log'); //->daily()->at('19:00');
-        $schedule->command('backup:run -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/runbackup.log'); //->daily()->at('19:00');
+        // $schedule->command('backup:clean -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/deletebackup.log'); //->daily()->at('02:00');
+        //$schedule->command('backup:run -n')->everyMinute()->appendOutputTo(storage_path('app') . '/backuplog/runbackup.log'); //->daily()->at('03:00');
+        $schedule->command('backup:clean -n')->daily()->at('03:00')->appendOutputTo(storage_path('app') . '/backuplog/deletebackup.log'); //
+        $schedule->command('backup:run -n')->daily()->at('02:00')->appendOutputTo(storage_path('app') . '/backuplog/runbackup.log'); //;
     }
 
     /**
