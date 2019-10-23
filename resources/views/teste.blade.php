@@ -7,19 +7,13 @@
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
-    <h2 class=" ft-secoundary">
-        Condomínio: Vila das Flores
-    </h2>
     <p>
-        (3) dormitórios: sendo (2) quartos e (1) suíte; (1) banheiro; box no bwc;
-        lavabo; sl. 2 ambientes; cozinha; área de serviço; teto de laje; (1) sala
+        (2) dormitórios: sendo (2) suítes flex com varanda gourmet
+        com churrasqueira a gás; sala ampla e elevador.
     </p>
-    <i class="far fa-check-square mr-2"></i> Asfalto<br>
-    <i class="far fa-check-square mr-2"></i>Calçada<br>
-    <i class="far fa-check-square mr-2"></i>Cerca Elétrica<br>
-    <i class="far fa-check-square mr-2"></i>Interfone<br>
-    <i class="far fa-check-square mr-2"></i>Jardim c/ grama<br>
-    <i class="far fa-check-square mr-2"></i>Portão Eletrônico<br>
+    <i class="far fa-check-square mr-2"></i> Elevador<br>
+    <i class="far fa-check-square mr-2"></i>Varanda Gourmet<br>
+    <i class="far fa-check-square mr-2"></i> Churrasqueira<br>
 </div>
 <div class="px-3 px-md-5 my-5">
     <h2 class=" ft-secoundary">

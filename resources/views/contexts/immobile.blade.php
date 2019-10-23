@@ -76,12 +76,12 @@
             @endif
             @if($immobilechain->area_building >0)
             <span class="p-2">
-                <i class="far fa-building mr-2"></i>{{$immobilechain->area_building}} m2
+                <i class="far fa-building mr-2"></i>{{$immobilechain->area_building}} m²
             </span>
             @endif
             @if($immobilechain->area_total > 0)
             <span class="p-2">
-                <i class="far fa-map mr-2"></i>{{$immobilechain->area_total}} m2
+                <i class="far fa-map mr-2"></i>{{$immobilechain->area_total}} m²
             </span>
             @endif
             @if($immobilechain->value_condominium > 0)
