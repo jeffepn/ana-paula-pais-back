@@ -9,7 +9,9 @@ Imóvel não encontrado
 @endsection
 
 @section('description')
+@if($immobilechain)
 <meta name="description" content="{!!strip_tags($immobilechain->min_description)!!}">
+@endif
 @endsection
 @section('header')
 @include('parts.header',['fixed'=>'fixed'])
