@@ -1,8 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/.htaccess
 /public/images/immobiles/*
-/storage/*.key  
+/storage/*.key
 /vendor
 .env
 .phpunit.result.cache
@@ -10,4 +11,3 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-     

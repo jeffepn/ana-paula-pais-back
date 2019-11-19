@@ -1,15 +1,15 @@
 <div class="context-item-sidebar">
-    <div class="item-sidebar-active">
-        <a href="{{url('/laraveladminhome')}}">
-            <i class="material-icons">dashboard</i>Painel Administrativo
-        </a>
-    </div>
+    <a href="{{url('laraveladminhome')}}" class="item-sidebar-active text-white">
+        <i class="fas fa-home "></i>Painel Administrativo
+    </a>
 </div>
 <div class="context-item-sidebar">
     <div class="item-sidebar">
-        <i class="material-icons"> error_outline </i>Errors
-        <button class="button-drop remove-style-button" type="button" data-target="#drop-table">
-            <i class="material-icons icon-drop">chevron_left</i>
+        <i class="fas fa-bug"></i>Errors
+        <button class="hamburger hamburger--minus button-drop" type="button" data-target="#drop-table">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
         </button>
     </div>
     <div id="drop-table" class="drop-item-sidebar collapse-jp">
@@ -22,44 +22,32 @@
     </div>
 </div>
 <div class="context-item-sidebar">
-    <div class="item-sidebar">
-        <a href="{{url('laraveladmintypographys')}}">
-            <i class="material-icons">line_weight</i>Tipografia
-        </a>
-    </div>
+    <a href="{{url('laraveladmintypographys')}}" class="item-sidebar">
+        <i class="fa fa-font"></i>Tipografia
+    </a>
 </div>
 <div class="context-item-sidebar">
-    <div class="item-sidebar">
-        <a href="{{url('laraveladmintabels')}}">
-            <i class="material-icons">ballot</i>Tabelas
-        </a>
-    </div>
+    <a href="{{url('laraveladmintabels')}}" class="item-sidebar">
+        <i class="fa fa-table"></i>Tabelas
+    </a>
 </div>
 <div class="context-item-sidebar">
-    <div class="item-sidebar">
-        <a href="{{url('laraveladmincards')}}">
-            <i class="material-icons">bookmarks</i>Cards
-        </a>
-    </div>
+    <a href="{{url('laraveladmincards')}}" class="item-sidebar">
+        <i class="fa fa-layer-group"></i>Cards
+    </a>
 </div>
 <div class="context-item-sidebar">
-    <div class="item-sidebar">
-        <a href="{{url('laraveladminforms')}}">
-            <i class="material-icons">line_style</i>Forms
-        </a>
-    </div>
+    <a href="{{url('laraveladminforms')}}" class="item-sidebar">
+        <i class="far fa-keyboard"></i>Forms
+    </a>
 </div>
 <div class="context-item-sidebar">
-    <div class="item-sidebar">
-        <a href="{{url('laraveladminbuttons')}}">
-            <i class="material-icons">mouse</i>Botões
-        </a>
-    </div>
+    <a href="{{url('laraveladminbuttons')}}" class="item-sidebar">
+        <i class="fa fa-mouse-pointer"></i>Botões
+    </a>
 </div>
 <div class="context-item-sidebar">
-    <div class="item-sidebar">
-        <a href="{{url('laraveladminlogin')}}">
-            <i class="material-icons">input</i>Login
-        </a>
-    </div>
+    <a href="{{url('laraveladminlogin')}}" class="item-sidebar">
+        <i class="fa fa-sign-in-alt"></i>Login
+    </a>
 </div>

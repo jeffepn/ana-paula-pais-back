@@ -1,0 +1,109 @@
+//Colors
+$colorPrimary: #9c07ff; //#a221ff;
+$colorPrimaryDark: #7b17c4; //#8e1be0;
+
+$colorSecoundary: #00ffcd; //#0899ff; //#3d0eff; //#28f1ff; //#ff6486;
+$colorSecoundaryDark: #00c19a; //#0574c1; //#3008c9; //#1fbdc9; //#c94f68;
+
+$colorThird: #ff7600; // #f73b00; //#ff00a0; //#553576;
+$colorThirdDark: #d45e00; //#c12d00; //#b70073; //#260b42;
+
+$colorSucessText: green;
+$colorDangerText: red;
+$colorFontDefault: #525f7f;
+
+$colorShadowdefault: #b3b3b4;
+
+$backContextSite: #e8e8e8;
+$backFooter: $backContextSite;
+
+$colorBorderInputs: #ccc;
+$colorBorderInputsHover: $colorPrimary;
+
+$heighHeader: 70px;
+//Sidebar
+$sizeSidebar: 270px;
+$sizeFontItemSideBar: 18px;
+$colorItemSidebar: #3c4858;
+$colorIconItemSidebar: #3c4858; //#a9afbb;
+$colorItemSidebarActive: white;
+$backgroundImageSidebar: "/imageslaraveladmin/back/backsidebar.jpg";
+
+%size-sidebar {
+    width: $sizeSidebar;
+}
+//Fonts
+/*$fontPrimary: "Abel", sans-serif;
+$fontSecoundary: "Marvel", sans-serif;
+$fontThird: "Poppins", sans-serif;
+$fontFourth: "Poiret One", cursive;*/
+$fontPrimary: "Raleway", sans-serif;
+$fontSecoundary: "Montserrat", sans-serif;
+$fontThird: "Lato", sans-serif;
+$fontFourth: "Roboto", sans-serif;
+//Links
+
+.remove-style-link {
+    color: inherit;
+    text-decoration: none !important;
+    &:hover {
+        color: inherit;
+        text-decoration: none !important;
+    }
+    &:active {
+        color: inherit;
+        text-decoration: none !important;
+    }
+    &:visited {
+        color: inherit;
+        text-decoration: none !important;
+    }
+    &:focus {
+        color: inherit;
+        text-decoration: none !important;
+    }
+}
+//Buttons
+.remove-style-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    &:hover,
+    &:focus {
+        outline: none !important;
+    }
+}
+
+//Colors
+@mixin backLinearGradient($deg, $colorOne, $colorTwo, $colorThree: null) {
+    @if $colorThree != null {
+        background: linear-gradient(60deg, $colorOne, $colorTwo, $colorThree);
+    } @else {
+        background: linear-gradient(60deg, $colorOne, $colorTwo);
+    }
+}
+%back-primary-to-right {
+    @include backLinearGradient(60deg, $colorPrimary, $colorPrimaryDark);
+}
+%back-primary-to-bottom {
+    @include backLinearGradient(to bottom, $colorPrimary, $colorPrimaryDark);
+}
+
+//Shadow
+@mixin boxshadow(
+    $horizontal,
+    $vertical,
+    $blur,
+    $spread,
+    $color: black,
+    $outset: null
+) {
+    box-shadow: $horizontal $vertical $blur $spread $color $outset;
+}
+@mixin boxshadows($shadows) {
+    box-shadow: $shadows;
+}
