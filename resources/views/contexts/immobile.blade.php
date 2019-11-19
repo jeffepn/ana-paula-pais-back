@@ -187,7 +187,6 @@
         </div>
     </div>
 </div>
-@endif
 
 @section('js-util')
 @parent
@@ -234,3 +233,5 @@ items:1
 }
 });
 @endsection
+
+@endif
