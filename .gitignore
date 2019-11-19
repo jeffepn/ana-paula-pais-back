@@ -4,6 +4,7 @@
 /public/.htaccess
 /public/images/immobiles/*
 /storage/*.key
+/storage/logs/*
 /vendor
 .env
 .phpunit.result.cache
