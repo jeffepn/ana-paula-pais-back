@@ -196,7 +196,7 @@ class SiteController extends Controller
     {
         $immobile = $immobileService->getWithSlug($slug);
         if (!$immobile) {
-            return view('immobile', ['immobile' => null]);
+            return view('immobile', ['immobilechain' => null]);
         }
         $immobileService->registerVisit($immobile->id, request()->ip());
         return view('immobile', ['immobilechain' => $immobile, 'immobiles' => $immobileService->getSimilarImmobiles($immobile, 3)]);
