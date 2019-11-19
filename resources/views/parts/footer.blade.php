@@ -20,9 +20,11 @@ scrollInApp(null,'#form-newsletter',1);
     <div class="background-footer"></div>
     <div class="ps-md-2 px-lg-5 py-5 content-footer">
         <div class="row">
-            <div class="col-md-3 mb-3 col-lg-4">
-                <img width="40%" class="mx-auto d-block" src="{{url('images/site/logowhite.png')}}"
+            <div class="col-md-3 mb-3 col-lg-4 px-xl-4 mb-4">
+                <img class="m-w-100 mx-auto d-block" src="{{url('images/site/logowhite.png')}}"
                     alt="Ana Paula Pais Imóveis">
+                <br>
+                <h4 class="ft-primary">CRECI-MG 32225</h4>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 mb-3">
                 <h4>Contatos</h4>

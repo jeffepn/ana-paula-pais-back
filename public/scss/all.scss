@@ -3,10 +3,12 @@ html {
     margin: 0;
     padding: 0;
 }
+
 body {
     display: flex;
     flex-direction: column;
 }
+
 .row {
     margin: 0;
 }
@@ -23,7 +25,6 @@ body {
 @import "./auxscss/animation.scss";
 @import "./auxscss/modal.scss";
 @import "./auxscss/itens-marking.scss";
-
 .pre-launch {
     display: flex;
     flex-direction: column;

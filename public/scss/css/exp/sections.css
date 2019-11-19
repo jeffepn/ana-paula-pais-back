@@ -47,7 +47,6 @@
 .section-clients {
   background-image: url(/images/site/backs/sections/brick.png);
   background-size: 220px 140px;
-  min-height: 600px;
   background-color: gray;
 }
 

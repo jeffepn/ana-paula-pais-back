@@ -34,16 +34,19 @@ $heightSectionServices: 400px;
         text-align: center;
     }
 }
+
 .section-immobiles-search {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
 .section-clients {
     background-image: url(/images/site/backs/sections/brick.png);
     background-size: 220px 140px;
-    min-height: 600px;
+    //min-height: 600px;
     background-color: rgba(gray, 1);
 }
+
 .section-not-found {
     margin-top: 146px;
     position: relative;
@@ -51,6 +54,7 @@ $heightSectionServices: 400px;
     display: flex;
     align-items: center;
 }
+
 @mixin section-description {
     position: relative;
     margin: 2rem 0;
@@ -67,6 +71,7 @@ $heightSectionServices: 400px;
         background: rgba(black, 0.5);
     }
 }
+
 .section-services-description-one {
     @include section-description;
     min-height: $heightSectionServices;
@@ -78,6 +83,7 @@ $heightSectionServices: 400px;
         height: $heightSectionServices * 0.66;
     }
 }
+
 .section-services-description-two {
     @include section-description;
     min-height: $heightSectionServices;
@@ -89,6 +95,7 @@ $heightSectionServices: 400px;
         height: $heightSectionServices * 0.66;
     }
 }
+
 .section-contact {
     @include section-description;
     min-height: auto;
@@ -105,6 +112,7 @@ $heightSectionServices: 400px;
         background: rgba($colorPrimary, 0.9);
     }
 }
+
 .section-curated-immobiles {
     @include section-description;
     min-height: 100vh;
@@ -122,6 +130,7 @@ $heightSectionServices: 400px;
         background: rgba($colorPrimary, 0.9);
     }
 }
+
 .section-enterprises {
     img {
         max-width: 100%;
@@ -129,6 +138,7 @@ $heightSectionServices: 400px;
         display: block;
     }
 }
+
 .section-view-all-immobiles {
     padding: 4rem 0;
     background: #f9f9f9;
@@ -149,6 +159,7 @@ $heightSectionServices: 400px;
         }
     }
 }
+
 .immobile-list {
     padding: 0 1rem;
     margin-bottom: 1rem;
@@ -242,14 +253,14 @@ $heightSectionServices: 400px;
             line-height: 1.5em;
         }
         &:hover {
-            ~ .immobile-list-image::after {
+            ~.immobile-list-image::after {
                 opacity: 1;
                 z-index: 4;
             }
-            ~ .immobile-list-image .owl-item.active img {
+            ~.immobile-list-image .owl-item.active img {
                 transform: scale(1.3);
             }
-            ~ .immobile-list-image img {
+            ~.immobile-list-image img {
                 transform: scale(1.3);
             }
         }
@@ -258,7 +269,6 @@ $heightSectionServices: 400px;
         font-size: 1.1em;
         font-family: $fontPrimary;
     }
-
     .item-data-immobile {
         font-family: $fontPrimary;
         padding: 0 0.25rem;
@@ -269,6 +279,7 @@ $heightSectionServices: 400px;
         }
     }
 }
+
 @mixin basecontent() {
     width: 100%;
     min-height: 100%;
@@ -287,6 +298,7 @@ $heightSectionServices: 400px;
         font-weight: lighter !important;
     }
 }
+
 .lead-section {
     padding: 1.5rem 1rem;
     text-align: center;
@@ -306,6 +318,7 @@ $heightSectionServices: 400px;
         font-weight: 200;
     }
 }
+
 .content-home {
     @include basecontent();
     z-index: 4;
@@ -335,6 +348,7 @@ $heightSectionServices: 400px;
         white-space: nowrap;
     }
 }
+
 .content-default {
     @include basecontent();
     box-shadow: 0px 0 4px 0 black;
@@ -360,10 +374,12 @@ $heightSectionServices: 400px;
         font-size: 1.2em;
     }
 }
+
 .content-view {
     opacity: 1;
     left: 0;
 }
+
 .content-clients {
     @include basecontent();
     h1 {
@@ -372,6 +388,7 @@ $heightSectionServices: 400px;
         font-family: $fontThird;
     }
 }
+
 .content-ana {
     @include basecontent();
     min-height: 500px;
@@ -419,12 +436,7 @@ $heightSectionServices: 400px;
     .section-services-description-one,
     .section-services-description-two {
         &::after {
-            background-image: linear-gradient(
-                to right,
-                white,
-                rgba(gray, 0.5),
-                rgba(black, 0.5)
-            );
+            background-image: linear-gradient( to right, white, rgba(gray, 0.5), rgba(black, 0.5));
         }
     }
 }
