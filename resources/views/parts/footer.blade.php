@@ -73,6 +73,14 @@ scrollInApp(null,'#form-newsletter',1);
                 anunciado).
             </p>
         </div>
-        <p class="text-center mb-0">© Copyright 2019</p>
+        <p class="text-center mb-0 px-2">
+            © 2019 Imóveis Ana Paula Pais | Todos os direitos reservados<br>
+            Desenvolvido por
+            <a href="https://jpdesenvolvimentoweb.com.br/">
+                <img width="40" class="logo-content mb-2"
+                    src="https://jpdesenvolvimentoweb.com.br/images/site/logonewnotext.svg">
+                Jp Desenvolvimento Web
+            </a>
+        </p>
     </div>
 </footer>
