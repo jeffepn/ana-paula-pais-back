@@ -3,17 +3,29 @@
 @include('parts.header')
 @endsection
 @section('context')
+<p>
+    VILA ROSA KLLIAS <br> Casas apartir de R$ 220.000 <br>
+    2 dorms, banheiro, sala de TV, área de serviço, cozinha e 1 vaga.
+</p>
 <div class="px-3 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <p>
-        (2) dormitórios: sendo (2) suítes flex com varanda gourmet
-        com churrasqueira a gás; sala ampla e elevador.
+        <strong> Vila Rosa kllias - Próximo da PUC</strong><br>
+        Casas com 62,66 m², 68,47 m² e 74 m², e preços entre R$ 220.000 a R$ 282.000
     </p>
-    <i class="far fa-check-square mr-2"></i> Elevador<br>
-    <i class="far fa-check-square mr-2"></i>Varanda Gourmet<br>
-    <i class="far fa-check-square mr-2"></i> Churrasqueira<br>
+    <ul>
+        <li>2 quartos</li>
+        <li>Espaço gourmet</li>
+        <li>Jardim</li>
+        <li>Sala de TV</li>
+        <li>Lavado</li>
+    </ul>
+</div>
+<i class="far fa-check-square mr-2"></i> Elevador<br>
+<i class="far fa-check-square mr-2"></i>Varanda Gourmet<br>
+<i class="far fa-check-square mr-2"></i> Churrasqueira<br>
 </div>
 <div class="px-3 px-md-5 my-5">
     <h2 class=" ft-secoundary">
