@@ -27,10 +27,12 @@ class ImmobileService implements ServiceDefault
     }
 
     public function edit($data)
-    { }
+    {
+    }
 
     public function getWithId($id)
-    { }
+    {
+    }
 
     public function getWithSlug($slug)
     {
@@ -156,13 +158,16 @@ class ImmobileService implements ServiceDefault
     }
 
     public function getAllForSelect()
-    { }
+    {
+    }
 
     public function deleteWithId($id)
-    { }
+    {
+    }
 
     public function deleteWithSlug($slug)
-    { }
+    {
+    }
 
     public function getRules($type, $parameters)
     {
@@ -235,7 +240,8 @@ class ImmobileService implements ServiceDefault
             'name',
             'name_city',
             Neighborhood::join('cities', 'neighborhoods.city_id', '=', 'cities.id')
-                ->select('neighborhoods.id', 'neighborhoods.name', 'cities.name AS name_city')->get()
+                ->select('neighborhoods.id', 'neighborhoods.name', 'cities.name AS name_city')
+                ->orderBy("neighborhoods.name", "asc")->get()
         );
     }
     /**

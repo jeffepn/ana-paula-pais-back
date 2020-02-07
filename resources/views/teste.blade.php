@@ -7,21 +7,32 @@
     VILA ROSA KLLIAS <br> Casas apartir de R$ 220.000 <br>
     2 dorms, banheiro, sala de TV, área de serviço, cozinha e 1 vaga.
 </p>
-<div class="px-3 px-md-5 my-5">
+<div class="px-2 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <p>
-        <strong> Vila Rosa kllias - Próximo da PUC</strong><br>
-        Casas com 62,66 m², 68,47 m² e 74 m², e preços entre R$ 220.000 a R$ 282.000
+        Linda casa no Jardim Europa, ótimo acabamento e com estrutura completa <br>
+        Com um terreno de 400m² e 306m² de área construída
     </p>
-    <ul>
-        <li>2 quartos</li>
-        <li>Espaço gourmet</li>
-        <li>Jardim</li>
-        <li>Sala de TV</li>
-        <li>Lavado</li>
-    </ul>
+    <div class="row">
+        <div class="col-6 px-1">
+            <div><i class="far fa-check-square mr-2"></i>3 suítes</div>
+            <div><i class="far fa-check-square mr-2"></i>2 banheiros sociais</div>
+            <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
+            <div><i class="far fa-check-square mr-2"></i>Escritório</div>
+            <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
+            <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
+        </div>
+        <div class="col-6 px-1">
+            <div><i class="far fa-check-square mr-2"></i>Dispensa</div>
+            <div><i class="far fa-check-square mr-2"></i>Área gourmet</div>
+            <div><i class="far fa-check-square mr-2"></i>Piscina com <strong><i> aquecimento solar</i></strong></div>
+            <div><i class="far fa-check-square mr-2"></i>Canil</div>
+            <div><i class="far fa-check-square mr-2"></i>Cerca elétrica e 5 câmeras</div>
+            <div><i class="far fa-check-square mr-2"></i>Garagem para 2 carros</div>
+        </div>
+    </div>
 </div>
 <i class="far fa-check-square mr-2"></i> Elevador<br>
 <i class="far fa-check-square mr-2"></i>Varanda Gourmet<br>
