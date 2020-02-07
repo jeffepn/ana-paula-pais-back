@@ -3,36 +3,58 @@
 @include('parts.header')
 @endsection
 @section('context')
-<p>
-    VILA ROSA KLLIAS <br> Casas apartir de R$ 220.000 <br>
-    2 dorms, banheiro, sala de TV, área de serviço, cozinha e 1 vaga.
-</p>
 <div class="px-2 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <p>
-        Linda casa no Jardim Europa, ótimo acabamento e com estrutura completa <br>
-        Com um terreno de 400m² e 306m² de área construída
+        Ótima casa no Jardim Europa de alto padrão, 2 andares e ótimo acabamento <br>
+        Com um terreno de 449m² e 300m² de área construída
     </p>
     <div class="row">
-        <div class="col-6 px-1">
-            <div><i class="far fa-check-square mr-2"></i>3 suítes</div>
-            <div><i class="far fa-check-square mr-2"></i>2 banheiros sociais</div>
-            <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
+        <div class="col-md-6 px-1">
+            <h5 class="font-weight-bold">1º Andar</h5>
+            <div><i class="far fa-check-square mr-2"></i>Garagem 2 carros grande + 2</div>
+            <div><i class="far fa-check-square mr-2"></i>Sala pé direito duplo, 6 mts</div>
             <div><i class="far fa-check-square mr-2"></i>Escritório</div>
-            <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-            <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
+            <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
         </div>
-        <div class="col-6 px-1">
-            <div><i class="far fa-check-square mr-2"></i>Dispensa</div>
-            <div><i class="far fa-check-square mr-2"></i>Área gourmet</div>
-            <div><i class="far fa-check-square mr-2"></i>Piscina com <strong><i> aquecimento solar</i></strong></div>
-            <div><i class="far fa-check-square mr-2"></i>Canil</div>
-            <div><i class="far fa-check-square mr-2"></i>Cerca elétrica e 5 câmeras</div>
-            <div><i class="far fa-check-square mr-2"></i>Garagem para 2 carros</div>
+        <div class="col-md-6 px-1">
+            <h5 class="font-weight-bold">2º Andar</h5>
+            <div><i class="far fa-check-square mr-2"></i>Suíte máster com closet e sacada</div>
+            <div><i class="far fa-check-square mr-2"></i>2 suítes com acesso ao quintal</div>
+            <div><i class="far fa-check-square mr-2"></i>Sala íntima</div>
+        </div>
+        <div class="col-md-6 px-1">
+            <h5 class="font-weight-bold">Andar do Meio do Pé direito 4,5 mts</h5>
+            <div><i class="far fa-check-square mr-2"></i>Sala Jantar</div>
+            <div><i class="far fa-check-square mr-2"></i>Cozinha ilha</div>
+            <div><i class="far fa-check-square mr-2"></i>Área de serviço fechada com porta 4,80 * 2,7 mts</div>
+            <div><i class="far fa-check-square mr-2"></i>Quintal</div>
+        </div>
+        <div class="col-md-6 px-1">
+            <h5 class="font-weight-bold">Edícula</h5>
+            <div><i class="far fa-check-square mr-2"></i>Banheiro</div>
+            <div><i class="far fa-check-square mr-2"></i>Quarto</div>
+            <div><i class="far fa-check-square mr-2"></i>Área gourmet com bancada de granito</div>
+            <div><i class="far fa-check-square mr-2"></i>Churrasqueira em inox</div>
         </div>
     </div>
+    <h5 class="mt-4">Extras:</h5>
+    <p>
+        Planejados, bancada granito em todas suítes e cozinha. <br>
+        Box, espelhos bisotado, monocomando, acessórios ducha higiênica em todos banheiros. <br>
+        Guarda corpo em alumínio com vidro 8 mm em toda casa. <br>
+        Todas aberturas em alumínio, fechaduras pado, portas branca com moldura 10. <br>
+        Lustre cristal, iluminação em Led em toda casa. <br>
+        Sanca: sala estar ,copa e sala intima. <br>
+        Forro gesso e baguete: sala, copa, cozinha, área de serviço, escritório, garagem, sala intima, varandas,
+        corredor, banheiros e área de lazer. <br>
+        Câmeras (6), alarme, cerca elétrica, portão automatizado, interfone com câmera e 3 fones. <br>
+        Piso porcelanato carpete madeira (rodapé de 10) granito. <br>
+        Aquecedor solar Eco tubo. <br>
+        Paisagismo (espaço para piscina ou spa)
+    </p>
 </div>
 <i class="far fa-check-square mr-2"></i> Elevador<br>
 <i class="far fa-check-square mr-2"></i>Varanda Gourmet<br>
