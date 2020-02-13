@@ -8,9 +8,19 @@
         CARACTERÍSTICA(S)
     </h2>
     <p>
-        Ótima casa no Jardim Europa de alto padrão, 2 andares e ótimo acabamento <br>
-        Com um terreno de 449m² e 300m² de área construída
+        Lindo apartamento no Jardim Quisisana <br>
+        Com uma área útil de 134 m²
     </p>
+    <div><i class="far fa-check-square mr-2"></i>3 quartos</div>
+    <div><i class="far fa-check-square mr-2"></i>1 suite com banheira de hidromassagem</div>
+    <div><i class="far fa-check-square mr-2"></i>2 banheiros</div>
+    <div><i class="far fa-check-square mr-2"></i>3 vagas</div>
+    <div><i class="far fa-check-square mr-2"></i>Área de Serviço com Banheiro</div>
+    <div><i class="far fa-check-square mr-2"></i>Elevador</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha com móveis planejados</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala ampla para 2 ambientes e lavabo</div>
+</div>
+<div>
     <div class="row">
         <div class="col-md-6 px-1">
             <h5 class="font-weight-bold">1º Andar</h5>

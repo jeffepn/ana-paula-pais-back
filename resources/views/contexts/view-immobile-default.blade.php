@@ -54,7 +54,8 @@
             </a>
         </div>
         <a href="{{url('imovel/'.$immobileview->slug)}}">
-            <div class="immobile-list-image">
+            <div
+                class="immobile-list-image @if($immobileview->sold) immobile-list-image-sold @elseif($immobileview->rented) immobile-list-image-rented @endif">
                 @php
                 $images = $immobileview->images;
                 $way = '';

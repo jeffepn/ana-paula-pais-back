@@ -2,6 +2,7 @@
 .section-immobile-not-found {
     justify-content: center;
 }
+
 .section-immobile-not-found,
 .section-immobile {
     margin-top: 146px;
@@ -10,6 +11,7 @@
     display: flex;
     align-items: center;
 }
+
 .section-immobile {
     &::after {
         content: "";
@@ -41,11 +43,13 @@
         margin-left: auto;
     }
 }
+
 .big-description-immobile {
     font-size: 1.2em;
     font-family: $fontPrimary;
     line-height: 2em;
 }
+
 .contact-immobile {
     background: $colorPrimary;
     text-align: center;
@@ -62,6 +66,7 @@
         color: white;
     }
 }
+
 .more-options-immobile {
     h1,
     h2,
@@ -73,28 +78,25 @@
         text-align: center;
     }
 }
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .section-immobile {
         &::after {
-            background-image: linear-gradient(
-                to left,
-                white,
-                rgba(gray, 0.5),
-                rgba(black, 0.5)
-            );
+            background-image: linear-gradient( to left, white, rgba(gray, 0.5), rgba(black, 0.5));
         }
     }
 }
+
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     .section-immobile {
         margin-top: 96px;
     }
 }
+
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}

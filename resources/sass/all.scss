@@ -13,18 +13,18 @@ body {
     margin: 0;
 }
 
-@import "./auxscss/variables.scss";
-@import "./auxscss/sections.scss";
-@import "./auxscss/fonts.scss";
-@import "./auxscss/footer.scss";
-@import "./auxscss/header.scss";
-@import "./auxscss/immobiles.scss";
-@import "./auxscss/carrousel.scss";
-@import "./auxscss/buttons.scss";
-@import "./auxscss/form.scss";
-@import "./auxscss/animation.scss";
-@import "./auxscss/modal.scss";
-@import "./auxscss/itens-marking.scss";
+@import "variables.scss";
+@import "sections.scss";
+@import "fonts.scss";
+@import "footer.scss";
+@import "header.scss";
+@import "immobiles.scss";
+@import "carrousel.scss";
+@import "buttons.scss";
+@import "form.scss";
+@import "animation.scss";
+@import "modal.scss";
+@import "itens-marking.scss";
 .pre-launch {
     display: flex;
     flex-direction: column;

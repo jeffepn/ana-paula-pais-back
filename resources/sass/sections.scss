@@ -206,6 +206,35 @@ $heightSectionServices: 400px;
             display: block;
             margin: 0 auto;
         }
+        &-sold,
+        &-rented {
+            &::before {
+                position: absolute;
+                font-size: 20px;
+                padding: 4px;
+                top: 50%;
+                left: 5%;
+                margin-top: -14px;
+                background-color: $colorPrimary;
+                color: white;
+                font-weight: bold;
+                width: 90%;
+                text-align: center;
+                transform: rotate(-15deg);
+                font-family: $fontSecoundary;
+                letter-spacing: 3px;
+            }
+        }
+        &-sold {
+            &::before {
+                content: "VENDIDO";
+            }
+        }
+        &-rented {
+            &::before {
+                content: "ALUGADO";
+            }
+        }
         .owl-carousel {
             position: relative;
             z-index: 3;
