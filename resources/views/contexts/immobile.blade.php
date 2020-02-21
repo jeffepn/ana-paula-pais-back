@@ -41,6 +41,9 @@
             <a class="btn bt--pr--out ft-md ft-secoundary d-inline-block px-5 scrool-smoth my-2 mx-2"
                 href="#more-info">Pedir
                 informações</a>
+            <a class="btn bt--pr--out ft-md ft-secoundary d-inline-block px-5 my-2 mx-2 copy-link-immobile" href="#"
+                data-clipboard-text="{{request()->url()}}" data-toggle="tooltip" data-placement="top"
+                title="Link copiado para área de transferência">Compartilhar link</a>
         </div>
     </div>
 </section>

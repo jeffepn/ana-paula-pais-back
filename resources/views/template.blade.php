@@ -55,6 +55,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
     </script>
+    <script src="{{url('js/clipboard.min.js?v=1.0.15')}}">
+    </script>
     <script src="{{url('js/assetsutilities.min.js?v=1.0.15')}}">
     </script>
     <script src="{{url('js/screen.js?v=1.0.15')}}">

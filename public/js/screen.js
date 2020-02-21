@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    var clipboard = new ClipboardJS('.copy-link-immobile');
+    clipboard.on('success', function (e) {
+        $('.copy-link-immobile').tooltip('show');
+    });
     verifyIfNavFloating($(window).scrollTop());
     verifyViexContext($(window).scrollTop());
     $(window).scroll(function () {
@@ -22,6 +26,12 @@ $(document).ready(function () {
     });
     $("body").on("click", ".close-modal-view-image-immobile", function (event) {
         $('#modal-view-image-immobile').modal('hide');
+    });
+    $("body").on("click", ".copy-link", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var link = this.getAttribute("data-link");
+        alert("Link copiado para área de transferência");
     });
 });
 function verifyIfNavFloating(top) {
