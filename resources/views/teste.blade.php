@@ -8,18 +8,77 @@
         CARACTERÍSTICA(S)
     </h2>
     <p>
-        Lindo apartamento no Jardim Quisisana <br>
-        Com uma área útil de 134 m²
+        Casa de alto padrão no Jardim dos Estados <br>
+        R$ 2.800.000,00
     </p>
-    <div><i class="far fa-check-square mr-2"></i>3 quartos</div>
-    <div><i class="far fa-check-square mr-2"></i>1 suite com banheira de hidromassagem</div>
-    <div><i class="far fa-check-square mr-2"></i>2 banheiros</div>
-    <div><i class="far fa-check-square mr-2"></i>3 vagas</div>
-    <div><i class="far fa-check-square mr-2"></i>Área de Serviço com Banheiro</div>
-    <div><i class="far fa-check-square mr-2"></i>Elevador</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha com móveis planejados</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala ampla para 2 ambientes e lavabo</div>
+    <p>
+        Que tal morar em uma casa completa e espaçosa, pertinho do centro de Poços de Caldas <br>
+        Uma linda casa com toda a infraestrutura, e uma espaçosa piscina. <br>
+        <strong>Venha conferir!!!</strong>
+    </p>
+
+    <div><i class="far fa-check-square mr-2"></i>2 suítes com hidromassagem</div>
+    <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
+    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
+    <div><i class="far fa-check-square mr-2"></i>Escritório</div>
+    <div><i class="far fa-check-square mr-2"></i>4 salas</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
+    <div><i class="far fa-check-square mr-2"></i>Área de hurrasqueira</div>
+    <div><i class="far fa-check-square mr-2"></i>5 vagas</div>
+    <div><i class="far fa-check-square mr-2"></i>Piscina</div>
 </div>
+<div>
+
+    Casa de alto padrão no Jardim dos estados, com infraestrutura completa <br>
+    <strong>Venha conferir!!!</strong>
+
+    <p>
+        Toda a fachada do prédio é revestida com placas deus pedra São Thomé
+    </p>
+    <p>
+        O empreendimento possui uma área construída de aproximadamente 895 metros quadrados, sendo 6 apartamentos
+        residenciais, duas unidades por andar, sendo aproximadamente 170 m2 a área total para cada apartamento,
+        incluindo garagem, proporcionando espaço e conforto para seus moradores
+    </p>
+    <p>
+        BAIXO VALOR DE CONDOMÍNIO por possuir apenas 6 apartamentos e 1 único elevador
+    </p>
+    <p>
+        A localização privilegiada do empreendimento somada com a distribuição interna dos cômodos leva diretamente
+        a melhoria da qualidade de vida e segurança do morador
+    </p>
+    <p>
+        - três quartos (sendo 1 suíte com closet), todos com carpete de madeira de primeira qualidade <br>
+        - banheiro social com porcelanato e pastilhas PORTOBELO<br>
+        - sala de estar e jantar com carpete de madeira<br>
+        - cozinha planejada com porcelanato PORTOBELO<br>
+        - lavanderia com porcelanato PORTOBELO<br>
+        - despensa com porcelanato PORTOBELO<br>
+        - banheiro de serviço com porcelanato PORTOBELO<br>
+        - uma vaga na garagem;<br>
+    </p>
+    <p>
+        Todos os três quartos e a sala de estar possuem varandas com guarda-corpos em vidro fumê de primeira
+        qualidade<br>
+    </p>
+    <strong> Outras dependências do prédio:</strong><br>
+    - elevador social;<br>
+    - hall de entrada (recepção)<br>
+    - portaria;<br>
+    - almoxarifado;<br>
+    - banheiro do hall;<br>
+    - portão eletrônico;<br>
+    - interfone;<br>
+    - 01 vaga na garagem<br>
+    - Área de paisagismo;<br>
+
+</div>
+
+<div><i class="far fa-check-square mr-2"></i>1 suite com banheira de hidromassagem</div>
+<div><i class="far fa-check-square mr-2"></i>Área de Serviço com Banheiro</div>
+<div><i class="far fa-check-square mr-2"></i>Elevador</div>
+<div><i class="far fa-check-square mr-2"></i>Cozinha com móveis planejados</div>
+<div><i class="far fa-check-square mr-2"></i>Sala ampla para 2 ambientes e lavabo</div>
 <div>
     <div class="row">
         <div class="col-md-6 px-1">
