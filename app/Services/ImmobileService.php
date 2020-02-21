@@ -138,7 +138,8 @@ class ImmobileService implements ServiceDefault
      */
     public function getOrderByVisits($amount)
     {
-        return Immobile::where('rent', true)->orWhere('sale', true)->take($amount)->get();
+        return  Immobile::withCount("visits")->orderBy("visits_count", "desc")
+            ->take($amount)->get();
     }
     /**
      * Get Immobiles similiar Immobile with amount defined

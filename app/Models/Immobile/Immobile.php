@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 //Models
 use App\Models\Immobile\ImageImmobile;
 use App\Models\Address\Neighborhood;
+use App\Models\Immobile\VisitImmobile;
 //Utility
 use App\Utility\SiteUtility;
 
@@ -34,6 +35,16 @@ class Immobile extends Model
     {
         return $this->belongsTo('App\Models\Address\Neighborhood', 'neighborhood_id');
     }
+    /**
+     * Return all VisitImmobile of Immobile
+     *
+     * @return VisitImmobile[]
+     */
+    public function visits()
+    {
+        return $this->hasMany("App\Models\Immobile\VisitImmobile", "immobile_id");
+    }
+
     /**
      * Get text of type of Immobile
      *
