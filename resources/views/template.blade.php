@@ -16,6 +16,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="charset" content="UTF-8">
+
+    <link rel="canonical" href="{{request()->url()}}" />
     @section('description')
     <meta name="description"
         content="Casas, Apartamentos, Salas, Pontos Comerciais em Poços de Caldas. Entre em contato e lhe ajudaremos a encontrar o imóvel perfeito para suas necessidades.">

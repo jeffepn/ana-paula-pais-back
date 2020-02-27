@@ -8,11 +8,12 @@ Imóvel não encontrado
 - {{config('app.name')}}
 @endsection
 
-@section('description')
 @if($immobilechain)
+@section('description')
 <meta name="description" content="{!!strip_tags($immobilechain->min_description)!!}">
-@endif
 @endsection
+@endif
+
 @section('header')
 @include('parts.header',['fixed'=>'fixed'])
 @endsection

@@ -2,6 +2,9 @@
 @section('title')
 Empreendimentos - {{config('app.name')}}
 @endsection
+
+
+
 @section('context')
 <section class="section-enterprises ">
     <div class="row my-5 px-md-5  align-items-center ">

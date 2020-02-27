@@ -2,6 +2,7 @@
 @section('title')
 Busca de immobiles - {{config('app.name')}}
 @endsection
+
 @section('context')
 @include('contexts.immobiles-search')
 @endsection
