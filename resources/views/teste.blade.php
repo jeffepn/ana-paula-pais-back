@@ -4,29 +4,62 @@
 @endsection
 @section('context')
 <div class="px-2 px-md-5 my-5">
+    Skyline <br>
+    Apartamentos com 2 quartos sendo 1 suíte com closet, 1 a 2 varandas, 75 m² de área útil. Próximo ao shopping,
+    supermercados e Parque municipal
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
+    <h4 class="my-3">
+        SKYLINE
+    </h4>
     <p>
-        Casa de alto padrão no Jardim dos Estados <br>
-        R$ 2.800.000,00
-    </p>
-    <p>
-        Que tal morar em uma casa completa e espaçosa, pertinho do centro de Poços de Caldas <br>
-        Uma linda casa com toda a infraestrutura, e uma espaçosa piscina. <br>
-        <strong>Venha conferir!!!</strong>
+        <strong>Localização</strong><br>
+        Localização estratégica de fácil acesso ao centro pela Avenida João Pinheiro e Avenida Pe. Cletus Francis Cox,
+        em um bairro seguro, próximo a universidade, shopping, supermercados e Parque Municipal.
     </p>
 
-    <div><i class="far fa-check-square mr-2"></i>2 suítes com hidromassagem</div>
     <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
-    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
-    <div><i class="far fa-check-square mr-2"></i>Escritório</div>
-    <div><i class="far fa-check-square mr-2"></i>4 salas</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-    <div><i class="far fa-check-square mr-2"></i>Área de hurrasqueira</div>
-    <div><i class="far fa-check-square mr-2"></i>5 vagas</div>
-    <div><i class="far fa-check-square mr-2"></i>Piscina</div>
+    <div><i class="far fa-check-square mr-2"></i>2 banheiros</div>
+    <div><i class="far fa-check-square mr-2"></i>1 suíte com closet</div>
+    <div><i class="far fa-check-square mr-2"></i>1 vaga</div>
+    <div><i class="far fa-check-square mr-2"></i>75 m² área útil</div>
+    <div><i class="far fa-check-square mr-2"></i>1 a 2 varandas </div>
+
+    <h2 class=" ft-secoundary">
+        Estrutura
+    </h2>
+    <div><i class="far fa-check-square mr-2"></i>27 apartamentos</div>
+    <div><i class="far fa-check-square mr-2"></i>12 andares</div>
+    <h2 class=" ft-secoundary">
+        ROOFTOP
+    </h2>
+    <p>
+        Ampla área de convivência com piscina, vista surpreendente para a Serra de São Domingos e Furnas, lavanderia e
+        um lounge completo.
+    </p>
+    <h2 class=" ft-secoundary">
+        APARTAMENTOS
+    </h2>
+    <p>
+        Prédio com 2 elevadores, apartamentos amplos, com excelente ventilação e iluminação natural.
+        Bela vista para as montanhas de Poços de Caldas.
+    </p>
+    <h2 class=" ft-secoundary">
+        APARTAMENTO 1
+    </h2>
+    <p>
+        Apartamento ventilado com 2 quartos, sendo 1 suíte com closet. 2 varandas, janelas amplas e acabamentos
+        selecionados.
+    </p>
+    <h2 class=" ft-secoundary">
+        APARTAMENTO 2
+    </h2>
+    <p>
+        Cozinha gourmet, 2 quartos, sendo 1 ampla suíte com closet, varanda e acabamentos selecionados
+    </p>
 </div>
+
 <div>
 
     Casa de alto padrão no Jardim dos estados, com infraestrutura completa <br>
