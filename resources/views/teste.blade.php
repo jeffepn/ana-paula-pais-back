@@ -3,16 +3,153 @@
 @include('parts.header')
 @endsection
 @section('context')
+Residencial Porto Real <br> Lindos Apartamentos apartir de 107m², com preços iniciados em R$ 525 mil
 <div class="px-2 px-md-5 my-5">
-    Skyline <br>
-    Apartamentos com 2 quartos sendo 1 suíte com closet, 1 a 2 varandas, 75 m² de área útil. Próximo ao shopping,
-    supermercados e Parque municipal
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <h4 class="my-3">
-        SKYLINE
+        RESIDENCIAL PORTO REAL
     </h4>
+    <p>
+        Apartamentos apartir de R$ 525.000,00, com 2 ou 3 vagas na garagem
+    </p>
+    <p>
+        Os apartamentos serão entregues com os
+        seguintes itens:
+    </p>
+    <p>
+        Na cozinha, lavanderia e banheiros serão pisos
+        porcelanatos retificados e também
+        revestimento tipo "A".
+        Pisos laminado nos quartos e sala.
+        Sistema de iluminação completo em led.
+        Esquadrias de alumínio com persiana
+        integrada, sendo a da Suíte Master
+        automatizada.
+        Metais com garantia eterna.
+        Bancadas e soleiras no granito preto São
+        Gabriel e lavatórios em granito travertino.
+        Molduras de gesso nos apartamentos.
+        Cozinha toda planejada;
+        lavandeira com armário aéreo;
+        Varanda gourmet com churrasqueira e
+        planejado;
+        Banheiros com gabinetes, box de vidro e
+        espelho .
+        Todas as paredes levarão massa antes do gesso
+        ou grafiato.
+    </p>
+    <div class="row mt-4">
+        <div class="col-sm-6 col-lg-8">
+            <p>
+                A área comum contará com
+                dois elevadores de última
+                geração, sistema de câmeras e
+                monitoramento completos,
+                cerca elétrica em todo edifício e
+                portões eletrônicos
+                Área de lazer terá:
+            </p>
+            <p>
+
+                <div><i class="far fa-check-square mr-2"></i>Academia</div>
+                <div><i class="far fa-check-square mr-2"></i>Espaço mulher</div>
+                <div><i class="far fa-check-square mr-2"></i>Espaço Kids</div>
+                <div><i class="far fa-check-square mr-2"></i>Salão de festa</div>
+                <div><i class="far fa-check-square mr-2"></i>Rooftop</div>
+                <div><i class="far fa-check-square mr-2"></i>Espaço das Churrasqueiras</div>
+                <div><i class="far fa-check-square mr-2"></i>Piscina Aquecida</div>
+                <div><i class="far fa-check-square mr-2"></i>Sauna</div>
+                <div><i class="far fa-check-square mr-2"></i>Área de descanso</div>
+            </p>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+            <img class="m-w-100" src="{{url('images/utilsimmobiles/portoreal1.png')}}" alt="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        APARTAMENTO 01 - 137m²<br>
+                        03 SUÍTES <br>
+                        AMBIENTES INTEGRADOS <br>
+                        VARANDA GOURMET <br>
+                        LAVABO <br>
+                        LAVANDERIA
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p>
+                        APARTAMENTO 02 - 135m²<br>
+                        03 SUÍTES <br>
+                        AMBIENTES INTEGRADOS <br>
+                        VARANDA GOURMET <br>
+                        LAVABO <br>
+                        LAVANDERIA
+                    </p>
+                </div>
+            </div>
+            <img class="m-w-100" src="{{url('images/utilsimmobiles/portoreal2.png')}}" alt="">
+        </div>
+        <div class="col-sm-6">
+            <div class="col-12">
+                <p>
+                    APARTAMENTO 03 - 130m²<br>
+                    03 SUÍTES <br>
+                    AMBIENTES INTEGRADOS <br>
+                    VARANDA GOURMET <br>
+                    LAVABO <br>
+                    LAVANDERIA
+                </p>
+            </div>
+            <img class="m-w-100" src="{{url('images/utilsimmobiles/portoreal3.png')}}" alt="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-4">
+            <div class="col-12">
+                <p>
+                    APARTAMENTO 04 - 125m²<br>
+                    03 SUÍTES <br>
+                    AMBIENTES INTEGRADOS <br>
+                    VARANDA GOURMET <br>
+                    LAVABO <br>
+                    LAVANDERIA
+                </p>
+            </div>
+            <img class="m-w-100" src="{{url('images/utilsimmobiles/portoreal4.png')}}" alt="">
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        APARTAMENTO 05 - 107m²<br>
+                        03 SUÍTES <br>
+                        AMBIENTES INTEGRADOS <br>
+                        VARANDA GOURMET <br>
+                        LAVABO <br>
+                        LAVANDERIA
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p>
+                        APARTAMENTO 06 - 127m²<br>
+                        03 SUÍTES <br>
+                        AMBIENTES INTEGRADOS <br>
+                        VARANDA GOURMET <br>
+                        LAVABO <br>
+                        LAVANDERIA
+                    </p>
+                </div>
+            </div>
+            <img class="m-w-100" src="{{url('images/utilsimmobiles/portoreal5.png')}}" alt="">
+        </div>
+    </div>
+</div>
+<div>
     <p>
         <strong>Localização</strong><br>
         Localização estratégica de fácil acesso ao centro pela Avenida João Pinheiro e Avenida Pe. Cletus Francis Cox,
@@ -201,4 +338,5 @@
     </div>
 
 </div>
+
 @endsection
