@@ -61,6 +61,19 @@
     </div>
 </section>
 <section id="more" class="description-immobile">
+    @if($immobilechain->sold)
+    <div class="px-3">
+        <div class="alert alert-danger text-center" role="alert">
+            O imóvel já foi vendido
+        </div>
+    </div>
+    @elseif($immobilechain->rented)
+    <div class="px-3">
+        <div class="alert alert-danger text-center" role="alert">
+            O imóvel já foi alugado
+        </div>
+    </div>
+    @endif
     <div class="divider-section-services-description my-3">
         <h3>Detalhes do imóvel</h3>
         <p>

@@ -3,17 +3,29 @@
 @include('parts.header')
 @endsection
 @section('context')
-Residencial Porto Real <br> Lindos Apartamentos apartir de 107m², com preços iniciados em R$ 525 mil
+RESIDENCIAL VALE VEREDAS <br>
+Próximo ao Jd. Country Club, a partir de R$285.000,00 <br>
+Opções: 2 suítes 74m² ou 1 suíte + 2 quartos 89m²
 <div class="px-2 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <h4 class="my-3">
-        RESIDENCIAL PORTO REAL
+        Residencial Vale Veredas <br>
+        Apartamentos com: <br>
+        2 suítes 74m² - 2 vagas cobertas <br>
+        1 suíte + 2 quartos 89m² - 2 vagas cobertas
     </h4>
     <p>
-        Apartamentos apartir de R$ 525.000,00, com 2 ou 3 vagas na garagem
+        <div><i class="far fa-check-square mr-2"></i>2 ou 3 dormitórios</div>
+        <div><i class="far fa-check-square mr-2"></i>1 ou 2 suítes</div>
+        <div><i class="far fa-check-square mr-2"></i>Varanda gourmet</div>
+        <div><i class="far fa-check-square mr-2"></i>1 Elevador</div>
+        <div><i class="far fa-check-square mr-2"></i>1 Vaga coberta</div>
+
     </p>
+</div>
+<div>
     <p>
         Os apartamentos serão entregues com os
         seguintes itens:
@@ -152,7 +164,8 @@ Residencial Porto Real <br> Lindos Apartamentos apartir de 107m², com preços i
 <div>
     <p>
         <strong>Localização</strong><br>
-        Localização estratégica de fácil acesso ao centro pela Avenida João Pinheiro e Avenida Pe. Cletus Francis Cox,
+        Localização estratégica de fácil acesso ao centro pela Avenida João Pinheiro e Avenida Pe. Cletus Francis
+        Cox,
         em um bairro seguro, próximo a universidade, shopping, supermercados e Parque Municipal.
     </p>
 
@@ -172,7 +185,8 @@ Residencial Porto Real <br> Lindos Apartamentos apartir de 107m², com preços i
         ROOFTOP
     </h2>
     <p>
-        Ampla área de convivência com piscina, vista surpreendente para a Serra de São Domingos e Furnas, lavanderia e
+        Ampla área de convivência com piscina, vista surpreendente para a Serra de São Domingos e Furnas, lavanderia
+        e
         um lounge completo.
     </p>
     <h2 class=" ft-secoundary">
