@@ -32,7 +32,7 @@ class ImmobileController extends Controller
                     $immobileService->createImage($way, $immobile);
                 }
             }
-            return redirect()->back()->with('success', Util::success('RegisterImmobileSuccess'));
+            return redirect()->back()->with('success', Util::success('RegisterImmobileSuccess') . "<br> <a target='_blank' href='" . url("imovel/" . $immobile->slug) . "'>Ir para $immobile->slug</a>");
         }
         return redirect()->back()->with('error', Util::error('SolicitationError'))->withInput($request->all());
     }
