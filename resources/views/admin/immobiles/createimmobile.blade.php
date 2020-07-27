@@ -12,7 +12,7 @@
                     (*) - Campos obrigatórios
                 </p>
                 <hr>
-                <p class="text-success">{{session('success')}}</p>
+                <p class="text-success">{!!session('success')!!}</p>
                 <p class="text-danger">{{session('error')}}</p>
                 @include('laraveladmin::parts.generateform',['form'=>view('admin.immobiles.parts.formcreate',['neighborhoods'=>$neighborhoods,'types'=>$types])->render()])
             </div>

@@ -3,32 +3,30 @@
 @include('parts.header')
 @endsection
 @section('context')
-Residencial Augusta Chuengue ( 68 - 90 m² ) - Caio Junqueira <br>
-Apartamentos com 2 ou 3qts, 1 ou 2, Elevador, Varanda Gourmet
+Residencial Attualità 88 m² <br>
+2 qts e 1 suíte com varanda e closet, sala 2 ambientes, lavabo, banheiro social, área de serviço, cozinnha e 1 vaga
 <div class="px-2 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <h4 class="my-3">
-        Residencial Augusta Chuengue <br>
-        Apartamentos com 2 e 3 qts, Varanda Gourmet, Elevador, apartir de R$ 200 mil
+        Residencial Attualità <br>
+        Apartamentos em ótima localização e uma incrível vista para o centro de Poços de Caldas
     </h4>
     <p>
-        <div><i class="far fa-check-square mr-2"></i>2 e 3 quartos</div>
-        <div><i class="far fa-check-square mr-2"></i>2 banheiros</div>
-        <div><i class="far fa-check-square mr-2"></i>1 e 2 vagas de garagem</div>
-        <div><i class="far fa-check-square mr-2"></i>Varanda Gourmet</div>
+        <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
+        <div><i class="far fa-check-square mr-2"></i>1 suíte com varanda e closet</div>
+        <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
+        <div><i class="far fa-check-square mr-2"></i>Sala 2 ambientes com lavabo</div>
+        <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
+        <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
+        <div><i class="far fa-check-square mr-2"></i>1 vaga na garagem</div>
     </p>
     <p>
 
-        O Residencial Augusta Chuengue, está localizado no bairro Caio Junqueira e foi criado pensando nas reais
-        necessidades de Poços de Caldas, com apartamentos de 02 e 03 quartos, ambos com suíte, com metragens entre 68m²
-        e 91m², Vaga de Garagem para dois carros, Elevador Social, Acabamento em Porcelanato e Piso Laminado (Carpete de
-        Madeira), Varanda Simples e Varanda Gourmet com Churrasqueira.
-    </p>
-    <p>
-        O Condomínio está a apenas 3km do centro, e fica próximo de escola, supermercado, farmácia, padaria, pizzaria,
-        sorveteria e todas as demais estruturas para sua comodidade.
+        O Residencial Attualità, fica localizado em uma área nobre de Poços de Caldas,
+        os moradores desfrutam dos benefícios e serviços a pouco metros de distância, trazendo
+        praticidade e conforto no dia a dia. Não peca essa chance de morar bem!!!
     </p>
 </div>
 <div>
