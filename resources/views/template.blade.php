@@ -20,7 +20,7 @@
     <link rel="canonical" href="{{request()->url()}}" />
     @section('description')
     <meta name="description"
-        content="Casas, Apartamentos, Salas, Pontos Comerciais em Poços de Caldas. Entre em contato e lhe ajudaremos a encontrar o imóvel perfeito para suas necessidades.">
+        content="Casas, Apartamentos, Salas, Pontos Comerciais em Poços de Caldas. Entre em contato e lhe ajudarei a encontrar o imóvel perfeito para suas necessidades.">
     @show
     <title> @section('title') {{config('app.name')}} @show em Poços de Caldas</title>
 

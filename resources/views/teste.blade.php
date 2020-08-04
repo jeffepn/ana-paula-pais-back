@@ -3,31 +3,48 @@
 @include('parts.header')
 @endsection
 @section('context')
-Residencial Attualità 88 m² <br>
-2 qts e 1 suíte com varanda e closet, sala 2 ambientes, lavabo, banheiro social, área de serviço, cozinnha e 1 vaga
+Residencial Mirante do Sol - R$ 225 à R$ 297 mil <br>
+3 qts sendo 1 suíte, varanda gourmet, cozinha, lavabo, banheiro social, sala de estar e jantar
 <div class="px-2 px-md-5 my-5">
     <h2 class=" ft-secoundary">
         CARACTERÍSTICA(S)
     </h2>
     <h4 class="my-3">
-        Residencial Attualità <br>
-        Apartamentos em ótima localização e uma incrível vista para o centro de Poços de Caldas
+        Residencial Mirante do Sol - 84 à 98 m² <br>
+        Os preços variam de R$ 225 à R$ 297 mil
     </h4>
-    <p>
-        <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
-        <div><i class="far fa-check-square mr-2"></i>1 suíte com varanda e closet</div>
-        <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
-        <div><i class="far fa-check-square mr-2"></i>Sala 2 ambientes com lavabo</div>
-        <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-        <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
-        <div><i class="far fa-check-square mr-2"></i>1 vaga na garagem</div>
+    <div><i class="far fa-check-square mr-2"></i>3 dormitórios sendo 1 suíte</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
+    <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
+    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de estar</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de jantar</div>
+    <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
+    <div><i class="far fa-check-square mr-2"></i>Varanda Gourmet</div>
+    <div><i class="far fa-check-square mr-2"></i>Elevador</div>
+    <div><i class="far fa-check-square mr-2"></i>Vaga p/ 2 carros</div>
+    <div><i class="far fa-check-square mr-2"></i>5 andares de apartamento, 1 pavimento térreo para garagem e mais 1
+        subsolo para garagem</div>
+    <p class="mt-2">
+        O Residencial apresentará infraestrutura de bastante conforto, comodidade e acabamento em
+        porcelanato e carpete de madeira, além de instalação de gabinete planejado nos banheiros. Estará numa região
+        residencial privilegiada de Poços de Caldas. A área útil total deste empreendimento será de aproximadamente
+        3561,61 m2. Estará totalmente adequado as normas da Prefeitura Municipal, do Corpo de Bombeiros, DMAE
+        e DME. Contará com a instalação de energia elétrica e água fria.
     </p>
-    <p>
-
-        O Residencial Attualità, fica localizado em uma área nobre de Poços de Caldas,
-        os moradores desfrutam dos benefícios e serviços a pouco metros de distância, trazendo
-        praticidade e conforto no dia a dia. Não peca essa chance de morar bem!!!
-    </p>
+    Contém infraestrutura completa, próximo a comércios e ao centro da cidade que atende as
+    necessidades do residencial. <br>
+    <strong>- Posto de Combustível Centenário;</strong> <br>
+    <strong>- Posto de Combustível Floresta;</strong> <br>
+    <strong>- Campo Society Floresta;</strong> <br>
+    <strong>- Pet Shop;</strong> <br>
+    <strong>- Aline Distribuidora de Gás;</strong> <br>
+    <strong>- Pizzaria da Mama;</strong> <br>
+    <strong>- Colégio CEPOC;</strong> <br>
+    <strong>- Parque temático Walter Word;</strong> <br>
+    <strong>- Hospital Santa Lúcia;</strong> <br>
+    <strong>- Casa Carneiro;</strong> <br>
+    <strong>- Restaurante Panela de Pedra, e muito mais.</strong> <br>
 </div>
 <div>
     <p>
