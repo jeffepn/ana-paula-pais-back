@@ -3,48 +3,178 @@
 @include('parts.header')
 @endsection
 @section('context')
-Residencial Mirante do Sol - R$ 225 à R$ 297 mil <br>
-3 qts sendo 1 suíte, varanda gourmet, cozinha, lavabo, banheiro social, sala de estar e jantar
+Vila dos Pássaros - R$ 490 mil <br>
+Casas com 3 qts e 1 suíte / 3 suítes, Área de Lazer com piscina, Quadra, Sauna, Pomar, Playground e muito mais ...
 <div class="px-2 px-md-5 my-5">
-    <h2 class=" ft-secoundary">
-        CARACTERÍSTICA(S)
-    </h2>
-    <h4 class="my-3">
-        Residencial Mirante do Sol - 84 à 98 m² <br>
-        Os preços variam de R$ 225 à R$ 297 mil
-    </h4>
-    <div><i class="far fa-check-square mr-2"></i>3 dormitórios sendo 1 suíte</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-    <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
-    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala de estar</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala de jantar</div>
-    <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
-    <div><i class="far fa-check-square mr-2"></i>Varanda Gourmet</div>
-    <div><i class="far fa-check-square mr-2"></i>Elevador</div>
-    <div><i class="far fa-check-square mr-2"></i>Vaga p/ 2 carros</div>
-    <div><i class="far fa-check-square mr-2"></i>5 andares de apartamento, 1 pavimento térreo para garagem e mais 1
-        subsolo para garagem</div>
-    <p class="mt-2">
-        O Residencial apresentará infraestrutura de bastante conforto, comodidade e acabamento em
-        porcelanato e carpete de madeira, além de instalação de gabinete planejado nos banheiros. Estará numa região
-        residencial privilegiada de Poços de Caldas. A área útil total deste empreendimento será de aproximadamente
-        3561,61 m2. Estará totalmente adequado as normas da Prefeitura Municipal, do Corpo de Bombeiros, DMAE
-        e DME. Contará com a instalação de energia elétrica e água fria.
+    <p class="caption">
+        Pré-lançamento Vila dos Pássaros
     </p>
-    Contém infraestrutura completa, próximo a comércios e ao centro da cidade que atende as
-    necessidades do residencial. <br>
-    <strong>- Posto de Combustível Centenário;</strong> <br>
-    <strong>- Posto de Combustível Floresta;</strong> <br>
-    <strong>- Campo Society Floresta;</strong> <br>
-    <strong>- Pet Shop;</strong> <br>
-    <strong>- Aline Distribuidora de Gás;</strong> <br>
-    <strong>- Pizzaria da Mama;</strong> <br>
-    <strong>- Colégio CEPOC;</strong> <br>
-    <strong>- Parque temático Walter Word;</strong> <br>
-    <strong>- Hospital Santa Lúcia;</strong> <br>
-    <strong>- Casa Carneiro;</strong> <br>
-    <strong>- Restaurante Panela de Pedra, e muito mais.</strong> <br>
+    <h3>
+        Sua família merece esse cuidado:
+        bem-vindo ao Vila dos Pássaros
+    </h3>
+    <p>
+        Com uma linda vista para o Cristo e próximo a uma ampla área verde, o Vila dos Pássaros é a oportunidade ideal
+        para
+        quem quer viver com bem-estar e segurança, além, é claro, da privacidade que só um condomínio fechado pode
+        proporcionar. Conheça e apaixone-se por seu novo lar!
+    </p>
+    <h5 class="font-weight-bold"> Casas a partir de R$ 490 mil</h5>
+    <div class="my-3">
+        <h2 class="text-center">
+            Tipologias
+        </h2>
+        <hr class="bg-info w-25 mx-auto" style="height: 3px;">
+        <div class="row">
+            <div class="col-sm-6 col-md-3 my-2 text-center d-flex flex-column justify-content-center">
+                <h3> Tipologia Sabiá</h3>
+                <h4 class="font-weight-bold text-danger">
+                    154,06 m²
+                </h4>
+            </div>
+            <div class="col-sm-6 col-md-4 my-2 d-flex flex-column justify-content-center">
+                <div>
+                    <div><i class="far fa-check-square mr-2"></i>3 suítes</div>
+                    <div><i class="far fa-check-square mr-2"></i>1 lavabo</div>
+                    <div><i class="far fa-check-square mr-2"></i>Salas de jantar, estar e tv</div>
+                    <div><i class="far fa-check-square mr-2"></i>Cozinha Gourmet</div>
+                    <div><i class="far fa-check-square mr-2"></i>Área externa descoberta</div>
+                    <div><i class="far fa-check-square mr-2"></i>2 vagas de garagem cobertas</div>
+                </div>
+            </div>
+            <div class="col-md-5 row my-2">
+                <div class="w-50 text-center">
+                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/sabia1.jpeg')}}" alt="">
+                    <strong class="text-info">
+                        Pavimento Térreo
+                    </strong class="text-info">
+                </div>
+                <div class="w-50 text-center">
+                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/sabia2.jpeg')}}" alt="">
+                    <strong class="text-info">
+                        Primeiro Pavimento
+                    </strong class="text-info">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3 my-2 text-center d-flex flex-column justify-content-center">
+                <h3> Tipologia Andorinha </h3>
+                <h4 class="font-weight-bold text-danger">
+                    138,79 m²
+                </h4>
+            </div>
+            <div class="col-sm-6 col-md-4 my-2 d-flex flex-column justify-content-center">
+                <div>
+                    <div><i class="far fa-check-square mr-2"></i>3 dormitórios, sendo 1 suíte</div>
+                    <div><i class="far fa-check-square mr-2"></i>1 lavabo e 1 banheiro social</div>
+                    <div><i class="far fa-check-square mr-2"></i>Salas de jantar, estar e tv</div>
+                    <div><i class="far fa-check-square mr-2"></i>Cozinha Gourmet</div>
+                    <div><i class="far fa-check-square mr-2"></i>Área externa descoberta</div>
+                    <div><i class="far fa-check-square mr-2"></i>2 vagas de garagem cobertas</div>
+
+                </div>
+            </div>
+            <div class="col-md-5 row my-2">
+                <div class="w-50 text-center">
+                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/andorinha1.jpeg')}}"
+                        alt="">
+                    <strong class="text-info">
+                        Pavimento Térreo
+                    </strong class="text-info">
+                </div>
+                <div class="w-50 text-center">
+                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/andorinha2.jpeg')}}"
+                        alt="">
+                    <strong class="text-info">
+                        Primeiro Pavimento
+                    </strong class="text-info">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-auto my-2">
+            Condomínio resort com
+            <hr class="bg-info my-2 w-50" style="height: 3px" />
+            <h5 class="font-weight-bold"> 52 casas</h5>
+        </div>
+        <div class="col-auto my-2">
+            Casas de
+            <hr class="bg-info my-2 w-50" style="height: 3px" />
+            <h5 class="font-weight-bold"> 3 quartos</h5>
+        </div>
+        <div class="col-auto my-2">
+            Todas unidades com
+            <hr class="bg-info my-2 w-50" style="height: 3px" />
+            <h5 class="font-weight-bold"> Quintal e Jardim</h5>
+        </div>
+        <div class="col-auto my-2">
+            Ampla
+            <hr class="bg-info my-2 w-50" style="height: 3px" />
+            <h5 class="font-weight-bold"> Área de Lazer</h5>
+        </div>
+        <div class="col-auto my-2">
+            Bairro Primavera
+            <hr class="bg-info my-2 w-50" style="height: 3px" />
+            <h5 class="font-weight-bold"> Poços de Caldas</h5>
+        </div>
+        <div class="col-auto my-2">
+            Vista linda para
+            <hr class="bg-info my-2 w-50" style="height: 3px" />
+            <h5 class="font-weight-bold"> Serra de São Domingos</h5>
+        </div>
+    </div>
+    <div class="mt-3 text-white font-weight-bold position-relative" style="background-image: url('/images/site/enterprises/vila-dos-passaros/lazer.jpeg');
+         background-size:cover;
+          background-repeat: no-repeat;
+          background-position-y: bottom">
+        <div class="w-100 h-100 bg-dark position-absolute" style="opacity: .6;"></div>
+        <div class="row  py-5 justify-content-between">
+            <h2 class="col-12 text-center">Área de Lazer</h2>
+            <div class="col-auto my-2">
+                Salão de Festas
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                com churrasqueira para aproveitar com a família
+            </div>
+            <div class="col-auto my-2">
+                Espaço fitness
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                com uma academia para se exercitar
+            </div>
+            <div class="col-auto my-2">
+                Quadra Gramada
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                para se divertir nos fins de semana
+            </div>
+            <div class="col-auto my-2">
+                Playground
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                para as crianças se divertirem ao ar livre
+            </div>
+            <div class="col-auto my-2">
+                Sauna
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                para relaxar depois do treino
+            </div>
+            <div class="col-auto my-2">
+                Área de churrasco
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                para as reuniões de família e amigos
+            </div>
+            <div class="col-auto my-2">
+                Piscina
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                para relaxar nos dias quentes
+            </div>
+            <div class="col-auto my-2">
+                Pomar
+                <hr class="bg-danger w-50 my-2" style="height: 3px">
+                com frutas fresquinhas
+            </div>
+        </div>
+    </div>
+
 </div>
 <div>
     <p>
