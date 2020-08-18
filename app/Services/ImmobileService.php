@@ -4,6 +4,7 @@ namespace App\Services;
 
 //Services
 use JpUtilities\Services\ServiceDefault;
+use Illuminate\Support\Facades\DB;
 //Models
 use App\Models\Immobile\Immobile;
 use App\Models\Immobile\ImageImmobile;
@@ -236,13 +237,14 @@ class ImmobileService implements ServiceDefault
      */
     public function getAllNeighborhoodsSelectWithCity()
     {
-        return ArrayUtility::convertArrayForInputSelectWith2Value(
+        return ArrayUtility::convertArrayForInputSelect(
             'id',
-            'name',
-            'name_city',
+            'result',
             Neighborhood::join('cities', 'neighborhoods.city_id', '=', 'cities.id')
-                ->select('neighborhoods.id', 'neighborhoods.name', 'cities.name AS name_city')
+                ->join('states', 'cities.state_id', '=', 'states.id')
+                ->select('neighborhoods.id', 'neighborhoods.name', DB::raw('CONCAT(neighborhoods.name ," - ",cities.name," ",states.initials) AS result'))
                 ->orderBy("neighborhoods.name", "asc")->get()
+
         );
     }
     /**

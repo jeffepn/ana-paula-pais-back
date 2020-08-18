@@ -3,22 +3,47 @@
 @include('parts.header')
 @endsection
 @section('context')
-Vila dos Pássaros - R$ 490 mil <br>
-Casas com 3 qts e 1 suíte / 3 suítes, Área de Lazer com piscina, Quadra, Sauna, Pomar, Playground e muito mais ...
+Residencial Maui <br>
+O conforto que você procura, com a praticidade que você merece
 <div class="px-2 px-md-5 my-5">
     <p class="caption">
-        Pré-lançamento Vila dos Pássaros
+        Residencial Maui - São Jõao da Boa Vista SP <br>
+        Apartamentos com 157m² a 183m², com valores entre R$ 825 mil à R$ 922 mil
     </p>
     <h3>
-        Sua família merece esse cuidado:
-        bem-vindo ao Vila dos Pássaros
+        Desfrute bem a vida em família
     </h3>
     <p>
-        Com uma linda vista para o Cristo e próximo a uma ampla área verde, o Vila dos Pássaros é a oportunidade ideal
-        para
-        quem quer viver com bem-estar e segurança, além, é claro, da privacidade que só um condomínio fechado pode
-        proporcionar. Conheça e apaixone-se por seu novo lar!
+        Empreendimento de alto padrão, inspirado na ilha de Maui - Hawai. Maui RESIDENCES será
+        implantado em uma área de 6.225 m². Serão 5 torres de 8 pavimentos, sendo 1 apartamento por andar.
     </p>
+    <p>
+        Estrategicamente localizado no vetor de crescimento de São João da Boa Vista - SP, o empreendimento contará
+        ainda com
+        infraestrutura de lazer e bem estar completa, para que você VIVA BEM suas experiências com sua família.
+    </p>
+    <h5 class="font-weight-bold">Apartamentos</h5>
+    <p>
+        Unidades de 183 m² e 157 m², com vagas de até 26 m²
+    </p>
+    <div><i class="far fa-check-square mr-2"></i>3 suítes</div>
+    <div><i class="far fa-check-square mr-2"></i>Persianas integradas motorizadas</div>
+    <div><i class="far fa-check-square mr-2"></i>Ampla varanda gourmet com churrasqueira</div>
+    <div><i class="far fa-check-square mr-2"></i>Vista panorâmica para o Lago</div>
+    <div><i class="far fa-check-square mr-2"></i>Living amplo com salas integradas</div>
+    <div><i class="far fa-check-square mr-2"></i>Hall de acesso exclusivo</div>
+    <div><i class="far fa-check-square mr-2"></i>Lavabo social e WC de serviço</div>
+    <div><i class="far fa-check-square mr-2"></i>Porcelanato nas áreas comuns</div>
+    <div><i class="far fa-check-square mr-2"></i>Laminado de madeira nas áreas íntimas</div>
+    <div><i class="far fa-check-square mr-2"></i>Infraestrutura para ar condicionado Split</div>
+    <div><i class="far fa-check-square mr-2"></i>Infraestrutura para água quente</div>
+    <div><i class="far fa-check-square mr-2"></i>Manta de isolamento acústico nos pisos</div>
+    <div><i class="far fa-check-square mr-2"></i>Forro rebaixado - mais mobilidade do projeto de iluminação</div>
+    <div><i class="far fa-check-square mr-2"></i>2 vagas de garagem coberta</div>
+
+</div>
+<div class="mt-5">
+
     <h5 class="font-weight-bold"> Casas a partir de R$ 490 mil</h5>
     <div class="my-3">
         <h2 class="text-center">
@@ -44,13 +69,15 @@ Casas com 3 qts e 1 suíte / 3 suítes, Área de Lazer com piscina, Quadra, Saun
             </div>
             <div class="col-md-5 row my-2">
                 <div class="w-50 text-center">
-                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/sabia1.jpeg')}}" alt="">
+                    <img class="m-w-100" src="/images/site/enterprises/vila-dos-passaros/sabia1.jpeg"
+                        alt="Vila dos Pássaros - Unidade Sabiá - Bairro Primavera Poços de Caldas">
                     <strong class="text-info">
                         Pavimento Térreo
                     </strong class="text-info">
                 </div>
                 <div class="w-50 text-center">
-                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/sabia2.jpeg')}}" alt="">
+                    <img class="m-w-100" src="/images/site/enterprises/vila-dos-passaros/sabia2.jpeg"
+                        alt="Vila dos Pássaros - Unidade Sabiá - Bairro Primavera Poços de Caldas">
                     <strong class="text-info">
                         Primeiro Pavimento
                     </strong class="text-info">
@@ -77,15 +104,15 @@ Casas com 3 qts e 1 suíte / 3 suítes, Área de Lazer com piscina, Quadra, Saun
             </div>
             <div class="col-md-5 row my-2">
                 <div class="w-50 text-center">
-                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/andorinha1.jpeg')}}"
-                        alt="">
+                    <img class="m-w-100" src="/images/site/enterprises/vila-dos-passaros/andorinha1.jpeg"
+                        alt="Vila dos Pássaros - Unidade Andorinha - Bairro Primavera Poços de Caldas">
                     <strong class="text-info">
                         Pavimento Térreo
                     </strong class="text-info">
                 </div>
                 <div class="w-50 text-center">
-                    <img class="m-w-100" src="{{url('/images/site/enterprises/vila-dos-passaros/andorinha2.jpeg')}}"
-                        alt="">
+                    <img class="m-w-100" src="/images/site/enterprises/vila-dos-passaros/andorinha2.jpeg"
+                        alt="Vila dos Pássaros - Unidade Andorinha - Bairro Primavera Poços de Caldas">
                     <strong class="text-info">
                         Primeiro Pavimento
                     </strong class="text-info">
@@ -174,8 +201,11 @@ Casas com 3 qts e 1 suíte / 3 suítes, Área de Lazer com piscina, Quadra, Saun
             </div>
         </div>
     </div>
-
 </div>
+
+
+
+
 <div>
     <p>
         Os apartamentos serão entregues com os

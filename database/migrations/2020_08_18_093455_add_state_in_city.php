@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCitiesTable extends Migration
+class AddStateInCity extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->engine = "InnoDB";
-            $table->bigIncrements('id');
-            $table->string('name', 60);
+        Schema::table('cities', function (Blueprint $table) {
+            $table->bigInteger('state_id')->unsigned()->nullable();
+            $table->foreign('state_id')->references('id')->on('states');
         });
     }
 
@@ -27,6 +26,8 @@ class CreateCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::table('cities', function (Blueprint $table) {
+            //
+        });
     }
 }
