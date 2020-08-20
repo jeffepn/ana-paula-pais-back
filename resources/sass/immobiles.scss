@@ -83,13 +83,19 @@
 @media (min-width: 576px) {
     .section-immobile {
         &::after {
-            background-image: linear-gradient( to left, white, rgba(gray, 0.5), rgba(black, 0.5));
+            background-image: linear-gradient(
+                to left,
+                white,
+                rgba(gray, 0.5),
+                rgba(black, 0.5)
+            );
         }
     }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -99,4 +105,5 @@
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
