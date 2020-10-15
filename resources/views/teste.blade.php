@@ -3,17 +3,21 @@
 @include('parts.header')
 @endsection
 @section('context')
-Residencial Euro <br>
-2 qts, com armários em 1 quarto e na cozinha
+
+3 quartos sendo 1 suíte, área gourmet, 2 vagas na garagem
 <div class="px-2 px-md-5 my-5">
-    <p class="caption">
-        Residencial Euro - Apartamento 55 m²<br>
+    <p>
+        Apartamento Vila Togni - Poços de Caldas
     </p>
-    <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
-    <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
-    <div><i class="far fa-check-square mr-2"></i>Varanda</div>
+    <p>
+        Muito bem localizado, gabinetes na cozinha, blindex nos banheiros, quartos
+        com boa luminosidade
+    </p>
+    <strong>Apartamento</strong>
+    <div><i class="far fa-check-square mr-2"></i>3 quartos sendo 1 suíte</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha com gabinetes planejados e cooktop</div>
+    <div><i class="far fa-check-square mr-2"></i>Área gourmet</div>
+    <div><i class="far fa-check-square mr-2"></i>2 vagas</div>
 </div>
 <div class="mt-5">
 

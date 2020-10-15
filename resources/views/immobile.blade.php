@@ -7,9 +7,19 @@ Imóvel não encontrado
 @endif
 - {{config('app.name')}}
 @endsection
-
+@php
+$url = request()->url();
+@endphp
 @if($immobilechain)
 @section('description')
+<meta property="og:locale" content="pt-br">
+<meta property="og:url" content="{{$url}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{!!strip_tags($immobilechain->min_description)!!}" />
+<meta property="og:site_name" content="{{config("app.name")}}">
+<meta property="og:description" content="{!!strip_tags($immobilechain->min_description)!!}" />
+<meta property="og:image" content="{{url($immobilechain->images->first()->way)}}" />
+<meta property="og:image:width" content="1200">
 <meta name="description" content="{!!strip_tags($immobilechain->min_description)!!}">
 @endsection
 @endif
