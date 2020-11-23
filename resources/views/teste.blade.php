@@ -7,17 +7,178 @@
 3 quartos sendo 1 suíte, área gourmet, 2 vagas na garagem
 <div class="px-2 px-md-5 my-5">
     <p>
-        Apartamento Vila Togni - Poços de Caldas
+        GRÃ DUQUESA RESIDENCIAL - Poços de Caldas
     </p>
     <p>
-        Muito bem localizado, gabinetes na cozinha, blindex nos banheiros, quartos
-        com boa luminosidade
+        <strong> LOCALIZAÇÃO PRIVILEGIADA </strong>
+        <li> Proximidade de comércios e serviços</li>
+        <li>Tranquilidade e segurança</li>
+        <li>Bairro com alto índice de valorização imobiliária</li>
+    </p>
+    <p>
+        Localizado no bairro Vila Togni em Poços de Caldas - MG,
+        o empreendimento tem uma variedade de tipologias de
+        apartamentos, com 70 unidades que variam de 70 a 108 m2. <br>
+        São 3 pavimentos de garagem, sendo 1, 2 ou 3 vagas.
     </p>
     <strong>Apartamento</strong>
-    <div><i class="far fa-check-square mr-2"></i>3 quartos sendo 1 suíte</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha com gabinetes planejados e cooktop</div>
-    <div><i class="far fa-check-square mr-2"></i>Área gourmet</div>
-    <div><i class="far fa-check-square mr-2"></i>2 vagas</div>
+    <div><i class="far fa-check-square mr-2"></i>2 quartos com ou sem suíte, ou 3 suítes</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de jantar</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de TV</div>
+    <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
+    <div><i class="far fa-check-square mr-2"></i>Varanda gourmet</div>
+    <div><i class="far fa-check-square mr-2"></i>1, 2 ou 3 vagas</div>
+    <strong>Área de lazer</strong>
+    <div><i class="far fa-check-square mr-2"></i>Academia</div>
+    <div><i class="far fa-check-square mr-2"></i>Espaço de Festas</div>
+    <div><i class="far fa-check-square mr-2"></i>Espaço Mulher</div>
+    <div><i class="far fa-check-square mr-2"></i>Espaço Kids</div>
+    <div><i class="far fa-check-square mr-2"></i>Hall dos Elevadores</div>
+    <p>
+        Apartamentos modernos e bem dimensionados, com infraestrutura completa e
+        acabamentos de primeira linha,
+    </p>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 01 - 108,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 8º PAVIMENTO <br>
+                    <i>
+                        3 Suítes, lavabo, lavanderia.
+                        Sala de jantar, sala de tv, cozinha,
+                        varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-1.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 02 - 108,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 8º PAVIMENTO <br>
+                    <i>
+                        3 Suítes, lavabo, lavanderia.
+                        Sala de jantar, sala de tv, cozinha,
+                        varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-2.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 03 - 79,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 9º PAVIMENTO <br>
+                    <i>
+                        2 Quartos sendo 1 suíte com closet,
+                        banheiro social , lavanderia, sala de
+                        jantar, sala de tv, cozinha, varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-3.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 04 - 78,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 9º PAVIMENTO <br>
+                    <i>
+                        2 quartos sendo 1 suíte , banheiro social ,
+                        lavanderia, Sala de jantar, sala de tv,
+                        cozinha, varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-4.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 05 - 75,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 9º PAVIMENTO <br>
+                    <i>
+                        2 quartos sendo 1 suíte com closet,
+                        banheiro social , lavanderia, Sala de jantar,
+                        sala de tv, cozinha, varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-5.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 06 - 78,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 9º PAVIMENTO <br>
+                    <i>
+                        2 quartos sendo 1 suíte , banheiro social ,
+                        lavanderia, Sala de jantar, sala de tv,
+                        cozinha, varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-6.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 07 - 78,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 9º PAVIMENTO <br>
+                    <i>
+                        2 quartos, banheiro social , lavabo,
+                        lavanderia, Sala de jantar, sala de tv,
+                        cozinha, varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-7.png")}}" alt="">
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4">
+            <div class="col-12">
+                <p>
+                    <h5> APARTAMENTO 08 - 78,00m² </h5>
+                    REFERENTE AOS APARTAMENTOS
+                    DO PAVIMENTO TIPO, DO 1º AO 9º PAVIMENTO <br>
+                    <i>
+                        2 quartos, banheiro social , lavabo,
+                        lavanderia, Sala de jantar, sala de tv,
+                        cozinha, varanda gourmet.
+                    </i>
+                </p>
+            </div>
+            <div class="col-12">
+                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-8.png")}}" alt="">
+            </div>
+        </div>
+    </div>
+
+
 </div>
 <div class="mt-5">
 
