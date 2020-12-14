@@ -4,7 +4,8 @@
 @endsection
 @section('context')
 
-3 quartos sendo 1 suíte, área gourmet, 2 vagas na garagem
+2 quartos com ou sem suíte, ou 3 suítes, cozinha, lavabo, sala de jantar, sala de TV, varanda gourmet, 1, 2 ou 3 vagas
+na garagem
 <div class="px-2 px-md-5 my-5">
     <p>
         GRÃ DUQUESA RESIDENCIAL - Poços de Caldas
@@ -54,7 +55,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-1.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-1.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -71,7 +72,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-2.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-2.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -88,7 +89,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-3.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-3.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -105,7 +106,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-4.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-4.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -122,7 +123,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-5.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-5.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -139,7 +140,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-6.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-6.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -156,7 +157,7 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-7.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-7.png" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-4">
@@ -173,12 +174,10 @@
                 </p>
             </div>
             <div class="col-12">
-                <img class="m-w-100" src="{{url("images/utilsimmobiles/gra-duquesa-8.png")}}" alt="">
+                <img class="m-w-100" src="/images/utilsimmobiles/gra-duquesa-8.png" alt="">
             </div>
         </div>
     </div>
-
-
 </div>
 <div class="mt-5">
 
