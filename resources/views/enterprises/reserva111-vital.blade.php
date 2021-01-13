@@ -13,6 +13,9 @@ Reserva 111 (Vital) - {{config('app.name')}}
             sala de estar e jantar e banheiro social
         </p>
         <p>
+            <i class="fas fa-map-marker-alt color-secoundary"></i> Vila Togni - Poços de Caldas
+        </p>
+        <p>
             Não existe nada parecido na região. Tudo para colocar
             você em evidência. O empreendimento possui um
             estilo arquitetônico extremamente moderno. Um projeto

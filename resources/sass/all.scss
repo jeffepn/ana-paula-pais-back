@@ -41,6 +41,12 @@ body {
         color: white;
     }
 }
+.color-primary{
+    color: $colorPrimary!important;
+}
+.color-secoundary{
+    color: $colorSecoundary!important;
+}
 .bg-primary{
     background: $colorPrimary!important;
 }

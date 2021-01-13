@@ -1630,6 +1630,14 @@ header {
   color: white;
 }
 
+.color-primary {
+  color: #6e273d !important;
+}
+
+.color-secoundary {
+  color: #3e0000 !important;
+}
+
 .bg-primary {
   background: #6e273d !important;
 }
