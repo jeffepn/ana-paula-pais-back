@@ -4,26 +4,44 @@
 @endsection
 @section('context')
 
-3 quarto sendo 1 suíte com closet, sala, cozinha, área de serviço, área gourmet
-com vista panorâmica.
+2 quartos, varanda gourmet, cozinha, área de serviço,
+sala de estar e jantar e banheiro social
 
 <div class="px-2 px-md-5 my-5">
+    <h2>Reserva 111</h2>
     <p>
-        Casa no Jardim Vitória - Poços de Caldas
+        Apartamentos no Vila Togni - Poços de Caldas
     </p>
     <p>
-        Casa recém-reformada, com revestimentos e movéis planejados de excelente padrão,
-        bem iluminada e espaçosa, com 161m² construídos em um terreno de 210m².
+
+        Não existe nada parecido na região. Tudo para colocar
+        você em evidência. O empreendimento possui um
+        estilo arquitetônico extremamente moderno. Um projeto
+        que se propõe a ser um diferencial para a cidade.
+        Bonito, arrojado, amigável. Um lugar onde tudo que
+        você precisa está ao seu redor.
     </p>
-    <strong>Casa</strong>
-    <div><i class="far fa-check-square mr-2"></i>3 quartos sendo 1 suíte com closet</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha planejada</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala</div>
+    <p>
+        Entrada
+        facilitada,
+        projeto
+        financiado
+        pelo: <strong class="color-primary"> Programa CASA VERDE E AMARELA </strong>
+    </p>
+    <strong>Apartamento</strong>
+    <div><i class="far fa-check-square mr-2"></i>Aprox. 45 m²</div>
+    <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de estar e jantar</div>
     <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
-    <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
-    <div><i class="far fa-check-square mr-2"></i>2 vagas na garagem</div>
-    <strong>Área de lazer</strong>
-    <div><i class="far fa-check-square mr-2"></i>Área gourmet, com churrasqueira e vista panorâmica</div>
+    <div><i class="far fa-check-square mr-2"></i>Varanda gourmet</div>
+    <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
+    <strong>Condomínio</strong>
+    <div><i class="far fa-check-square mr-2"></i>Brinquedoteca</div>
+    <div><i class="far fa-check-square mr-2"></i>Salão de jogos</div>
+    <div><i class="far fa-check-square mr-2"></i>Academia</div>
+    <div><i class="far fa-check-square mr-2"></i>ROOFTOP - 02 Espaços Gourmet</div>
+    <div><i class="far fa-check-square mr-2"></i>Piscina com borda infinita na cobertura do prédio</div>
 </div>
 <div>
 
