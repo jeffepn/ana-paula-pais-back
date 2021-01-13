@@ -4,44 +4,24 @@
 @endsection
 @section('context')
 
-2 quartos, varanda gourmet, cozinha, área de serviço,
-sala de estar e jantar e banheiro social
+4 quartos sendo 2 suítes, 2 banheiros sociais, lavabo, piscina e garagem
 
 <div class="px-2 px-md-5 my-5">
-    <h2>Reserva 111</h2>
     <p>
-        Apartamentos no Vila Togni - Poços de Caldas
+        Casa no Jardim Country Club - Poços de Caldas
     </p>
     <p>
-
-        Não existe nada parecido na região. Tudo para colocar
-        você em evidência. O empreendimento possui um
-        estilo arquitetônico extremamente moderno. Um projeto
-        que se propõe a ser um diferencial para a cidade.
-        Bonito, arrojado, amigável. Um lugar onde tudo que
-        você precisa está ao seu redor.
+        São 386 m² construídos em um terreno de 390 m²
     </p>
-    <p>
-        Entrada
-        facilitada,
-        projeto
-        financiado
-        pelo: <strong class="color-primary"> Programa CASA VERDE E AMARELA </strong>
-    </p>
-    <strong>Apartamento</strong>
-    <div><i class="far fa-check-square mr-2"></i>Aprox. 45 m²</div>
-    <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
+    <strong>Casa</strong>
+    <div><i class="far fa-check-square mr-2"></i>4 quartos sendo 2 suíte</div>
     <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
     <div><i class="far fa-check-square mr-2"></i>Sala de estar e jantar</div>
-    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
-    <div><i class="far fa-check-square mr-2"></i>Varanda gourmet</div>
+    <div><i class="far fa-check-square mr-2"></i>2 Banheiros sociais</div>
     <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
-    <strong>Condomínio</strong>
-    <div><i class="far fa-check-square mr-2"></i>Brinquedoteca</div>
-    <div><i class="far fa-check-square mr-2"></i>Salão de jogos</div>
-    <div><i class="far fa-check-square mr-2"></i>Academia</div>
-    <div><i class="far fa-check-square mr-2"></i>ROOFTOP - 02 Espaços Gourmet</div>
-    <div><i class="far fa-check-square mr-2"></i>Piscina com borda infinita na cobertura do prédio</div>
+    <strong>Área de lazer</strong>
+    <div><i class="far fa-check-square mr-2"></i>Piscina</div>
+    <div><i class="far fa-check-square mr-2"></i>Área de lazer completa com churrasqueira e fogão a lenha</div>
 </div>
 <div>
 
