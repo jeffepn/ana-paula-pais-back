@@ -4,6 +4,16 @@
             <div class="owl-stage">
                 <div class="owl-item px-2">
                     <div class="block-enterprise-carrousel"
+                        style="background-image: url('{{url('images/site/enterprises/reserva111.svg')}}');background-color: #FFFFFF;">
+                        <div class="data-immobile mb-5 text-center">
+                            <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/reserva111')}}">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-item px-2">
+                    <div class="block-enterprise-carrousel"
                         style="background-image: url('{{url('images/site/enterprises/bluepark.svg')}}');background-color: #999999;">
                         <div class="data-immobile mb-5 text-center">
                             <a class="bt--pr ft-third-big px-5" href="{{url('empreendimento/blue-park')}}">

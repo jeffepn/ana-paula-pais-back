@@ -45,42 +45,28 @@ class SiteController extends Controller
     public function enterprise($slug)
     {
         switch ($slug) {
+            case 'reserva111':
+                return view('enterprises.reserva111-vital');
             case 'blue-park':
-                //return redirect()->to('/');
                 return view('enterprises.blue-park-vital');
-                break;
             case 'unique':
-                //  return redirect()->to('/');
                 return view('enterprises.unique-vital');
-                break;
             case 'chateau-de-versailles':
-                //return redirect()->to('/');
                 return view('enterprises.chateau-vital');
-                break;
             case 'easy':
-                //   return redirect()->to('/');
                 return view('enterprises.easy-vital');
-                break;
             case 'green-park':
-                //  return redirect()->to('/');
                 return view('enterprises.green-park-vital');
-                break;
             case 'lumiere':
-                // return redirect()->to('/');
                 return view('enterprises.lumiere-vital');
-                break;
             case 'zeuz':
                 return view('enterprises.zeuz-vogo');
-                break;
             case 'meditterraneum':
                 return view('enterprises.meditterraneum-elos');
-                break;
             case 'sorano':
                 return view('enterprises.sorano-elos');
-                break;
             default:
                 return view('errors.404');
-                break;
         }
     }
     public function blue()

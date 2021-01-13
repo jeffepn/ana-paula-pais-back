@@ -4,38 +4,29 @@
 @endsection
 @section('context')
 
-2 quartos com ou sem suíte, ou 3 suítes, cozinha, lavabo, sala de jantar, sala de TV, varanda gourmet, 1, 2 ou 3 vagas
-na garagem
+3 quarto sendo 1 suíte com closet, sala, cozinha, área de serviço, área gourmet
+com vista panorâmica.
+
 <div class="px-2 px-md-5 my-5">
     <p>
-        GRÃ DUQUESA RESIDENCIAL - Poços de Caldas
+        Casa no Jardim Vitória - Poços de Caldas
     </p>
     <p>
-        <strong> LOCALIZAÇÃO PRIVILEGIADA </strong>
-        <li> Proximidade de comércios e serviços</li>
-        <li>Tranquilidade e segurança</li>
-        <li>Bairro com alto índice de valorização imobiliária</li>
+        Casa recém-reformada, com revestimentos e movéis planejados de excelente padrão,
+        bem iluminada e espaçosa, com 161m² construídos em um terreno de 210m².
     </p>
-    <p>
-        Localizado no bairro Vila Togni em Poços de Caldas - MG,
-        o empreendimento tem uma variedade de tipologias de
-        apartamentos, com 70 unidades que variam de 70 a 108 m2. <br>
-        São 3 pavimentos de garagem, sendo 1, 2 ou 3 vagas.
-    </p>
-    <strong>Apartamento</strong>
-    <div><i class="far fa-check-square mr-2"></i>2 quartos com ou sem suíte, ou 3 suítes</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala de jantar</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala de TV</div>
+    <strong>Casa</strong>
+    <div><i class="far fa-check-square mr-2"></i>3 quartos sendo 1 suíte com closet</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha planejada</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala</div>
+    <div><i class="far fa-check-square mr-2"></i>Banheiro social</div>
     <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
-    <div><i class="far fa-check-square mr-2"></i>Varanda gourmet</div>
-    <div><i class="far fa-check-square mr-2"></i>1, 2 ou 3 vagas</div>
+    <div><i class="far fa-check-square mr-2"></i>2 vagas na garagem</div>
     <strong>Área de lazer</strong>
-    <div><i class="far fa-check-square mr-2"></i>Academia</div>
-    <div><i class="far fa-check-square mr-2"></i>Espaço de Festas</div>
-    <div><i class="far fa-check-square mr-2"></i>Espaço Mulher</div>
-    <div><i class="far fa-check-square mr-2"></i>Espaço Kids</div>
-    <div><i class="far fa-check-square mr-2"></i>Hall dos Elevadores</div>
+    <div><i class="far fa-check-square mr-2"></i>Área gourmet, com churrasqueira e vista panorâmica</div>
+</div>
+<div>
+
     <p>
         Apartamentos modernos e bem dimensionados, com infraestrutura completa e
         acabamentos de primeira linha,

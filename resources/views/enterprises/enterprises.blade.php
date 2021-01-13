@@ -9,6 +9,11 @@ Empreendimentos - {{config('app.name')}}
 <section class="section-enterprises ">
     <div class="row my-5 px-md-5  align-items-center ">
         <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
+            <a href="{{url('empreendimento/reserva111')}}">
+                <img src="{{url('images/site/enterprises/reserva111.png')}}">
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
             <a href="{{url('empreendimento/blue-park')}}">
                 <img src="{{url('images/site/enterprises/blue-park.png')}}">
             </a>
