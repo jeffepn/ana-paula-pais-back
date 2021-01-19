@@ -19,6 +19,7 @@ class SiteUtility
             5 => "Ponto Comercial",
             6 => "Terreno",
             7 => "Studio",
+            8 => "Chácara",
         ];
     }
     /**

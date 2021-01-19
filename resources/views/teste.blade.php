@@ -4,24 +4,59 @@
 @endsection
 @section('context')
 
-4 quartos sendo 2 suítes, 2 banheiros sociais, lavabo, piscina e garagem
+Linda chácara a 10 minutos de centro de Poços de Caldas, com duas casas, pomar, horta, lago e área de lazer
 
 <div class="px-2 px-md-5 my-5">
     <p>
-        Casa no Jardim Country Club - Poços de Caldas
+        Chácara Santa Cruz 1 - Poços de Caldas
     </p>
     <p>
-        São 386 m² construídos em um terreno de 390 m²
+        Localizado a 10 minutos do centro de Poços de Caldas e perto de Supermercado,
+        caminho até a chácara totalmente asfaltado e bastante ar puro. <br>
+        Área interna das casas: 450 m² <br>
+        Área total do terreno: 5000 m² <br>
+        Não possui IPTU e nem conta de água.
     </p>
-    <strong>Casa</strong>
-    <div><i class="far fa-check-square mr-2"></i>4 quartos sendo 2 suíte</div>
-    <div><i class="far fa-check-square mr-2"></i>Cozinha</div>
-    <div><i class="far fa-check-square mr-2"></i>Sala de estar e jantar</div>
-    <div><i class="far fa-check-square mr-2"></i>2 Banheiros sociais</div>
-    <div><i class="far fa-check-square mr-2"></i>Área de serviço</div>
-    <strong>Área de lazer</strong>
-    <div><i class="far fa-check-square mr-2"></i>Piscina</div>
-    <div><i class="far fa-check-square mr-2"></i>Área de lazer completa com churrasqueira e fogão a lenha</div>
+    <strong>Casa 1</strong>
+    <div><i class="far fa-check-square mr-2"></i>Sala de estar com varanda e lareira</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de TV</div>
+    <div><i class="far fa-check-square mr-2"></i>2 quartos</div>
+    <div><i class="far fa-check-square mr-2"></i>Banheiro social com hidromassagem</div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha americana</div>
+    <div><i class="far fa-check-square mr-2"></i>Aquecimento solar</div>
+    <p>
+        Portas e janelas em Sucupira maciça e teto em gesso.
+    </p>
+    <strong>Casa 2</strong>
+    <div><i class="far fa-check-square mr-2"></i>Sala de estar com varanda e lareira</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de jantar</div>
+    <div><i class="far fa-check-square mr-2"></i>Sala de TV em mezanino </div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha americana </div>
+    <div><i class="far fa-check-square mr-2"></i>Escritório</div>
+    <div><i class="far fa-check-square mr-2"></i>Lavabo</div>
+    <div><i class="far fa-check-square mr-2"></i>Aquecimento solar</div>
+    <div><i class="far fa-check-square mr-2"></i>4 quartos </div>
+    <div><i class="far fa-check-square mr-2"></i></div>
+    <div><i class="far fa-check-square mr-2"></i></div>
+    <p>
+        Portas e janelas em sucupira maciça e pé direito alto.
+    </p>
+    <strong>Área comum</strong>
+    <div><i class="far fa-check-square mr-2"></i>Sauna</div>
+    <div><i class="far fa-check-square mr-2"></i>Lavanderia</div>
+    <div><i class="far fa-check-square mr-2"></i>Amplo espaço para montar academia e tubulação pronta para SPA </div>
+    <div><i class="far fa-check-square mr-2"></i>Garagem coberta para carros grandes</div>
+    <div><i class="far fa-check-square mr-2"></i>Lago cercado e seguro </div>
+    <div><i class="far fa-check-square mr-2"></i>Energia 110 e 220V </div>
+    <div><i class="far fa-check-square mr-2"></i>Jardins planejados e irrigados</div>
+    <div><i class="far fa-check-square mr-2"></i>2 hortas irrigadas </div>
+    <div><i class="far fa-check-square mr-2"></i>Pomar com mais de 25 pés de fruta</div>
+    <div><i class="far fa-check-square mr-2"></i>3 cisternas com bombas </div>
+    <div><i class="far fa-check-square mr-2"></i>Fossa séptica </div>
+    <div><i class="far fa-check-square mr-2"></i>Acabamento com pisos P3, P4 e P5 </div>
+    <div><i class="far fa-check-square mr-2"></i>Cozinha Mineira com fogão e forno a lenha</div>
+    <div><i class="far fa-check-square mr-2"></i>Churrasqueira</div>
+    <div><i class="far fa-check-square mr-2"></i>Aquecimento solar para a água </div>
 </div>
 <div>
 
