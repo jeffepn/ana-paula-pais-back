@@ -243,6 +243,9 @@
                         @error("image")
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
+                        @error("image.*")
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
                     <div class="col-12 px-2">
                         <button type="submit" class="btn btn-primary">Salvar</button>

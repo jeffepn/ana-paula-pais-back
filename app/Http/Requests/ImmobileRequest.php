@@ -39,13 +39,13 @@ class ImmobileRequest extends FormRequest
                 'area_building' => 'numeric|between:0,99999999.99',
                 'min_description' => 'required|max:150',
                 'description' => 'required|max:65300',
-                'image' => 'required',
-                'image.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+                // 'image' => 'required',
+                'image.*' => 'required|mimes:jpg,jpeg,png,svg|max:2048'
             ];
         if ($this->method() == "PUT" || $this->method() == "PATCH")
             return [
-                'image' => 'required',
-                'image.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+                // 'image' => 'required',
+                'image.*' => 'required|mimes:jpg,jpeg,png,svg|max:2048'
             ];
         return [];
     }
@@ -61,7 +61,7 @@ class ImmobileRequest extends FormRequest
             'type.required' => 'Escolha um Tipo de Imóvel',
             'image.required' => 'Escolha pelo menos uma imagem.',
             'image' => 'Imagem inválida',
-            'mimes' => 'Formato de arquivos aceitos (peg,png,jpg,svg|).'
+            'mimes' => 'Formato de arquivos aceitos (jpeg,png,svg).'
         ];
     }
 }
