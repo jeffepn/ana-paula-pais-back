@@ -16,6 +16,9 @@
                 </p>
                 @if ($errors->any())
                 <p class="form-text text-danger">Verifique os erros do formulário.</p>
+                @foreach ($errors->all() as $error)
+                <p class="form-text text-danger">{{$error}}</p>
+                @endforeach
                 @endif
                 @csrf
                 <div class="row">
