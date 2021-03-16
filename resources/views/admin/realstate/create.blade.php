@@ -7,7 +7,6 @@
             <div class="d-flex">
                 <h3>Registrar novo imóvel</h3>
             </div>
-
             <form id="formimmobile" action="{{route('immobiles.store')}}" method="POST" enctype="multipart/form-data">
                 <p class="text-danger">
                     @if (session("url"))
@@ -15,6 +14,9 @@
                     @endif
 
                 </p>
+                @if ($errors->any())
+                <p class="form-text text-danger">Verifique os erros do formulário.</p>
+                @endif
                 @csrf
                 <div class="row">
                     <div class="col-12 px-2">
