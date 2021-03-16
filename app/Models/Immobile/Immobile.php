@@ -9,6 +9,7 @@ use App\Models\Address\Neighborhood;
 use App\Models\Immobile\VisitImmobile;
 //Utility
 use App\Utility\SiteUtility;
+use JpUtilities\Utilities\StringUtility;
 
 class Immobile extends Model
 {
@@ -17,6 +18,23 @@ class Immobile extends Model
     protected $fillable = [
         'slug', 'type', 'neighborhood_id', 'rent', 'sale', 'value_rent', 'value_sale', 'dormitory', 'suite', 'bathroom', 'garage', 'value_condominium', 'value_iptu', 'area_total', 'area_building', 'min_description', 'description', 'visits'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($immobile) {
+            $data = [];
+            $data['slug'] = 'AN-' . StringUtility::generateSlugOfTextWithComplement($immobile->neighborhood_id . $immobile->type . rand(1, 999));
+            while (validator()->make($data, ['slug' => 'unique:immobiles'])->fails()) {
+                $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $immobile->neighborhood_id . $immobile->type . rand(1, 999));
+            }
+            $immobile->slug = $data["slug"];
+        });
+    }
+
+
+
     /**
      * Get all ImageImmobile of Immobile
      *

@@ -11,14 +11,15 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.sass("resources/sass/all.scss", "public/css")
+mix.js("resources/js/app.js", "public/js")
+    .sass("resources/sass/all.scss", "public/css")
     .options({
         postCss: [
             require("autoprefixer")({
                 browsers: ["last 40 versions"],
                 // browsers: ['last 2 versions'],
-                cascade: false,
-            }),
-        ],
+                cascade: false
+            })
+        ]
     })
     .version();

@@ -42,8 +42,8 @@ Route::get('registra-busca-de-imoveis', 'SiteController@setsessionsearch');
 Route::get('imovel/{slug?}', 'SiteController@immobile');
 
 
-Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');
-Route::post('cadastrar-imovel-99', 'Immobile\ImmobileController@store');
+// Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');
+// Route::post('cadastrar-imovel-99', 'Immobile\ImmobileController@store');
 Route::get('editar-imovel-99/{slug}', 'Immobile\ImmobileController@edit');
 Route::post('editar-imovel-99', 'Immobile\ImmobileController@update');
 
@@ -52,3 +52,16 @@ Route::post('editar-imovel-99', 'Immobile\ImmobileController@update');
 
 Route::get('busca-de-imoveis-aluguel', 'SiteController@searchimmobilesrent');
 Route::get('busca-de-imoveis-venda', 'SiteController@searchimmobilessale');
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Resources
+Route::group(["prefix" => "admin"], function () {
+    Route::resource("immobiles", "Admin\ImmobilesController");
+});
+
+Route::middleware("auth", function () {
+    Route::get('/admin', 'AdminController@home')->name('admin');
+});
