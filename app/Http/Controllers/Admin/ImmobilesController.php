@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Immobile\Immobile;
+use App\Models\Immobile\ImageImmobile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use JpUtilities\Utilities\Util;
@@ -48,7 +49,10 @@ class ImmobilesController extends Controller
             foreach ($request->image as $image) {
                 $way = Upload::upload($image, time() . rand(1111, 9999), 'images/immobiles');
                 if ($way)
-                    $immobile->images()->create(['way' => $way, 'alt' => SiteUtility::getTypesImmobile()[$immobile->type] . ' ' . $immobile->neighborhood->name . ' , ' . $immobile->neighborhood->city->name . ' - Imóveis Ana Paula Pais']);
+                    $immobile->images()->create([
+                        'way' => $way,
+                        'alt' => SiteUtility::getTypesImmobile()[$immobile->type] . ' ' . $immobile->neighborhood->name . ' , ' . $immobile->neighborhood->city->name . ' - Imóveis Ana Paula Pais'
+                    ]);
             }
             return redirect()->back()->with('success', Util::success('RegisterImmobileSuccess'))->with("url", url("imovel/" . $immobile->slug));
         }
@@ -86,7 +90,17 @@ class ImmobilesController extends Controller
      */
     public function update(Request $request, Immobile $immobile)
     {
-        //
+        $immobile->images()->delete();
+        foreach ($request->image as $image) {
+            $way = Upload::upload($image, time() . rand(1111, 9999), 'images/immobiles');
+            if ($way) {
+                $immobile->images()->create([
+                    'way' => $way,
+                    'alt' => SiteUtility::getTypesImmobile()[$immobile->type] . ' ' . $immobile->neighborhood->name . ' , ' . $immobile->neighborhood->city->name . ' - Imóveis Ana Paula Pais'
+                ]);
+            }
+        }
+        return redirect()->back()->with('success', Util::success('EditImmobileSuccess'));
     }
 
     /**

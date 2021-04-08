@@ -9,6 +9,7 @@ use App\Models\Address\Neighborhood;
 use App\Models\Immobile\VisitImmobile;
 //Utility
 use App\Utility\SiteUtility;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use JpUtilities\Utilities\StringUtility;
 
 class Immobile extends Model
@@ -38,9 +39,8 @@ class Immobile extends Model
     /**
      * Get all ImageImmobile of Immobile
      *
-     * @return ImageImmobile[]
      */
-    public function images()
+    public function images(): HasMany
     {
         return $this->hasMany('App\Models\Immobile\ImageImmobile', 'immobile_id');
     }

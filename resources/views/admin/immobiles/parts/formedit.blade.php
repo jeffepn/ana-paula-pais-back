@@ -1,6 +1,7 @@
-<form id="formimmobile" action="{{url('editar-imovel-99')}}" method="POST" enctype="multipart/form-data">
+<form id="formimmobile" action="{{route('immobiles.update',$immobile->id)}}" method="POST"
+    enctype="multipart/form-data">
     @csrf
-    <input type="hidden" name="slug" value="{{$immobile->slug}}">
+    @method("PATCH")
     <div class="row">
         <!--
         <div class="col-6 px-2">
