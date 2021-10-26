@@ -3,7 +3,6 @@
 namespace App\Services;
 
 //Services
-use JpUtilities\Services\ServiceDefault;
 use Illuminate\Support\Facades\DB;
 //Models
 use App\Models\Immobile\Immobile;
@@ -15,8 +14,10 @@ use JpUtilities\Utilities\ArrayUtility;
 use JpUtilities\Utilities\StringUtility;
 use JpUtilities\Utilities\Upload;
 use App\Utility\SiteUtility;
+use Illuminate\Support\Arr;
+use Jeffpereira\RealEstate\Models\Property\Property;
 
-class ImmobileService implements ServiceDefault
+class ImmobileService
 {
     public function create($data)
     {
@@ -92,7 +93,9 @@ class ImmobileService implements ServiceDefault
         } else {
             $slugBussiness = null;
         }
-        return Immobile:: //where($slugBussiness, true)
+        return Property::all();
+
+        Immobile:: //where($slugBussiness, true)
             when($verifyBussiness, function ($query, $verifyBussiness) use ($slugBussiness) {
                 if ($slugBussiness) {
                     return $query->where($slugBussiness, true);
@@ -139,8 +142,7 @@ class ImmobileService implements ServiceDefault
      */
     public function getOrderByVisits($amount)
     {
-        return  Immobile::withCount("visits")->orderBy("visits_count", "desc")
-            ->take($amount)->get();
+        return  Property::take($amount)->get();
     }
     /**
      * Get Immobiles similiar Immobile with amount defined
@@ -237,15 +239,16 @@ class ImmobileService implements ServiceDefault
      */
     public function getAllNeighborhoodsSelectWithCity()
     {
-        return ArrayUtility::convertArrayForInputSelect(
-            'id',
-            'result',
-            Neighborhood::join('cities', 'neighborhoods.city_id', '=', 'cities.id')
-                ->join('states', 'cities.state_id', '=', 'states.id')
-                ->select('neighborhoods.id', 'neighborhoods.name', DB::raw('CONCAT(neighborhoods.name ," - ",cities.name," ",states.initials) AS result'))
-                ->orderBy("neighborhoods.name", "asc")->get()
-
-        );
+        return Neighborhood::join('cities', 'neighborhoods.city_id', '=', 'cities.id')
+            ->join('states', 'cities.state_id', '=', 'states.id')
+            ->select('neighborhoods.id', 'neighborhoods.name', DB::raw('CONCAT(neighborhoods.name ," - ",cities.name," ",states.initials) AS result'))
+            ->orderBy("neighborhoods.name", "asc")->get()
+            ->map(function ($neighborhood) {
+                return [
+                    'id' => $neighborhood->id,
+                    'result' => $neighborhood->result,
+                ];
+            });
     }
     /**
      * Return all Neighborhoods for select

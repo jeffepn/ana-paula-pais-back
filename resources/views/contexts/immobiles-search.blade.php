@@ -12,7 +12,7 @@
         @include('contexts.view-immobile-default',['immobileview'=>$immobile])
         @endforeach
         <div class="col-12">
-            {{$immobiles->links()}}
+            {{-- {{$immobiles->links()}} --}}
         </div>
     </div>
 </section>

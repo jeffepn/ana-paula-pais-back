@@ -20,17 +20,22 @@
             <form class="form-search-immobile row" action="{{url('registra-busca-de-imoveis')}}">
                 @csrf
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                    {{Form::select('bussiness',[''=>'Você quer?']+ $bussiness, session('search_immobile.bussiness'), ['class'=>'form-control'])}}
+                    {{Form::select('bussiness', array_merge([''=>'Você quer?'], $bussiness),
+                    session('search_immobile.bussiness'),
+                    ['class'=>'form-control'])}}
                 </div>
 
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                    {{Form::select('neighborhood', [''=>'Bairro']+$neighborhoods, session('search_immobile.neighborhood'), ['class'=>'form-control'])}}
+                    {{Form::select('neighborhood', array_merge([''=>'Bairro'], $neighborhoods->toArray()),
+                    session('search_immobile.neighborhood'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                    {{Form::select('type', [''=>'Tipo do imóvel']+$types, session('search_immobile.type'), ['class'=>'form-control'])}}
+                    {{Form::select('type', array_merge([''=>'Tipo do imóvel'], $types), session('search_immobile.type'),
+                    ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                    {{Form::select('dormitory', [''=>'Dormitórios',0,1,2,3,4,5,6,7,8,9,10], session('search_immobile.dormitory'), ['class'=>'form-control'])}}
+                    {{Form::select('dormitory', [''=>'Dormitórios',0,1,2,3,4,5,6,7,8,9,10],
+                    session('search_immobile.dormitory'), ['class'=>'form-control'])}}
                 </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                     <input class="form-control" type="number" name="garage" placeholder="Vagas na garagem"
