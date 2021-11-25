@@ -114,9 +114,9 @@ class SyncOldWithNewDB extends Command
 
     private function getAddressId($immobile): string
     {
-        $neighborhoodOld = DB::connection('mysql_old')->table('neighborhoods_old')->whereId($immobile->neighborhood_id)->first();
-        $cityOld = DB::connection('mysql_old')->table('cities_old')->whereId($neighborhoodOld->city_id)->first();
-        $stateOld = DB::connection('mysql_old')->table('states_old')->whereId($cityOld->state_id)->first();
+        $neighborhoodOld = DB::connection('mysql_old')->table('neighborhoods')->whereId($immobile->neighborhood_id)->first();
+        $cityOld = DB::connection('mysql_old')->table('cities')->whereId($neighborhoodOld->city_id)->first();
+        $stateOld = DB::connection('mysql_old')->table('states')->whereId($cityOld->state_id)->first();
 
         return Property::createAddress([
             'neighborhood' => $neighborhoodOld->name,
