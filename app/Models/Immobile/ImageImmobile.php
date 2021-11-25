@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ImageImmobile extends Model
 {
 
-    protected $table = "image_immobiles";
+    protected $table = "image_properties";
     public $timestamps = false;
     protected $fillable = [
         'immobile_id', 'way', 'alt'

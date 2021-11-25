@@ -1,4 +1,4 @@
-@if(!$immobilechain)
+@if(!$propertyChain)
 <section class="section-immobile-not-found">
     <div class="text-center mb-4">
         <h1 class="mt-5 ft-third">Imóvel não encontrado, ou não se encontra mais disponível.</h1>
@@ -8,31 +8,30 @@
 @else
 <section class="section-immobile">
     @php
-    $imagehighlight = $immobilechain->images->first();
+    $imagehighlight = $propertyChain->images->first();
     @endphp
     <div class="image-highlights" style="background-image: url('{{url($imagehighlight->way)}}');">
     </div>
     <div class="content-default my-5">
         <p>
-            {{$immobilechain->neighborhood->name}}, {{$immobilechain->neighborhood->city->name}}<br>
-            <span>({{$immobilechain->slug}}) {{$immobilechain->textType()}}</span>
+            {{$propertyChain->address->neighborhood->name}}, {{$propertyChain->address->neighborhood->city->name}}<br>
+            <span>({{Str::upper($propertyChain->slug)}}) {{Str::title($propertyChain->sub_type->name)}}</span>
         </p>
         <div class="row">
             <h4>
-                {!!$immobilechain->min_description!!}
+                {!!$propertyChain->min_description!!}
             </h4>
         </div>
         <div class="immobile-list-context-price mt-3">
             <div class="row">
-                @if($immobilechain->rent && $immobilechain->value_rent > 0)
+                @foreach ($propertyChain->businesses as $business)
+                @if ($business->pivot->value > 0)
                 <div class="col-6 px-0">
-                    Aluguel:<br>
-                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobilechain->value_rent)}}</div>
+                    {{Str::title($business->name)}}:<br>
+                    {{number_format($business->pivot->value, 2, ',','.')}}
+                </div>
                 @endif
-                @if($immobilechain->sale && $immobilechain->value_sale > 0)
-                <div class="col-6 px-0">Venda:<br>
-                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobilechain->value_sale)}}</div>
-                @endif
+                @endforeach
             </div>
         </div>
         <div class="mt-4">
@@ -51,7 +50,7 @@
     <div id="carrousel-pre-view" class="px-2 owl-carousel owl-theme owl-loaded carrousel-owl carrousel-immobile-view ">
         <div class="owl-stage-outer">
             <div class="owl-stage">
-                @foreach ($immobilechain->images as $image)
+                @foreach ($propertyChain->images as $image)
                 <div class="owl-item" data-toggle="modal" data-target="#modal-view-image-immobile">
                     <img src="{{url($image->way)}}" alt="{{$image->alt}}">
                 </div>
@@ -61,59 +60,46 @@
     </div>
 </section>
 <section id="more" class="description-immobile">
-    @if($immobilechain->sold)
-    <div class="px-3">
-        <div class="alert alert-danger text-center" role="alert">
-            O imóvel já foi vendido
-        </div>
-    </div>
-    @elseif($immobilechain->rented)
-    <div class="px-3">
-        <div class="alert alert-danger text-center" role="alert">
-            O imóvel já foi alugado
-        </div>
-    </div>
-    @endif
     <div class="divider-section-services-description my-3">
         <h3>Detalhes do imóvel</h3>
         <p>
-            @if($immobilechain->garage)
+            @if($propertyChain->max_garage)
             <span class="p-2">
-                <i class="fas fa-car-alt mr-2"></i>{{$immobilechain->garage}} vaga(s)
+                <i class="fas fa-car-alt mr-2"></i>{{$propertyChain->max_garage}} vaga(s)
             </span>
             @endif
-            @if($immobilechain->dormitory)
+            @if($propertyChain->max_dormitory)
             <span class="p-2">
-                <i class="fas fa-bed mr-2"></i>{{$immobilechain->dormitory}} quarto(s)
-                @if($immobilechain->suite)
-                sendo {{$immobilechain->suite}} suíte(s)
+                <i class="fas fa-bed mr-2"></i>{{$propertyChain->max_dormitory}} quarto(s)
+                @if($propertyChain->suite)
+                sendo {{$propertyChain->suite}} suíte(s)
                 @endif
             </span>
             @endif
-            @if($immobilechain->area_building >0)
+            @if($propertyChain->building_area >0)
             <span class="p-2">
-                <i class="far fa-building mr-2"></i>{{$immobilechain->area_building}} m²
+                <i class="far fa-building mr-2"></i>{{$propertyChain->building_area}} m²
             </span>
             @endif
-            @if($immobilechain->area_total > 0)
+            @if($propertyChain->total_area > 0)
             <span class="p-2">
-                <i class="far fa-map mr-2"></i>{{$immobilechain->area_total}} m²
+                <i class="far fa-map mr-2"></i>{{$propertyChain->total_area}} m²
             </span>
             @endif
-            @if($immobilechain->value_condominium > 0)
+            {{-- @if($propertyChain->value_condominium > 0)
             <span class="p-2">
-                <i class="fas fa-dollar-sign mr-2"></i>{{$immobilechain->value_condominium}} (Condomínio)
+                <i class="fas fa-dollar-sign mr-2"></i>{{$propertyChain->value_condominium}} (Condomínio)
             </span>
             @endif
-            @if($immobilechain->value_iptu >0)
+            @if($propertyChain->value_iptu >0)
             <span class="p-2">
-                <i class="fas fa-dollar-sign mr-2"></i>{{$immobilechain->value_iptu}} (IPTU)
+                <i class="fas fa-dollar-sign mr-2"></i>{{$propertyChain->value_iptu}} (IPTU)
             </span>
-            @endif
+            @endif --}}
         </p>
     </div>
     <div class="big-description-immobile p-4">
-        {!!$immobilechain->description!!}
+        {!!$propertyChain->content!!}
     </div>
 </section>
 <section id="more-info" class="contact-immobile">
@@ -139,7 +125,7 @@
         @csrf
         <div class="row px-sm-3">
             <div class="my-2 px-1 col-6">
-                <input name="slug" value="{{$immobilechain->slug}}" readonly>
+                <input name="slug" value="{{Str::upper($propertyChain->slug)}}" readonly>
             </div>
             <div class="my-2 px-1 col-6">
                 <input name="name" placeholder="Nome *">
@@ -155,7 +141,7 @@
             </div>
             <div class="my-2 px-1 col-12">
                 <textarea name="message" id="" cols="30" rows="3"
-                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o imóvel {{$immobilechain->slug}}.</textarea>
+                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o imóvel {{$propertyChain->slug}}.</textarea>
                 <p class="my-3"> {{$errors->contact->first('message')}} </p>
             </div>
             <p class="ft-secoundary-big font-weight-light"> {{session('successcontact')}} </p>
@@ -166,13 +152,13 @@
     </form>
 </section>
 
-@if($immobiles->isNotEmpty())
+@if($properties->isNotEmpty())
 <section class="more-options-immobile my-5">
     <h1 class="my-3"> Mais algumas opções </h1>
     <div class="row justify-content-center">
-        @foreach($immobiles as $immobile)
-        @if($immobilechain->id != $immobile->id)
-        @include('contexts.view-immobile-default',['immobileview'=>$immobile])
+        @foreach($propertys as $property)
+        @if($propertyChain->id != $property->id)
+        @include('contexts.view-property-default',['propertyView'=>$property])
         @endif
         @endforeach
     </div>
@@ -191,7 +177,7 @@
                 <div id="carrousel-immobile-view" class="owl-carousel owl-theme owl-loaded carrousel-owl">
                     <div class="owl-stage-outer">
                         <div class="owl-stage">
-                            @foreach ($immobilechain->images as $image)
+                            @foreach ($propertyChain->images as $image)
                             <div class="owl-item px-1">
                                 <img src="{{url($image->way)}}" alt="{{$image->alt}}">
                             </div>

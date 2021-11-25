@@ -16,8 +16,8 @@ class ImmobileSeeder extends Seeder
     {
 
         for ($i = 1; $i <= 30; $i++) {
-            $immobile =  factory(Immobile::class)->create(['neighborhood_id' => rand(1, 11)]);
-            factory(ImageImmobile::class, rand(3, 6))->create(['immobile_id' => $immobile->id]);
+            $property =  factory(Immobile::class)->create(['neighborhood_id' => rand(1, 11)]);
+            factory(ImageImmobile::class, rand(3, 6))->create(['immobile_id' => $property->id]);
         }
     }
 }

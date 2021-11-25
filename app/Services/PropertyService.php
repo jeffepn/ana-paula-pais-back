@@ -16,13 +16,14 @@ use JpUtilities\Utilities\Upload;
 use App\Utility\SiteUtility;
 use Illuminate\Support\Arr;
 use Jeffpereira\RealEstate\Models\Property\Property;
+use Illuminate\Support\Str;
 
-class ImmobileService
+class PropertyService
 {
     public function create($data)
     {
         $data['slug'] = 'AN-' . StringUtility::generateSlugOfTextWithComplement($data['neighborhood_id'] . $data['type'] . rand(1, 999));
-        while (validator()->make($data, ['slug' => 'unique:immobiles'])->fails()) {
+        while (validator()->make($data, ['slug' => 'unique:properties'])->fails()) {
             $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $data['neighborhood_id'] . $data['type'] . rand(1, 999));
         }
         return Immobile::create($data);
@@ -38,7 +39,7 @@ class ImmobileService
 
     public function getWithSlug($slug)
     {
-        return Immobile::where('slug', $slug)->first();
+        return Property::where('slug', Str::upper($slug))->first();
     }
 
     /**
@@ -51,7 +52,7 @@ class ImmobileService
         return Immobile::where('sale', true)->orWhere('rent', true)->paginate(12);
     }
     /**
-     * Get all immobiles rent
+     * Get all properties rent
      *
      * @return Immobile[]
      */
@@ -61,7 +62,7 @@ class ImmobileService
         return Immobile::where('rent', true)->paginate(12);
     }
     /**
-     * Get all immobiles sale
+     * Get all properties sale
      *
      * @return Immobile[]
      */
@@ -93,9 +94,9 @@ class ImmobileService
         } else {
             $slugBussiness = null;
         }
-        return Property::all();
+        // return Property::all();
 
-        Immobile:: //where($slugBussiness, true)
+        return Property:: //where($slugBussiness, true)
             when($verifyBussiness, function ($query, $verifyBussiness) use ($slugBussiness) {
                 if ($slugBussiness) {
                     return $query->where($slugBussiness, true);
@@ -147,17 +148,20 @@ class ImmobileService
     /**
      * Get Immobiles similiar Immobile with amount defined
      *
-     * @param Immobile $immobile
-     * @param int $amount Amount immobiles search
+     * @param Immobile $property
+     * @param int $amount Amount properties search
      * @return Immobile[]
      */
-    public function getSimilarImmobiles($immobile, $amount)
+    public function getSimilarImmobiles($property, $amount)
     {
-        return Immobile::where('id', '!=', $immobile->id)
-            ->where('rent', $immobile->rent)
-            ->where('sale', $immobile->sale)
-            ->where('neighborhood_id', $immobile->neighborhood_id)
-            ->where('type', $immobile->type)
+        return Property::select('properties.*')
+            ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
+            ->join('types', 'sub_types.type_id', 'types.id')
+            ->join('addresses', 'properties.address_id', 'addresses.id')
+            ->join('neighborhoods', 'addresses.neighborhood_id', 'neighborhoods.id')
+            ->where('properties.id', '!=', $property->id)
+            ->where('addresses.neighborhood_id', $property->neighborhood_id)
+            ->where('sub_types.id', $property->sub_type_id)
             ->take($amount)->get();
     }
 
@@ -224,12 +228,12 @@ class ImmobileService
      * Create ImageImmobile in system
      *
      * @param string $way Way for image
-     * @param Immobile $immobile
+     * @param Immobile $property
      * @return ImageImmobile
      */
-    public function createImage($way, $immobile)
+    public function createImage($way, $property)
     {
-        return ImageImmobile::create(['immobile_id' => $immobile->id, 'way' => $way, 'alt' => SiteUtility::getTypesImmobile()[$immobile->type] . ' ' . $immobile->neighborhood->name . ' , ' . $immobile->neighborhood->city->name . ' - Imóveis Ana Paula Pais']);
+        return ImageImmobile::create(['immobile_id' => $property->id, 'way' => $way, 'alt' => SiteUtility::getTypesImmobile()[$property->type] . ' ' . $property->neighborhood->name . ' , ' . $property->neighborhood->city->name . ' - Imóveis Ana Paula Pais']);
     }
 
     /**
@@ -257,17 +261,17 @@ class ImmobileService
      */
     public function getAllNeighborhoodsSelect()
     {
-        return ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
+        return App\Services\ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
     }
     /**
      * Register visit if ip not visited immobile
      *
-     * @param int $immobile_id Id of Immobile
+     * @param int $property_id Id of Immobile
      * @param string $ip Ip of visitant
      * @return VisitImmobile
      */
-    public function registerVisit($immobile_id, $ip)
+    public function registerVisit($property_id, $ip)
     {
-        return VisitImmobile::firstOrCreate(['immobile_id' => $immobile_id, 'ip' => $ip]);
+        return VisitImmobile::firstOrCreate(['immobile_id' => $property_id, 'ip' => $ip]);
     }
 }

@@ -37,22 +37,15 @@ Route::get('lumiere', 'SiteController@lumiere');
 Route::get('unique', 'SiteController@unique');
 
 //Immobiles
-Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');
-Route::post('busca-imovel-por-codigo', 'SiteController@searchimmobilecode');
-Route::get('registra-busca-de-imoveis', 'SiteController@setsessionsearch');
-Route::get('imovel/{slug?}', 'SiteController@immobile');
-
-
-// Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');
-// Route::post('cadastrar-imovel-99', 'Immobile\ImmobileController@store');
-Route::get('editar-imovel-99/{slug}', 'Immobile\ImmobileController@edit');
-Route::post('editar-imovel-99', 'Immobile\ImmobileController@update');
-
+Route::get('busca-de-imoveis', 'SiteController@searchProperties');
+Route::post('busca-imovel-por-codigo', 'SiteController@searchPropertyCode');
+Route::get('registra-busca-de-imoveis', 'SiteController@setSessionSearch');
+Route::get('imovel/{slug?}', 'SiteController@property');
 
 //Generator sitemap
 
-Route::get('busca-de-imoveis-aluguel', 'SiteController@searchimmobilesrent');
-Route::get('busca-de-imoveis-venda', 'SiteController@searchimmobilessale');
+Route::get('busca-de-imoveis-aluguel', 'SiteController@searchPropertiesRent');
+Route::get('busca-de-imoveis-venda', 'SiteController@searchPropertiesSale');
 
 Auth::routes(['register' => false]);
 

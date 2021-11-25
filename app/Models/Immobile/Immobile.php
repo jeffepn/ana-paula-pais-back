@@ -14,7 +14,7 @@ use JpUtilities\Utilities\StringUtility;
 
 class Immobile extends Model
 {
-    public $table = "immobiles";
+    public $table = "properties";
     public $timestamps = true;
     protected $fillable = [
         'slug', 'type', 'neighborhood_id', 'rent', 'sale', 'value_rent', 'value_sale', 'dormitory', 'suite', 'bathroom', 'garage', 'value_condominium', 'value_iptu', 'area_total', 'area_building', 'min_description', 'description', 'visits'
@@ -24,13 +24,13 @@ class Immobile extends Model
     {
         parent::boot();
 
-        static::saving(function ($immobile) {
+        static::saving(function ($property) {
             $data = [];
-            $data['slug'] = 'AN-' . StringUtility::generateSlugOfTextWithComplement($immobile->neighborhood_id . $immobile->type . rand(1, 999));
-            while (validator()->make($data, ['slug' => 'unique:immobiles'])->fails()) {
-                $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $immobile->neighborhood_id . $immobile->type . rand(1, 999));
+            $data['slug'] = 'AN-' . StringUtility::generateSlugOfTextWithComplement($property->neighborhood_id . $property->type . rand(1, 999));
+            while (validator()->make($data, ['slug' => 'unique:properties'])->fails()) {
+                $data['slug'] = StringUtility::generateSlugOfTextWithComplement('AN-' . $property->neighborhood_id . $property->type . rand(1, 999));
             }
-            $immobile->slug = $data["slug"];
+            $property->slug = $data["slug"];
         });
     }
 

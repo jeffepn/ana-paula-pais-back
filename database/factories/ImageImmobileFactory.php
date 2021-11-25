@@ -9,7 +9,7 @@ $factory->define(ImageImmobile::class, function (Faker $faker, $data) {
     $imageflag = rand(1, 5);
     return [
         'immobile_id' => $data['immobile_id'],
-        'way' => 'images/immobiles/' . $imageflag . '.jpg',
+        'way' => 'images/properties/' . $imageflag . '.jpg',
         'alt' => '',
     ];
 });

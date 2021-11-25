@@ -2,17 +2,17 @@
 <section class="section-view-all-immobiles">
     <div class="row">
         <div class="col-12">
-            @if($immobiles->isEmpty())
+            @if($properties->isEmpty())
             <h3>Nenhum imóvel encontrado</h3>
             @else
-            <h3>{{$immobiles->total()}} imóveis encontrado(s)</h3>
+            <h3>{{$properties->count()}} imóveis encontrado(s)</h3>
             @endif
         </div>
-        @foreach($immobiles as $immobile)
-        @include('contexts.view-immobile-default',['immobileview'=>$immobile])
+        @foreach($properties as $property)
+        @include('contexts.view-property-default',['propertyView'=>$property])
         @endforeach
         <div class="col-12">
-            {{-- {{$immobiles->links()}} --}}
+            {{$properties->links()}}
         </div>
     </div>
 </section>
