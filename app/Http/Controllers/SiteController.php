@@ -22,7 +22,7 @@ class SiteController extends Controller
     //Site
     public function home(ImmobileService $immobileService)
     {
-        return view('home', ['immobileshighlights' => $immobileService->getOrderByVisits(6)]);
+        return view('home', ['properties' => $immobileService->getOrderByVisits(6)]);
     }
     public function teste(ImmobileService $immobileService)
     {

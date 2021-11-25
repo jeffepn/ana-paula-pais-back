@@ -11,7 +11,8 @@
 |
 */
 
-use Illuminate\Mail\Markdown;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'SiteController@home');
@@ -56,12 +57,3 @@ Route::get('busca-de-imoveis-venda', 'SiteController@searchimmobilessale');
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//Resources
-Route::group(["prefix" => "admin"], function () {
-    Route::resource("immobiles", "Admin\ImmobilesController");
-});
-
-Route::middleware("auth", function () {
-    Route::get('/admin', 'AdminController@home')->name('admin');
-});

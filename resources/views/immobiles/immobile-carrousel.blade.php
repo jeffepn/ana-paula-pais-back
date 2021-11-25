@@ -108,29 +108,29 @@
     <div id="carrousel-partial" class="owl-carousel owl-theme owl-loaded">
         <div class="owl-stage-outer">
             <div class="owl-stage">
-                @foreach($immobileshighlights as $immobileshighlight)
+                @foreach($properties as $property)
                 @php
-                $image = $immobileshighlight->images->first();
+                $image = $property->images->first();
                 @endphp
                 <div class="owl-item px-2">
-                    <a href="{{url('imovel/'.$immobileshighlight->slug)}}">
+                    <a href="{{url('imovel/'.$property->slug)}}">
                         <div class="block-immobile-carrousel" style="background-image: url('{{url( $image->way)}}');">
                             <div class="data-immobile">
                                 <h5 class="data-immobile-neighborhood">
-                                    {{$immobileshighlight->neighborhood->name.', '.$immobileshighlight->neighborhood->city->name}}
+                                    {{$property->address->neighborhood->name.',
+                                    '.$property->address->neighborhood->city->name}}
                                 </h5>
                                 <h3 class="data-immobile-description">
-                                    {!!$immobileshighlight->min_description!!}
+                                    {!!$property->min_description!!}
                                 </h3>
                                 <span class="data-immobile-price">
-                                    @if($immobileshighlight->rent && $immobileshighlight->value_rent > 0)
-                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_rent)}}
-                                    <span class="data-immobile-type-bussiness">( Aluguel ) </span><br>
+
+                                    @foreach ($property->businesses as $business)
+                                    @if($business->pivot->value > 0)
+                                    R$ {{number_format($business->pivot->value, 2, ',', '.')}}
+                                    <span class="data-immobile-type-bussiness">( {{$business->name}} ) </span><br>
                                     @endif
-                                    @if($immobileshighlight->sale && $immobileshighlight->value_sale > 0)
-                                    {{\JpUtilities\Utilities\Util::formatDecimalPtBr($immobileshighlight->value_sale)}}
-                                    <span class="data-immobile-type-bussiness"> ( Venda )</span>
-                                    @endif
+                                    @endforeach
                                 </span>
                             </div>
                         </div>

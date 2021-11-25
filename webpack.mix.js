@@ -17,9 +17,8 @@ mix.js("resources/js/app.js", "public/js")
         postCss: [
             require("autoprefixer")({
                 browsers: ["last 40 versions"],
-                // browsers: ['last 2 versions'],
-                cascade: false
-            })
-        ]
+                cascade: false,
+            }),
+        ],
     })
     .version();
