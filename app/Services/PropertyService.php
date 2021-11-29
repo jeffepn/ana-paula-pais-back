@@ -261,7 +261,9 @@ class PropertyService
      */
     public function getAllNeighborhoodsSelect()
     {
-        return App\Services\ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
+        return Neighborhood::all()->map(function ($neighborhood) {
+            return [$neighborhood->id => Str::title($neighborhood->name)];
+        })->toArray();  // App\Services\ArrayUtility::convertArrayForInputSelect('id', 'name', Neighborhood::all());
     }
     /**
      * Register visit if ip not visited immobile

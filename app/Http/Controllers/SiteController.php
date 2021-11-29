@@ -12,6 +12,7 @@ use App\Utility\SiteUtility;
 use JpUtilities\Utilities\Util;
 //Job
 use App\Jobs\Contact\ContactJob;
+use App\Utility\MessageUtil;
 
 class SiteController extends Controller
 {
@@ -121,7 +122,7 @@ class SiteController extends Controller
             return redirect()->back()->withErrors($validator, 'contact');
         }
         ContactJob::dispatch($request->all());
-        return redirect()->back()->with('successcontact', Util::success('ContactSuccess'));
+        return redirect()->back()->with('successcontact', MessageUtil::success('ContactSuccess'));
     }
 
     public function newsletter(Request $request)
@@ -145,7 +146,7 @@ class SiteController extends Controller
             return redirect()->back()->withErrors($validator, 'newsletter');
         }
         Newsletter::create($request->all());
-        return redirect()->back()->with('successnewsletter', Util::success('NewsletterSuccess'));
+        return redirect()->back()->with('successnewsletter', MessageUtil::success('NewsletterSuccess'));
     }
     //Immobiles
     public function searchProperties(PropertyService $propertyService)

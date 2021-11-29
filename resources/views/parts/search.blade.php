@@ -24,7 +24,12 @@
                     session('search_immobile.bussiness'),
                     ['class'=>'form-control'])}}
                 </div>
+                <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+                    <select name="city"></select>
 
+                    {{Form::select('neighborhood', array_merge([''=>'Cidade'], $cities->toArray()),
+                    session('search_immobile.neighborhood'), ['class'=>'form-control'])}}
+                </div>
                 <div class="mb-2 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                     {{Form::select('neighborhood', array_merge([''=>'Bairro'], $neighborhoods->toArray()),
                     session('search_immobile.neighborhood'), ['class'=>'form-control'])}}

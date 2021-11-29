@@ -5,12 +5,10 @@
             @if($properties->isEmpty())
             <h3>Nenhum imóvel encontrado</h3>
             @else
-            <h3>{{$properties->count()}} imóveis encontrado(s)</h3>
+            <h3>{{$properties->total()}} imóveis encontrado(s)</h3>
             @endif
         </div>
-        @foreach($properties as $property)
-        @include('contexts.view-property-default',['propertyView'=>$property])
-        @endforeach
+        @each('contexts.view-property-default', $properties, 'propertyView')
         <div class="col-12">
             {{$properties->links()}}
         </div>
