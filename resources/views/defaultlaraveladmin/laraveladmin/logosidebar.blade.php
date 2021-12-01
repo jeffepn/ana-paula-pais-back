@@ -1,1 +1,0 @@
-<img src="{{url('imagessite/utilities/user2.png')}}">

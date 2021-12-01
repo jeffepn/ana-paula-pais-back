@@ -11,13 +11,11 @@
 |
 */
 
-use Illuminate\Mail\Markdown;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'SiteController@home');
-Route::get('/teste', 'SiteController@teste');
-//Site
-//Route::get('site', 'SiteController@home');
 Route::get('nossos-servicos', 'SiteController@services');
 Route::get('sobre', 'SiteController@about');
 Route::get('contato', 'SiteController@contact');
@@ -35,33 +33,13 @@ Route::get('green', 'SiteController@green');
 Route::get('lumiere', 'SiteController@lumiere');
 Route::get('unique', 'SiteController@unique');
 
-//Immobiles
-Route::get('busca-de-imoveis', 'SiteController@searchimmobiles');
-Route::post('busca-imovel-por-codigo', 'SiteController@searchimmobilecode');
-Route::get('registra-busca-de-imoveis', 'SiteController@setsessionsearch');
-Route::get('imovel/{slug?}', 'SiteController@immobile');
-
-
-// Route::get('cadastrar-imovel-99', 'Immobile\ImmobileController@create');
-// Route::post('cadastrar-imovel-99', 'Immobile\ImmobileController@store');
-Route::get('editar-imovel-99/{slug}', 'Immobile\ImmobileController@edit');
-Route::post('editar-imovel-99', 'Immobile\ImmobileController@update');
-
+Route::get('busca-de-imoveis', 'SiteController@searchProperties')->name('property.search_properties');
+Route::post('busca-imovel-por-codigo', 'SiteController@searchPropertyCode')->name('property.search_per_code');
+Route::get('registra-busca-de-imoveis', 'SiteController@setSessionSearch')->name('property.set_filter');
+Route::get('imovel/{slug?}', 'SiteController@property');
 
 //Generator sitemap
-
-Route::get('busca-de-imoveis-aluguel', 'SiteController@searchimmobilesrent');
-Route::get('busca-de-imoveis-venda', 'SiteController@searchimmobilessale');
 
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//Resources
-Route::group(["prefix" => "admin"], function () {
-    Route::resource("immobiles", "Admin\ImmobilesController");
-});
-
-Route::middleware("auth", function () {
-    Route::get('/admin', 'AdminController@home')->name('admin');
-});

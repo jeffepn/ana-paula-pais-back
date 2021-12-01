@@ -3,32 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//Models
 use App\Models\Site\Newsletter;
-//Services
-use App\Services\ImmobileService;
-//Utilities
+use App\Services\PropertyService;
 use App\Utility\SiteUtility;
-use JpUtilities\Utilities\Util;
-//Job
 use App\Jobs\Contact\ContactJob;
+use App\Utility\MessageUtil;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Jeffpereira\RealEstate\Models\Property\BusinessProperty;
+use Jeffpereira\RealEstate\Models\Property\Property;
+use Jeffpereira\RealEstate\Models\Property\SubType;
+use JPAddress\Models\Address\Neighborhood;
+use Illuminate\Support\Str;
 
 class SiteController extends Controller
 {
-    public function prelaunch()
+    public function home()
     {
-        return view('pre-launch');
+        return view('home', ['properties' => Property::take(6)->get()]);
     }
-    //Site
-    public function home(ImmobileService $immobileService)
-    {
-        return view('home', ['immobileshighlights' => $immobileService->getOrderByVisits(6)]);
-    }
-    public function teste(ImmobileService $immobileService)
-    {
-        // return date('H:i:s');
-        return view('teste');
-    }
+
     public function services()
     {
         return view('services');
@@ -121,7 +114,9 @@ class SiteController extends Controller
             return redirect()->back()->withErrors($validator, 'contact');
         }
         ContactJob::dispatch($request->all());
-        return redirect()->back()->with('successcontact', Util::success('ContactSuccess'));
+        return redirect()
+            ->back()
+            ->with('successcontact', MessageUtil::success('ContactSuccess'));
     }
 
     public function newsletter(Request $request)
@@ -145,28 +140,42 @@ class SiteController extends Controller
             return redirect()->back()->withErrors($validator, 'newsletter');
         }
         Newsletter::create($request->all());
-        return redirect()->back()->with('successnewsletter', Util::success('NewsletterSuccess'));
+        return redirect()
+            ->back()
+            ->with('successnewsletter', MessageUtil::success('NewsletterSuccess'));
     }
-    //Immobiles
-    public function searchimmobiles(ImmobileService $immobileService)
+
+    public function searchProperties(PropertyService $propertyService)
     {
-        if (!session()->has('search_immobile')) {
+        if (!session()->has('search_property')) {
             SiteUtility::initializeSessionSearch();
         }
-        $search = session('search_immobile');
-        return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getAllNeighborhoodsSelectWithCity(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllPerSearch($search)]);
+        $search = session('search_property');
+        return view('properties-search', [
+            'businesses' => BusinessProperty::join('properties', 'business_properties.property_id', 'properties.id')
+                ->join('businesses', 'business_properties.business_id', 'businesses.id')
+                ->select('businesses.*')
+                ->distinct()
+                ->get(),
+            'neighborhoods' => Neighborhood::with('city')
+                ->orderBy('name')
+                ->get(),
+            'types' => SubType::whereHas('properties')
+                ->get(),
+            'properties' => $propertyService->getAllPerSearch($search)
+        ]);
     }
-    public function searchimmobilecode(Request $request)
+    public function searchPropertyCode(Request $request)
     {
         return redirect()->to('imovel/' . $request->code);
     }
-    public function setsessionsearch(Request $request)
+    public function setSessionSearch(Request $request)
     {
-        if (!session()->has('search_immobile')) {
+        if (!session()->has('search_property')) {
             SiteUtility::initializeSessionSearch();
         }
-        session()->put('search_immobile', [
-            'bussiness' => $request->bussiness,
+        session()->put('search_property', [
+            'business' => $request->business,
             'neighborhood' => $request->neighborhood,
             'type' => $request->type,
             'garage' => $request->garage,
@@ -176,30 +185,19 @@ class SiteController extends Controller
             'area_min' => $request->area_min,
             'area_max' => $request->area_max
         ]);
-        return redirect()->back();
+        return redirect()->to(route('property.search_properties'));
     }
-    public function immobile(ImmobileService $immobileService, $slug = null)
+    public function property(PropertyService $propertyService, $slug = null)
     {
-        $immobile = $immobileService->getWithSlug($slug);
-        if (!$immobile) {
-            return view('immobile', ['immobilechain' => null]);
+        try {
+            $property = Property::where('slug', Str::upper($slug))->firstOrFail();
+            return view('property', [
+                'propertyChain' => $property,
+                'properties' => $propertyService
+                    ->getSimilarProperties($property, 3)
+            ]);
+        } catch (ModelNotFoundException $th) {
+            return view('property', ['propertyChain' => null]);
         }
-        $immobileService->registerVisit($immobile->id, request()->ip());
-        return view('immobile', ['immobilechain' => $immobile, 'immobiles' => $immobileService->getSimilarImmobiles($immobile, 3)]);
-    }
-
-
-    //Generator
-
-    public function searchimmobilesrent(ImmobileService $immobileService)
-    {
-        SiteUtility::initializeSessionSearch();
-        return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllRent()]);
-    }
-
-    public function searchimmobilessale(ImmobileService $immobileService)
-    {
-        SiteUtility::initializeSessionSearch();
-        return view('immobiles-search', ['bussiness' => SiteUtility::getBussiness(), 'neighborhoods' => $immobileService->getallNeighborhoodsSelect(), 'types' => SiteUtility::getTypesImmobile(), 'immobiles' => $immobileService->getAllSale()]);
     }
 }

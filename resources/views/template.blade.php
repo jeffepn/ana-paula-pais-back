@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="{{url('css/materialdesignicons-light.min.css')}}">
     <link rel="stylesheet" href="{{ mix('/css/all.css') }}">
     <link rel="stylesheet" href="{{url('css/assetsutilities.min.css?v=1.0.18')}}">
-
 </head>
 
 <body class="h-100">
@@ -68,7 +67,6 @@
     </script>
     @section('js')
     @show
-
     <script type="text/javascript">
         $(document).ready(function () {
             @section('js-util')

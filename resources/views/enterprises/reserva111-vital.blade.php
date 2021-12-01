@@ -127,7 +127,7 @@ Reserva 111 (Vital) - {{config('app.name')}}
         </div>
     </div>
 </section>
-<section id="more-info" class="contact-immobile">
+<section id="more-info" class="contact-property">
     <h2>Gostou do imóvel ou possui alguma dúvida, entre em contato com a gente...</h2>
     @php
     $key = array_key_first($errors->contact->messages());
@@ -135,7 +135,7 @@ Reserva 111 (Vital) - {{config('app.name')}}
     @if($key)
     @section('js-util')
     @parent
-    $("#form-immobile-contact [name={{$key}}]").focus();
+    $("#form-property-contact [name={{$key}}]").focus();
     @endsection
     @endif
 
@@ -146,7 +146,7 @@ Reserva 111 (Vital) - {{config('app.name')}}
     @endsection
     @endif
 
-    <form id="form-immobile-contact" class="form-contact" method="POST" action="{{url('contato')}}" novalidate>
+    <form id="form-property-contact" class="form-contact" method="POST" action="{{url('contato')}}" novalidate>
         @csrf
         <div class="row px-sm-3">
             <div class="my-2 px-1 col-6">

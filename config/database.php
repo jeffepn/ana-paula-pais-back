@@ -69,6 +69,32 @@ return [
                 //'add_extra_option' => '--optionname=optionvalue',
             ]
         ],
+        'mysql_old' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE_OLD', ''),
+            'username' => env('DB_USERNAME_OLD', ''),
+            'password' => env('DB_PASSWORD_OLD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+            'dump' => [
+                'dump_binary_path' => env('MYSQL_DUMP'), // only the path, so without `mysqldump` or `pg_dump`
+                'use_single_transaction',
+                'timeout' => 60 * 15, // 15 minute timeout
+                // 'exclude_tables' => ['table1', 'table2'],
+                //'add_extra_option' => '--optionname=optionvalue',
+            ]
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
