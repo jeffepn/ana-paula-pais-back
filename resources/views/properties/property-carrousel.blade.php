@@ -114,7 +114,8 @@
                 @endphp
                 <div class="owl-item px-2">
                     <a href="{{url('imovel/'.$property->slug)}}">
-                        <div class="block-property-carrousel" style="background-image: url('{{url( $image->way)}}');">
+                        <div class="block-property-carrousel"
+                            style="background-image: url('{{url( $image->wayUrl)}}');">
                             <div class="data-property">
                                 <h5 class="data-property-neighborhood">
                                     {{$property->address->neighborhood->name.',

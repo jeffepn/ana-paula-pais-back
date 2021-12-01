@@ -10,7 +10,7 @@
     @php
     $imagehighlight = $propertyChain->images->first();
     @endphp
-    <div class="image-highlights" style="background-image: url('{{url($imagehighlight->way)}}');">
+    <div class="image-highlights" style="background-image: url('{{url($imagehighlight->wayUrl)}}');">
     </div>
     <div class="content-default my-5">
         <p>
@@ -52,7 +52,7 @@
             <div class="owl-stage">
                 @foreach ($propertyChain->images as $image)
                 <div class="owl-item" data-toggle="modal" data-target="#modal-view-image-property">
-                    <img src="{{url($image->way)}}" alt="{{$image->alt}}">
+                    <img src="{{url($image->wayUrl)}}" alt="{{$image->alt}}">
                 </div>
                 @endforeach
             </div>
@@ -179,7 +179,7 @@
                         <div class="owl-stage">
                             @foreach ($propertyChain->images as $image)
                             <div class="owl-item px-1">
-                                <img src="{{url($image->way)}}" alt="{{$image->alt}}">
+                                <img src="{{url($image->wayUrl)}}" alt="{{$image->alt}}">
                             </div>
                             @endforeach
                         </div>

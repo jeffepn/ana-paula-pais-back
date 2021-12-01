@@ -62,22 +62,11 @@
                 $way = '';
                 $alt = '';
                 if($images->isNotEmpty()){
-                $way = $images->first()->way;
+                $way = $images->first()->wayUrl;
                 $alt = $images->first()->alt;
                 }
                 @endphp
                 <img src="{{url($way)}}" alt="{{$alt}}">
-                <!-- <div class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        @foreach ($propertyView->images as $image)
-                        <div class="owl-item">
-                            <img src="{{url($image->way)}}" alt="{{$image->alt}}">
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-        </div>-->
             </div>
         </a>
     </div>
