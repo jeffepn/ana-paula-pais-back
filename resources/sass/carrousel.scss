@@ -1,5 +1,5 @@
 @import "./variables.scss";
-.block-immobile-carrousel,
+.block-property-carrousel,
 .block-enterprise-carrousel {
     position: relative;
     background-size: cover;
@@ -8,7 +8,7 @@
     width: 100%;
     height: 70vh;
     cursor: pointer;
-    .data-immobile {
+    .data-property {
         position: absolute;
         padding: 1rem;
         bottom: 0;
@@ -40,7 +40,7 @@
     background-size: 90%;
 }
 
-.block-immobile-carrousel {
+.block-property-carrousel {
     &:after {
         content: "";
         position: absolute;
@@ -145,7 +145,7 @@
         }
     }
 }
-#carrousel-immobile-view {
+#carrousel-property-view {
     .owl-nav {
         button {
             background: none !important;
@@ -169,7 +169,7 @@
     .item-depoiment {
         padding: 0 2rem;
     }
-    #carrousel-immobile-view {
+    #carrousel-property-view {
         .owl-nav {
             button {
                 &::before {
@@ -182,7 +182,7 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    #carrousel-immobile-view {
+    #carrousel-property-view {
         .owl-nav {
             button {
                 &::before {

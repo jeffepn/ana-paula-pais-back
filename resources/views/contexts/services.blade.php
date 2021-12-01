@@ -8,7 +8,7 @@
     <div class="divider-section-services-description mt-0">
         <h1>Curadoria de Imóveis</h1>
     </div>
-    <section class="section-curated-immobiles py-5 my-0">
+    <section class="section-curated-properties py-5 my-0">
         <div class="content-default-with-back">
         </div>
         <div class="content-default text-justify">

@@ -1,10 +1,10 @@
 @extends('template')
 @section('title')
-Busca de immobiles - {{config('app.name')}}
+Busca de Imóveis - {{config('app.name')}}
 @endsection
 
 @section('context')
-@include('contexts.immobiles-search')
+@include('contexts.properties-search')
 @endsection
 
 @section('css')

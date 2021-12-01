@@ -1,10 +1,10 @@
 @import "./variables.scss";
-.section-immobile-not-found {
+.section-property-not-found {
     justify-content: center;
 }
 
-.section-immobile-not-found,
-.section-immobile {
+.section-property-not-found,
+.section-property {
     margin-top: 146px;
     position: relative;
     height: auto;
@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.section-immobile {
+.section-property {
     min-height: 650px !important;
     &::after {
         content: "";
@@ -45,13 +45,13 @@
     }
 }
 
-.big-description-immobile {
+.big-description-property {
     font-size: 1.2em;
     font-family: $fontPrimary;
     line-height: 2em;
 }
 
-.contact-immobile {
+.contact-property {
     background: $colorPrimary;
     text-align: center;
     padding: 1.5rem 0.25rem;
@@ -68,7 +68,7 @@
     }
 }
 
-.more-options-immobile {
+.more-options-property {
     h1,
     h2,
     h3,
@@ -82,9 +82,14 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .section-immobile {
+    .section-property {
         &::after {
-            background-image: linear-gradient(to left, white, rgba(gray, 0.5), rgba(black, 0.5));
+            background-image: linear-gradient(
+                to left,
+                white,
+                rgba(gray, 0.5),
+                rgba(black, 0.5)
+            );
         }
     }
 }
@@ -95,7 +100,7 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .section-immobile {
+    .section-property {
         margin-top: 96px;
         min-height: unset !important;
     }

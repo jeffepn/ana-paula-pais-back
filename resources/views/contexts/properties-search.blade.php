@@ -1,5 +1,5 @@
 @include('parts.search')
-<section class="section-view-all-immobiles">
+<section class="section-view-all-properties">
     <div class="row">
         <div class="col-12">
             @if($properties->isEmpty())
