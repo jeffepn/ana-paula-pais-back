@@ -190,7 +190,11 @@ class SiteController extends Controller
     public function property(PropertyService $propertyService, $slug = null)
     {
         try {
-            $property = Property::where('slug', Str::upper($slug))->firstOrFail();
+            $property = Property::where(
+                'code',
+                Str::replaceFirst("AN-", "", Str::upper($slug))
+            )
+                ->firstOrFail();
             return view('property', [
                 'propertyChain' => $property,
                 'properties' => $propertyService

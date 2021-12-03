@@ -36,7 +36,7 @@ Route::get('unique', 'SiteController@unique');
 Route::get('busca-de-imoveis', 'SiteController@searchProperties')->name('property.search_properties');
 Route::post('busca-imovel-por-codigo', 'SiteController@searchPropertyCode')->name('property.search_per_code');
 Route::get('registra-busca-de-imoveis', 'SiteController@setSessionSearch')->name('property.set_filter');
-Route::get('imovel/{slug?}', 'SiteController@property');
+Route::get('imovel/{slug?}', 'SiteController@property')->name('property.show');
 
 //Generator sitemap
 

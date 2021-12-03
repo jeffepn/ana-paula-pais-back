@@ -1,11 +1,11 @@
 <div class="property-list">
     <div class="property-list-card">
         <div class="property-list-context">
-            <a href="{{url('imovel/'.$propertyView->slug)}}">
+            <a href="{{route('property.show','AN-'.$propertyView->code)}}">
                 <p class="font-weight-bold">
                     {{$propertyView->address->neighborhood->name}},
                     {{$propertyView->address->neighborhood->city->name}}<br>
-                    <span>({{Str::upper($propertyView->slug)}}) {{Str::title($propertyView->sub_type->name)}}</span>
+                    <span>({{"AN-".$propertyView->code}}) {{Str::title($propertyView->sub_type->name)}}</span>
                 </p>
                 <hr>
                 <div class="row">
@@ -55,7 +55,7 @@
                 </div>
             </a>
         </div>
-        <a href="{{url('imovel/'.$propertyView->slug)}}">
+        <a href="{{route('property.show','AN-'.$propertyView->code)}}">
             <div class="property-list-image">
                 @php
                 $images = $propertyView->images;

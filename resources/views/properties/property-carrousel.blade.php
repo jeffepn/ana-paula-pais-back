@@ -113,7 +113,7 @@
                 $image = $property->images->first();
                 @endphp
                 <div class="owl-item px-2">
-                    <a href="{{url('imovel/'.$property->slug)}}">
+                    <a href="{{route('property.show','AN-'.$property->code)}}">
                         <div class="block-property-carrousel"
                             style="background-image: url('{{url( $image->wayUrl)}}');">
                             <div class="data-property">

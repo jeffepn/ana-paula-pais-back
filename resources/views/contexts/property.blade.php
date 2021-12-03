@@ -15,7 +15,7 @@
     <div class="content-default my-5">
         <p>
             {{$propertyChain->address->neighborhood->name}}, {{$propertyChain->address->neighborhood->city->name}}<br>
-            <span>({{Str::upper($propertyChain->slug)}}) {{Str::title($propertyChain->sub_type->name)}}</span>
+            <span>({{"AN-".$propertyChain->code}}) {{Str::title($propertyChain->sub_type->name)}}</span>
         </p>
         <div class="row">
             <h4>
@@ -125,7 +125,7 @@
         @csrf
         <div class="row px-sm-3">
             <div class="my-2 px-1 col-6">
-                <input name="slug" value="{{Str::upper($propertyChain->slug)}}" readonly>
+                <input name="slug" value="{{" AN-".$propertyChain->code}}" readonly>
             </div>
             <div class="my-2 px-1 col-6">
                 <input name="name" placeholder="Nome *">
@@ -141,7 +141,7 @@
             </div>
             <div class="my-2 px-1 col-12">
                 <textarea name="message" id="" cols="30" rows="3"
-                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o imóvel {{$propertyChain->slug}}.</textarea>
+                    placeholder="Mensagem *">Eu gostaria de ter mais informações sobre o imóvel {{"AN-".$propertyChain->code}}.</textarea>
                 <p class="my-3"> {{$errors->contact->first('message')}} </p>
             </div>
             <p class="ft-secoundary-big font-weight-light"> {{session('successcontact')}} </p>
