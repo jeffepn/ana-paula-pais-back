@@ -18,7 +18,7 @@ $url = request()->url();
 <meta property="og:title" content="{!!strip_tags($propertyChain->min_description)!!}" />
 <meta property="og:site_name" content="{{config(" app.name")}}">
 <meta property="og:description" content="{!!strip_tags($propertyChain->min_description)!!}" />
-<meta property="og:image" content="{{url($propertyChain->images->first()->way)}}" />
+<meta property="og:image" content="{{url($propertyChain->images->first()->wayUrl)}}" />
 <meta property="og:image:width" content="1200">
 <meta name="description" content="{!!strip_tags($propertyChain->min_description)!!}">
 @endsection
