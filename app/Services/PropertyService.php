@@ -29,6 +29,7 @@ class PropertyService
             ->join('businesses', 'business_properties.business_id', 'businesses.id')
             ->select('properties.*')
             ->distinct('properties.id')
+            ->whereActive(true)
             ->when($verifyNeighborhood, function ($query) use ($search) {
                 return $query->where('neighborhoods.id', $search['neighborhood']);
             })->when($verifyType, function ($query) use ($search) {

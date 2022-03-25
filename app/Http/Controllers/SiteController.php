@@ -194,6 +194,7 @@ class SiteController extends Controller
                 'code',
                 Str::replaceFirst("AN-", "", Str::upper($slug))
             )
+                ->whereActive(true)
                 ->firstOrFail();
             return view('property', [
                 'propertyChain' => $property,
