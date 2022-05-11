@@ -52,8 +52,8 @@ class SyncOldWithNewDB extends Command
     {
         parent::__construct();
 
-        $this->sale = Business::firstOrCreate(['name' => 'Venda']);
-        $this->rent = Business::firstOrCreate(['name' => 'Aluguel']);
+        //  $this->sale = Business::firstOrCreate(['name' => 'Venda']);
+        // $this->rent = Business::firstOrCreate(['name' => 'Aluguel']);
     }
 
     /**
