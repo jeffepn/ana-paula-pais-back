@@ -7,12 +7,10 @@ use App\Models\Site\Newsletter;
 use App\Services\PropertyService;
 use App\Utility\SiteUtility;
 use App\Jobs\Contact\ContactJob;
+use App\Services\SearchService;
 use App\Utility\MessageUtil;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Jeffpereira\RealEstate\Models\Property\BusinessProperty;
 use Jeffpereira\RealEstate\Models\Property\Property;
-use Jeffpereira\RealEstate\Models\Property\SubType;
-use JPAddress\Models\Address\Neighborhood;
 use Illuminate\Support\Str;
 
 class SiteController extends Controller
@@ -145,23 +143,18 @@ class SiteController extends Controller
             ->with('successnewsletter', MessageUtil::success('NewsletterSuccess'));
     }
 
-    public function searchProperties(PropertyService $propertyService)
-    {
+    public function searchProperties(
+        PropertyService $propertyService,
+        SearchService $searchService
+    ) {
         if (!session()->has('search_property')) {
             SiteUtility::initializeSessionSearch();
         }
         $search = session('search_property');
         return view('properties-search', [
-            'businesses' => BusinessProperty::join('properties', 'business_properties.property_id', 'properties.id')
-                ->join('businesses', 'business_properties.business_id', 'businesses.id')
-                ->select('businesses.*')
-                ->distinct()
-                ->get(),
-            'neighborhoods' => Neighborhood::with('city')
-                ->orderBy('name')
-                ->get(),
-            'types' => SubType::whereHas('properties')
-                ->get(),
+            'businesses' => $searchService->getBusinesses(),
+            'neighborhoods' => $searchService->getNeighborhoods(),
+            'types' => $searchService->getSubtypes(),
             'properties' => $propertyService->getAllPerSearch($search)
         ]);
     }
