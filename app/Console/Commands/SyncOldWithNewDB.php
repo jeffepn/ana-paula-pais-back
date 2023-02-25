@@ -51,9 +51,6 @@ class SyncOldWithNewDB extends Command
     public function __construct()
     {
         parent::__construct();
-
-        $this->sale = Business::firstOrCreate(['name' => 'Venda']);
-        $this->rent = Business::firstOrCreate(['name' => 'Aluguel']);
     }
 
     /**
@@ -63,6 +60,9 @@ class SyncOldWithNewDB extends Command
      */
     public function handle()
     {
+
+        $this->sale = Business::firstOrCreate(['name' => 'Venda']);
+        $this->rent = Business::firstOrCreate(['name' => 'Aluguel']);
         DB::connection('mysql_old')->table('immobiles')->get()->each(function ($immobile) {
             if (!$immobile->sold) {
                 $property = $this->createProperty($immobile);
