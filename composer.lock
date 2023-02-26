@@ -1148,16 +1148,16 @@
         },
         {
             "name": "jeffersonpereira/realestatelaravel",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffepn/real-estate-laravel.git",
-                "reference": "106c2e4f1e2f8819631f392ad68b2e8ca30ce9ef"
+                "reference": "bc69ce10cad3784dd83cf1a389a2fca4471b9b5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffepn/real-estate-laravel/zipball/106c2e4f1e2f8819631f392ad68b2e8ca30ce9ef",
-                "reference": "106c2e4f1e2f8819631f392ad68b2e8ca30ce9ef",
+                "url": "https://api.github.com/repos/jeffepn/real-estate-laravel/zipball/bc69ce10cad3784dd83cf1a389a2fca4471b9b5c",
+                "reference": "bc69ce10cad3784dd83cf1a389a2fca4471b9b5c",
                 "shasum": ""
             },
             "require": {
@@ -1202,9 +1202,9 @@
             "description": "It's package to make manager real estate in system with laravel",
             "support": {
                 "issues": "https://github.com/jeffepn/real-estate-laravel/issues",
-                "source": "https://github.com/jeffepn/real-estate-laravel/tree/1.4.1"
+                "source": "https://github.com/jeffepn/real-estate-laravel/tree/1.4.2"
             },
-            "time": "2023-02-23T13:08:09+00:00"
+            "time": "2023-02-26T06:02:08+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2270,24 +2270,24 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab"
+                "reference": "dd3a383e599f49777d8b628dadbb90cae435b87e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
-                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/dd3a383e599f49777d8b628dadbb90cae435b87e",
+                "reference": "dd3a383e599f49777d8b628dadbb90cae435b87e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.8",
-                "phpunit/phpunit": "^8.5.28 || ^9.5.21"
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "phpunit/phpunit": "^8.5.32 || ^9.6.3 || ^10.0.12"
             },
             "type": "library",
             "extra": {
@@ -2329,7 +2329,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.1"
             },
             "funding": [
                 {
@@ -2341,7 +2341,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-30T15:51:26+00:00"
+            "time": "2023-02-25T19:38:58+00:00"
         },
         {
             "name": "psr/container",
