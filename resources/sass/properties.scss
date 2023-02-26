@@ -1,4 +1,3 @@
-@import "./variables.scss";
 .section-property-not-found {
     justify-content: center;
 }
@@ -45,10 +44,30 @@
     }
 }
 
-.big-description-property {
-    font-size: 1.2em;
+.content-property {
     font-family: $fontPrimary;
-    line-height: 2em;
+    ul {
+        padding-left: 2rem;
+    }
+    table {
+        width: 100%;
+    }
+    h1,
+    h2 {
+        font-family: $fontThird;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 2.3em;
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $fontPrimary;
+    }
 }
 
 .contact-property {

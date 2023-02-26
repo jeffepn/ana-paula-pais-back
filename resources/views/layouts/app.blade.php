@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/realestatelaravel/css/realestatelaravel.css" />
+    @realestatelaravelStyles
 </head>
 
 <body>
@@ -41,9 +41,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('jp_realestate.property.list') }}">Imovéis</a>
+                        @foreach (Jeffpereira\RealEstate\Utilities\Helpers\RouteHelper::allView() as $item)
+                        <li>
+                            <a class="nav-link" href="{{$item['url']}}">
+                                {{$item['title']}}
+                            </a>
                         </li>
+                        @endforeach
                         @endauth
                     </ul>
 
@@ -86,9 +90,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="/realestatelaravel/js/manifest.js"></script>
-    <script src="/realestatelaravel/js/realestatelaravel.js"></script>
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    @realestatelaravelScripts
+    <script src="{{ mix('js/admin.js') }}" defer></script>
 </body>
 
 </html>
