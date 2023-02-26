@@ -52,7 +52,7 @@
             <div class="swiper-wrapper">
                 @foreach ($propertyChain->images as $image)
                 <div class="swiper-slide"
-                    style="background-image: url({{$image->thumbnail_url ?? $image->way_url}}); background-size: cover; background-position: center; background-repeat: no-repeat">
+                    style="background-image: url({{$image->thumbnail ? $image->thumbnail_url : $image->way_url}}); background-size: cover; background-position: center; background-repeat: no-repeat">
                     <a data-fslightbox="gallery" href="{{$image->way_url}}" class="stretched-link"></a>
                 </div>
                 @endforeach

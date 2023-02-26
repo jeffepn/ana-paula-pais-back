@@ -59,7 +59,7 @@
             <div class="property-list-image">
                 @php
                 $image = $propertyView->images->first();
-                $way = $image ? $image->thumbnail_url ?? $image->way_url : '';
+                $way = $image ? $image->thumbnail ? $image->thumbnail_url : $image->way_url : '';
                 $alt = $image ? $image->alt : '';
                 @endphp
                 <img src="{{url($way)}}" alt="{{$alt}}">
