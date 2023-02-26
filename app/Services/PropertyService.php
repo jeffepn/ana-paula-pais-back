@@ -46,7 +46,7 @@ class PropertyService
                     ->orWhere('properties.total_area', '=', $search['area_max']);
             });
 
-        return $properties->orderBy('created_at')
+        return $properties->orderByDesc('created_at')
             ->paginate(self::DEFAULT_PAGINATE);
     }
 
@@ -61,7 +61,7 @@ class PropertyService
             ->where('addresses.neighborhood_id', $property->neighborhood_id)
             ->where('sub_types.id', $property->sub_type_id)
             ->take($amount)
-            ->orderBy('created_at')
+            ->orderByDesc('created_at')
             ->get();
     }
 }
