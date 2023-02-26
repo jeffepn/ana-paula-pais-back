@@ -3,27 +3,25 @@
         <h1>
             O que estão falando sobre o meu trabalho
         </h1>
-        <div id="carrousel-clients" class="owl-carousel owl-theme owl-loaded carrousel-owl">
-            <div class="owl-stage-outer">
-                <div class="owl-stage">
-                    <div class="owl-item px-2">
+        <div class="swiper-depoiments container">
+            <div id="swiperDepoiments" class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-swiper-autoplay="2000">
                         <div class="item-depoiment">
-                            <div class="container">
-                                <h3>
-                                    Renata Santucci<br>
-                                    Propagandista
-                                </h3>
-                                <p>
-                                    Falar da Ana Paula é um privilégio! Uma profissional totalmente diferenciada que
-                                    consegue escutar e compreender seus clientes.<br>
-                                    Trazendo o empreendimento correto que
-                                    sempre buscamos dentro do que foi conversado.<br>
-                                    Ana Paula você é uma profissional (Sensacional)
-                                </p>
-                            </div>
+                            <h3>
+                                Renata Santucci<br>
+                                Propagandista
+                            </h3>
+                            <p>
+                                Falar da Ana Paula é um privilégio! Uma profissional totalmente diferenciada que
+                                consegue escutar e compreender seus clientes.<br>
+                                Trazendo o empreendimento correto que
+                                sempre buscamos dentro do que foi conversado.<br>
+                                Ana Paula você é uma profissional (Sensacional)
+                            </p>
                         </div>
                     </div>
-                    <div class="owl-item px-2">
+                    <div class="swiper-slide" data-swiper-autoplay="2000">
                         <div class="item-depoiment">
                             <h3>
                                 Cylmara Lacerda Gontijo<br>
@@ -37,7 +35,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="owl-item px-2">
+                    <div class="swiper-slide" data-swiper-autoplay="2000">
                         <div class="item-depoiment">
                             <h3>
                                 Eliana Barbosa<br>
@@ -54,7 +52,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="owl-item px-2">
+                    <div class="swiper-slide" data-swiper-autoplay="2000">
                         <div class="item-depoiment">
                             <h3>
                                 Regina Cioffi<br>
@@ -74,31 +72,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-button-prev" data-id-swiper="swiperDepoiments"></div>
+                <div class="swiper-button-next" data-id-swiper="swiperDepoiments"></div>
             </div>
         </div>
     </div>
 </div>
-@section('js-util')
-@parent
-$('#carrousel-clients').owlCarousel({
-loop: true,
-autoplay: true,
-autoplayHoverPause:true,
-dots: false,
-responsiveClass: true,
-responsive:{
-0:{
-items:1,
-nav: true
-},
-768:{
-items:2,
-nav: true
-},
-1200:{
-items:3,
-nav: true
-}
-}
-});
-@endsection

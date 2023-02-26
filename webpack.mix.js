@@ -12,13 +12,6 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/app.js", "public/js")
+    .js("resources/js/admin.js", "public/js")
     .sass("resources/sass/all.scss", "public/css")
-    .options({
-        postCss: [
-            require("autoprefixer")({
-                browsers: ["last 40 versions"],
-                cascade: false,
-            }),
-        ],
-    })
     .version();

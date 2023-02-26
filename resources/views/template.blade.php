@@ -65,6 +65,7 @@
     </script>
     <script src="{{url('js/screen.js?v=1.0.18')}}">
     </script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
     @section('js')
     @show
     <script type="text/javascript">

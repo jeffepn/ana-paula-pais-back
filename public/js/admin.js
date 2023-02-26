@@ -1,0 +1,1 @@
+(()=>{for(var e=document.querySelectorAll("[type=file]"),n=0;n<e.length;n++)e[n].addEventListener("change",(function(e){return t(e)}));function t(e){e.target.nextSibling.nextElementSibling.innerHTML="".concat(e.target.files.length," arq.(s) selecionados")}})();

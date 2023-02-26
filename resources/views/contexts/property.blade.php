@@ -46,59 +46,75 @@
         </div>
     </div>
 </section>
-<section class="my-2">
-    <div id="carrousel-pre-view" class="px-2 owl-carousel owl-theme owl-loaded carrousel-owl carrousel-property-view ">
-        <div class="owl-stage-outer">
-            <div class="owl-stage">
+<section>
+    <div class="swiper-coverflow container">
+        <div id="swiperProperty" class="swiper">
+            <div class="swiper-wrapper">
                 @foreach ($propertyChain->images as $image)
-                <div class="owl-item" data-toggle="modal" data-target="#modal-view-image-property">
-                    <img src="{{url($image->wayUrl)}}" alt="{{$image->alt}}">
+                <div class="swiper-slide"
+                    style="background-image: url({{$image->thumbnail_url ?? $image->way_url}}); background-size: cover; background-position: center; background-repeat: no-repeat">
+                    <a data-fslightbox="gallery" href="{{$image->way_url}}" class="stretched-link"></a>
                 </div>
+                @endforeach
+            </div>
+            <div class="swiper-button-prev" data-id-swiper="swiperProperty"></div>
+            <div class="swiper-button-next" data-id-swiper="swiperProperty"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<section id="more">
+    <div class="jumbotron jumbotron-fluid mb-0">
+        <div class="container">
+            <h1 class="display-4 ft-third">Detalhes do imóvel</h1>
+            <p class="lead">
+                {!!$propertyChain->min_description!!}
+            </p>
+            @php
+            $detailsProperty = [
+            (object) ['prop' => 'max_dormitory', 'icon' => 'cil-bed', 'title' => 'dormitório(s)', 'min' =>
+            'min_dormitory'],
+            (object) ['prop' => 'max_bathroom', 'icon' => 'cil-shower', 'title' => 'banheiro(s)', 'min' =>
+            'min_bathroom'],
+            (object) ['prop' => 'max_suite', 'icon' => 'cil-bathroom', 'title' => 'suite(s)', 'min' => 'min_suite'],
+            (object) ['prop' => 'max_garage', 'icon' => 'cil-garage', 'title' => 'vaga(s)', 'min' => 'min_garage'],
+            (object) ['prop' => 'building_area', 'icon' => 'cil-map', 'title' => 'área construída (m²)', 'min' => null],
+            (object) ['prop' => 'total_area', 'icon' => 'cil-map', 'title' => 'área total (m²)', 'min' => null],
+            (object) ['prop' => 'useful_area', 'icon' => 'cil-map', 'title' => 'área útil (m²)', 'min' => null],
+            (object) ['prop' => 'ground_area', 'icon' => 'cil-map', 'title' => 'área do terreno (m²)', 'min' => null],
+            ];
+            @endphp
+
+            <div class="row">
+                @foreach ($detailsProperty as $item )
+                @if ($propertyChain[$item->prop])
+                <div class="col-md-6 col-lg-4 my-2">
+                    <div
+                        class="row d-flex w-100 justify-content-between border-bottom border-secondary text-uppercase py-2">
+                        <div class="col-auto align-self-end px-1">
+                            <i class="fas fa-caret-right"></i>
+                            <div class="icon-rounded d-inline-flex">
+                                <i class="{{$item->icon}}"></i>
+                            </div>
+                            {{$item->title}}
+                        </div>
+                        <div class="col-auto  align-self-end px-0 ft-md ft-bold">
+                            @if($propertyChain[$item->min])
+                            {{$propertyChain[$item->min]}} -
+                            @endif
+                            {{$propertyChain[$item->prop]}}
+                        </div>
+                    </div>
+                </div>
+                @endif
                 @endforeach
             </div>
         </div>
     </div>
 </section>
-<section id="more" class="description-property">
-    <div class="divider-section-services-description my-3">
-        <h3>Detalhes do imóvel</h3>
-        <p>
-            @if($propertyChain->max_garage)
-            <span class="p-2">
-                <i class="fas fa-car-alt mr-2"></i>{{$propertyChain->max_garage}} vaga(s)
-            </span>
-            @endif
-            @if($propertyChain->max_dormitory)
-            <span class="p-2">
-                <i class="fas fa-bed mr-2"></i>{{$propertyChain->max_dormitory}} quarto(s)
-                @if($propertyChain->suite)
-                sendo {{$propertyChain->suite}} suíte(s)
-                @endif
-            </span>
-            @endif
-            @if($propertyChain->building_area >0)
-            <span class="p-2">
-                <i class="far fa-building mr-2"></i>{{$propertyChain->building_area}} m²
-            </span>
-            @endif
-            @if($propertyChain->total_area > 0)
-            <span class="p-2">
-                <i class="far fa-map mr-2"></i>{{$propertyChain->total_area}} m²
-            </span>
-            @endif
-            {{-- @if($propertyChain->value_condominium > 0)
-            <span class="p-2">
-                <i class="fas fa-dollar-sign mr-2"></i>{{$propertyChain->value_condominium}} (Condomínio)
-            </span>
-            @endif
-            @if($propertyChain->value_iptu >0)
-            <span class="p-2">
-                <i class="fas fa-dollar-sign mr-2"></i>{{$propertyChain->value_iptu}} (IPTU)
-            </span>
-            @endif --}}
-        </p>
-    </div>
-    <div class="big-description-property p-4">
+<section class="py-5">
+    <div class="container content-property">
         {!!$propertyChain->content!!}
     </div>
 </section>
@@ -164,76 +180,10 @@
     </div>
 </section>
 @endif
-<!-- Modal -->
-<div class="modal fade" id="modal-view-image-property" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <button type="button" class="close-modal-view-image-property remove_style_button ml-auto" data-dismiss="modal"
-        aria-label="Close">
-        <i class="far fa-times-circle fa-3x text-white"></i>
-    </button>
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content bg-transparent border-0">
-            <div class="modal-body px-0">
-                <div id="carrousel-property-view" class="owl-carousel owl-theme owl-loaded carrousel-owl">
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage">
-                            @foreach ($propertyChain->images as $image)
-                            <div class="owl-item px-1">
-                                <img src="{{url($image->wayUrl)}}" alt="{{$image->alt}}">
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 @section('js-util')
 @parent
-
 maskedPhone('#phone-contact');
-
-$('#carrousel-pre-view').owlCarousel({
-loop: false,
-center: true,
-autoplay: true,
-autoplayHoverPause:true,
-nav: true,
-dots: false,
-responsiveClass: true,
-margin: 10,
-responsive:{
-0:{
-items:2
-},
-500:{
-items:3
-},
-650:{
-items:4
-},
-768:{
-items:5
-},
-1080:{
-items:6
-}
-}
-});
-$('.carrousel-owl').owlCarousel({
-loop: false,
-autoplayHoverPause:true,
-nav: true,
-dots: false,
-responsiveClass: true,
-responsive:{
-0:{
-items:1
-}
-}
-});
 @endsection
 
 @endif

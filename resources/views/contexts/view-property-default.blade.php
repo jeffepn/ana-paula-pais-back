@@ -1,4 +1,4 @@
-<div class="property-list">
+<div class="property-list col-md-6 col-xl-4">
     <div class="property-list-card">
         <div class="property-list-context">
             <a href="{{route('property.show','AN-'.$propertyView->code)}}">
@@ -58,13 +58,9 @@
         <a href="{{route('property.show','AN-'.$propertyView->code)}}">
             <div class="property-list-image">
                 @php
-                $images = $propertyView->images;
-                $way = '';
-                $alt = '';
-                if($images->isNotEmpty()){
-                $way = $images->first()->wayUrl;
-                $alt = $images->first()->alt;
-                }
+                $image = $propertyView->images->first();
+                $way = $image ? $image->thumbnail_url ?? $image->way_url : '';
+                $alt = $image ? $image->alt : '';
                 @endphp
                 <img src="{{url($way)}}" alt="{{$alt}}">
             </div>
