@@ -24,10 +24,12 @@ class SiteController extends Controller
     {
         return view('services');
     }
+
     public function about()
     {
         return view('about');
     }
+
     public function contact()
     {
         return view('contact');
@@ -60,26 +62,32 @@ class SiteController extends Controller
                 return view('errors.404');
         }
     }
+
     public function blue()
     {
         return view('enterprises.blue-park-vital');
     }
+
     public function chateau()
     {
         return view('enterprises.chateau-vital');
     }
+
     public function easy()
     {
         return view('enterprises.easy-vital');
     }
+
     public function green()
     {
         return view('enterprises.green-park-vital');
     }
+
     public function lumiere()
     {
         return view('enterprises.lumiere-vital');
     }
+
     public function unique()
     {
         return view('enterprises.unique-vital');
@@ -89,6 +97,7 @@ class SiteController extends Controller
     {
         return view('enterprises.enterprises');
     }
+
     public function sendcontact(Request $request)
     {
         $validator = validator()->make(
@@ -158,10 +167,12 @@ class SiteController extends Controller
             'properties' => $propertyService->getAllPerSearch($search)
         ]);
     }
+
     public function searchPropertyCode(Request $request)
     {
         return redirect()->to('imovel/' . $request->code);
     }
+
     public function setSessionSearch(Request $request)
     {
         if (!session()->has('search_property')) {
@@ -180,6 +191,7 @@ class SiteController extends Controller
         ]);
         return redirect()->to(route('property.search_properties'));
     }
+
     public function property(PropertyService $propertyService, $slug = null)
     {
         try {
