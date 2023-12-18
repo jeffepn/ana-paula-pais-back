@@ -21,10 +21,10 @@ scrollInApp(null,'#form-newsletter',1);
     <div class="ps-md-2 px-lg-5 py-5 content-footer">
         <div class="row">
             <div class="col-md-3 mb-3 col-lg-4 px-xl-4 mb-4">
-                <img class="m-w-100 mx-auto d-block" src="{{url('images/site/logowhite.png')}}"
-                    alt="Ana Paula Pais Imóveis">
+                <img width="250" class="mx-auto d-block" src="{{url('images/site/logowhite.png')}}"
+                    alt="{{config('app.name')}}">
                 <br>
-                <h4 class="ft-primary">CRECI-MG 32225</h4>
+                <h5 class="ft-primary text-center">CRECI-MG 32225</h5>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 mb-3">
                 <h4>Contatos</h4>
@@ -36,7 +36,7 @@ scrollInApp(null,'#form-newsletter',1);
                     <a target="_blank" class=" mr-3" href="{{url(config('app.url_whatsapp'))}}"><i
                             class="fab fa-whatsapp i-wath"></i></a>
                 </div>
-                <a href="{{url(config('app.url_instagram'))}}" class="d-flex align-items-center text-white ft-primary">
+                <a href="mailto:contato@anapaulapais.com.br" class="d-flex align-items-center text-white ft-primary">
                     <i class="mdil mdil-email mdil-24px mr-2"></i>
                     contato@anapaulapais.com.br
                 </a>
