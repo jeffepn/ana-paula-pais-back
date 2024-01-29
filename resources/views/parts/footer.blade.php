@@ -24,7 +24,8 @@ scrollInApp(null,'#form-newsletter',1);
                 <img width="250" class="mx-auto d-block" src="{{url('images/site/logowhite.png')}}"
                     alt="{{config('app.name')}}">
                 <br>
-                <h5 class="ft-primary text-center">CRECI-MG 32225</h5>
+                <h5 class="ft-primary text-center">CRECI-MG J 8585</h5>
+                <h5 class="ft-primary text-center">CRECI-MG F 32225</h5>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 mb-3">
                 <h4>Contatos</h4>
