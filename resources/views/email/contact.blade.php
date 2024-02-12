@@ -2,18 +2,23 @@
 $url = url('/');
 @endphp
 @component('mail::message')
-@component('mail::panel')
-@if(isset($content['slug']))
-Contato do Site - Informação Imóvel {{$content['slug']}}
-@else
-Contato do Site
-@endif
-@endcomponent
+
+<div class="panel-content">
+    @if(isset($content['slug']))
+    <h1> Contato do Site - Informação do Imóvel {{$content['slug']}} </h1>
+    @else
+    <h1> Contato do Site </h1>
+    @endif
+</div>
+<br>
+
 # Os dados seguem abaixo
 
 @if(isset($content['slug']))
 <br>
-# Código do Imóvel : {{$content['slug']}}
+
+## Código do Imóvel : {{$content['slug']}}
+
 @endif
 Nome: {{$content['name']}}<br>
 Telefone: {{$content['phone']}}<br>
