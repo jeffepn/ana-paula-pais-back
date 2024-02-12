@@ -10,9 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 
 //Mail
 use App\Mail\Contact\ContactMail;
-//Services
-use JpUtilities\Services\ContactService;
-use JpUtilities\Utilities\LogsSystem;
+use Illuminate\Support\Facades\Mail;
 
 class ContactJob implements ShouldQueue
 {
@@ -35,9 +33,8 @@ class ContactJob implements ShouldQueue
      */
     public function handle()
     {
+        Mail::to('contato@anapaulapais.com.br')
+            ->send(new ContactMail($this->content));
 
-        //  $logs = new LogsSystem();
-        // $logs->writeLogEmail('Passei kkkkkk = ' . "    " . config('queue.default') . "    " . config('queue.connections.async.binary') . "    " . config('mail.encryption') . "    " .  config('mail.driver') . "    " . config('mail.host') . "    " . config('queue.connections.binary') . "    " . config('mail.port') . "    " . config('mail.username') . "  add=  " . config('mail.from.address') . " name=   " . config('mail.from.name'));
-        ContactService::sendEmail('contato@anapaulapais.com.br', new ContactMail($this->content));
     }
 }
