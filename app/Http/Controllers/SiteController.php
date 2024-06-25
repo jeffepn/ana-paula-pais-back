@@ -162,7 +162,7 @@ class SiteController extends Controller
         $search = session('search_property');
         return view('properties-search', [
             'businesses' => $searchService->getBusinesses(),
-            'neighborhoods' => $searchService->getNeighborhoods(),
+            'citiesNeighborhoods' => $searchService->getNeighborhoods(),
             'types' => $searchService->getSubtypes(),
             'properties' => $propertyService->getAllPerSearch($search)
         ]);

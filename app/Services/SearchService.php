@@ -30,7 +30,13 @@ class SearchService
             ->select("neighborhoods.*")
             ->orderBy('name', 'asc')
             ->get()
-            ->unique();
+            ->unique()
+            ->groupBy(function ($item) {
+                return $item->city->id;
+            })
+            ->sortBy(function ($item) {
+                return $item->first()->city->name;
+            });
     }
 
     public function getSubtypes()

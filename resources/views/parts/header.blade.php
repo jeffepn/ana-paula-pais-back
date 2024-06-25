@@ -5,7 +5,7 @@ $classHeader = ' header-fixed ';
 }
 @endphp
 <header class=" px-0 {{$classHeader}}">
-    <nav id="nav-master" class="navbar navbar-expand-lg navbar-light container px-0">
+    <nav id="nav-master" class="navbar navbar-expand-lg navbar-light container">
         <a class="navbar-brand py-0" href="{{url('/')}}">
             <img class="img-header-floating" src="{{url('images/site/logo.png')}}" alt="Ana Paula Pais Imóveis">
         </a>
@@ -16,32 +16,37 @@ $classHeader = ' header-fixed ';
 
         <div class="collapse navbar-collapse  px-3" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{url('busca-de-imoveis')}}">Busca</a>
+                @php
+                $itemsMenu = [
+                ['label' => 'Busca', 'path' => 'busca-de-imoveis'],
+                ['label' => 'Empreendimentos', 'path' => 'empreendimentos'],
+                ['label' => 'Serviços', 'path' => 'nossos-servicos'],
+                ['label' => 'Sobre', 'path' => 'sobre'],
+                ['label' => 'Contato', 'path' => 'contato'],
+                ];
+                @endphp
+                @foreach ($itemsMenu as $item)
+                <li class="nav-item {{request()->path() === $item['path'] ? 'active' : ''}}">
+                    <a class="nav-link" href="{{url($item['path'])}}">{{$item['label']}}</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{url('empreendimentos')}}">Empreendimentos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('nossos-servicos')}}">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('sobre')}}">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('contato')}}">Contato</a>
-                </li>
+                @endforeach
                 <li class="nav-item">
                     <a class="nav-link" href="">(35) 99733-3777</a>
                 </li>
             </ul>
             <div class="social-network">
-                <a target="_blank" class="px-3" href="{{url(config('app.url_facebook'))}}"><i
-                        class="fab fa-facebook-square i-face"></i></a>
-                <a target="_blank" class=" px-3" href="{{url(config('app.url_instagram'))}}"><i
-                        class="fab fa-instagram i-inst"></i></a>
-                <a target="_blank" class=" px-3" href="{{url(config('app.url_whatsapp'))}}"><i
-                        class="fab fa-whatsapp i-wath"></i></a>
+                <a target="_blank" class="px-1" href="tel:+5535997333777">
+                    <i class="fas fa-phone i-phone"></i>
+                </a>
+                <a target="_blank" class="px-1" href="{{url(config('app.url_facebook'))}}">
+                    <i class="fab fa-facebook-square i-face"></i>
+                </a>
+                <a target="_blank" class=" px-1" href="{{url(config('app.url_instagram'))}}">
+                    <i class="fab fa-instagram i-inst"></i>
+                </a>
+                <a target="_blank" class=" px-1" href="{{url(config('app.url_whatsapp'))}}">
+                    <i class="fab fa-whatsapp i-wath"></i>
+                </a>
             </div>
         </div>
     </nav>
