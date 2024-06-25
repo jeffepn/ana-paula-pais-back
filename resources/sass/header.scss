@@ -3,7 +3,6 @@
     box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
 }
 .open-menu {
-    margin: 0 auto;
     margin-top: 10px;
     background: transparent;
     border: none;
@@ -35,10 +34,10 @@ header {
     background: transparent;
     font-size: 1.2em;
     .navbar-brand {
-        width: 100%;
+        width: auto;
         margin: 0;
         img {
-            height: 70px;
+            height: 50px;
             margin: 0 auto;
             transition: height 0.5s;
             display: block;
@@ -46,21 +45,35 @@ header {
     }
     a {
         color: $colorPrimary;
+        font-weight: 400;
+        letter-spacing: 1px;
         &:hover {
-            font-size: 1.1em;
+            transform: translateX(5px);
+            font-weight: bold;
         }
     }
     li {
         a {
             font-family: $fontSecoundary;
         }
+        &.active {
+            a {
+                font-weight: bold;
+            }
+        }
     }
 }
 .social-network {
     a {
         color: $colorPrimary;
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
     }
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -77,22 +90,6 @@ header {
 @media (min-width: 992px) {
     header {
         box-shadow: none;
-    }
-    #nav-master {
-        .navbar-brand {
-            width: auto;
-            img {
-                height: 80px;
-                margin: 0;
-            }
-        }
-    }
-    .nav-in-floating {
-        .navbar-brand {
-            img {
-                height: 50px !important;
-            }
-        }
     }
 }
 
