@@ -30,9 +30,6 @@ $classHeader = ' header-fixed ';
                     <a class="nav-link" href="{{url($item['path'])}}">{{$item['label']}}</a>
                 </li>
                 @endforeach
-                <li class="nav-item">
-                    <a class="nav-link" href="">(35) 99733-3777</a>
-                </li>
             </ul>
             <div class="social-network">
                 <a target="_blank" class="px-1" href="tel:+5535997333777">
