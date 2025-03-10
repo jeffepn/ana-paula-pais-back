@@ -72,6 +72,7 @@ class SyncOldWithNewDB extends Command
         });
         $this->syncNewsletters();
         $this->syncUsers();
+        return 0;
     }
 
     private function createProperty($immobile): Property
@@ -82,7 +83,7 @@ class SyncOldWithNewDB extends Command
 
         return Property::create([
             'address_id' => $this->getAddressId($immobile),
-            'sub_type_id' =>  $subType->id,
+            'sub_type_id' => $subType->id,
             'slug' => Str::slug($immobile->slug),
             'code' => $code,
             'building_area' => $immobile->area_building,
@@ -171,7 +172,7 @@ class SyncOldWithNewDB extends Command
             ->table('newsletters')
             ->get()
             ->each(function ($newsletter) {
-                Newsletter::create((array)$newsletter);
+                Newsletter::create((array) $newsletter);
             });
     }
 
@@ -181,7 +182,7 @@ class SyncOldWithNewDB extends Command
             ->table('users')
             ->get()
             ->each(function ($user) {
-                User::create((array)$user);
+                User::create((array) $user);
             });
     }
 }
