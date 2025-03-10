@@ -9,13 +9,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.1.0",
-        "fruitcake/laravel-cors": "^3.0",
         "intervention/image": "^2.5",
         "jeffersonpereira/realestatelaravel": "^2.0",
-        "laravel/framework": "^9.0",
+        "laravel/framework": "^10.0",
         "laravel/helpers": "^1.4",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^3.0",
+        "laravel/ui": "^4.0",
         "lucascudo/laravel-pt-br-localization": "^1.1",
         "symfony/http-client": "^6.4",
         "symfony/mailgun-mailer": "^6.4",
@@ -26,8 +25,8 @@
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.0"
+        "nunomaduro/collision": "^7.0",
+        "phpunit/phpunit": "^10.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -53,7 +52,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
