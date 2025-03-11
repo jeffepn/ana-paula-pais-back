@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1.0",
+        "doctrine/dbal": "^3.0",
         "intervention/image": "^2.5",
         "jeffersonpereira/realestatelaravel": "^2.0",
         "laravel/framework": "^10.0",
