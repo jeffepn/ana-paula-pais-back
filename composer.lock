@@ -1324,16 +1324,16 @@
         },
         {
             "name": "jeffersonpereira/realestatelaravel",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffepn/real-estate-laravel.git",
-                "reference": "f72c5ef9963e847b8eee257f0e4ebe2bd551aa0e"
+                "reference": "2a7620ef380d0eb3fb078150b61923cfd2032317"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffepn/real-estate-laravel/zipball/f72c5ef9963e847b8eee257f0e4ebe2bd551aa0e",
-                "reference": "f72c5ef9963e847b8eee257f0e4ebe2bd551aa0e",
+                "url": "https://api.github.com/repos/jeffepn/real-estate-laravel/zipball/2a7620ef380d0eb3fb078150b61923cfd2032317",
+                "reference": "2a7620ef380d0eb3fb078150b61923cfd2032317",
                 "shasum": ""
             },
             "require": {
@@ -1377,9 +1377,9 @@
             "description": "It's package to make manager real estate in system with laravel",
             "support": {
                 "issues": "https://github.com/jeffepn/real-estate-laravel/issues",
-                "source": "https://github.com/jeffepn/real-estate-laravel/tree/2.1.0"
+                "source": "https://github.com/jeffepn/real-estate-laravel/tree/2.1.1"
             },
-            "time": "2025-03-10T08:27:49+00:00"
+            "time": "2025-03-11T22:25:39+00:00"
         },
         {
             "name": "laravel/framework",
