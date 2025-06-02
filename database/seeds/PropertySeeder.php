@@ -1,0 +1,171 @@
+<?php
+
+namespace Database\Seeders;
+
+
+use Jeffpereira\RealEstate\Models\Property\Business;
+use Jeffpereira\RealEstate\Models\Property\BusinessProperty;
+use Jeffpereira\RealEstate\Models\Property\ImageProperty;
+use Jeffpereira\RealEstate\Models\Property\Property;
+use Jeffpereira\RealEstate\Models\Property\Type;
+use Jeffpereira\RealEstate\Models\Property\SubType;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
+use Jeffpereira\RealEstate\Models\Common\Image;
+use Jeffpereira\RealEstate\Models\Property\Situation;
+use JPAddress\Models\Address\Address;
+use JPAddress\Models\Address\City;
+use JPAddress\Models\Address\Country;
+use JPAddress\Models\Address\Neighborhood;
+use JPAddress\Models\Address\State;
+
+class PropertySeeder extends Seeder
+{
+    public function run(): void
+    {
+        $this->createBusinesses();
+        $this->createTypes();
+        $this->createCountries();
+        $this->createStates();
+        $this->createCities();
+        $this->createNeighborhoods();
+        $this->createProperties();
+        $this->createBusinessProperties();
+        $this->createImages();
+    }
+
+    private function createBusinesses(): void
+    {
+        $businesses = [
+            ['name' => 'VENDA'],
+            ['name' => 'ALUGUEL'],
+        ];
+
+        foreach ($businesses as $business) {
+            Business::updateOrCreate($business);
+        }
+    }
+
+    private function createTypes(): void
+    {
+        $types = [
+            ['name' => 'Apartamento'],
+            ['name' => 'Casa'],
+            ['name' => 'Comercial'],
+            ['name' => 'Terreno'],
+        ];
+
+        foreach ($types as $type) {
+            $currentType = Type::updateOrCreate($type);
+            SubType::updateOrCreate(array_merge(['type_id' => $currentType->id], $type));
+        }
+    }
+
+    private function createCountries(): void
+    {
+        Country::updateOrCreate(['name' => "Brasil"]);
+    }
+
+    private function createStates(): void
+    {
+        $country = Country::first();
+        $states = [
+            ['country_id' => $country->id, 'name' => 'São Paulo', 'initials' => 'SP'],
+            ['country_id' => $country->id, 'name' => 'Rio de Janeiro', 'initials' => 'RJ'],
+            ['country_id' => $country->id, 'name' => 'Minas Gerais', 'initials' => 'MG'],
+        ];
+
+        foreach ($states as $state) {
+            State::updateOrCreate($state);
+        }
+    }
+
+    private function createCities(): void
+    {
+        $cities = [
+            ['name' => 'São Paulo', 'state_id' => State::inRandomOrder()->first()->id],
+            ['name' => 'Rio de Janeiro', 'state_id' => State::inRandomOrder()->first()->id],
+            ['name' => 'Belo Horizonte', 'state_id' => State::inRandomOrder()->first()->id],
+        ];
+
+        foreach ($cities as $city) {
+            City::updateOrCreate($city);
+        }
+    }
+
+    private function createNeighborhoods(): void
+    {
+        $neighborhoods = [
+            ['name' => 'Jardins', 'city_id' => City::inRandomOrder()->get()->first()->id],
+            ['name' => 'Vila Mariana', 'city_id' => City::inRandomOrder()->get()->first()->id],
+            ['name' => 'Copacabana', 'city_id' => City::inRandomOrder()->get()->first()->id],
+            ['name' => 'Ipanema', 'city_id' => City::inRandomOrder()->get()->first()->id],
+            ['name' => 'Savassi', 'city_id' => City::inRandomOrder()->get()->first()->id],
+            ['name' => 'Lourdes', 'city_id' => City::inRandomOrder()->get()->first()->id],
+        ];
+
+        foreach ($neighborhoods as $neighborhood) {
+            Neighborhood::updateOrCreate($neighborhood);
+        }
+    }
+
+    private function createProperties(): void
+    {
+        for ($i = 0; $i < 20; $i++) {
+            $property = new Property();
+            $property->code = str_pad($i + 1, 4, '0', STR_PAD_LEFT);
+            $property->min_description = 'Descrição da propriedade ' . ($i + 1);
+            $property->total_area = rand(0, 500);
+            $property->useful_area = rand(0, 500);
+            $property->ground_area = rand(0, 500);
+            $property->building_area = rand(0, 500);
+            $property->min_dormitory = rand(1, 5);
+            $property->min_suite = rand(1, 5);
+            $property->min_garage = rand(1, 4);
+            $property->min_restroom = rand(1, 4);
+            $property->min_bathroom = rand(1, 4);
+            $property->sub_type_id = SubType::inRandomOrder()->first()->id;
+            $property->situation_id = Situation::updateOrCreate(['name' => "PRONTO"])->id;
+            $property->address_id = Address::create(['neighborhood_id' => Neighborhood::inRandomOrder()->first()->id])->id;
+            $property->active = 1;
+            $property->save();
+        }
+    }
+
+    private function createImages(): void
+    {
+        Property::all()->each(function ($property) {
+            for ($i = 0; $i < 5; $i++) {
+                $imageRandom = "properties/{$property->id}-{$i}.jpg";
+                $contents = file_get_contents('https://picsum.photos/800/600');
+                Storage::disk('public')->put($imageRandom, $contents);
+
+                $image = new ImageProperty();
+                $image->property_id = $property->id;
+                $image->way = $imageRandom;
+                $image->thumbnail = $imageRandom;
+                $image->order = $i;
+                $image->save();
+            }
+        });
+    }
+
+    private function createBusinessProperties(): void
+    {
+        Property::all()->each(function ($property) {
+            Business::all()->each(function ($business) use ($property) {
+                if (rand(1, 100) < 30) {
+                    return true;
+                }
+
+                BusinessProperty::create([
+                    'business_id' => $business->id,
+                    'property_id' => $property->id,
+                    'value' => $business->name === 'VENDA'
+                        ? rand(100000, 1000000)
+                        : rand(700, 4000),
+                ]);
+            });
+        });
+    }
+}

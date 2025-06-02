@@ -3,17 +3,19 @@ scripts:
   composer: kool exec app composer
   mysql: kool exec -e MYSQL_PWD=$DB_PASSWORD database mysql -u $DB_USERNAME $DB_DATABASE
   node-setup:
-  - kool run yarn install
-  - kool run yarn dev
+    - kool run yarn install
+    - kool run yarn dev
   phpunit: kool exec app php ./bin/phpunit
   reset:
-  - kool run composer install
-  - kool run artisan migrate:fresh --seed
-  - kool run node-setup
+    - kool run composer install
+    - kool run artisan migrate:fresh --seed
+    - kool run node-setup
   setup:
-  - cp .env.example .env
-  - kool start
-  - kool run composer install
-  - kool run artisan key:generate
-  - kool run node-setup
+    - cp .env.example .env
+    - kool start
+    - kool run composer install
+    - kool run artisan key:generate
+    - kool run node-setup
+  test: kool run phpunit
+  testwatch: kool exec app vendor/bin/phpunit-watcher watch
   yarn: kool docker kooldev/node:14 yarn
