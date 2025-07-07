@@ -11,7 +11,7 @@
     },
     "servers": [
         {
-            "url": "/api/v1",
+            "url": "/api",
             "description": "Servidor de Produção"
         }
     ],
@@ -55,6 +55,16 @@
                                         "type": "string",
                                         "maxLength": 300,
                                         "example": "Gostaria de mais informações sobre o imóvel"
+                                    },
+                                    "terms_accept": {
+                                        "description": "Confirmação de aceite dos termos de uso e política de privacidade",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "recaptchaToken": {
+                                        "description": "Token do Google reCAPTCHA v3 para validação de segurança",
+                                        "type": "string",
+                                        "example": "03AFcWeA5X..."
                                     }
                                 },
                                 "type": "object"
@@ -108,6 +118,25 @@
                                                     "example": "Em breve retornaremos seu contato."
                                                 }
                                             },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro na validação do reCAPTCHA",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Falha ao verificar o recaptcha."
+                                        },
+                                        "errors": {
                                             "type": "object"
                                         }
                                     },
@@ -176,7 +205,9 @@
                             "schema": {
                                 "required": [
                                     "name",
-                                    "email"
+                                    "email",
+                                    "terms_accept",
+                                    "recaptchaToken"
                                 ],
                                 "properties": {
                                     "name": {
@@ -189,6 +220,16 @@
                                         "format": "email",
                                         "maxLength": 300,
                                         "example": "joao.silva@exemplo.com"
+                                    },
+                                    "terms_accept": {
+                                        "description": "Confirmação de aceite dos termos de uso e política de privacidade",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "recaptchaToken": {
+                                        "description": "Token do Google reCAPTCHA v3 para validação de segurança",
+                                        "type": "string",
+                                        "example": "03AFcWeA5X..."
                                     }
                                 },
                                 "type": "object"
@@ -250,6 +291,25 @@
                             }
                         }
                     },
+                    "400": {
+                        "description": "Erro na validação do reCAPTCHA",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Falha ao verificar o recaptcha."
+                                        },
+                                        "errors": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
                     "422": {
                         "description": "Erro de validação",
                         "content": {
@@ -275,6 +335,20 @@
                                                         "type": "string",
                                                         "example": "Precisamos do seu e-mail para te manter informado"
                                                     }
+                                                },
+                                                "terms_accept": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": "É necessário aceitar os termos de uso e política de privacidade."
+                                                    }
+                                                },
+                                                "recaptchaToken": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": "Token de verificação é obrigatório."
+                                                    }
                                                 }
                                             },
                                             "type": "object"
@@ -288,7 +362,7 @@
                 }
             }
         },
-        "/v1/properties/search": {
+        "/properties/search": {
             "get": {
                 "tags": [
                     "Propriedades"
@@ -1017,6 +1091,577 @@
                                                     "nullable": true
                                                 }
                                             },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/properties/{id}": {
+            "get": {
+                "tags": [
+                    "Propriedades"
+                ],
+                "summary": "Buscar um imóvel específico",
+                "description": "Endpoint para buscar um imóvel pelo ID",
+                "operationId": "showProperty",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do imóvel",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Imóvel encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "properties"
+                                                    ]
+                                                },
+                                                "id": {
+                                                    "type": "string",
+                                                    "format": "uuid"
+                                                },
+                                                "attributes": {
+                                                    "properties": {
+                                                        "code": {
+                                                            "type": "integer"
+                                                        },
+                                                        "slug": {
+                                                            "type": "string"
+                                                        },
+                                                        "min_description": {
+                                                            "type": "string"
+                                                        },
+                                                        "content": {
+                                                            "type": "string"
+                                                        },
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "building_area": {
+                                                            "type": "number"
+                                                        },
+                                                        "total_area": {
+                                                            "type": "number"
+                                                        },
+                                                        "useful_area": {
+                                                            "type": "number"
+                                                        },
+                                                        "ground_area": {
+                                                            "type": "number"
+                                                        },
+                                                        "min_dormitory": {
+                                                            "type": "integer"
+                                                        },
+                                                        "max_dormitory": {
+                                                            "type": "integer"
+                                                        },
+                                                        "min_bathroom": {
+                                                            "type": "integer"
+                                                        },
+                                                        "max_bathroom": {
+                                                            "type": "integer"
+                                                        },
+                                                        "min_suite": {
+                                                            "type": "integer"
+                                                        },
+                                                        "max_suite": {
+                                                            "type": "integer"
+                                                        },
+                                                        "min_garage": {
+                                                            "type": "integer"
+                                                        },
+                                                        "max_garage": {
+                                                            "type": "integer"
+                                                        },
+                                                        "min_restroom": {
+                                                            "type": "integer"
+                                                        },
+                                                        "max_restroom": {
+                                                            "type": "integer"
+                                                        },
+                                                        "embed": {
+                                                            "type": "string"
+                                                        },
+                                                        "has_plate": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "active": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "created_at": {
+                                                            "type": "string",
+                                                            "format": "date-time"
+                                                        },
+                                                        "updated_at": {
+                                                            "type": "string",
+                                                            "format": "date-time"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "relationships": {
+                                                    "properties": {
+                                                        "businesses": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "type": {
+                                                                                "type": "string",
+                                                                                "enum": [
+                                                                                    "businesses"
+                                                                                ]
+                                                                            },
+                                                                            "id": {
+                                                                                "type": "string",
+                                                                                "format": "uuid"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "types"
+                                                                            ]
+                                                                        },
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "format": "uuid"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "sub_type": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "sub_types"
+                                                                            ]
+                                                                        },
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "format": "uuid"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "address": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "addresses"
+                                                                            ]
+                                                                        },
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "format": "uuid"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "neighborhood": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "neighborhoods"
+                                                                            ]
+                                                                        },
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "format": "uuid"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "city": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "cities"
+                                                                            ]
+                                                                        },
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "format": "uuid"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "state": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "properties": {
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "states"
+                                                                            ]
+                                                                        },
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "format": "uuid"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "images": {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "type": {
+                                                                                "type": "string",
+                                                                                "enum": [
+                                                                                    "images"
+                                                                                ]
+                                                                            },
+                                                                            "id": {
+                                                                                "type": "string",
+                                                                                "format": "uuid"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "oneOf": [
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "businesses"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "name_completed": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "value": {
+                                                                        "type": "number"
+                                                                    },
+                                                                    "old_value": {
+                                                                        "type": "number"
+                                                                    },
+                                                                    "status": {
+                                                                        "type": "boolean"
+                                                                    },
+                                                                    "status_situation": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "types"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "slug": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "sub_types"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "slug": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "addresses"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "address": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "number": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "not_number": {
+                                                                        "type": "boolean"
+                                                                    },
+                                                                    "complement": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "cep": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "longitude": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "latitude": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "neighborhoods"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "slug": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "cities"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "slug": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "states"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "slug": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "initials": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "images"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "format": "uuid"
+                                                            },
+                                                            "attributes": {
+                                                                "properties": {
+                                                                    "url": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "thumbnail": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "alt": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "order": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Imóvel não encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Imóvel não encontrado."
+                                        },
+                                        "errors": {
                                             "type": "object"
                                         }
                                     },

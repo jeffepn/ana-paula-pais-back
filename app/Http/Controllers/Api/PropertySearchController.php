@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 /**
  * @OA\Get(
- *     path="/v1/properties/search",
+ *     path="/properties/search",
  *     summary="Buscar propriedades",
  *     description="Endpoint para buscar propriedades com base em filtros",
  *     operationId="searchProperties",

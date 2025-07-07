@@ -19,7 +19,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
  * )
  * 
  * @OA\Server(
- *     url="/api/v1",
+ *     url="/api",
  *     description="Servidor de Produção"
  * )
  */

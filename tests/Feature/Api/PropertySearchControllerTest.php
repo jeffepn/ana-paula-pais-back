@@ -129,7 +129,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_without_filters()
     {
-        $response = $this->getJson('/api/v1/properties/search');
+        $response = $this->getJson('/api/properties/search');
 
         $response->assertStatus(Response::HTTP_OK);
         // dd($response->json());
@@ -193,7 +193,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_business()
     {
-        $response = $this->getJson('/api/v1/properties/search?business=' . $this->business->id);
+        $response = $this->getJson('/api/properties/search?business=' . $this->business->id);
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -203,7 +203,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_neighborhood()
     {
-        $response = $this->getJson('/api/v1/properties/search?neighborhood=' . $this->neighborhood->id);
+        $response = $this->getJson('/api/properties/search?neighborhood=' . $this->neighborhood->id);
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -213,7 +213,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_type()
     {
-        $response = $this->getJson('/api/v1/properties/search?type=' . $this->subType->id);
+        $response = $this->getJson('/api/properties/search?type=' . $this->subType->id);
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -223,7 +223,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_garage_range()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_garage=1&max_garage=3');
+        $response = $this->getJson('/api/properties/search?min_garage=1&max_garage=3');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -233,7 +233,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_dormitory_range()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_dormitory=2&max_dormitory=4');
+        $response = $this->getJson('/api/properties/search?min_dormitory=2&max_dormitory=4');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -243,7 +243,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_bathroom_range()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_bathroom=1&max_bathroom=3');
+        $response = $this->getJson('/api/properties/search?min_bathroom=1&max_bathroom=3');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -253,7 +253,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_suite_range()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_suite=0&max_suite=2');
+        $response = $this->getJson('/api/properties/search?min_suite=0&max_suite=2');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -263,7 +263,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_suite_range_does_not_match()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_suite=3&max_suite=5');
+        $response = $this->getJson('/api/properties/search?min_suite=3&max_suite=5');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
@@ -273,7 +273,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_suite_range_is_invalid()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_suite=5&max_suite=2');
+        $response = $this->getJson('/api/properties/search?min_suite=5&max_suite=2');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
@@ -283,7 +283,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_price_range()
     {
-        $response = $this->getJson('/api/v1/properties/search?price_min=400000&price_max=600000');
+        $response = $this->getJson('/api/properties/search?price_min=400000&price_max=600000');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -293,7 +293,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_price_range_does_not_match()
     {
-        $response = $this->getJson('/api/v1/properties/search?price_min=700000&price_max=800000');
+        $response = $this->getJson('/api/properties/search?price_min=700000&price_max=800000');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
@@ -303,7 +303,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_price_range_is_invalid()
     {
-        $response = $this->getJson('/api/v1/properties/search?price_min=600000&price_max=400000');
+        $response = $this->getJson('/api/properties/search?price_min=600000&price_max=400000');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
@@ -313,7 +313,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_can_search_properties_by_area_range()
     {
-        $response = $this->getJson('/api/v1/properties/search?area_min=100&area_max=300');
+        $response = $this->getJson('/api/properties/search?area_min=100&area_max=300');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(1, 'data')
@@ -323,7 +323,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_area_range_does_not_match()
     {
-        $response = $this->getJson('/api/v1/properties/search?area_min=400&area_max=500');
+        $response = $this->getJson('/api/properties/search?area_min=400&area_max=500');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
@@ -333,7 +333,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_area_range_is_invalid()
     {
-        $response = $this->getJson('/api/v1/properties/search?area_min=300&area_max=100');
+        $response = $this->getJson('/api/properties/search?area_min=300&area_max=100');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
@@ -357,7 +357,7 @@ class PropertySearchControllerTest extends TestCase
                 'status_situation' => 1
             ]));
 
-        $response = $this->getJson('/api/v1/properties/search?page=2&size=10');
+        $response = $this->getJson('/api/properties/search?page=2&size=10');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(6, 'data') // 16 propriedades no total, 10 na primeira página, 6 na segunda
@@ -369,7 +369,7 @@ class PropertySearchControllerTest extends TestCase
     /** @test */
     public function it_returns_empty_results_when_no_properties_match_filters()
     {
-        $response = $this->getJson('/api/v1/properties/search?min_garage=10');
+        $response = $this->getJson('/api/properties/search?min_garage=10');
 
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')

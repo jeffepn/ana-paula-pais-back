@@ -18,6 +18,7 @@ abstract class JsonApiResource extends JsonResource
     abstract public function getAttributes(): array;
     abstract public function getRelationships(): array;
     abstract protected function getIncluded(): array;
+    abstract public function getType(): string;
 
     public function toArray($request): array
     {
@@ -42,11 +43,6 @@ abstract class JsonApiResource extends JsonResource
         }
 
         return $data;
-    }
-
-    public function getType(): string
-    {
-        return "contacts";
     }
 
     public function getId(): string

@@ -1,0 +1,27 @@
+GET http://localhost:9096/api/neighborhood HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET http://localhost:9096/api/sub_type HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+ 
+GET http://localhost:9096/api/business HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+ 
+GET http://localhost:9096/api/property HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+ 
+GET http://localhost:9096/api/property/712e50fc-7a37-4172-98d6-5a93d2cf8f67 HTTP/1.1
+Content-Type: application/json
+Accept: application/json

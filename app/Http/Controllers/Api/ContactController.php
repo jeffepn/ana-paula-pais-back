@@ -9,6 +9,7 @@ use App\Services\ContactService;
 use App\Utility\MessageUtil;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Http;
 
 class ContactController extends Controller
 {
@@ -54,6 +55,18 @@ class ContactController extends Controller
      *                 type="string",
      *                 maxLength=300,
      *                 example="Gostaria de mais informações sobre o imóvel"
+     *             ),
+     *             @OA\Property(
+     *                 property="terms_accept",
+     *                 type="boolean",
+     *                 example=true,
+     *                 description="Confirmação de aceite dos termos de uso e política de privacidade"
+     *             ),
+     *             @OA\Property(
+     *                 property="recaptchaToken",
+     *                 type="string",
+     *                 example="03AFcWeA5X...",
+     *                 description="Token do Google reCAPTCHA v3 para validação de segurança"
      *             )
      *         )
      *     ),
@@ -78,6 +91,21 @@ class ContactController extends Controller
      *                 property="meta",
      *                 type="object",
      *                 @OA\Property(property="message", type="string", example="Em breve retornaremos seu contato.")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Erro na validação do reCAPTCHA",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 property="message",
+     *                 type="string",
+     *                 example="Falha ao verificar o recaptcha."
+     *             ),
+     *             @OA\Property(
+     *                 property="errors",
+     *                 type="object"
      *             )
      *         )
      *     ),
@@ -115,6 +143,20 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request): JsonResponse
     {
+        $recaptchaToken = $request->input('recaptchaToken');
+
+        $recaptchaResponse = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('services.recaptcha.secret_key'),
+            'response' => $recaptchaToken,
+        ]);
+
+        if (!$recaptchaResponse->successful() || $recaptchaResponse->json('score') < config('services.recaptcha.score_threshold')) {
+            return response()->json([
+                'message' => 'Falha ao verificar o recaptcha.',
+                'errors' => []
+            ], Response::HTTP_BAD_REQUEST);
+        }
+
         $data = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),

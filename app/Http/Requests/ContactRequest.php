@@ -18,6 +18,8 @@ class ContactRequest extends FormRequest
             'email' => 'required|email|max:300',
             'phone' => 'nullable|string|max:20',
             'message' => 'required|string|max:300',
+            'terms_accept' => 'required|boolean|accepted',
+            'recaptchaToken' => 'required|string',
         ];
     }
 
@@ -31,7 +33,10 @@ class ContactRequest extends FormRequest
             'email.max' => 'Limite o campo a 300 caracteres.',
             'phone.max' => 'Limite o campo a 20 caracteres.',
             'message.required' => 'Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.',
-            'message.max' => 'Limite o campo a 300 caracteres.'
+            'message.max' => 'Limite o campo a 300 caracteres.',
+            'terms_accept.required' => 'É necessário aceitar os termos de uso e política de privacidade.',
+            'terms_accept.accepted' => 'É necessário aceitar os termos de uso e política de privacidade.',
+            'recaptchaToken.required' => 'Token de verificação é obrigatório.',
         ];
     }
 }

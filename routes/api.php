@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\NewsletterController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\PropertySearchController;
+use App\Http\Controllers\Api\PropertyShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1')->group(function () {
+Route::group([], function () {
     // Newsletter
     Route::post('/newsletters', [NewsletterController::class, 'store']);
 
@@ -30,4 +31,5 @@ Route::prefix('v1')->group(function () {
 
     // Propriedades
     Route::get('/properties/search', PropertySearchController::class);
+    Route::get('/properties/{id}', PropertyShowController::class);
 });

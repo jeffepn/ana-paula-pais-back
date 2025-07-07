@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Queue;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Http;
 
 class ContactControllerTest extends TestCase
 {
@@ -26,10 +27,19 @@ class ContactControllerTest extends TestCase
             'name' => $this->faker->name,
             'email' => $this->faker->email,
             'phone' => $this->faker->phoneNumber,
-            'message' => $this->faker->paragraph
+            'message' => $this->faker->paragraph,
+            'terms_accept' => true,
+            'recaptchaToken' => 'valid-token'
         ];
 
-        $response = $this->postJson('/api/v1/contacts', $data);
+        Http::fake([
+            'https://www.google.com/recaptcha/api/siteverify' => Http::response([
+                'success' => true,
+                'score' => 0.8
+            ], 200)
+        ]);
+
+        $response = $this->postJson('/api/contacts', $data);
 
         $response->assertStatus(status: Response::HTTP_ACCEPTED)
             ->assertJsonStructure([
@@ -59,7 +69,6 @@ class ContactControllerTest extends TestCase
                     "message" => "Em breve retornaremos seu contato."
                 ]
             ]);
-        ;
 
         Queue::assertPushed(ContactJob::class, function ($job) use ($data) {
             return $job->content['name'] === $data['name'] &&
@@ -72,7 +81,7 @@ class ContactControllerTest extends TestCase
     /** @test */
     public function it_validates_required_fields()
     {
-        $response = $this->postJson('/api/v1/contacts', []);
+        $response = $this->postJson('/api/contacts', []);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson([
@@ -80,7 +89,9 @@ class ContactControllerTest extends TestCase
                 'errors' => [
                     'name' => ['Como podemos te chamar'],
                     'email' => ['Precisamos saber seu e-mail, para que possamos entrar em contato.'],
-                    'message' => ['Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.']
+                    'message' => ['Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.'],
+                    'terms_accept' => ['É necessário aceitar os termos de uso e política de privacidade.'],
+                    'recaptchaToken' => ['Token de verificação é obrigatório.']
                 ]
             ]);
     }
@@ -94,7 +105,7 @@ class ContactControllerTest extends TestCase
             'message' => $this->faker->paragraph
         ];
 
-        $response = $this->postJson('/api/v1/contacts', $data);
+        $response = $this->postJson('/api/contacts', $data);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson([
@@ -114,7 +125,7 @@ class ContactControllerTest extends TestCase
             'message' => $this->faker->paragraph
         ];
 
-        $response = $this->postJson('/api/v1/contacts', $data);
+        $response = $this->postJson('/api/contacts', $data);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson([
@@ -134,7 +145,7 @@ class ContactControllerTest extends TestCase
             'message' => $this->faker->paragraph
         ];
 
-        $response = $this->postJson('/api/v1/contacts', $data);
+        $response = $this->postJson('/api/contacts', $data);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson([
@@ -154,7 +165,7 @@ class ContactControllerTest extends TestCase
             'message' => str_repeat('a', 301)
         ];
 
-        $response = $this->postJson('/api/v1/contacts', $data);
+        $response = $this->postJson('/api/contacts', $data);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson([
@@ -175,7 +186,7 @@ class ContactControllerTest extends TestCase
             'message' => $this->faker->paragraph
         ];
 
-        $response = $this->postJson('/api/v1/contacts', $data);
+        $response = $this->postJson('/api/contacts', $data);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJson([
@@ -183,6 +194,77 @@ class ContactControllerTest extends TestCase
                 'errors' => [
                     'phone' => ['Limite o campo a 20 caracteres.']
                 ]
+            ]);
+    }
+
+    /** @test */
+    public function it_validates_terms_accept()
+    {
+        $data = [
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'message' => $this->faker->paragraph,
+            'terms_accept' => false,
+            'recaptchaToken' => 'valid-token'
+        ];
+
+        $response = $this->postJson('/api/contacts', $data);
+
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
+            ->assertJson([
+                'message' => 'Os dados fornecidos são inválidos.',
+                'errors' => [
+                    'terms_accept' => ['É necessário aceitar os termos de uso e política de privacidade.']
+                ]
+            ]);
+    }
+
+    /** @test */
+    public function it_validates_recaptcha_token()
+    {
+        $data = [
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'message' => $this->faker->paragraph,
+            'terms_accept' => true,
+            'recaptchaToken' => ''
+        ];
+
+        $response = $this->postJson('/api/contacts', $data);
+
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
+            ->assertJson([
+                'message' => 'Os dados fornecidos são inválidos.',
+                'errors' => [
+                    'recaptchaToken' => ['Token de verificação é obrigatório.']
+                ]
+            ]);
+    }
+
+    /** @test */
+    public function it_validates_recaptcha_score()
+    {
+        $data = [
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'message' => $this->faker->paragraph,
+            'terms_accept' => true,
+            'recaptchaToken' => 'invalid-token'
+        ];
+
+        Http::fake([
+            'https://www.google.com/recaptcha/api/siteverify' => Http::response([
+                'success' => true,
+                'score' => 0.3
+            ], 200)
+        ]);
+
+        $response = $this->postJson('/api/contacts', $data);
+
+        $response->assertStatus(Response::HTTP_BAD_REQUEST)
+            ->assertJson([
+                'message' => 'Falha ao verificar o recaptcha.',
+                'errors' => []
             ]);
     }
 }

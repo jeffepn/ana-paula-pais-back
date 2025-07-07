@@ -16,6 +16,11 @@ class ContactResource extends JsonApiResource
         ];
     }
 
+    public function getType(): string
+    {
+        return "contacts";
+    }
+
     public function getRelationships(): array
     {
         return [];

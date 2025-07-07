@@ -20,6 +20,11 @@ class NewsletterResource extends JsonApiResource
         ];
     }
 
+    public function getType(): string
+    {
+        return "newsletters";
+    }
+
     public function getRelationships(): array
     {
         return [];

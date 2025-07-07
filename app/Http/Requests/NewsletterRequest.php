@@ -17,7 +17,9 @@ class NewsletterRequest extends FormRequest
                 'email',
                 'max:300',
                 'unique:newsletters,email'
-            ]
+            ],
+            'terms_accept' => ['required', 'boolean', 'accepted'],
+            'recaptchaToken' => ['required', 'string']
         ];
     }
 
@@ -29,7 +31,10 @@ class NewsletterRequest extends FormRequest
             'email.required' => 'Precisamos do seu e-mail para te manter informado',
             'email.email' => 'Formato de e-mail inválido.',
             'email.max' => 'Limite o campo a 300 caracteres.',
-            'email.unique' => 'Você já está cadastrado em nossa Newsletter.'
+            'email.unique' => 'Você já está cadastrado em nossa Newsletter.',
+            'terms_accept.required' => 'É necessário aceitar os termos de uso e política de privacidade.',
+            'terms_accept.accepted' => 'É necessário aceitar os termos de uso e política de privacidade.',
+            'recaptchaToken.required' => 'Token de verificação é obrigatório.'
         ];
     }
 }

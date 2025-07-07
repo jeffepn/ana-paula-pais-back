@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Http\Resources\JsonApi\JsonApiResource;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PropertyResource extends JsonApiResource
@@ -35,6 +36,11 @@ class PropertyResource extends JsonApiResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];
+    }
+
+    public function getType(): string
+    {
+        return "properties";
     }
 
     public function getRelationships(): array
@@ -101,6 +107,9 @@ class PropertyResource extends JsonApiResource
 
         // Adiciona os negócios (businesses)
         $this->businesses->each(function ($business) use (&$included) {
+            $bussinessProperty = $this->businessesProperty()
+                ->where('id', $business->pivot->id)
+                ->first();
             $included[] = [
                 'type' => 'businesses',
                 'id' => $business->pivot->id,
@@ -109,8 +118,8 @@ class PropertyResource extends JsonApiResource
                     'name_completed' => $business->name_completed,
                     'value' => $business->pivot->value,
                     'old_value' => $business->pivot->old_value,
-                    'status' => $business->pivot->status,
-                    'status_situation' => $business->pivot->status_situation
+                    'status' => $bussinessProperty?->status,
+                    'status_situation' => $bussinessProperty?->status_situation
                 ]
             ];
         });
@@ -195,5 +204,12 @@ class PropertyResource extends JsonApiResource
         });
 
         return $included;
+    }
+
+    public function with(Request $request)
+    {
+        return [
+            'included' => $this->getIncluded()
+        ];
     }
 }
