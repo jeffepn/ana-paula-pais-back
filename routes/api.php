@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\NewsletterController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\PropertySearchController;
 use App\Http\Controllers\Api\PropertyShowController;
+use App\Http\Controllers\Api\PropertyMostViewedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,6 @@ Route::group([], function () {
 
     // Propriedades
     Route::get('/properties/search', PropertySearchController::class);
+    Route::get('/properties/most-viewed', PropertyMostViewedController::class);
     Route::get('/properties/{id}', PropertyShowController::class);
 });

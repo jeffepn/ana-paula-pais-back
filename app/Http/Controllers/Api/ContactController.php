@@ -27,42 +27,42 @@ class ContactController extends Controller
      *     description="Endpoint para enviar uma mensagem de contato através do sistema",
      *     operationId="sendContact",
      *     tags={"Contato"},
-     * @OA\RequestBody(
+     *     @OA\RequestBody(
      *         required=true,
-     * @OA\JsonContent(
+     *         @OA\JsonContent(
      *             required={"name", "email", "message"},
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="name",
      *                 type="string",
      *                 maxLength=50,
      *                 example="João Silva"
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="email",
      *                 type="string",
      *                 format="email",
      *                 maxLength=300,
      *                 example="joao.silva@exemplo.com"
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="phone",
      *                 type="string",
      *                 maxLength=20,
      *                 example="(11) 99999-9999"
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="message",
      *                 type="string",
      *                 maxLength=300,
      *                 example="Gostaria de mais informações sobre o imóvel"
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="terms_accept",
      *                 type="boolean",
      *                 example=true,
      *                 description="Confirmação de aceite dos termos de uso e política de privacidade"
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="recaptchaToken",
      *                 type="string",
      *                 example="03AFcWeA5X...",
@@ -70,71 +70,71 @@ class ContactController extends Controller
      *             )
      *         )
      *     ),
-     * @OA\Response(
+     *     @OA\Response(
      *         response=202,
      *         description="Mensagem enviada com sucesso",
-     * @OA\JsonContent(
-     * @OA\Property(
+     *         @OA\JsonContent(
+     *             @OA\Property(
      *                 property="data",
      *                 type="object",
-     * @OA\Property(property="type",    type="string", enum={"contacts"}),
-     * @OA\Property(
+     *                 @OA\Property(property="type", type="string", enum={"contacts"}),
+     *                 @OA\Property(
      *                     property="attributes",
      *                     type="object",
-     * @OA\Property(property="name",    type="string", example="João Silva"),
-     * @OA\Property(property="email",   type="string", example="joao.silva@exemplo.com"),
-     * @OA\Property(property="phone",   type="string", example="(11) 99999-9999"),
-     * @OA\Property(property="message", type="string", example="Gostaria de mais informações sobre o imóvel")
+     *                     @OA\Property(property="name", type="string", example="João Silva"),
+     *                     @OA\Property(property="email", type="string", example="joao.silva@exemplo.com"),
+     *                     @OA\Property(property="phone", type="string", example="(11) 99999-9999"),
+     *                     @OA\Property(property="message", type="string", example="Gostaria de mais informações sobre o imóvel")
      *                 )
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     * @OA\Property(property="message", type="string", example="Em breve retornaremos seu contato.")
+     *                 @OA\Property(property="message", type="string", example="Em breve retornaremos seu contato.")
      *             )
      *         )
      *     ),
-     * @OA\Response(
+     *     @OA\Response(
      *         response=400,
      *         description="Erro na validação do reCAPTCHA",
-     * @OA\JsonContent(
-     * @OA\Property(
+     *         @OA\JsonContent(
+     *             @OA\Property(
      *                 property="message",
      *                 type="string",
      *                 example="Falha ao verificar o recaptcha."
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="errors",
      *                 type="object"
      *             )
      *         )
      *     ),
-     * @OA\Response(
+     *     @OA\Response(
      *         response=422,
      *         description="Erro de validação",
-     * @OA\JsonContent(
-     * @OA\Property(
+     *         @OA\JsonContent(
+     *             @OA\Property(
      *                 property="message",
      *                 type="string",
      *                 example="Os dados fornecidos são inválidos."
      *             ),
-     * @OA\Property(
+     *             @OA\Property(
      *                 property="errors",
      *                 type="object",
-     * @OA\Property(
+     *                 @OA\Property(
      *                     property="name",
      *                     type="array",
-     * @OA\Items(type="string",         example="Como podemos te chamar")
+     *                     @OA\Items(type="string", example="Como podemos te chamar")
      *                 ),
-     * @OA\Property(
+     *                 @OA\Property(
      *                     property="email",
      *                     type="array",
-     * @OA\Items(type="string",         example="Precisamos saber seu e-mail, para que possamos entrar em contato.")
+     *                     @OA\Items(type="string", example="Precisamos saber seu e-mail, para que possamos entrar em contato.")
      *                 ),
-     * @OA\Property(
+     *                 @OA\Property(
      *                     property="message",
      *                     type="array",
-     * @OA\Items(type="string",         example="Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.")
+     *                     @OA\Items(type="string", example="Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.")
      *                 )
      *             )
      *         )
