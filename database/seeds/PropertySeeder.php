@@ -167,8 +167,9 @@ class PropertySeeder extends Seeder
     {
         Property::all()->each(function ($property) {
             for ($i = 0; $i < 5; $i++) {
+                $portrait = $this->faker->boolean(70);
                 $imageRandom = "properties/{$property->id}-{$i}.jpg";
-                $contents = file_get_contents('https://picsum.photos/800/600');
+                $contents = file_get_contents('https://picsum.photos/' . ($portrait ? '600/800' : '800/600'));
                 Storage::disk('public')->put($imageRandom, $contents);
 
                 $image = new ImageProperty();
@@ -185,7 +186,7 @@ class PropertySeeder extends Seeder
     {
         Property::all()->each(function ($property) {
             Business::all()->each(function ($business) use ($property) {
-                if (rand(1, 100) < 30) {
+                if ($this->faker->boolean(30)) {
                     return true;
                 }
 
@@ -193,8 +194,8 @@ class PropertySeeder extends Seeder
                     'business_id' => $business->id,
                     'property_id' => $property->id,
                     'value' => $business->name === 'VENDA'
-                        ? rand(100000, 1000000)
-                        : rand(700, 4000),
+                        ? $this->faker->numberBetween(100000, 1000000)
+                        : $this->faker->numberBetween(700, 4000),
                 ]);
             });
         });
