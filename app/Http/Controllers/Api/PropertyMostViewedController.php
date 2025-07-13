@@ -17,6 +17,16 @@ use Jeffpereira\RealEstate\Models\Property\Property;
  *     operationId="getMostViewedProperties",
  *     tags={"Propriedades"},
  *     @OA\Parameter(
+ *         name="type",
+ *         in="query",
+ *         description="ID do tipo de propriedade para filtrar",
+ *         required=false,
+ *         @OA\Schema(
+ *             type="string",
+ *             format="uuid"
+ *         )
+ *     ),
+ *     @OA\Parameter(
  *         name="size",
  *         in="query",
  *         description="Quantidade de itens por página",
@@ -286,11 +296,19 @@ class PropertyMostViewedController extends Controller
 {
     public function __invoke(Request $request): JsonResponse
     {
+        $request->validate([
+            'type' => 'nullable|string|uuid',
+            'size' => 'nullable|integer|min:1|max:100',
+        ]);
+
+        $type = $request->input('type');
         $perPage = $request->input('size', 15);
 
         $properties = Property::select('properties.*')
             ->selectRaw('COUNT(view_property.id) as view_count')
             ->leftJoin('view_property', 'properties.id', '=', 'view_property.property_id')
+            ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
+            ->when(isset($type), fn($q) => $q->where('sub_types.type_id', $type))
             ->groupBy('properties.id')
             ->orderByDesc('view_count')
             ->orderBy('properties.created_at', 'desc')

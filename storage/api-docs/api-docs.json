@@ -372,6 +372,16 @@
                 "operationId": "getMostViewedProperties",
                 "parameters": [
                     {
+                        "name": "type",
+                        "in": "query",
+                        "description": "ID do tipo de propriedade para filtrar",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    },
+                    {
                         "name": "size",
                         "in": "query",
                         "description": "Quantidade de itens por página",

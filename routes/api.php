@@ -33,5 +33,5 @@ Route::group([], function () {
     // Propriedades
     Route::get('/properties/search', PropertySearchController::class);
     Route::get('/properties/most-viewed', PropertyMostViewedController::class);
-    Route::get('/properties/{id}', PropertyShowController::class);
+    Route::get('/properties/{code}', PropertyShowController::class);
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\StringHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PropertyResource;
 use Illuminate\Http\JsonResponse;
@@ -10,249 +11,249 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @OA\Get(
- *     path="/properties/{id}",
+ *     path="/properties/{code}",
  *     summary="Buscar um imóvel específico",
- *     description="Endpoint para buscar um imóvel pelo ID",
+ *     description="Endpoint para buscar um imóvel pelo código (apenas números)",
  *     operationId="showProperty",
  *     tags={"Propriedades"},
- * @OA\Parameter(
- *         name="id",
+ *     @OA\Parameter(
+ *         name="code",
  *         in="path",
- *         description="ID do imóvel",
+ *         description="Código do imóvel (apenas números, caracteres não numéricos serão removidos)",
  *         required=true,
- * @OA\Schema(type="string",                 format="uuid")
+ *         @OA\Schema(type="string", example="12345")
  *     ),
- * @OA\Response(
+ *     @OA\Response(
  *         response=200,
  *         description="Imóvel encontrado",
- * @OA\JsonContent(
- * @OA\Property(
+ *         @OA\JsonContent(
+ *             @OA\Property(
  *                 property="data",
  *                 type="object",
- * @OA\Property(property="type",             type="string", enum={"properties"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                 @OA\Property(property="type", type="string", enum={"properties"}),
+ *                 @OA\Property(property="id", type="string", format="uuid"),
+ *                 @OA\Property(
  *                     property="attributes",
  *                     type="object",
- * @OA\Property(property="code",             type="integer"),
- * @OA\Property(property="slug",             type="string"),
- * @OA\Property(property="min_description",  type="string"),
- * @OA\Property(property="content",          type="string"),
- * @OA\Property(property="items",            type="string"),
- * @OA\Property(property="building_area",    type="number"),
- * @OA\Property(property="total_area",       type="number"),
- * @OA\Property(property="useful_area",      type="number"),
- * @OA\Property(property="ground_area",      type="number"),
- * @OA\Property(property="min_dormitory",    type="integer"),
- * @OA\Property(property="max_dormitory",    type="integer"),
- * @OA\Property(property="min_bathroom",     type="integer"),
- * @OA\Property(property="max_bathroom",     type="integer"),
- * @OA\Property(property="min_suite",        type="integer"),
- * @OA\Property(property="max_suite",        type="integer"),
- * @OA\Property(property="min_garage",       type="integer"),
- * @OA\Property(property="max_garage",       type="integer"),
- * @OA\Property(property="min_restroom",     type="integer"),
- * @OA\Property(property="max_restroom",     type="integer"),
- * @OA\Property(property="embed",            type="string"),
- * @OA\Property(property="has_plate",        type="boolean"),
- * @OA\Property(property="active",           type="boolean"),
- * @OA\Property(property="created_at",       type="string", format="date-time"),
- * @OA\Property(property="updated_at",       type="string", format="date-time")
+ *                     @OA\Property(property="code", type="integer"),
+ *                     @OA\Property(property="slug", type="string"),
+ *                     @OA\Property(property="min_description", type="string"),
+ *                     @OA\Property(property="content", type="string"),
+ *                     @OA\Property(property="items", type="string"),
+ *                     @OA\Property(property="building_area", type="number"),
+ *                     @OA\Property(property="total_area", type="number"),
+ *                     @OA\Property(property="useful_area", type="number"),
+ *                     @OA\Property(property="ground_area", type="number"),
+ *                     @OA\Property(property="min_dormitory", type="integer"),
+ *                     @OA\Property(property="max_dormitory", type="integer"),
+ *                     @OA\Property(property="min_bathroom", type="integer"),
+ *                     @OA\Property(property="max_bathroom", type="integer"),
+ *                     @OA\Property(property="min_suite", type="integer"),
+ *                     @OA\Property(property="max_suite", type="integer"),
+ *                     @OA\Property(property="min_garage", type="integer"),
+ *                     @OA\Property(property="max_garage", type="integer"),
+ *                     @OA\Property(property="min_restroom", type="integer"),
+ *                     @OA\Property(property="max_restroom", type="integer"),
+ *                     @OA\Property(property="embed", type="string"),
+ *                     @OA\Property(property="has_plate", type="boolean"),
+ *                     @OA\Property(property="active", type="boolean"),
+ *                     @OA\Property(property="created_at", type="string", format="date-time"),
+ *                     @OA\Property(property="updated_at", type="string", format="date-time")
  *                 ),
- * @OA\Property(
+ *                 @OA\Property(
  *                     property="relationships",
  *                     type="object",
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="businesses",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="array",
- * @OA\Items(
+ *                             @OA\Items(
  *                                 type="object",
- * @OA\Property(property="type",             type="string", enum={"businesses"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                                 @OA\Property(property="type", type="string", enum={"businesses"}),
+ *                                 @OA\Property(property="id", type="string", format="uuid")
  *                             )
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="type",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"types"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                             @OA\Property(property="type", type="string", enum={"types"}),
+ *                             @OA\Property(property="id", type="string", format="uuid")
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="sub_type",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"sub_types"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                             @OA\Property(property="type", type="string", enum={"sub_types"}),
+ *                             @OA\Property(property="id", type="string", format="uuid")
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="address",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"addresses"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                             @OA\Property(property="type", type="string", enum={"addresses"}),
+ *                             @OA\Property(property="id", type="string", format="uuid")
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="neighborhood",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"neighborhoods"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                             @OA\Property(property="type", type="string", enum={"neighborhoods"}),
+ *                             @OA\Property(property="id", type="string", format="uuid")
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="city",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"cities"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                             @OA\Property(property="type", type="string", enum={"cities"}),
+ *                             @OA\Property(property="id", type="string", format="uuid")
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="state",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"states"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                             @OA\Property(property="type", type="string", enum={"states"}),
+ *                             @OA\Property(property="id", type="string", format="uuid")
  *                         )
  *                     ),
- * @OA\Property(
+ *                     @OA\Property(
  *                         property="images",
  *                         type="object",
- * @OA\Property(
+ *                         @OA\Property(
  *                             property="data",
  *                             type="array",
- * @OA\Items(
+ *                             @OA\Items(
  *                                 type="object",
- * @OA\Property(property="type",             type="string", enum={"images"}),
- * @OA\Property(property="id",               type="string", format="uuid")
+ *                                 @OA\Property(property="type", type="string", enum={"images"}),
+ *                                 @OA\Property(property="id", type="string", format="uuid")
  *                             )
  *                         )
  *                     )
  *                 )
  *             ),
- * @OA\Property(
+ *             @OA\Property(
  *                 property="included",
  *                 type="array",
- * @OA\Items(
+ *                 @OA\Items(
  *                     oneOf={
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"businesses"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"businesses"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="name",             type="string"),
- * @OA\Property(property="name_completed",   type="string"),
- * @OA\Property(property="value",            type="number"),
- * @OA\Property(property="old_value",        type="number"),
- * @OA\Property(property="status",           type="boolean"),
- * @OA\Property(property="status_situation", type="integer")
+ *                                 @OA\Property(property="name", type="string"),
+ *                                 @OA\Property(property="name_completed", type="string"),
+ *                                 @OA\Property(property="value", type="number"),
+ *                                 @OA\Property(property="old_value", type="number"),
+ *                                 @OA\Property(property="status", type="boolean"),
+ *                                 @OA\Property(property="status_situation", type="integer")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"types"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"types"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="name",             type="string"),
- * @OA\Property(property="slug",             type="string")
+ *                                 @OA\Property(property="name", type="string"),
+ *                                 @OA\Property(property="slug", type="string")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"sub_types"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"sub_types"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="name",             type="string"),
- * @OA\Property(property="slug",             type="string")
+ *                                 @OA\Property(property="name", type="string"),
+ *                                 @OA\Property(property="slug", type="string")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"addresses"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"addresses"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="address",          type="string"),
- * @OA\Property(property="number",           type="integer"),
- * @OA\Property(property="not_number",       type="boolean"),
- * @OA\Property(property="complement",       type="string"),
- * @OA\Property(property="cep",              type="string"),
- * @OA\Property(property="longitude",        type="integer"),
- * @OA\Property(property="latitude",         type="integer")
+ *                                 @OA\Property(property="address", type="string"),
+ *                                 @OA\Property(property="number", type="integer"),
+ *                                 @OA\Property(property="not_number", type="boolean"),
+ *                                 @OA\Property(property="complement", type="string"),
+ *                                 @OA\Property(property="cep", type="string"),
+ *                                 @OA\Property(property="longitude", type="integer"),
+ *                                 @OA\Property(property="latitude", type="integer")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"neighborhoods"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"neighborhoods"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="name",             type="string"),
- * @OA\Property(property="slug",             type="string")
+ *                                 @OA\Property(property="name", type="string"),
+ *                                 @OA\Property(property="slug", type="string")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"cities"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"cities"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="name",             type="string"),
- * @OA\Property(property="slug",             type="string")
+ *                                 @OA\Property(property="name", type="string"),
+ *                                 @OA\Property(property="slug", type="string")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"states"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"states"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="name",             type="string"),
- * @OA\Property(property="slug",             type="string"),
- * @OA\Property(property="initials",         type="string")
+ *                                 @OA\Property(property="name", type="string"),
+ *                                 @OA\Property(property="slug", type="string"),
+ *                                 @OA\Property(property="initials", type="string")
  *                             )
  *                         ),
- * @OA\Schema(
+ *                         @OA\Schema(
  *                             type="object",
- * @OA\Property(property="type",             type="string", enum={"images"}),
- * @OA\Property(property="id",               type="string", format="uuid"),
- * @OA\Property(
+ *                             @OA\Property(property="type", type="string", enum={"images"}),
+ *                             @OA\Property(property="id", type="string", format="uuid"),
+ *                             @OA\Property(
  *                                 property="attributes",
  *                                 type="object",
- * @OA\Property(property="url",              type="string"),
- * @OA\Property(property="thumbnail",        type="string"),
- * @OA\Property(property="alt",              type="string"),
- * @OA\Property(property="order",            type="integer")
+ *                                 @OA\Property(property="url", type="string"),
+ *                                 @OA\Property(property="thumbnail", type="string"),
+ *                                 @OA\Property(property="alt", type="string"),
+ *                                 @OA\Property(property="order", type="integer")
  *                             )
  *                         )
  *                     }
@@ -260,16 +261,16 @@ use Symfony\Component\HttpFoundation\Response;
  *             )
  *         )
  *     ),
- * @OA\Response(
+ *     @OA\Response(
  *         response=404,
  *         description="Imóvel não encontrado",
- * @OA\JsonContent(
- * @OA\Property(
+ *         @OA\JsonContent(
+ *             @OA\Property(
  *                 property="message",
  *                 type="string",
  *                 example="Imóvel não encontrado."
  *             ),
- * @OA\Property(
+ *             @OA\Property(
  *                 property="errors",
  *                 type="object"
  *             )
@@ -279,7 +280,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class PropertyShowController extends Controller
 {
-    public function __invoke(string $id): JsonResponse
+    public function __invoke(string $code): JsonResponse
     {
         $property = Property::with(
             [
@@ -288,7 +289,9 @@ class PropertyShowController extends Controller
                 'sub_type.type',
                 'businesses',
             ]
-        )->find($id);
+        )
+            ->where("code", StringHelper::removeNonNumeric($code))
+            ->first();
 
         if (!$property) {
             return response()->json(
