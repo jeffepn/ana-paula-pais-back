@@ -11,18 +11,22 @@ use Jeffpereira\RealEstate\Models\Property\Type;
 use Jeffpereira\RealEstate\Models\Property\SubType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
-use Jeffpereira\RealEstate\Models\Common\Image;
 use Jeffpereira\RealEstate\Models\Property\Situation;
 use JPAddress\Models\Address\Address;
 use JPAddress\Models\Address\City;
 use JPAddress\Models\Address\Country;
 use JPAddress\Models\Address\Neighborhood;
 use JPAddress\Models\Address\State;
+use Faker\Factory;
 
 class PropertySeeder extends Seeder
 {
+    protected $faker;
+
     public function run(): void
     {
+        $this->faker = Factory::create('pt_BR');
+
         $this->createBusinesses();
         $this->createTypes();
         $this->createCountries();
@@ -111,19 +115,47 @@ class PropertySeeder extends Seeder
 
     private function createProperties(): void
     {
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 50; $i++) {
+            $minDormitory = $this->faker->numberBetween(1, 5);
+            $minSuite = $this->faker->numberBetween(1, 5);
+            $minGarage = $this->faker->numberBetween(1, 5);
+            $minRestroom = $this->faker->numberBetween(1, 5);
+            $minBathroom = $this->faker->numberBetween(1, 5);
+
             $property = new Property();
             $property->code = str_pad($i + 1, 4, '0', STR_PAD_LEFT);
-            $property->min_description = 'Descrição da propriedade ' . ($i + 1);
-            $property->total_area = rand(0, 500);
-            $property->useful_area = rand(0, 500);
-            $property->ground_area = rand(0, 500);
-            $property->building_area = rand(0, 500);
-            $property->min_dormitory = rand(1, 5);
-            $property->min_suite = rand(1, 5);
-            $property->min_garage = rand(1, 4);
-            $property->min_restroom = rand(1, 4);
-            $property->min_bathroom = rand(1, 4);
+            $property->min_description = $this->faker->text(200);
+            $property->content = $this->faker->randomHtml();
+            $property->total_area = $this->faker->numberBetween(0, 500);
+            $property->useful_area = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(0, 500)
+                : null;
+            $property->ground_area = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(0, 500)
+                : null;
+            $property->building_area = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(0, 500)
+                : null;
+            $property->min_dormitory = $minDormitory;
+            $property->max_dormitory = $this->faker->boolean(20)
+                ? ($minDormitory + $this->faker->numberBetween(1, 5))
+                : null;
+            $property->min_suite = $minSuite;
+            $property->max_suite = $this->faker->boolean(20)
+                ? ($minSuite + $this->faker->numberBetween(1, 5))
+                : null;
+            $property->min_garage = $minGarage;
+            $property->max_garage = $this->faker->boolean(20)
+                ? ($minGarage + $this->faker->numberBetween(1, 5))
+                : null;
+            $property->min_restroom = $minRestroom;
+            $property->max_restroom = $this->faker->boolean(20)
+                ? ($minRestroom + $this->faker->numberBetween(1, 5))
+                : null;
+            $property->min_bathroom = $minBathroom;
+            $property->max_bathroom = $this->faker->boolean(20)
+                ? ($minBathroom + $this->faker->numberBetween(1, 5))
+                : null;
             $property->sub_type_id = SubType::inRandomOrder()->first()->id;
             $property->situation_id = Situation::updateOrCreate(['name' => "PRONTO"])->id;
             $property->address_id = Address::create(['neighborhood_id' => Neighborhood::inRandomOrder()->first()->id])->id;
