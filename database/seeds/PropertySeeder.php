@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-
 use Jeffpereira\RealEstate\Models\Property\Business;
 use Jeffpereira\RealEstate\Models\Property\BusinessProperty;
 use Jeffpereira\RealEstate\Models\Property\ImageProperty;
@@ -67,7 +66,7 @@ class PropertySeeder extends Seeder
 
     private function createCountries(): void
     {
-        Country::updateOrCreate(['name' => "Brasil"]);
+        Country::updateOrCreate(['name' => 'Brasil']);
     }
 
     private function createStates(): void
@@ -157,7 +156,7 @@ class PropertySeeder extends Seeder
                 ? ($minBathroom + $this->faker->numberBetween(1, 5))
                 : null;
             $property->sub_type_id = SubType::inRandomOrder()->first()->id;
-            $property->situation_id = Situation::updateOrCreate(['name' => "PRONTO"])->id;
+            $property->situation_id = Situation::updateOrCreate(['name' => 'PRONTO'])->id;
             $property->address_id = Address::create(['neighborhood_id' => Neighborhood::inRandomOrder()->first()->id])->id;
             $property->active = 1;
             $property->save();

@@ -19,7 +19,8 @@ use Tests\TestCase;
 
 class PropertySearchControllerTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use RefreshDatabase;
+    use WithFaker;
 
     private Property $property;
     private Business $business;
@@ -30,101 +31,6 @@ class PropertySearchControllerTest extends TestCase
     private City $city;
     private State $state;
     private ImageProperty $image;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        // Criar estado
-        $this->state = State::factory()->create([
-            'name' => 'São Paulo',
-            'slug' => 'sao-paulo',
-            'initials' => 'SP'
-        ]);
-
-        // Criar cidade
-        $this->city = City::factory()->create([
-            'name' => 'São Paulo',
-            'slug' => 'sao-paulo',
-            'state_id' => $this->state->id
-        ]);
-
-        // Criar bairro
-        $this->neighborhood = Neighborhood::factory()->create([
-            'name' => 'Vila Mariana',
-            'slug' => 'vila-mariana',
-            'city_id' => $this->city->id
-        ]);
-
-        // Criar endereço
-        $this->address = Address::factory()
-            ->create([
-                'address' => 'Rua Exemplo',
-                'number' => 123,
-                'neighborhood_id' => $this->neighborhood->id
-            ]);
-
-        // Criar tipo
-        $this->type = Type::factory()->create([
-            'name' => 'Casa',
-            'slug' => 'casa'
-        ]);
-
-        // Criar subtipo
-        $this->subType = SubType::factory()->create([
-            'name' => 'Casa Padrão',
-            'slug' => 'casa-padrao',
-            'type_id' => $this->type->id
-        ]);
-
-        // Criar negócio
-        $this->business = Business::factory()->create([
-            'name' => 'Venda',
-            'name_completed' => 'Venda de Imóvel'
-        ]);
-
-        // Criar propriedade
-        $this->property = Property::factory()->create([
-            'code' => 12345,
-            'slug' => 'casa-vila-mariana',
-            'min_description' => 'Casa em Vila Mariana',
-            'content' => 'Descrição completa da casa',
-            'building_area' => 150.5,
-            'total_area' => 200.0,
-            'useful_area' => 180.0,
-            'ground_area' => 250.0,
-            'min_dormitory' => 3,
-            'max_dormitory' => 3,
-            'min_bathroom' => 2,
-            'max_bathroom' => 2,
-            'min_suite' => 1,
-            'max_suite' => 1,
-            'min_garage' => 2,
-            'max_garage' => 2,
-            'address_id' => $this->address->id,
-            'sub_type_id' => $this->subType->id,
-            'active' => 1
-        ]);
-
-        // Vincular negócio à propriedade
-        BusinessProperty::factory()->create([
-            'property_id' => $this->property->id,
-            'business_id' => $this->business->id,
-            'value' => 500000.00,
-            'old_value' => 550000.00,
-            'status' => true,
-            'status_situation' => 1
-        ]);
-
-        // Criar imagem
-        $this->image = ImageProperty::factory()->create([
-            'property_id' => $this->property->id,
-            'way' => 'properties/image.jpg',
-            'thumbnail' => 'properties/thumb.jpg',
-            'alt' => 'Casa em Vila Mariana',
-            'order' => 1
-        ]);
-    }
 
     /** @test */
     public function it_can_search_properties_without_filters()
@@ -154,7 +60,7 @@ class PropertySearchControllerTest extends TestCase
                         'min_suite',
                         'max_suite',
                         'min_garage',
-                        'max_garage'
+                        'max_garage',
                     ],
                     'relationships' => [
                         'businesses',
@@ -164,29 +70,29 @@ class PropertySearchControllerTest extends TestCase
                         'neighborhood',
                         'city',
                         'state',
-                        'images'
-                    ]
-                ]
+                        'images',
+                    ],
+                ],
             ],
             'included' => [
                 '*' => [
                     'type',
                     'id',
-                    'attributes'
-                ]
+                    'attributes',
+                ],
             ],
             'meta' => [
                 'total',
                 'current_page',
                 'per_page',
-                'last_page'
+                'last_page',
             ],
             'links' => [
                 'first',
                 'last',
                 'prev',
-                'next'
-            ]
+                'next',
+            ],
         ]);
     }
 
@@ -348,14 +254,14 @@ class PropertySearchControllerTest extends TestCase
             'address_id' => $this->address->id,
             'sub_type_id' => $this->subType->id,
             'active' => 1,
-        ])->each(fn($property) => BusinessProperty::factory()->create([
-                'property_id' => $property->id,
-                'business_id' => $this->business->id,
-                'value' => 500000.00,
-                'old_value' => 550000.00,
-                'status' => true,
-                'status_situation' => 1
-            ]));
+        ])->each(fn ($property) => BusinessProperty::factory()->create([
+            'property_id' => $property->id,
+            'business_id' => $this->business->id,
+            'value' => 500000.00,
+            'old_value' => 550000.00,
+            'status' => true,
+            'status_situation' => 1,
+        ]));
 
         $response = $this->getJson('/api/properties/search?page=2&size=10');
 
@@ -374,5 +280,100 @@ class PropertySearchControllerTest extends TestCase
         $response->assertStatus(Response::HTTP_OK)
             ->assertJsonCount(0, 'data')
             ->assertJsonPath('meta.total', 0);
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // Criar estado
+        $this->state = State::factory()->create([
+            'name' => 'São Paulo',
+            'slug' => 'sao-paulo',
+            'initials' => 'SP',
+        ]);
+
+        // Criar cidade
+        $this->city = City::factory()->create([
+            'name' => 'São Paulo',
+            'slug' => 'sao-paulo',
+            'state_id' => $this->state->id,
+        ]);
+
+        // Criar bairro
+        $this->neighborhood = Neighborhood::factory()->create([
+            'name' => 'Vila Mariana',
+            'slug' => 'vila-mariana',
+            'city_id' => $this->city->id,
+        ]);
+
+        // Criar endereço
+        $this->address = Address::factory()
+            ->create([
+                'address' => 'Rua Exemplo',
+                'number' => 123,
+                'neighborhood_id' => $this->neighborhood->id,
+            ]);
+
+        // Criar tipo
+        $this->type = Type::factory()->create([
+            'name' => 'Casa',
+            'slug' => 'casa',
+        ]);
+
+        // Criar subtipo
+        $this->subType = SubType::factory()->create([
+            'name' => 'Casa Padrão',
+            'slug' => 'casa-padrao',
+            'type_id' => $this->type->id,
+        ]);
+
+        // Criar negócio
+        $this->business = Business::factory()->create([
+            'name' => 'Venda',
+            'name_completed' => 'Venda de Imóvel',
+        ]);
+
+        // Criar propriedade
+        $this->property = Property::factory()->create([
+            'code' => 12345,
+            'slug' => 'casa-vila-mariana',
+            'min_description' => 'Casa em Vila Mariana',
+            'content' => 'Descrição completa da casa',
+            'building_area' => 150.5,
+            'total_area' => 200.0,
+            'useful_area' => 180.0,
+            'ground_area' => 250.0,
+            'min_dormitory' => 3,
+            'max_dormitory' => 3,
+            'min_bathroom' => 2,
+            'max_bathroom' => 2,
+            'min_suite' => 1,
+            'max_suite' => 1,
+            'min_garage' => 2,
+            'max_garage' => 2,
+            'address_id' => $this->address->id,
+            'sub_type_id' => $this->subType->id,
+            'active' => 1,
+        ]);
+
+        // Vincular negócio à propriedade
+        BusinessProperty::factory()->create([
+            'property_id' => $this->property->id,
+            'business_id' => $this->business->id,
+            'value' => 500000.00,
+            'old_value' => 550000.00,
+            'status' => true,
+            'status_situation' => 1,
+        ]);
+
+        // Criar imagem
+        $this->image = ImageProperty::factory()->create([
+            'property_id' => $this->property->id,
+            'way' => 'properties/image.jpg',
+            'thumbnail' => 'properties/thumb.jpg',
+            'alt' => 'Casa em Vila Mariana',
+            'order' => 1,
+        ]);
     }
 }

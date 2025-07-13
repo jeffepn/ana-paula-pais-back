@@ -8,9 +8,11 @@ class NewsletterService
 {
     public function create(array $data): Newsletter
     {
-        return Newsletter::create([
-            'name' => $data['name'],
-            'email' => $data['email']
-        ]);
+        return Newsletter::create(
+            [
+                'name' => $data['name'],
+                'email' => $data['email'],
+            ]
+        );
     }
 }

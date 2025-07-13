@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
     public $content;
+
     /**
      * Create a new job instance.
      *
@@ -35,6 +39,5 @@ class ContactJob implements ShouldQueue
     {
         Mail::to('contato@anapaulapais.com.br')
             ->send(new ContactMail($this->content));
-
     }
 }

@@ -34,70 +34,81 @@ class PropertyResource extends JsonApiResource
             'has_plate' => $this->has_plate,
             'active' => $this->active,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
         ];
     }
 
     public function getType(): string
     {
-        return "properties";
+        return 'properties';
     }
 
     public function getRelationships(): array
     {
         return [
             'businesses' => [
-                'data' => $this->businesses->map(function ($business) {
-                    return [
-                        'type' => 'businesses',
-                        'id' => $business->pivot->id
-                    ];
-                })
+                'data' => $this->businesses->map(
+                    function ($business) {
+                        return [
+                            'type' => 'businesses',
+                            'id' => $business->pivot->id,
+                        ];
+                    }
+                ),
             ],
             'type' => [
                 'data' => [
                     'type' => 'types',
-                    'id' => $this->sub_type->type->id
-                ]
+                    'id' => $this->sub_type->type->id,
+                ],
             ],
             'sub_type' => [
                 'data' => [
                     'type' => 'sub_types',
-                    'id' => $this->sub_type->id
-                ]
+                    'id' => $this->sub_type->id,
+                ],
             ],
             'address' => [
                 'data' => [
                     'type' => 'addresses',
-                    'id' => $this->address->id
-                ]
+                    'id' => $this->address->id,
+                ],
             ],
             'neighborhood' => [
                 'data' => [
                     'type' => 'neighborhoods',
-                    'id' => $this->address->neighborhood->id
-                ]
+                    'id' => $this->address->neighborhood->id,
+                ],
             ],
             'city' => [
                 'data' => [
                     'type' => 'cities',
-                    'id' => $this->address->neighborhood->city->id
-                ]
+                    'id' => $this->address->neighborhood->city->id,
+                ],
             ],
             'state' => [
                 'data' => [
                     'type' => 'states',
-                    'id' => $this->address->neighborhood->city->state->id
-                ]
+                    'id' => $this->address->neighborhood->city->state->id,
+                ],
             ],
             'images' => [
-                'data' => $this->images->map(function ($image) {
-                    return [
-                        'type' => 'images',
-                        'id' => $image->id
-                    ];
-                })
-            ]
+                'data' => $this->images->map(
+                    function ($image) {
+                        return [
+                            'type' => 'images',
+                            'id' => $image->id,
+                        ];
+                    }
+                ),
+            ],
+        ];
+    }
+
+    public function with(Request $request)
+    {
+        return [
+            'included' => $this->getIncluded(),
         ];
     }
 
@@ -106,23 +117,25 @@ class PropertyResource extends JsonApiResource
         $included = [];
 
         // Adiciona os negócios (businesses)
-        $this->businesses->each(function ($business) use (&$included) {
-            $bussinessProperty = $this->businessesProperty()
-                ->where('id', $business->pivot->id)
-                ->first();
-            $included[] = [
-                'type' => 'businesses',
-                'id' => $business->pivot->id,
-                'attributes' => [
-                    'name' => $business->name,
-                    'name_completed' => $business->name_completed,
-                    'value' => $business->pivot->value,
-                    'old_value' => $business->pivot->old_value,
-                    'status' => $bussinessProperty?->status,
-                    'status_situation' => $bussinessProperty?->status_situation
-                ]
-            ];
-        });
+        $this->businesses->each(
+            function ($business) use (&$included) {
+                $bussinessProperty = $this->businessesProperty()
+                    ->where('id', $business->pivot->id)
+                    ->first();
+                $included[] = [
+                    'type' => 'businesses',
+                    'id' => $business->pivot->id,
+                    'attributes' => [
+                        'name' => $business->name,
+                        'name_completed' => $business->name_completed,
+                        'value' => $business->pivot->value,
+                        'old_value' => $business->pivot->old_value,
+                        'status' => $bussinessProperty?->status,
+                        'status_situation' => $bussinessProperty?->status_situation,
+                    ],
+                ];
+            }
+        );
 
         // Adiciona o tipo e subtipo
         $included[] = [
@@ -130,8 +143,8 @@ class PropertyResource extends JsonApiResource
             'id' => $this->sub_type->type->id,
             'attributes' => [
                 'name' => $this->sub_type->type->name,
-                'slug' => $this->sub_type->type->slug
-            ]
+                'slug' => $this->sub_type->type->slug,
+            ],
         ];
 
         $included[] = [
@@ -139,8 +152,8 @@ class PropertyResource extends JsonApiResource
             'id' => $this->sub_type->id,
             'attributes' => [
                 'name' => $this->sub_type->name,
-                'slug' => $this->sub_type->slug
-            ]
+                'slug' => $this->sub_type->slug,
+            ],
         ];
 
         // Adiciona o endereço
@@ -154,8 +167,8 @@ class PropertyResource extends JsonApiResource
                 'complement' => $this->address->complement,
                 'cep' => $this->address->cep,
                 'longitude' => $this->address->longitude,
-                'latitude' => $this->address->latitude
-            ]
+                'latitude' => $this->address->latitude,
+            ],
         ];
 
         // Adiciona o bairro
@@ -164,8 +177,8 @@ class PropertyResource extends JsonApiResource
             'id' => $this->address->neighborhood->id,
             'attributes' => [
                 'name' => $this->address->neighborhood->name,
-                'slug' => $this->address->neighborhood->slug
-            ]
+                'slug' => $this->address->neighborhood->slug,
+            ],
         ];
 
         // Adiciona a cidade
@@ -174,8 +187,8 @@ class PropertyResource extends JsonApiResource
             'id' => $this->address->neighborhood->city->id,
             'attributes' => [
                 'name' => $this->address->neighborhood->city->name,
-                'slug' => $this->address->neighborhood->city->slug
-            ]
+                'slug' => $this->address->neighborhood->city->slug,
+            ],
         ];
 
         // Adiciona o estado
@@ -185,31 +198,26 @@ class PropertyResource extends JsonApiResource
             'attributes' => [
                 'name' => $this->address->neighborhood->city->state->name,
                 'slug' => $this->address->neighborhood->city->state->slug,
-                'initials' => $this->address->neighborhood->city->state->initials
-            ]
+                'initials' => $this->address->neighborhood->city->state->initials,
+            ],
         ];
 
         // Adiciona as imagens
-        $this->images->each(function ($image) use (&$included) {
-            $included[] = [
-                'type' => 'images',
-                'id' => $image->id,
-                'attributes' => [
-                    'url' => Storage::disk('public')->url($image->way),
-                    'thumbnail' => $image->thumbnail ? Storage::disk('public')->url($image->thumbnail) : null,
-                    'alt' => $image->alt,
-                    'order' => $image->order
-                ]
-            ];
-        });
+        $this->images->each(
+            function ($image) use (&$included) {
+                $included[] = [
+                    'type' => 'images',
+                    'id' => $image->id,
+                    'attributes' => [
+                        'url' => Storage::disk('public')->url($image->way),
+                        'thumbnail' => $image->thumbnail ? Storage::disk('public')->url($image->thumbnail) : null,
+                        'alt' => $image->alt,
+                        'order' => $image->order,
+                    ],
+                ];
+            }
+        );
 
         return $included;
-    }
-
-    public function with(Request $request)
-    {
-        return [
-            'included' => $this->getIncluded()
-        ];
     }
 }

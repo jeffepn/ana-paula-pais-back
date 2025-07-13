@@ -12,12 +12,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
  *     version="1.0.0",
  *     title="API de Imóveis",
  *     description="API para gerenciamento de imóveis e contatos",
- *     @OA\Contact(
+ * @OA\Contact(
  *         email="suporte@exemplo.com",
  *         name="Suporte"
  *     )
  * )
- * 
+ *
  * @OA\Server(
  *     url="/api",
  *     description="Servidor de Produção"
@@ -25,5 +25,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
  */
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 }

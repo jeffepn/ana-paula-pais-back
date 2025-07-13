@@ -114,13 +114,14 @@ class SiteController extends Controller
                 'name.max' => 'Que nome grande hein... Limite ele a 50 caracteres.',
                 'email.email' => 'Formato de e-mail inválido.',
                 'email.required' => 'Precisamos saber seu e-mail, para que possamos entrar em contato.',
-                'message.required' => 'Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.'
+                'message.required' => 'Descreva em poucas palavras: sua dúvida, mensagem ou sugestão.',
             ]
         );
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator, 'contact');
         }
         ContactJob::dispatch($request->all());
+
         return redirect()
             ->back()
             ->with('successcontact', MessageUtil::success('ContactSuccess'));
@@ -132,7 +133,7 @@ class SiteController extends Controller
             $request->all(),
             [
                 'name' => 'required|max:50',
-                'email' => 'required|email|unique:newsletters|max:300'
+                'email' => 'required|email|unique:newsletters|max:300',
             ],
             [
                 'max' => 'Limite o campo a :max caracteres.',
@@ -140,13 +141,14 @@ class SiteController extends Controller
                 'name.max' => 'Que nome grande hein... Limite ele a 50 caracteres.',
                 'email.unique' => 'Você já está cadastrado em nossa Newsletter.',
                 'email.email' => 'Formato de e-mail inválido.',
-                'email.required' => 'Precisamos saber seu e-mail, para que possamos enviar nossos boletos informativos.'
+                'email.required' => 'Precisamos saber seu e-mail, para que possamos enviar nossos boletos informativos.',
             ]
         );
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator, 'newsletter');
         }
         Newsletter::create($request->all());
+
         return redirect()
             ->back()
             ->with('successnewsletter', MessageUtil::success('NewsletterSuccess'));
@@ -160,12 +162,16 @@ class SiteController extends Controller
             SiteUtility::initializeSessionSearch();
         }
         $search = session('search_property');
-        return view('properties-search', [
-            'businesses' => $searchService->getBusinesses(),
-            'citiesNeighborhoods' => $searchService->getNeighborhoods(),
-            'types' => $searchService->getSubtypes(),
-            'properties' => $propertyService->getAllPerSearch($search)
-        ]);
+
+        return view(
+            'properties-search',
+            [
+                'businesses' => $searchService->getBusinesses(),
+                'citiesNeighborhoods' => $searchService->getNeighborhoods(),
+                'types' => $searchService->getSubtypes(),
+                'properties' => $propertyService->getAllPerSearch($search),
+            ]
+        );
     }
 
     public function searchPropertyCode(Request $request)
@@ -178,17 +184,21 @@ class SiteController extends Controller
         if (!session()->has('search_property')) {
             SiteUtility::initializeSessionSearch();
         }
-        session()->put('search_property', [
-            'business' => $request->business,
-            'neighborhood' => $request->neighborhood,
-            'type' => $request->type,
-            'garage' => $request->garage,
-            'dormitory' => $request->dormitory,
-            'price_min' => $request->price_min,
-            'price_max' => $request->price_max,
-            'area_min' => $request->area_min,
-            'area_max' => $request->area_max
-        ]);
+        session()->put(
+            'search_property',
+            [
+                'business' => $request->business,
+                'neighborhood' => $request->neighborhood,
+                'type' => $request->type,
+                'garage' => $request->garage,
+                'dormitory' => $request->dormitory,
+                'price_min' => $request->price_min,
+                'price_max' => $request->price_max,
+                'area_min' => $request->area_min,
+                'area_max' => $request->area_max,
+            ]
+        );
+
         return redirect()->to(route('property.search_properties'));
     }
 
@@ -197,15 +207,19 @@ class SiteController extends Controller
         try {
             $property = Property::where(
                 'code',
-                Str::replaceFirst("AN-", "", Str::upper($slug))
+                Str::replaceFirst('AN-', '', Str::upper($slug))
             )
                 ->whereActive(true)
                 ->firstOrFail();
-            return view('property', [
-                'propertyChain' => $property,
-                'properties' => $propertyService
-                    ->getSimilarProperties($property, 3)
-            ]);
+
+            return view(
+                'property',
+                [
+                    'propertyChain' => $property,
+                    'properties' => $propertyService
+                        ->getSimilarProperties($property, 3),
+                ]
+            );
         } catch (ModelNotFoundException $th) {
             return view('property', ['propertyChain' => null]);
         }

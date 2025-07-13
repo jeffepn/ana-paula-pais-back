@@ -16,13 +16,13 @@ class NewsletterResource extends JsonApiResource
         return [
             'name' => $this->resource->name,
             'email' => $this->resource->email,
-            'created_at' => $this->resource->created_at
+            'created_at' => $this->resource->created_at,
         ];
     }
 
     public function getType(): string
     {
-        return "newsletters";
+        return 'newsletters';
     }
 
     public function getRelationships(): array

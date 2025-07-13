@@ -19,3 +19,9 @@ scripts:
   test: kool run phpunit
   testwatch: kool exec app vendor/bin/phpunit-watcher watch
   yarn: kool docker kooldev/node:14 yarn
+  quality:
+    - kool run php-cs-fixer
+    - kool run phpstan
+  phpqa: kool docker kooldev/phpqa:8.1
+  php-cs-fixer: kool run phpqa php-cs-fixer fix --diff
+  phpstan: kool docker ghcr.io/phpstan/phpstan:latest-php8.1 --memory-limit=-1 analyse app

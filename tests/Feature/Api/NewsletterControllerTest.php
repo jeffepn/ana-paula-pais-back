@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Http;
 
 class NewsletterControllerTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use RefreshDatabase;
+    use WithFaker;
 
     /** @test */
     public function it_can_create_a_newsletter_subscription()
@@ -20,14 +21,14 @@ class NewsletterControllerTest extends TestCase
             'name' => $this->faker->name,
             'email' => $this->faker->email,
             'terms_accept' => true,
-            'recaptchaToken' => 'valid-token'
+            'recaptchaToken' => 'valid-token',
         ];
 
         Http::fake([
             'https://www.google.com/recaptcha/api/siteverify' => Http::response([
                 'success' => true,
-                'score' => 0.8
-            ], 200)
+                'score' => 0.8,
+            ], 200),
         ]);
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -41,12 +42,12 @@ class NewsletterControllerTest extends TestCase
                     'attributes' => [
                         'name',
                         'email',
-                        'created_at'
-                    ]
+                        'created_at',
+                    ],
                 ],
                 'meta' => [
-                    'message'
-                ]
+                    'message',
+                ],
             ])
             ->assertJson([
                 'data' => [
@@ -55,16 +56,16 @@ class NewsletterControllerTest extends TestCase
                         'name' => $data['name'],
                         'email' => $data['email'],
                         'created_at' => $newsletter->created_at->toIsoString(),
-                    ]
+                    ],
                 ],
                 'meta' => [
-                    'message' => 'Você agora receberá  nossos boletos informativos.'
-                ]
+                    'message' => 'Você agora receberá  nossos boletos informativos.',
+                ],
             ]);
 
         $this->assertDatabaseHas('newsletters', [
             'name' => $data['name'],
-            'email' => $data['email']
+            'email' => $data['email'],
         ]);
     }
 
@@ -80,8 +81,8 @@ class NewsletterControllerTest extends TestCase
                     'name' => ['Como podemos te chamar'],
                     'email' => ['Precisamos do seu e-mail para te manter informado'],
                     'terms_accept' => ['É necessário aceitar os termos de uso e política de privacidade.'],
-                    'recaptchaToken' => ['Token de verificação é obrigatório.']
-                ]
+                    'recaptchaToken' => ['Token de verificação é obrigatório.'],
+                ],
             ]);
     }
 
@@ -92,7 +93,7 @@ class NewsletterControllerTest extends TestCase
             'name' => $this->faker->name,
             'email' => $this->faker->email,
             'terms_accept' => false,
-            'recaptchaToken' => 'valid-token'
+            'recaptchaToken' => 'valid-token',
         ];
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -101,8 +102,8 @@ class NewsletterControllerTest extends TestCase
             ->assertJson([
                 'message' => 'Os dados fornecidos são inválidos.',
                 'errors' => [
-                    'terms_accept' => ['É necessário aceitar os termos de uso e política de privacidade.']
-                ]
+                    'terms_accept' => ['É necessário aceitar os termos de uso e política de privacidade.'],
+                ],
             ]);
     }
 
@@ -113,14 +114,14 @@ class NewsletterControllerTest extends TestCase
             'name' => $this->faker->name,
             'email' => $this->faker->email,
             'terms_accept' => true,
-            'recaptchaToken' => 'invalid-token'
+            'recaptchaToken' => 'invalid-token',
         ];
 
         Http::fake([
             'https://www.google.com/recaptcha/api/siteverify' => Http::response([
                 'success' => true,
-                'score' => 0.3
-            ], 200)
+                'score' => 0.3,
+            ], 200),
         ]);
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -128,7 +129,7 @@ class NewsletterControllerTest extends TestCase
         $response->assertStatus(Response::HTTP_BAD_REQUEST)
             ->assertJson([
                 'message' => 'Falha ao verificar o recaptcha.',
-                'errors' => []
+                'errors' => [],
             ]);
     }
 
@@ -137,7 +138,7 @@ class NewsletterControllerTest extends TestCase
     {
         $data = [
             'name' => $this->faker->name,
-            'email' => 'invalid-email'
+            'email' => 'invalid-email',
         ];
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -147,8 +148,8 @@ class NewsletterControllerTest extends TestCase
             ->assertJson([
                 'message' => 'Os dados fornecidos são inválidos.',
                 'errors' => [
-                    'email' => ['Formato de e-mail inválido.']
-                ]
+                    'email' => ['Formato de e-mail inválido.'],
+                ],
             ]);
     }
 
@@ -158,12 +159,12 @@ class NewsletterControllerTest extends TestCase
         $email = $this->faker->email;
         Newsletter::create([
             'name' => $this->faker->name,
-            'email' => $email
+            'email' => $email,
         ]);
 
         $data = [
             'name' => $this->faker->name,
-            'email' => $email
+            'email' => $email,
         ];
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -173,8 +174,8 @@ class NewsletterControllerTest extends TestCase
             ->assertJson([
                 'message' => 'Os dados fornecidos são inválidos.',
                 'errors' => [
-                    'email' => ['Você já está cadastrado em nossa Newsletter.']
-                ]
+                    'email' => ['Você já está cadastrado em nossa Newsletter.'],
+                ],
             ]);
     }
 
@@ -183,7 +184,7 @@ class NewsletterControllerTest extends TestCase
     {
         $data = [
             'name' => str_repeat('a', 51),
-            'email' => $this->faker->email
+            'email' => $this->faker->email,
         ];
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -193,8 +194,8 @@ class NewsletterControllerTest extends TestCase
             ->assertJson([
                 'message' => 'Os dados fornecidos são inválidos.',
                 'errors' => [
-                    'name' => ['Que nome grande hein... Limite ele a 50 caracteres.']
-                ]
+                    'name' => ['Que nome grande hein... Limite ele a 50 caracteres.'],
+                ],
             ]);
     }
 
@@ -203,7 +204,7 @@ class NewsletterControllerTest extends TestCase
     {
         $data = [
             'name' => $this->faker->name,
-            'email' => str_repeat('a', 301) . '@example.com'
+            'email' => str_repeat('a', 301) . '@example.com',
         ];
 
         $response = $this->postJson('/api/newsletters', $data);
@@ -213,8 +214,8 @@ class NewsletterControllerTest extends TestCase
             ->assertJson([
                 'message' => 'Os dados fornecidos são inválidos.',
                 'errors' => [
-                    'email' => ['Limite o campo a 300 caracteres.']
-                ]
+                    'email' => ['Limite o campo a 300 caracteres.'],
+                ],
             ]);
     }
 }

@@ -24,7 +24,7 @@ class PropertySearchRequest extends FormRequest
             'data.attributes.area_min' => 'nullable|numeric',
             'data.attributes.area_max' => 'nullable|numeric',
             'page.number' => 'nullable|integer|min:1',
-            'page.size' => 'nullable|integer|min:1|max:100'
+            'page.size' => 'nullable|integer|min:1|max:100',
         ];
     }
-} 
+}

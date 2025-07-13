@@ -6,7 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class NewsletterRequest extends FormRequest
 {
-
     public function rules(): array
     {
         return [
@@ -16,10 +15,10 @@ class NewsletterRequest extends FormRequest
                 'string',
                 'email',
                 'max:300',
-                'unique:newsletters,email'
+                'unique:newsletters,email',
             ],
             'terms_accept' => ['required', 'boolean', 'accepted'],
-            'recaptchaToken' => ['required', 'string']
+            'recaptchaToken' => ['required', 'string'],
         ];
     }
 
@@ -34,7 +33,7 @@ class NewsletterRequest extends FormRequest
             'email.unique' => 'Você já está cadastrado em nossa Newsletter.',
             'terms_accept.required' => 'É necessário aceitar os termos de uso e política de privacidade.',
             'terms_accept.accepted' => 'É necessário aceitar os termos de uso e política de privacidade.',
-            'recaptchaToken.required' => 'Token de verificação é obrigatório.'
+            'recaptchaToken.required' => 'Token de verificação é obrigatório.',
         ];
     }
 }

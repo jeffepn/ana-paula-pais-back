@@ -2,8 +2,6 @@
 
 namespace App\Http\Resources\JsonApi;
 
-use Illuminate\Http\Request;
-
 class ContactResource extends JsonApiResource
 {
     public function getAttributes(): array
@@ -12,13 +10,13 @@ class ContactResource extends JsonApiResource
             'name' => $this->resource['name'],
             'email' => $this->resource['email'],
             'phone' => $this->resource['phone'],
-            'message' => $this->resource['message']
+            'message' => $this->resource['message'],
         ];
     }
 
     public function getType(): string
     {
-        return "contacts";
+        return 'contacts';
     }
 
     public function getRelationships(): array

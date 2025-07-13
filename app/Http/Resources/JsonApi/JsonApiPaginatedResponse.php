@@ -23,17 +23,20 @@ class JsonApiPaginatedResponse extends JsonResource
         $resources = $this->resourceClass::collection($this->resource->items());
 
         // Coleta todos os recursos incluídos
-        $resources->each(function ($resource) {
-            $resource->loadIncluded();
-            $this->included = $this->included->merge($resource->included);
-        });
+        $resources->each(
+            function ($resource) {
+                $resource->loadIncluded();
+                $this->included = $this->included->merge($resource->included);
+            }
+        );
 
         return [
-            'data' => $resources->map(function ($resource) {
-                $id = $resource->getId();
-                $relationships = $resource->getRelationships();
+            'data' => $resources->map(
+                function ($resource) {
+                    $id = $resource->getId();
+                    $relationships = $resource->getRelationships();
 
-                $data = $id ?
+                    $data = $id ?
                     [
                         'type' => $resource->getType(),
                         'id' => $id,
@@ -44,27 +47,30 @@ class JsonApiPaginatedResponse extends JsonResource
                         'attributes' => $resource->getAttributes(),
                     ];
 
+                    if (!empty($relationships)) {
+                        $data['relationships'] = $relationships;
+                    }
 
-                if (!empty($relationships)) {
-                    $data['relationships'] = $relationships;
+                    return $data;
                 }
-                return $data;
-            }),
-            'included' => $this->included->unique(function ($item) {
-                return $item['type'] . '-' . $item['id'];
-            })->values(),
+            ),
+            'included' => $this->included->unique(
+                function ($item) {
+                    return $item['type'] . '-' . $item['id'];
+                }
+            )->values(),
             'meta' => [
                 'total' => $this->resource->total(),
                 'current_page' => $this->resource->currentPage(),
                 'per_page' => $this->resource->perPage(),
-                'last_page' => $this->resource->lastPage()
+                'last_page' => $this->resource->lastPage(),
             ],
             'links' => [
                 'first' => $this->resource->url(1),
                 'last' => $this->resource->url($this->resource->lastPage()),
                 'prev' => $this->resource->previousPageUrl(),
-                'next' => $this->resource->nextPageUrl()
-            ]
+                'next' => $this->resource->nextPageUrl(),
+            ],
         ];
     }
 }

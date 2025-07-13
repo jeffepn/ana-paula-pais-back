@@ -26,27 +26,50 @@ class PropertyService
             ->select('properties.*')
             ->distinct('properties.id')
             ->whereActive(true)
-            ->when(!empty($search['neighborhood']), function ($query) use ($search) {
-                $query->where('neighborhoods.id', $search['neighborhood']);
-            })->when(!empty($search['type']), function ($query) use ($search) {
-                $query->where('properties.sub_type_id', $search['type']);
-            })->when(!empty($search['business']), function ($query) use ($search) {
-                $query->where('businesses.id', $search['business']);
-            })->when(!empty($search['dormitory']), function ($query) use ($search) {
-                $query->where('properties.min_dormitory', '>=', $search['dormitory'])
-                    ->orWhere('properties.max_dormitory', '<=', $search['dormitory']);
-            })
-            ->when(!empty($search['garage']), function ($query) use ($search) {
-                $query->where(function ($subQuery) use ($search) {
-                    $subQuery->where('properties.min_garage', $search['garage'])
-                        ->orWhere('properties.max_garage', $search['garage']);
-                });
-            })->when(!empty($search['price_max']), function ($query) use ($search) {
-                $query->where('business_properties.value', $search['price_max']);
-            })->when(!empty($search['area_max']), function ($query) use ($search) {
-                $query->where('properties.building_area', '=', $search['area_max'])
-                    ->orWhere('properties.total_area', '=', $search['area_max']);
-            });
+            ->when(
+                !empty($search['neighborhood']),
+                function ($query) use ($search) {
+                    $query->where('neighborhoods.id', $search['neighborhood']);
+                }
+            )->when(
+                !empty($search['type']),
+                function ($query) use ($search) {
+                    $query->where('properties.sub_type_id', $search['type']);
+                }
+            )->when(
+                !empty($search['business']),
+                function ($query) use ($search) {
+                    $query->where('businesses.id', $search['business']);
+                }
+            )->when(
+                !empty($search['dormitory']),
+                function ($query) use ($search) {
+                    $query->where('properties.min_dormitory', '>=', $search['dormitory'])
+                        ->orWhere('properties.max_dormitory', '<=', $search['dormitory']);
+                }
+            )
+            ->when(
+                !empty($search['garage']),
+                function ($query) use ($search) {
+                    $query->where(
+                        function ($subQuery) use ($search) {
+                            $subQuery->where('properties.min_garage', $search['garage'])
+                                ->orWhere('properties.max_garage', $search['garage']);
+                        }
+                    );
+                }
+            )->when(
+                !empty($search['price_max']),
+                function ($query) use ($search) {
+                    $query->where('business_properties.value', $search['price_max']);
+                }
+            )->when(
+                !empty($search['area_max']),
+                function ($query) use ($search) {
+                    $query->where('properties.building_area', '=', $search['area_max'])
+                        ->orWhere('properties.total_area', '=', $search['area_max']);
+                }
+            );
 
         return $properties->orderByDesc('created_at')
             ->paginate(self::DEFAULT_PAGINATE);
@@ -61,61 +84,106 @@ class PropertyService
             ->select('properties.*')
             ->distinct('properties.id')
             ->whereActive(true)
-            ->when(!empty($search['neighborhood']), function ($query) use ($search) {
-                $query->where('neighborhoods.id', $search['neighborhood']);
-            })->when(!empty($search['type']), function ($query) use ($search) {
-                $query->where('properties.sub_type_id', $search['type']);
-            })->when(!empty($search['business']), function ($query) use ($search) {
-                $query->where('businesses.id', $search['business']);
-            })
+            ->when(
+                !empty($search['neighborhood']),
+                function ($query) use ($search) {
+                    $query->where('neighborhoods.id', $search['neighborhood']);
+                }
+            )->when(
+                !empty($search['type']),
+                function ($query) use ($search) {
+                    $query->where('properties.sub_type_id', $search['type']);
+                }
+            )->when(
+                !empty($search['business']),
+                function ($query) use ($search) {
+                    $query->where('businesses.id', $search['business']);
+                }
+            )
 
-            ->when(!empty($search['min_suite']), function ($query) use ($search) {
-                $query->where('properties.min_suite', '>=', $search['min_suite']);
-            })
-            ->when(!empty($search['max_suite']), function ($query) use ($search) {
-                $query->where('properties.max_suite', "<=", $search['max_suite']);
-            })
+            ->when(
+                !empty($search['min_suite']),
+                function ($query) use ($search) {
+                    $query->where('properties.min_suite', '>=', $search['min_suite']);
+                }
+            )
+            ->when(
+                !empty($search['max_suite']),
+                function ($query) use ($search) {
+                    $query->where('properties.max_suite', '<=', $search['max_suite']);
+                }
+            )
 
-            ->when(!empty($search['min_bathroom']), function ($query) use ($search) {
-                $query->where('properties.min_bathroom', '>=', $search['min_bathroom']);
-            })
-            ->when(!empty($search['max_bathroom']), function ($query) use ($search) {
-                $query->where('properties.max_bathroom', "<=", $search['max_bathroom']);
-            })
+            ->when(
+                !empty($search['min_bathroom']),
+                function ($query) use ($search) {
+                    $query->where('properties.min_bathroom', '>=', $search['min_bathroom']);
+                }
+            )
+            ->when(
+                !empty($search['max_bathroom']),
+                function ($query) use ($search) {
+                    $query->where('properties.max_bathroom', '<=', $search['max_bathroom']);
+                }
+            )
 
-            ->when(!empty($search['min_dormitory']), function ($query) use ($search) {
-                $query->where('properties.min_dormitory', '>=', $search['min_dormitory']);
-            })
-            ->when(!empty($search['max_dormitory']), function ($query) use ($search) {
-                $query->where('properties.max_dormitory', "<=", $search['max_dormitory']);
-            })
+            ->when(
+                !empty($search['min_dormitory']),
+                function ($query) use ($search) {
+                    $query->where('properties.min_dormitory', '>=', $search['min_dormitory']);
+                }
+            )
+            ->when(
+                !empty($search['max_dormitory']),
+                function ($query) use ($search) {
+                    $query->where('properties.max_dormitory', '<=', $search['max_dormitory']);
+                }
+            )
 
-            ->when(!empty($search['min_garage']), function ($query) use ($search) {
-                $query->where('properties.min_garage', '>=', $search['min_garage']);
-            })
-            ->when(!empty($search['max_garage']), function ($query) use ($search) {
-                $query->where('properties.max_garage', "<=", $search['max_garage']);
-            })
+            ->when(
+                !empty($search['min_garage']),
+                function ($query) use ($search) {
+                    $query->where('properties.min_garage', '>=', $search['min_garage']);
+                }
+            )
+            ->when(
+                !empty($search['max_garage']),
+                function ($query) use ($search) {
+                    $query->where('properties.max_garage', '<=', $search['max_garage']);
+                }
+            )
 
-            ->when(!empty($search['price_min']), function ($query) use ($search) {
-                $query->where('business_properties.value', '>=', $search['price_min']);
-            })
-            ->when(!empty($search['price_max']), function ($query) use ($search) {
-                $query->where('business_properties.value', "<=", $search['price_max']);
-            })
+            ->when(
+                !empty($search['price_min']),
+                function ($query) use ($search) {
+                    $query->where('business_properties.value', '>=', $search['price_min']);
+                }
+            )
+            ->when(
+                !empty($search['price_max']),
+                function ($query) use ($search) {
+                    $query->where('business_properties.value', '<=', $search['price_max']);
+                }
+            )
 
-            ->when(!empty($search['area_max']), function ($query) use ($search) {
-                $query->where('properties.building_area', '<=', $search['area_max'])
-                    ->where('properties.total_area', '<=', $search['area_max'])
-                    ->where('properties.useful_area', '<=', $search['area_max'])
-                    ->where('properties.ground_area', '<=', $search['area_max']);
-            })
-            ->when(!empty($search['area_min']), function ($query) use ($search) {
-                $query->where('properties.building_area', '>=', $search['area_min'])
-                    ->where('properties.total_area', '>=', $search['area_min'])
-                    ->where('properties.useful_area', '>=', $search['area_min'])
-                    ->where('properties.ground_area', '>=', $search['area_min']);
-            });
+            ->when(
+                !empty($search['area_max']),
+                function ($query) use ($search) {
+                    $query->where('properties.building_area', '<=', $search['area_max'])
+                        ->where('properties.total_area', '<=', $search['area_max'])
+                        ->where('properties.useful_area', '<=', $search['area_max'])
+                        ->where('properties.ground_area', '<=', $search['area_max']);
+                }
+            )
+            ->when(
+                !empty($search['area_min']),
+                function ($query) use ($search) {
+                    $query->where('properties.building_area', '>=', $search['area_min'])
+                        ->where('properties.total_area', '>=', $search['area_min'])
+                        ->where('properties.useful_area', '>=', $search['area_min'])
+                        ->where('properties.ground_area', '>=', $search['area_min']);
+                }
+            );
 
         return $properties->orderByDesc('created_at');
     }
