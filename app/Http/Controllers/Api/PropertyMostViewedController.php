@@ -305,7 +305,11 @@ class PropertyMostViewedController extends Controller
         $perPage = $request->input('size', 15);
 
         $properties = Property::select('properties.*')
-            ->selectRaw('COUNT(view_property.id) as view_count')
+            ->selectSub(function ($query) {
+                $query->from('view_property')
+                    ->selectRaw('COUNT(*)')
+                    ->whereColumn('view_property.property_id', 'properties.id');
+            }, 'view_count')
             ->leftJoin('view_property', 'properties.id', '=', 'view_property.property_id')
             ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
             ->when(isset($type), fn($q) => $q->where('sub_types.type_id', $type))
