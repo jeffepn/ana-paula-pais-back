@@ -81,26 +81,26 @@ class PropertyService
             ->join('neighborhoods', 'addresses.neighborhood_id', 'neighborhoods.id')
             ->join('business_properties', 'properties.id', 'business_properties.property_id')
             ->join('businesses', 'business_properties.business_id', 'businesses.id')
+            ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
             ->select('properties.*')
             ->distinct('properties.id')
             ->whereActive(true)
             ->when(
-                !empty($search['neighborhood']),
-                function ($query) use ($search) {
-                    $query->where('neighborhoods.id', $search['neighborhood']);
-                }
+                !empty($search['neighborhoods']),
+                fn($query) => $query->where(
+                    fn($q) => $q->whereIn('neighborhoods.id', $search['neighborhoods'])->orWhereIn('neighborhoods.slug', $search['neighborhoods'])
+                )
             )->when(
                 !empty($search['type']),
-                function ($query) use ($search) {
-                    $query->where('properties.sub_type_id', $search['type']);
-                }
+                fn($query) => $query->where(
+                    fn($q) => $q->where('sub_types.id', $search['type'])->orWhere('sub_types.slug', $search['type'])
+                )
             )->when(
                 !empty($search['business']),
-                function ($query) use ($search) {
-                    $query->where('businesses.id', $search['business']);
-                }
+                fn($query) => $query->where(
+                    fn($q) => $q->where('businesses.id', $search['business'])->orWhere('businesses.slug', $search['business'])
+                )
             )
-
             ->when(
                 !empty($search['min_suite']),
                 function ($query) use ($search) {

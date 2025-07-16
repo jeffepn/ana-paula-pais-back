@@ -414,7 +414,7 @@ class PropertySearchController extends Controller
     {
         $search = $request->all();
         $page = $request->input('page', 1);
-        $perPage = $request->input('size', 15);
+        $perPage = $request->input('size', 12);
 
         $properties = $this->propertyService->getAllPerSearchApi($search ?? [])
             ->with(
