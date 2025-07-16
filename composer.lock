@@ -1694,16 +1694,16 @@
         },
         {
             "name": "jeffersonpereira/realestatelaravel",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffepn/real-estate-laravel.git",
-                "reference": "fc78b65699d83afcd9e1a4e5e24ff8b0f900bbd7"
+                "reference": "f2b62af5eb995f9cadc52232e03a1a77f8ec47a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffepn/real-estate-laravel/zipball/fc78b65699d83afcd9e1a4e5e24ff8b0f900bbd7",
-                "reference": "fc78b65699d83afcd9e1a4e5e24ff8b0f900bbd7",
+                "url": "https://api.github.com/repos/jeffepn/real-estate-laravel/zipball/f2b62af5eb995f9cadc52232e03a1a77f8ec47a8",
+                "reference": "f2b62af5eb995f9cadc52232e03a1a77f8ec47a8",
                 "shasum": ""
             },
             "require": {
@@ -1750,9 +1750,9 @@
             "description": "Pacote para gerenciamento de imóveis em sistemas Laravel 10+",
             "support": {
                 "issues": "https://github.com/jeffepn/real-estate-laravel/issues",
-                "source": "https://github.com/jeffepn/real-estate-laravel/tree/2.2.0"
+                "source": "https://github.com/jeffepn/real-estate-laravel/tree/2.2.1"
             },
-            "time": "2025-06-02T01:28:05+00:00"
+            "time": "2025-07-15T16:31:15+00:00"
         },
         {
             "name": "laravel/framework",
