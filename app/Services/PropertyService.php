@@ -104,7 +104,7 @@ class PropertyService
             ->when(
                 !empty($search['min_suite']),
                 function ($query) use ($search) {
-                    $query->where('properties.min_suite', '>=', $search['min_suite']);
+                    $query->where('properties.min_suite', $search['min_suite']);
                 }
             )
             ->when(
@@ -117,7 +117,7 @@ class PropertyService
             ->when(
                 !empty($search['min_bathroom']),
                 function ($query) use ($search) {
-                    $query->where('properties.min_bathroom', '>=', $search['min_bathroom']);
+                    $query->where('properties.min_bathroom', $search['min_bathroom']);
                 }
             )
             ->when(
@@ -130,7 +130,7 @@ class PropertyService
             ->when(
                 !empty($search['min_dormitory']),
                 function ($query) use ($search) {
-                    $query->where('properties.min_dormitory', '>=', $search['min_dormitory']);
+                    $query->where('properties.min_dormitory', $search['min_dormitory']);
                 }
             )
             ->when(
@@ -143,7 +143,7 @@ class PropertyService
             ->when(
                 !empty($search['min_garage']),
                 function ($query) use ($search) {
-                    $query->where('properties.min_garage', '>=', $search['min_garage']);
+                    $query->where('properties.min_garage', $search['min_garage']);
                 }
             )
             ->when(
@@ -177,12 +177,12 @@ class PropertyService
             )
             ->when(
                 !empty($search['area_min']),
-                function ($query) use ($search) {
-                    $query->where('properties.building_area', '>=', $search['area_min'])
-                        ->where('properties.total_area', '>=', $search['area_min'])
-                        ->where('properties.useful_area', '>=', $search['area_min'])
-                        ->where('properties.ground_area', '>=', $search['area_min']);
-                }
+                fn($query) => $query->where(
+                    fn($q) => $q->where('properties.building_area', '>=', $search['area_min'])
+                        ->orWhere('properties.total_area', '>=', $search['area_min'])
+                        ->orWhere('properties.useful_area', '>=', $search['area_min'])
+                        ->orWhere('properties.ground_area', '>=', $search['area_min'])
+                )
             );
 
         return $properties->orderByDesc('created_at');
