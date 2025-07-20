@@ -115,11 +115,11 @@ class PropertySeeder extends Seeder
     private function createProperties(): void
     {
         for ($i = 0; $i < 50; $i++) {
-            $minDormitory = $this->faker->numberBetween(1, 5);
-            $minSuite = $this->faker->numberBetween(1, 5);
-            $minGarage = $this->faker->numberBetween(1, 5);
-            $minRestroom = $this->faker->numberBetween(1, 5);
-            $minBathroom = $this->faker->numberBetween(1, 5);
+            $maxDormitory = $this->faker->numberBetween(1, 5);
+            $maxSuite = $this->faker->numberBetween(1, 5);
+            $maxGarage = $this->faker->numberBetween(1, 5);
+            $maxRestroom = $this->faker->numberBetween(1, 5);
+            $maxBathroom = $this->faker->numberBetween(1, 5);
 
             $property = new Property();
             $property->code = str_pad($i + 1, 4, '0', STR_PAD_LEFT);
@@ -135,26 +135,26 @@ class PropertySeeder extends Seeder
             $property->building_area = $this->faker->boolean(20)
                 ? $this->faker->numberBetween(0, 500)
                 : null;
-            $property->min_dormitory = $minDormitory;
-            $property->max_dormitory = $this->faker->boolean(20)
-                ? ($minDormitory + $this->faker->numberBetween(1, 5))
+            $property->min_dormitory = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(1, $maxDormitory)
                 : null;
-            $property->min_suite = $minSuite;
-            $property->max_suite = $this->faker->boolean(20)
-                ? ($minSuite + $this->faker->numberBetween(1, 5))
+            $property->max_dormitory = $maxDormitory;
+            $property->min_suite = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(1, $maxSuite)
                 : null;
-            $property->min_garage = $minGarage;
-            $property->max_garage = $this->faker->boolean(20)
-                ? ($minGarage + $this->faker->numberBetween(1, 5))
+            $property->max_suite = $maxSuite;
+            $property->min_garage = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(1, $maxGarage)
                 : null;
-            $property->min_restroom = $minRestroom;
-            $property->max_restroom = $this->faker->boolean(20)
-                ? ($minRestroom + $this->faker->numberBetween(1, 5))
+            $property->max_garage = $maxGarage;
+            $property->min_restroom = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(1, $maxRestroom)
                 : null;
-            $property->min_bathroom = $minBathroom;
-            $property->max_bathroom = $this->faker->boolean(20)
-                ? ($minBathroom + $this->faker->numberBetween(1, 5))
+            $property->max_restroom = $maxRestroom;
+            $property->min_bathroom = $this->faker->boolean(20)
+                ? $this->faker->numberBetween(1, $maxBathroom)
                 : null;
+            $property->max_bathroom = $maxBathroom;
             $property->sub_type_id = SubType::inRandomOrder()->first()->id;
             $property->situation_id = Situation::updateOrCreate(['name' => 'PRONTO'])->id;
             $property->address_id = Address::create(['neighborhood_id' => Neighborhood::inRandomOrder()->first()->id])->id;
@@ -163,14 +163,23 @@ class PropertySeeder extends Seeder
         }
     }
 
+    private function saveImage(bool $portrait, string $imageRandom): void
+    {
+        $contents = file_get_contents('https://picsum.photos/' . ($portrait ? '600/800' : '800/600'));
+        Storage::disk('public')->put($imageRandom, $contents);
+    }
     private function createImages(): void
     {
         Property::all()->each(function ($property) {
             for ($i = 0; $i < 5; $i++) {
                 $portrait = $this->faker->boolean(70);
                 $imageRandom = "properties/{$property->id}-{$i}.jpg";
-                $contents = file_get_contents('https://picsum.photos/' . ($portrait ? '600/800' : '800/600'));
-                Storage::disk('public')->put($imageRandom, $contents);
+                try {
+                    $this->saveImage($portrait, $imageRandom);
+                } catch (\Throwable $th) {
+                    sleep(seconds: 6);
+                    $this->saveImage($portrait, $imageRandom);
+                }
 
                 $image = new ImageProperty();
                 $image->property_id = $property->id;
