@@ -47,6 +47,13 @@ use Illuminate\Http\JsonResponse;
  *         )
  *     ),
  *     @OA\Parameter(
+ *         name="search",
+ *         in="query",
+ *         description="Campo de busca livre (nome do bairro, cidade, tipo, descrição, etc)",
+ *         required=false,
+ *         @OA\Schema(type="string")
+ *     ),
+ *     @OA\Parameter(
  *         name="min_garage",
  *         in="query",
  *         description="Número mínimo de vagas de garagem",

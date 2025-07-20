@@ -6,25 +6,28 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PropertySearchRequest extends FormRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
 
     public function rules()
     {
         return [
-            'data.attributes.business' => 'nullable|string',
-            'data.attributes.neighborhood' => 'nullable|string',
-            'data.attributes.type' => 'nullable|string',
-            'data.attributes.garage' => 'nullable|integer',
-            'data.attributes.dormitory' => 'nullable|integer',
-            'data.attributes.price_min' => 'nullable|numeric',
-            'data.attributes.price_max' => 'nullable|numeric',
-            'data.attributes.area_min' => 'nullable|numeric',
-            'data.attributes.area_max' => 'nullable|numeric',
-            'page.number' => 'nullable|integer|min:1',
-            'page.size' => 'nullable|integer|min:1|max:100',
+            'search' => 'nullable|string',
+            'business' => 'nullable|string|uuid',
+            'neighborhood' => 'nullable|string|uuid',
+            'type' => 'nullable|string|uuid',
+            'min_garage' => 'nullable|integer',
+            'max_garage' => 'nullable|integer',
+            'min_dormitory' => 'nullable|integer',
+            'max_dormitory' => 'nullable|integer',
+            'min_bathroom' => 'nullable|integer',
+            'max_bathroom' => 'nullable|integer',
+            'min_suite' => 'nullable|integer',
+            'max_suite' => 'nullable|integer',
+            'price_min' => 'nullable|numeric',
+            'price_max' => 'nullable|numeric',
+            'area_min' => 'nullable|numeric',
+            'area_max' => 'nullable|numeric',
+            'page' => 'nullable|integer|min:1',
+            'size' => 'nullable|integer|min:1|max:100',
         ];
     }
 }

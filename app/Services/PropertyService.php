@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 use Jeffpereira\RealEstate\Models\Property\Property;
 use Illuminate\Support\Str;
 
@@ -79,6 +80,7 @@ class PropertyService
     {
         $properties = Property::join('addresses', 'properties.address_id', 'addresses.id')
             ->join('neighborhoods', 'addresses.neighborhood_id', 'neighborhoods.id')
+            ->join('cities', 'neighborhoods.city_id', 'cities.id')
             ->join('business_properties', 'properties.id', 'business_properties.property_id')
             ->join('businesses', 'business_properties.business_id', 'businesses.id')
             ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
@@ -86,6 +88,28 @@ class PropertyService
             ->distinct('properties.id')
             ->whereActive(true)
             ->when(
+                !empty($search['search']),
+                function ($query) use ($search) {
+                    $term = $search['search'];
+                    $query->addSelect([
+                        DB::raw(
+                            '(
+                                MATCH(neighborhoods.name) AGAINST (\'' . $term . '\' IN BOOLEAN MODE) +
+                                MATCH(cities.name) AGAINST (\'' . $term . '\' IN BOOLEAN MODE) +
+                                MATCH(sub_types.name) AGAINST (\'' . $term . '\' IN BOOLEAN MODE) +
+                                MATCH(properties.min_description, properties.content) AGAINST (\'' . $term . '\' IN BOOLEAN MODE)
+                            ) as relevance'
+                        )
+                    ]);
+                    $query->where(function ($q) use ($term) {
+                        $q->orWhereRaw('MATCH(neighborhoods.name) AGAINST (? IN BOOLEAN MODE)', [$term])
+                            ->orWhereRaw('MATCH(cities.name) AGAINST (? IN BOOLEAN MODE)', [$term])
+                            ->orWhereRaw('MATCH(sub_types.name) AGAINST (? IN BOOLEAN MODE)', [$term])
+                            ->orWhereRaw('MATCH(properties.min_description, properties.content) AGAINST (? IN BOOLEAN MODE)', [$term]);
+                    });
+                    $query->orderByDesc('relevance');
+                }
+            )->when(
                 !empty($search['neighborhoods']),
                 fn($query) => $query->where(
                     fn($q) => $q->whereIn('neighborhoods.id', $search['neighborhoods'])->orWhereIn('neighborhoods.slug', $search['neighborhoods'])
@@ -110,7 +134,7 @@ class PropertyService
             ->when(
                 !empty($search['max_suite']),
                 function ($query) use ($search) {
-                    $query->where('properties.max_suite', '<=', $search['max_suite']);
+                    $query->where('properties.max_suite', $search['max_suite']);
                 }
             )
 
@@ -123,7 +147,7 @@ class PropertyService
             ->when(
                 !empty($search['max_bathroom']),
                 function ($query) use ($search) {
-                    $query->where('properties.max_bathroom', '<=', $search['max_bathroom']);
+                    $query->where('properties.max_bathroom', $search['max_bathroom']);
                 }
             )
 
@@ -136,7 +160,7 @@ class PropertyService
             ->when(
                 !empty($search['max_dormitory']),
                 function ($query) use ($search) {
-                    $query->where('properties.max_dormitory', '<=', $search['max_dormitory']);
+                    $query->where('properties.max_dormitory', $search['max_dormitory']);
                 }
             )
 
@@ -149,7 +173,7 @@ class PropertyService
             ->when(
                 !empty($search['max_garage']),
                 function ($query) use ($search) {
-                    $query->where('properties.max_garage', '<=', $search['max_garage']);
+                    $query->where('properties.max_garage', $search['max_garage']);
                 }
             )
 
