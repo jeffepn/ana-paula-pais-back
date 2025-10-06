@@ -11,9 +11,11 @@ class PropertySearchRequest extends FormRequest
     {
         return [
             'search' => 'nullable|string',
-            'business' => 'nullable|string|uuid',
-            'neighborhood' => 'nullable|string|uuid',
-            'type' => 'nullable|string|uuid',
+            'business' => 'nullable|string',
+            'neighborhood' => 'nullable|string',
+            'neighborhoods' => 'nullable|array',
+            'neighborhoods.*' => 'string',
+            'type' => 'nullable|string',
             'min_garage' => 'nullable|integer',
             'max_garage' => 'nullable|integer',
             'min_dormitory' => 'nullable|integer',
