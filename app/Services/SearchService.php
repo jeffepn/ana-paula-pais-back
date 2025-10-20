@@ -8,7 +8,6 @@ use JPAddress\Models\Address\Neighborhood;
 
 class SearchService
 {
-
     public function getBusinesses()
     {
         return BusinessProperty::join('properties', 'business_properties.property_id', 'properties.id')
@@ -21,22 +20,29 @@ class SearchService
 
     public function getNeighborhoods()
     {
-        return Neighborhood::join("addresses", "neighborhoods.id", "=", "addresses.neighborhood_id")
-            ->join('properties', function ($q) {
-                $q->on("properties.address_id", "addresses.id")
-                    ->where("active", true);
-            })
+        return Neighborhood::join('addresses', 'neighborhoods.id', '=', 'addresses.neighborhood_id')
+            ->join(
+                'properties',
+                function ($q) {
+                    $q->on('properties.address_id', 'addresses.id')
+                        ->where('active', true);
+                }
+            )
             ->with('city')
-            ->select("neighborhoods.*")
+            ->select('neighborhoods.*')
             ->orderBy('name', 'asc')
             ->get()
             ->unique()
-            ->groupBy(function ($item) {
-                return $item->city->id;
-            })
-            ->sortBy(function ($item) {
-                return $item->first()->city->name;
-            });
+            ->groupBy(
+                function ($item) {
+                    return $item->city->id;
+                }
+            )
+            ->sortBy(
+                function ($item) {
+                    return $item->first()->city->name;
+                }
+            );
     }
 
     public function getSubtypes()

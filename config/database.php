@@ -3,7 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -34,7 +33,6 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -67,7 +65,7 @@ return [
                 'timeout' => 60 * 15, // 15 minute timeout
                 // 'exclude_tables' => ['table1', 'table2'],
                 //'add_extra_option' => '--optionname=optionvalue',
-            ]
+            ],
         ],
         'mysql_old' => [
             'driver' => 'mysql',
@@ -93,7 +91,7 @@ return [
                 'timeout' => 60 * 15, // 15 minute timeout
                 // 'exclude_tables' => ['table1', 'table2'],
                 //'add_extra_option' => '--optionname=optionvalue',
-            ]
+            ],
         ],
 
         'pgsql' => [
@@ -123,7 +121,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
     ],
 
     /*
@@ -151,7 +148,6 @@ return [
     */
 
     'redis' => [
-
         'client' => env('REDIS_CLIENT', 'predis'),
 
         'options' => [
@@ -172,7 +168,5 @@ return [
             'port' => env('REDIS_PORT', 6379),
             'database' => env('REDIS_CACHE_DB', 1),
         ],
-
     ],
-
 ];
