@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($exception instanceof ValidationException) {
+        if ($exception instanceof ValidationException && $request->ajax()) {
             return response()->json(
                 [
                     'message' => 'Os dados fornecidos são inválidos.',

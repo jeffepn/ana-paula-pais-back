@@ -11,21 +11,11 @@ use Jeffpereira\RealEstate\Models\Property\Property;
 
 /**
  * @OA\Get(
- *     path="/properties/most-viewed",
- *     summary="Listar propriedades mais visualizadas",
- *     description="Endpoint para listar propriedades ordenadas por número de visualizações em ordem decrescente",
- *     operationId="getMostViewedProperties",
+ *     path="/properties/launchs",
+ *     summary="Listar propriedades em lançamento",
+ *     description="Endpoint para listar propriedades cuja situação seja 'LANÇAMENTO'",
+ *     operationId="getLaunchProperties",
  *     tags={"Propriedades"},
- *     @OA\Parameter(
- *         name="type",
- *         in="query",
- *         description="ID do tipo de propriedade para filtrar",
- *         required=false,
- *         @OA\Schema(
- *             type="string",
- *             format="uuid"
- *         )
- *     ),
  *     @OA\Parameter(
  *         name="size",
  *         in="query",
@@ -35,7 +25,7 @@ use Jeffpereira\RealEstate\Models\Property\Property;
  *     ),
  *     @OA\Response(
  *         response=200,
- *         description="Lista de propriedades mais visualizadas",
+ *         description="Lista de propriedades em lançamento",
  *         @OA\JsonContent(
  *             @OA\Property(
  *                 property="data",
@@ -292,29 +282,20 @@ use Jeffpereira\RealEstate\Models\Property\Property;
  *     )
  * )
  */
-class PropertyMostViewedController extends Controller
+class PropertyLaunchController extends Controller
 {
     public function __invoke(Request $request): JsonResponse
     {
         $request->validate([
-            'type' => 'nullable|string|uuid',
             'size' => 'nullable|integer|min:1|max:100',
         ]);
 
-        $type = $request->input('type');
         $perPage = $request->input('size', 15);
 
         $properties = Property::select('properties.*')
-            ->selectSub(function ($query) {
-                $query->from('view_property')
-                    ->selectRaw('COUNT(*)')
-                    ->whereColumn('view_property.property_id', 'properties.id');
-            }, 'view_count')
-            ->leftJoin('view_property', 'properties.id', '=', 'view_property.property_id')
-            ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
-            ->when(isset($type), fn($q) => $q->where('sub_types.type_id', $type))
+            ->join('situations', 'properties.situation_id', 'situations.id')
+            ->where('situations.name', 'LANÇAMENTO')
             ->whereActive(true)
-            ->orderByDesc('view_count')
             ->orderBy('properties.created_at', 'desc')
             ->with([
                 'images',

@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\PropertySearchController;
 use App\Http\Controllers\Api\PropertyShowController;
 use App\Http\Controllers\Api\PropertyMostViewedController;
+use App\Http\Controllers\Api\PropertyLaunchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,6 @@ Route::group([], function () {
     // Propriedades
     Route::get('/properties/search', PropertySearchController::class);
     Route::get('/properties/most-viewed', PropertyMostViewedController::class);
+    Route::get('/properties/launchs', PropertyLaunchController::class);
     Route::get('/properties/{code}', PropertyShowController::class);
 });
