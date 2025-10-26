@@ -127,11 +127,14 @@ class PropertyResource extends JsonApiResource
                     'id' => $business->pivot->id,
                     'attributes' => [
                         'name' => $business->name,
+                        'slug' => $business->slug,
                         'name_completed' => $business->name_completed,
                         'value' => $business->pivot->value,
                         'old_value' => $business->pivot->old_value,
                         'status' => $bussinessProperty?->status,
                         'status_situation' => $bussinessProperty?->status_situation,
+                        'is_completed' => $bussinessProperty?->isCompleted,
+                        'is_discounted' => $bussinessProperty?->isDiscounted,
                     ],
                 ];
             }
@@ -209,8 +212,8 @@ class PropertyResource extends JsonApiResource
                     'type' => 'images',
                     'id' => $image->id,
                     'attributes' => [
-                        'url' => Storage::disk('public')->url($image->way),
-                        'thumbnail' => $image->thumbnail ? Storage::disk('public')->url($image->thumbnail) : null,
+                        'url' => $image->way_url,
+                        'thumbnail' => $image->thumbnail ? $image->thumbnail_url : null,
                         'alt' => $image->alt,
                         'order' => $image->order,
                     ],
