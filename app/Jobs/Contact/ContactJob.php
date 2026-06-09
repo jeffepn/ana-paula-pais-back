@@ -37,7 +37,7 @@ class ContactJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to('contato@anapaulapais.com.br')
+        Mail::to(config('mail.to.address'))
             ->send(new ContactMail($this->content));
     }
 }
