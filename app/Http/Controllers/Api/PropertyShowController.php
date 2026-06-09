@@ -291,6 +291,7 @@ class PropertyShowController extends Controller
             ]
         )
             ->where('code', StringHelper::removeNonNumeric($code))
+            ->active()
             ->first();
 
         if (!$property) {
