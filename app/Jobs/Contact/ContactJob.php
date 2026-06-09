@@ -7,7 +7,6 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
-
 //Mail
 use App\Mail\Contact\ContactMail;
 use Illuminate\Support\Facades\Mail;
@@ -41,9 +40,7 @@ class ContactJob implements ShouldQueue
 
         $cc = config('mail.cc');
         if (!empty($cc)) {
-            foreach (array_filter(array_map('trim', explode(',', $cc))) as $email) {
-                $mailer->cc($email);
-            }
+            $mailer->cc(array_filter(array_map('trim', explode(',', $cc))));
         }
 
         $mailer->send(new ContactMail($this->content));
