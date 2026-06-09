@@ -290,7 +290,7 @@ class PropertyShowController extends Controller
                 'businesses',
             ]
         )
-            ->where("code", StringHelper::removeNonNumeric($code))
+            ->where('code', StringHelper::removeNonNumeric($code))
             ->first();
 
         if (!$property) {

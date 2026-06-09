@@ -39,5 +39,5 @@ use Illuminate\Support\Facades\Route;
 
 //Generator sitemap
 Auth::routes(['register' => false]);
-Route::get('/', fn() => redirect()->route('login'));
+Route::get('/', fn () => redirect()->route('login'));
 Route::get('/home', 'HomeController@index')->name('home');

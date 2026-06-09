@@ -4,7 +4,6 @@ namespace App\Http\Resources;
 
 use App\Http\Resources\JsonApi\JsonApiResource;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class PropertyResource extends JsonApiResource
 {

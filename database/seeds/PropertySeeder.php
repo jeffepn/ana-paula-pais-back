@@ -168,12 +168,14 @@ class PropertySeeder extends Seeder
         $contents = file_get_contents('https://picsum.photos/' . ($portrait ? '600/800' : '800/600'));
         Storage::disk('public')->put($imageRandom, $contents);
     }
+
     private function createImages(): void
     {
         Property::all()->each(function ($property) {
             for ($i = 0; $i < 5; $i++) {
                 $portrait = $this->faker->boolean(70);
                 $imageRandom = "properties/{$property->id}-{$i}.jpg";
+
                 try {
                     $this->saveImage($portrait, $imageRandom);
                 } catch (\Throwable $th) {

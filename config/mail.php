@@ -64,6 +64,8 @@ return [
         'name' => env('MAIL_TO_NAME', ''),
     ],
 
+    'cc' => env('MAIL_CC_ADDRESSES', ''),
+
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol

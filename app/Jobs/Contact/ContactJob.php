@@ -37,7 +37,16 @@ class ContactJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to(config('mail.to.address'))
-            ->send(new ContactMail($this->content));
+        $mailer = Mail::to(config('mail.to.address'));
+
+        $cc = config('mail.cc');
+        if (!empty($cc)) {
+            $ccAddresses = array_filter(array_map('trim', explode(',', $cc)));
+            if (!empty($ccAddresses)) {
+                $mailer->cc($ccAddresses);
+            }
+        }
+
+        $mailer->send(new ContactMail($this->content));
     }
 }

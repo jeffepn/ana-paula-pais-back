@@ -312,7 +312,7 @@ class PropertyMostViewedController extends Controller
             }, 'view_count')
             ->leftJoin('view_property', 'properties.id', '=', 'view_property.property_id')
             ->join('sub_types', 'properties.sub_type_id', 'sub_types.id')
-            ->when(isset($type), fn($q) => $q->where('sub_types.type_id', $type))
+            ->when(isset($type), fn ($q) => $q->where('sub_types.type_id', $type))
             ->whereActive(true)
             ->orderByDesc('view_count')
             ->orderBy('properties.created_at', 'desc')

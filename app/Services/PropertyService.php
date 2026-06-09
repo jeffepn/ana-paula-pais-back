@@ -99,7 +99,7 @@ class PropertyService
                                 MATCH(sub_types.name) AGAINST (\'' . $term . '\' IN BOOLEAN MODE) +
                                 MATCH(properties.min_description, properties.content) AGAINST (\'' . $term . '\' IN BOOLEAN MODE)
                             ) as relevance'
-                        )
+                        ),
                     ]);
                     $query->where(function ($q) use ($term) {
                         $q->orWhereRaw('MATCH(neighborhoods.name) AGAINST (? IN BOOLEAN MODE)', [$term])
@@ -111,18 +111,18 @@ class PropertyService
                 }
             )->when(
                 !empty($search['neighborhoods']),
-                fn($query) => $query->where(
-                    fn($q) => $q->whereIn('neighborhoods.id', $search['neighborhoods'])->orWhereIn('neighborhoods.slug', $search['neighborhoods'])
+                fn ($query) => $query->where(
+                    fn ($q) => $q->whereIn('neighborhoods.id', $search['neighborhoods'])->orWhereIn('neighborhoods.slug', $search['neighborhoods'])
                 )
             )->when(
                 !empty($search['type']),
-                fn($query) => $query->where(
-                    fn($q) => $q->where('sub_types.id', $search['type'])->orWhere('sub_types.slug', $search['type'])
+                fn ($query) => $query->where(
+                    fn ($q) => $q->where('sub_types.id', $search['type'])->orWhere('sub_types.slug', $search['type'])
                 )
             )->when(
                 !empty($search['business']),
-                fn($query) => $query->where(
-                    fn($q) => $q->where('businesses.id', $search['business'])->orWhere('businesses.slug', $search['business'])
+                fn ($query) => $query->where(
+                    fn ($q) => $q->where('businesses.id', $search['business'])->orWhere('businesses.slug', $search['business'])
                 )
             )
             ->when(
@@ -201,8 +201,8 @@ class PropertyService
             )
             ->when(
                 !empty($search['area_min']),
-                fn($query) => $query->where(
-                    fn($q) => $q->where('properties.building_area', '>=', $search['area_min'])
+                fn ($query) => $query->where(
+                    fn ($q) => $q->where('properties.building_area', '>=', $search['area_min'])
                         ->orWhere('properties.total_area', '>=', $search['area_min'])
                         ->orWhere('properties.useful_area', '>=', $search['area_min'])
                         ->orWhere('properties.ground_area', '>=', $search['area_min'])
