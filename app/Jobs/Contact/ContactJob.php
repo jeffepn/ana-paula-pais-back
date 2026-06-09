@@ -41,9 +41,8 @@ class ContactJob implements ShouldQueue
 
         $cc = config('mail.cc');
         if (!empty($cc)) {
-            $ccAddresses = array_filter(array_map('trim', explode(',', $cc)));
-            if (!empty($ccAddresses)) {
-                $mailer->cc($ccAddresses);
+            foreach (array_filter(array_map('trim', explode(',', $cc))) as $email) {
+                $mailer->cc($email);
             }
         }
 
